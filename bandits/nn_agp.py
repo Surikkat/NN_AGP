@@ -1,3 +1,4 @@
+# bandits/nn_agp.py
 import math
 from typing import List, Optional
 
@@ -5,6 +6,9 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.optim as optim
+
+
+DTYPE = torch.float64
 
 
 class NeuralEmbedding(nn.Module):
@@ -20,7 +24,8 @@ class NeuralEmbedding(nn.Module):
         return self.net(theta)
 
 
-def rbf_kernel_matrix(X1: torch.Tensor, X2: torch.Tensor, lengthscale: torch.Tensor, variance: torch.Tensor):
+def rbf_kernel_matrix(X1: torch.Tensor, X2: torch.Tensor,
+                      lengthscale: torch.Tensor, variance: torch.Tensor):
     x1 = X1 / lengthscale
     x2 = X2 / lengthscale
     x1_sq = (x1 ** 2).sum(dim=1).unsqueeze(1)
@@ -54,18 +59,29 @@ class NN_AGP_UCB:
         self.jitter = float(jitter)
         self.mll_steps = int(mll_steps)
 
-        self.encoder = NeuralEmbedding(theta_dim, self.m, hidden_dim).to(self.device)
+        # ==== ВСЁ В float64 ====
+        self.encoder = NeuralEmbedding(theta_dim, self.m, hidden_dim).to(
+            device=self.device, dtype=DTYPE
+        )
 
-        self.B = nn.Parameter(torch.randn(self.m, self.m, device=self.device) * 0.1)
+        self.B = nn.Parameter(
+            (torch.randn(self.m, self.m, device=self.device, dtype=DTYPE) * 0.1)
+        )
 
-        self.log_lengthscale = nn.Parameter(torch.log(torch.tensor(init_lengthscale, device=self.device)))
-        self.log_variance = nn.Parameter(torch.log(torch.tensor(init_var, device=self.device)))
-
-        self.log_noise = nn.Parameter(torch.log(torch.tensor(init_noise, device=self.device)))
+        self.log_lengthscale = nn.Parameter(
+            torch.log(torch.tensor(init_lengthscale, device=self.device, dtype=DTYPE))
+        )
+        self.log_variance = nn.Parameter(
+            torch.log(torch.tensor(init_var, device=self.device, dtype=DTYPE))
+        )
+        self.log_noise = nn.Parameter(
+            torch.log(torch.tensor(init_noise, device=self.device, dtype=DTYPE))
+        )
 
         self.optimizer = optim.Adam(
-            list(self.encoder.parameters()) + [self.B, self.log_lengthscale, self.log_variance, self.log_noise],
-            lr=lr
+            list(self.encoder.parameters())
+            + [self.B, self.log_lengthscale, self.log_variance, self.log_noise],
+            lr=lr,
         )
 
         self.thetas: List[torch.Tensor] = []
@@ -107,7 +123,7 @@ class NN_AGP_UCB:
             "Sigma_p": Sigma_p,
             "k_x": k_x,
             "GSGT": GSGT,
-            "K_tilde": K_tilde
+            "K_tilde": K_tilde,
         }
 
     def _neg_log_marginal_likelihood(self):
@@ -119,18 +135,18 @@ class NN_AGP_UCB:
         K_base = mats["K_tilde"]
         y = mats["y"]
 
-        jitter = float(self.jitter) if hasattr(self, "jitter") else 1e-6
-        max_jitter = 1e-1
+        jitter = float(self.jitter)
         success = False
+        L = None
 
         attempts = 0
-        K = None
         while attempts < 6:
             try:
-                K_try = K_base + (self.sigma_eps ** 2 + jitter) * torch.eye(n, device=self.device)
+                K_try = K_base + (self.sigma_eps ** 2 + jitter) * torch.eye(
+                    n, device=self.device, dtype=DTYPE
+                )
                 K_try = 0.5 * (K_try + K_try.t())
                 L = torch.linalg.cholesky(K_try)
-                K = K_try
                 success = True
                 break
             except RuntimeError:
@@ -139,28 +155,18 @@ class NN_AGP_UCB:
 
         if not success:
             K_sym = 0.5 * (K_base + K_base.t())
-            try:
-                eigvals, eigvecs = torch.linalg.eigh(K_sym)
-            except RuntimeError:
-                jitter = max(jitter, 1e-3)
-                K = K_sym + (self.sigma_eps ** 2 + jitter) * torch.eye(n, device=self.device)
-                K = 0.5 * (K + K.t())
-                L = torch.linalg.cholesky(K)
-            else:
-                min_eig = max(jitter, float(torch.max(-eigvals.min(), torch.tensor(1e-12, device=eigvals.device))))
-                rel_eps = 1e-8
-                min_eig = max(min_eig, float(eigvals.max()) * rel_eps)
-
-                eigvals_clipped = torch.clamp(eigvals, min=min_eig)
-                K = (eigvecs * eigvals_clipped.unsqueeze(0)) @ eigvecs.t()
-                K = K + (self.sigma_eps ** 2 + jitter) * torch.eye(n, device=self.device)
-                K = 0.5 * (K + K.t())
-                L = torch.linalg.cholesky(K)
-
-            print(f"[nn_agp] Warning: used spectral stabilization in _neg_log_marginal_likelihood (jitter~{jitter:.1e}, min_eig~{min_eig:.1e})")
-
-        if 'L' not in locals():
+            eigvals, eigvecs = torch.linalg.eigh(K_sym)
+            min_eig = max(
+                jitter,
+                float(torch.max(-eigvals.min(), torch.tensor(1e-12, device=eigvals.device, dtype=DTYPE))),
+            )
+            min_eig = max(min_eig, float(eigvals.max()) * 1e-8)
+            eigvals_clipped = torch.clamp(eigvals, min=min_eig)
+            K = (eigvecs * eigvals_clipped.unsqueeze(0)) @ eigvecs.t()
+            K = K + (self.sigma_eps ** 2 + jitter) * torch.eye(n, device=self.device, dtype=DTYPE)
+            K = 0.5 * (K + K.t())
             L = torch.linalg.cholesky(K)
+            print(f"[nn_agp] Warning: spectral stabilization in _nll (jitter~{jitter:.1e})")
 
         v = torch.linalg.solve(L, y)
         alpha = torch.linalg.solve(L.t(), v)
@@ -178,12 +184,16 @@ class NN_AGP_UCB:
             if loss is None:
                 break
             loss.backward()
-            torch.nn.utils.clip_grad_norm_(list(self.encoder.parameters()) + [self.B, self.log_lengthscale, self.log_variance, self.log_noise], 5.0)
+            torch.nn.utils.clip_grad_norm_(
+                list(self.encoder.parameters())
+                + [self.B, self.log_lengthscale, self.log_variance, self.log_noise],
+                5.0,
+            )
             self.optimizer.step()
 
     def posterior(self, x: np.ndarray, theta: np.ndarray):
-        x_t = torch.tensor(x, dtype=torch.float32, device=self.device).unsqueeze(0)
-        theta_t = torch.tensor(theta, dtype=torch.float32, device=self.device).unsqueeze(0)
+        x_t = torch.tensor(x, dtype=DTYPE, device=self.device).unsqueeze(0)
+        theta_t = torch.tensor(theta, dtype=DTYPE, device=self.device).unsqueeze(0)
         g_t = self.encoder(theta_t).view(self.m, 1)
         Sigma_p = self.B @ self.B.t()
         k_x_x = self.variance
@@ -203,10 +213,13 @@ class NN_AGP_UCB:
             K_base = K_tilde
             jitter = float(self.jitter)
             success = False
+            L = None
             attempts = 0
             while attempts < 6:
                 try:
-                    K = K_base + (self.sigma_eps ** 2 + jitter) * torch.eye(n, device=self.device)
+                    K = K_base + (self.sigma_eps ** 2 + jitter) * torch.eye(
+                        n, device=self.device, dtype=DTYPE
+                    )
                     K = 0.5 * (K + K.t())
                     L = torch.linalg.cholesky(K)
                     success = True
@@ -218,15 +231,17 @@ class NN_AGP_UCB:
             if not success:
                 K_sym = 0.5 * (K_base + K_base.t())
                 eigvals, eigvecs = torch.linalg.eigh(K_sym)
-                min_eig = max(jitter, float(torch.max(-eigvals.min(), torch.tensor(1e-12, device=eigvals.device))))
-                rel_eps = 1e-8
-                min_eig = max(min_eig, float(eigvals.max()) * rel_eps)
+                min_eig = max(
+                    jitter,
+                    float(torch.max(-eigvals.min(), torch.tensor(1e-12, device=eigvals.device, dtype=DTYPE))),
+                )
+                min_eig = max(min_eig, float(eigvals.max()) * 1e-8)
                 eigvals_clipped = torch.clamp(eigvals, min=min_eig)
                 K = (eigvecs * eigvals_clipped.unsqueeze(0)) @ eigvecs.t()
-                K = K + (self.sigma_eps ** 2 + jitter) * torch.eye(n, device=self.device)
+                K = K + (self.sigma_eps ** 2 + jitter) * torch.eye(n, device=self.device, dtype=DTYPE)
                 K = 0.5 * (K + K.t())
                 L = torch.linalg.cholesky(K)
-                print(f"[nn_agp] Warning: spectral stabilization in posterior (jitter~{jitter:.1e}, min_eig~{min_eig:.1e})")
+                print(f"[nn_agp] Warning: spectral stabilization in posterior (jitter~{jitter:.1e})")
 
             v = torch.linalg.solve(L, y)
             alpha = torch.linalg.solve(L.t(), v)
@@ -258,9 +273,9 @@ class NN_AGP_UCB:
         return X_candidates[idx], mus[idx], sig2s[idx]
 
     def update(self, theta: np.ndarray, x: np.ndarray, y: float):
-        theta_t = torch.tensor(theta, dtype=torch.float32, device=self.device)
-        x_t = torch.tensor(x, dtype=torch.float32, device=self.device)
-        y_t = torch.tensor([y], dtype=torch.float32, device=self.device)
+        theta_t = torch.tensor(theta, dtype=DTYPE, device=self.device)
+        x_t = torch.tensor(x, dtype=DTYPE, device=self.device)
+        y_t = torch.tensor([y], dtype=DTYPE, device=self.device)
 
         self.thetas.append(theta_t)
         self.Xs.append(x_t)
@@ -270,8 +285,7 @@ class NN_AGP_UCB:
 
     def prior_variance(self, x: np.ndarray, theta: np.ndarray) -> float:
         with torch.no_grad():
-            x_t = torch.tensor(x, dtype=torch.float32, device=self.device).unsqueeze(0)
-            theta_t = torch.tensor(theta, dtype=torch.float32, device=self.device).unsqueeze(0)
+            theta_t = torch.tensor(theta, dtype=DTYPE, device=self.device).unsqueeze(0)
             g_t = self.encoder(theta_t).view(self.m, 1)
             Sigma_p = self.B @ self.B.t()
             k_x_x = self.variance

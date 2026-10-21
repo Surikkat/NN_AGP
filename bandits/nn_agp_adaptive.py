@@ -59,7 +59,10 @@ class NN_AGP_UCB_Adaptive:
         prune_rule: str = "relative",
         burn_in: int = 100,
         seed: Optional[int] = None,
+        debug_spectral: bool = False,
     ):
+        self.debug_spectral = debug_spectral
+        
         if prune_rule not in ("relative", "bbp", "none"):
             raise ValueError("prune_rule must be 'relative', 'bbp' or 'none'")
         if T_spec < 1 or burn_in < 0 or not 0 < eps_prune < 1:
@@ -245,23 +248,32 @@ class NN_AGP_UCB_Adaptive:
 
     def _update_projection(self, calibration_contexts=None):
         """Select GP directions from the current joint covariance."""
-        contexts = (torch.stack(self.thetas) if calibration_contexts is None else
-                    torch.as_tensor(calibration_contexts, dtype=self.B.dtype, device=self.device))
+        contexts = (
+            torch.stack(self.thetas)
+            if calibration_contexts is None
+            else torch.as_tensor(calibration_contexts, dtype=self.B.dtype, device=self.device)
+        )
         if contexts.ndim != 2 or contexts.shape[0] == 0 or contexts.shape[1] != self.theta_dim:
             raise ValueError("Calibration contexts must have shape (n, theta_dim), n > 0")
+
         with torch.no_grad():
             H = (self.encoder(contexts) @ self.B).cpu().numpy()
             n = len(H)
             background = None
+            values = None
+            cutoff = None
+            d = self.m_max
+
             if self.prune_rule == "relative":
                 _, singular, vectors = np.linalg.svd(H, full_matrices=False)
                 values = singular * singular / n
                 cutoff = self.eps_prune * values[0]
                 self.m = max(1, int(np.sum(values > cutoff)))
-                projection = vectors[:self.m].T
+                projection = vectors[: self.m].T
                 self.epsilon = self.eps_prune
                 d = self.m_max
-            else:
+
+            else:  # bbp
                 B = self.B.cpu().numpy()
                 last = self.encoder.net[-1]
                 W, bias = last.weight.cpu().numpy(), last.bias.cpu().numpy()
@@ -271,20 +283,59 @@ class NN_AGP_UCB_Adaptive:
                 h = H @ Q
                 d = h.shape[1]
                 values, vectors = np.linalg.eigh(h.T @ h / n)
-                values, vectors = np.maximum(values[::-1], 0), vectors[:, ::-1]
+                values = np.maximum(values[::-1], 0)
+                vectors = vectors[:, ::-1]
+
                 cutoff, proposed = None, 0
                 if d:
                     gamma = d / n
-                    background = float(np.median(values[:min(d, n)])) / _mp_median(gamma)
+                    background = float(np.median(values[: min(d, n)])) / _mp_median(gamma)
                     cutoff = background * (1 + np.sqrt(gamma)) ** 2
                     if np.isfinite(background) and background > np.finfo(float).eps * values[0]:
                         proposed = int(np.sum(values > cutoff))
                 self.m = proposed or self.m_max
                 projection = Q @ vectors[:, :proposed] if proposed else np.eye(self.m_max)
                 self.epsilon = float(cutoff / values[0]) if d and values[0] > 0 else None
-            self.projection = torch.as_tensor(projection.copy(), dtype=self.B.dtype, device=self.device)
-            self.spectral_history.append(dict(t=self.step_count, n=n, dimension=d,
-                rank=self.m, cutoff=cutoff, epsilon=self.epsilon, background=background))
+
+            # ==== Логирование спектра ====
+            if self.debug_spectral:
+                top_k = min(10, len(values))
+                top_vals = np.array(values[:top_k])
+                # Отношения к lambda_1
+                ratios = top_vals / top_vals[0] if top_vals[0] > 0 else np.zeros_like(top_vals)
+                ratio_str = ", ".join(f"{r:.4f}" for r in ratios)
+                print(
+                    f"[spectral] t={self.step_count:>4} n={n:>4} d={d:>4} "
+                    f"m={self.m:>3} eps={self.eps_prune:.4g} "
+                    f"cutoff={cutoff if cutoff is None else f'{cutoff:.4g}'} "
+                    f"lambda_1={values[0]:.4g} "
+                    f"top{top_k}_ratios=[{ratio_str}]",
+                    flush=True,
+                )
+                # Дополнительно: сколько значений выше eps_prune * lambda_1
+                rel_counts = {
+                    eps: int(np.sum(values > eps * values[0]))
+                    for eps in (1e-4, 1e-3, 1e-2, 1e-1)
+                }
+                print(f"           counts at eps*lambda_1: {rel_counts}", flush=True)
+
+            self.projection = torch.as_tensor(
+                projection.copy(), dtype=self.B.dtype, device=self.device
+            )
+            self.spectral_history.append(dict(
+                t=self.step_count,
+                n=n,
+                dimension=d,
+                rank=self.m,
+                cutoff=cutoff,
+                epsilon=self.epsilon,
+                background=background,
+                # NEW: сохраняем топ-значения и их отношения для анализа
+                top_values=values[:min(20, len(values))].copy() if values is not None else None,
+                top_ratios=(values[:min(20, len(values))] / values[0]).copy()
+                if values is not None and values[0] > 0 else None,
+            ))
+            
 
 
     def prior_variance(self, x: np.ndarray, theta: np.ndarray) -> float:
