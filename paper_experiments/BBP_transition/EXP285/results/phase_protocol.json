@@ -1,0 +1,52 @@
+{
+  "source": "/Users/rknza/research/bandits/offline/bbp_v4_match_2026-10-13/crossed_m128",
+  "repetitions": 400,
+  "seed": 97013,
+  "sizes": [
+    16,
+    32,
+    64,
+    96,
+    127,
+    128,
+    192,
+    254,
+    256,
+    381,
+    508,
+    512,
+    762,
+    1016,
+    1025,
+    2032,
+    2049,
+    4065,
+    8130
+  ],
+  "context_sd": 0.02,
+  "M": 128,
+  "sigma_eff2": 3.504533478176815e-05,
+  "spike_excess": [
+    3.503520983998142e-05,
+    1.7589448201071394e-05
+  ],
+  "spike_ratio": [
+    0.9997110901679274,
+    0.5019055549220224
+  ],
+  "ncrit": [
+    128.0739929814161,
+    508.11962041236694
+  ],
+  "input_hashes": {
+    "/Users/rknza/research/bandits/offline/bbp_v4_match_2026-10-13/crossed_m128/checkpoint.pt": "36cdc3368b6cf2a0c2c050c2bb37f70cce971f910e1473baccc9dcc3044beef9",
+    "/Users/rknza/research/bandits/offline/bbp_v4_match_2026-10-13/crossed_m128/calibration.npz": "396e8b0cf4c8b2a531eb3b93dc4e8bb7050de4190111cde079c79e8f9e729718",
+    "/Users/rknza/research/bandits/code/agents.py": "50223bc1f0f4eba987dc4b01256b59c1b58ef5e7f0dafa004d28670b45a5063c"
+  },
+  "statistic": "Unmodified trained h=g(theta)B; raw H.T@H/n on fresh IID contexts",
+  "calibration": "Independent large Monte Carlo calibration; fixed raw J and directions before fresh tests",
+  "controls": "Finite Gaussian with isotropic tail; finite Gaussian with actual mean and covariance. Diagnostic only",
+  "scope": "Frozen learned checkpoint after offline crossed GP likelihood training; n counts independent contexts, not rewards",
+  "phase_labels": "Asymptotic BBP reference regimes; finite-M transition is rounded",
+  "intervals": "80% Monte Carlo confidence for means, conditional on this learned checkpoint"
+}

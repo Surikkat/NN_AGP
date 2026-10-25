@@ -1,0 +1,119 @@
+{
+  "id": "EXP285",
+  "environment": "BBP_transition",
+  "paper_key": "bbp.phases",
+  "title": "Frozen width-128 trained NN–AGP: BBP transition",
+  "horizon": null,
+  "paper_refs": [
+    "fig:joint-bbp",
+    "app:bbp-experiment"
+  ],
+  "folder": "BBP_transition/EXP285",
+  "settings": {
+    "training_seed": 96015,
+    "sampling_seed": 97013,
+    "checkpoints": 1,
+    "repetitions_per_context_count": 400,
+    "model_width": 128
+  },
+  "sources": [
+    {
+      "file": "BBP_transition/EXP285/results/results.json",
+      "original_source": "offline/bbp_v4_match_2026-10-13/crossed_m128/classical_transition/results.json",
+      "sha256": "10902d6ff87f6d177b1c943b38ae2bc8e016d2367fd5df759359c5a511e7c916",
+      "bytes": 67894,
+      "role": "spectral_samples_or_checkpoint"
+    },
+    {
+      "file": "BBP_transition/EXP285/results/samples.npz",
+      "original_source": "offline/bbp_v4_match_2026-10-13/crossed_m128/classical_transition/samples.npz",
+      "sha256": "f715f9cc3bf7b1e62229d0caa96b3dff3f21d18052508e6e90333690c289f9f4",
+      "bytes": 868890,
+      "role": "spectral_samples_or_checkpoint"
+    },
+    {
+      "file": "BBP_transition/EXP285/results/checkpoint.pt",
+      "original_source": "offline/bbp_v4_match_2026-10-13/crossed_m128/checkpoint.pt",
+      "sha256": "36cdc3368b6cf2a0c2c050c2bb37f70cce971f910e1473baccc9dcc3044beef9",
+      "bytes": 6720501,
+      "role": "spectral_samples_or_checkpoint"
+    },
+    {
+      "file": "BBP_transition/EXP285/results/calibration.npz",
+      "original_source": "offline/bbp_v4_match_2026-10-13/crossed_m128/calibration.npz",
+      "sha256": "396e8b0cf4c8b2a531eb3b93dc4e8bb7050de4190111cde079c79e8f9e729718",
+      "bytes": 708245,
+      "role": "spectral_samples_or_checkpoint"
+    },
+    {
+      "file": "BBP_transition/EXP285/results/training_protocol.json",
+      "original_source": "offline/bbp_v4_match_2026-10-13/crossed_m128/protocol.json",
+      "sha256": "c79e5b654141d82caca05198a10fc4aac1f714a932a8443423ab19653c2c129a",
+      "bytes": 4778,
+      "role": "training_provenance"
+    },
+    {
+      "file": "BBP_transition/EXP285/results/training_results.json",
+      "original_source": "offline/bbp_v4_match_2026-10-13/crossed_m128/results.json",
+      "sha256": "380b3cfb698869bca758d0f418e6fb9dfb1c33b27f42d437f6a7f45e5ae21e8c",
+      "bytes": 17651,
+      "role": "training_provenance"
+    },
+    {
+      "file": "BBP_transition/EXP285/results/training_training_statistics.npz",
+      "original_source": "offline/bbp_v4_match_2026-10-13/crossed_m128/training_statistics.npz",
+      "sha256": "cdab4dc35154a7091c999278b79b0419c88206055e22727e036103fc2105f64d",
+      "bytes": 2395057,
+      "role": "training_provenance"
+    },
+    {
+      "file": "BBP_transition/EXP285/results/training_calibration.json",
+      "original_source": "offline/bbp_v4_match_2026-10-13/crossed_m128/calibration.json",
+      "sha256": "43b6a96e52777b2339a93e29cc65c81dca4548b9007d015b8a914e519baabe75",
+      "bytes": 4397,
+      "role": "training_provenance"
+    },
+    {
+      "file": "BBP_transition/EXP285/results/phase_protocol.json",
+      "original_source": "offline/bbp_v4_match_2026-10-13/crossed_m128/classical_transition/protocol.json",
+      "sha256": "262208ab8e67a213a8883a616d5c6f9bc99f772554331f571b2e766bea9345f3",
+      "bytes": 1705,
+      "role": "spectral_protocol"
+    }
+  ],
+  "runs": [],
+  "configurations": {},
+  "plots": [
+    {
+      "file": "BBP_transition/EXP285/plots/bbp_phases.pdf",
+      "original_source": "new_paper/figures/bbp_phases.pdf",
+      "sha256": "2e53d0f926a8d65e4c476bf4dc77f2c4227d0a3b0f73a97d78bb7108124aa4b4",
+      "bytes": 53156,
+      "role": "final_manuscript_figure"
+    }
+  ],
+  "method_configurations": {},
+  "notes": [],
+  "kind": "spectral_diagnostic",
+  "paper_seed_order": [
+    96015
+  ],
+  "methods": [
+    "Trained features",
+    "Gaussian control",
+    "BBP prediction"
+  ],
+  "seeds": [
+    96015
+  ],
+  "method_seeds": {
+    "Trained features": [],
+    "Gaussian control": [],
+    "BBP prediction": []
+  },
+  "completion": "complete",
+  "availability": "Saved spectral samples and checkpoint",
+  "aggregation": "Only listed run rows; same-seed pairing within this numerical protocol. No pooling by date or study stage.",
+  "raw_container_policy": "Byte-exact source containers are retained. Any native methods not in selected_runs are provenance only and excluded from every table, plot and run count.",
+  "timing_note": "Original measured timings retained; paced/concurrent timings are descriptive, not an unpaced speed benchmark."
+}

@@ -50,8 +50,12 @@ class NN_AGP_UCB:
         lr: float = 1e-3,
         mll_steps: int = 60,
         jitter: float = 1e-6,
+        dtype: torch.dtype = DTYPE,
+        batched: bool = False,
     ):
         self.device = device or torch.device("cpu")
+        self.dtype = dtype
+        self.batched = batched
         self.theta_dim = theta_dim
         self.x_dim = x_dim
         self.m = int(m)
@@ -59,23 +63,22 @@ class NN_AGP_UCB:
         self.jitter = float(jitter)
         self.mll_steps = int(mll_steps)
 
-        # ==== ВСЁ В float64 ====
         self.encoder = NeuralEmbedding(theta_dim, self.m, hidden_dim).to(
-            device=self.device, dtype=DTYPE
+            device=self.device, dtype=self.dtype
         )
 
         self.B = nn.Parameter(
-            (torch.randn(self.m, self.m, device=self.device, dtype=DTYPE) * 0.1)
+            (torch.randn(self.m, self.m, device=self.device, dtype=self.dtype) * 0.1)
         )
 
         self.log_lengthscale = nn.Parameter(
-            torch.log(torch.tensor(init_lengthscale, device=self.device, dtype=DTYPE))
+            torch.log(torch.tensor(init_lengthscale, device=self.device, dtype=self.dtype))
         )
         self.log_variance = nn.Parameter(
-            torch.log(torch.tensor(init_var, device=self.device, dtype=DTYPE))
+            torch.log(torch.tensor(init_var, device=self.device, dtype=self.dtype))
         )
         self.log_noise = nn.Parameter(
-            torch.log(torch.tensor(init_noise, device=self.device, dtype=DTYPE))
+            torch.log(torch.tensor(init_noise, device=self.device, dtype=self.dtype))
         )
 
         self.optimizer = optim.Adam(
@@ -143,7 +146,7 @@ class NN_AGP_UCB:
         while attempts < 6:
             try:
                 K_try = K_base + (self.sigma_eps ** 2 + jitter) * torch.eye(
-                    n, device=self.device, dtype=DTYPE
+                    n, device=self.device, dtype=self.dtype
                 )
                 K_try = 0.5 * (K_try + K_try.t())
                 L = torch.linalg.cholesky(K_try)
@@ -158,12 +161,12 @@ class NN_AGP_UCB:
             eigvals, eigvecs = torch.linalg.eigh(K_sym)
             min_eig = max(
                 jitter,
-                float(torch.max(-eigvals.min(), torch.tensor(1e-12, device=eigvals.device, dtype=DTYPE))),
+                float(torch.max(-eigvals.min(), torch.tensor(1e-12, device=eigvals.device, dtype=self.dtype))),
             )
             min_eig = max(min_eig, float(eigvals.max()) * 1e-8)
             eigvals_clipped = torch.clamp(eigvals, min=min_eig)
             K = (eigvecs * eigvals_clipped.unsqueeze(0)) @ eigvecs.t()
-            K = K + (self.sigma_eps ** 2 + jitter) * torch.eye(n, device=self.device, dtype=DTYPE)
+            K = K + (self.sigma_eps ** 2 + jitter) * torch.eye(n, device=self.device, dtype=self.dtype)
             K = 0.5 * (K + K.t())
             L = torch.linalg.cholesky(K)
             print(f"[nn_agp] Warning: spectral stabilization in _nll (jitter~{jitter:.1e})")
@@ -192,8 +195,8 @@ class NN_AGP_UCB:
             self.optimizer.step()
 
     def posterior(self, x: np.ndarray, theta: np.ndarray):
-        x_t = torch.tensor(x, dtype=DTYPE, device=self.device).unsqueeze(0)
-        theta_t = torch.tensor(theta, dtype=DTYPE, device=self.device).unsqueeze(0)
+        x_t = torch.tensor(x, dtype=self.dtype, device=self.device).unsqueeze(0)
+        theta_t = torch.tensor(theta, dtype=self.dtype, device=self.device).unsqueeze(0)
         g_t = self.encoder(theta_t).view(self.m, 1)
         Sigma_p = self.B @ self.B.t()
         k_x_x = self.variance
@@ -218,7 +221,7 @@ class NN_AGP_UCB:
             while attempts < 6:
                 try:
                     K = K_base + (self.sigma_eps ** 2 + jitter) * torch.eye(
-                        n, device=self.device, dtype=DTYPE
+                        n, device=self.device, dtype=self.dtype
                     )
                     K = 0.5 * (K + K.t())
                     L = torch.linalg.cholesky(K)
@@ -233,12 +236,12 @@ class NN_AGP_UCB:
                 eigvals, eigvecs = torch.linalg.eigh(K_sym)
                 min_eig = max(
                     jitter,
-                    float(torch.max(-eigvals.min(), torch.tensor(1e-12, device=eigvals.device, dtype=DTYPE))),
+                    float(torch.max(-eigvals.min(), torch.tensor(1e-12, device=eigvals.device, dtype=self.dtype))),
                 )
                 min_eig = max(min_eig, float(eigvals.max()) * 1e-8)
                 eigvals_clipped = torch.clamp(eigvals, min=min_eig)
                 K = (eigvecs * eigvals_clipped.unsqueeze(0)) @ eigvecs.t()
-                K = K + (self.sigma_eps ** 2 + jitter) * torch.eye(n, device=self.device, dtype=DTYPE)
+                K = K + (self.sigma_eps ** 2 + jitter) * torch.eye(n, device=self.device, dtype=self.dtype)
                 K = 0.5 * (K + K.t())
                 L = torch.linalg.cholesky(K)
                 print(f"[nn_agp] Warning: spectral stabilization in posterior (jitter~{jitter:.1e})")
@@ -259,7 +262,37 @@ class NN_AGP_UCB:
             sigma2 = torch.clamp(sigma2, min=1e-12)
             return float(mu.cpu().item()), float(sigma2.cpu().item())
 
-    def select_action(self, X_candidates: np.ndarray, theta: np.ndarray):
+    def select_action(self, X_candidates: np.ndarray, theta: np.ndarray, batched: Optional[bool] = None):
+        batched = self.batched if batched is None else batched
+        if batched:
+            with torch.no_grad():
+                context = torch.tensor(theta, dtype=self.dtype or torch.float32, device=self.device)[None]
+                g = self.encoder(context).reshape(self.m, 1)
+                Sigma = self.B @ self.B.T
+                prior = (g.T @ Sigma @ g).squeeze() * self.variance
+                if not self.Xs:
+                    means = np.zeros(len(X_candidates))
+                    variances = np.full(len(X_candidates), float(prior))
+                else:
+                    mats = self._assemble()
+                    K = mats["K_tilde"] + (self.sigma_eps ** 2 + self.jitter) * torch.eye(
+                        len(self.Xs), dtype=self.dtype, device=self.device
+                    )
+                    K = 0.5 * (K + K.T)
+                    try:
+                        factor = torch.linalg.cholesky(K)
+                    except RuntimeError:
+                        return self.select_action(X_candidates, theta, batched=False)
+                    alpha = torch.cholesky_solve(mats["y"], factor)
+                    X = torch.as_tensor(X_candidates, dtype=self.dtype or torch.float32, device=self.device)
+                    kernels = rbf_kernel_matrix(X, mats["X"], self.lengthscale, self.variance)
+                    cross = kernels * (mats["G"] @ Sigma @ g).reshape(1, -1)
+                    means = (cross @ alpha).reshape(-1).cpu().numpy()
+                    forward = torch.linalg.solve_triangular(factor, cross.T, upper=False)
+                    variances = torch.clamp(prior - forward.square().sum(0), min=1e-12).cpu().numpy()
+                idx = int(np.argmax(means + math.sqrt(self.beta) * np.sqrt(variances)))
+                return X_candidates[idx], float(means[idx]), float(variances[idx])
+
         mus = []
         sig2s = []
         for x in X_candidates:
@@ -273,9 +306,9 @@ class NN_AGP_UCB:
         return X_candidates[idx], mus[idx], sig2s[idx]
 
     def update(self, theta: np.ndarray, x: np.ndarray, y: float):
-        theta_t = torch.tensor(theta, dtype=DTYPE, device=self.device)
-        x_t = torch.tensor(x, dtype=DTYPE, device=self.device)
-        y_t = torch.tensor([y], dtype=DTYPE, device=self.device)
+        theta_t = torch.tensor(theta, dtype=self.dtype, device=self.device)
+        x_t = torch.tensor(x, dtype=self.dtype, device=self.device)
+        y_t = torch.tensor([y], dtype=self.dtype, device=self.device)
 
         self.thetas.append(theta_t)
         self.Xs.append(x_t)
@@ -285,7 +318,7 @@ class NN_AGP_UCB:
 
     def prior_variance(self, x: np.ndarray, theta: np.ndarray) -> float:
         with torch.no_grad():
-            theta_t = torch.tensor(theta, dtype=DTYPE, device=self.device).unsqueeze(0)
+            theta_t = torch.tensor(theta, dtype=self.dtype, device=self.device).unsqueeze(0)
             g_t = self.encoder(theta_t).view(self.m, 1)
             Sigma_p = self.B @ self.B.t()
             k_x_x = self.variance
