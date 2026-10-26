@@ -1,0 +1,1564 @@
+{
+  "id": "EXP284",
+  "environment": "KuaiRec_100_users",
+  "paper_key": "legacy.kuairec100.T2000",
+  "title": "Relative cutoff 0.01 versus Full; 100 users; T=2000",
+  "horizon": 2000,
+  "paper_refs": [
+    "tab:kuairec",
+    "app:relative-results"
+  ],
+  "folder": "KuaiRec_100_users/EXP284",
+  "settings": {
+    "epsilon": 0.01,
+    "users": 100,
+    "corrected_svd_policy": true
+  },
+  "sources": [
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3000_f138caac2ce5.json",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/real/suite_rg_kr100_T2000/full/seed3000.json",
+      "sha256": "f138caac2ce5688576d2dcee73fa6cbdf6ee8d874e4fcf30659fb12a72133095",
+      "bytes": 2112012,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3000,
+          "method": "Full",
+          "raw_method": "nnagp_cov_full"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_full"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3001_09ca2c00ce7a.json",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/real/suite_rg_kr100_T2000/full/seed3001.json",
+      "sha256": "09ca2c00ce7ac7cf4d5e77c8836531a9d5e8c834cdcc59905816278c3a331724",
+      "bytes": 2120796,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3001,
+          "method": "Full",
+          "raw_method": "nnagp_cov_full"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_full"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3002_fe6a7896bf4b.json",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/recovered/real/suite_rg_kr100_T2000/full/seed3002.json",
+      "sha256": "fe6a7896bf4be3a1bee643cba9d041aa8bf83351d2b4d783f3bd799a08bc89fb",
+      "bytes": 2124592,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3002,
+          "method": "Full",
+          "raw_method": "nnagp_cov_full"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_full"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3003_2ef8ea38f522.json",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/recovered/real/suite_rg_kr100_T2000/full/seed3003.json",
+      "sha256": "2ef8ea38f522d3d44c27c7b376191e0a3dbea9675067714fea3d03113614c250",
+      "bytes": 2121044,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3003,
+          "method": "Full",
+          "raw_method": "nnagp_cov_full"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_full"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3004_f5c2b80c4fbc.json",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/recovered/real/suite_rg_kr100_T2000/full/seed3004.json",
+      "sha256": "f5c2b80c4fbccf3fe8b62d39fb881f546bb58c56504a107430eb17f78aa24c07",
+      "bytes": 2109888,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3004,
+          "method": "Full",
+          "raw_method": "nnagp_cov_full"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_full"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3005_cea94ffaaddc.json",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/recovered/real/suite_rg_kr100_T2000/full/seed3005.json",
+      "sha256": "cea94ffaaddcbaf057413495b1d52523743bd4cdd04d95a82c3533e2e5030d41",
+      "bytes": 2111834,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3005,
+          "method": "Full",
+          "raw_method": "nnagp_cov_full"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_full"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3006_f5d6941a0468.json",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/recovered/real/suite_rg_kr100_T2000/full/seed3006.json",
+      "sha256": "f5d6941a0468331124a01a768e986e3e02a438f769d48707d4f870f2ae09cc25",
+      "bytes": 2127838,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3006,
+          "method": "Full",
+          "raw_method": "nnagp_cov_full"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_full"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3007_15ee785705ed.json",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/recovered/real/suite_rg_kr100_T2000/full/seed3007.json",
+      "sha256": "15ee785705edea93cb4bf98f551a9bc3bad165e15e0e7304a51e623d8adc62ff",
+      "bytes": 2112642,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3007,
+          "method": "Full",
+          "raw_method": "nnagp_cov_full"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_full"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3008_eaf7e2315e8c.json",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/recovered/real/suite_rg_kr100_T2000/full/seed3008.json",
+      "sha256": "eaf7e2315e8c94be37c526dd30d1f03d46a99fad698a72b13cd3e73ea7802deb",
+      "bytes": 2117061,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3008,
+          "method": "Full",
+          "raw_method": "nnagp_cov_full"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_full"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3009_5b9bac1c2cec.json",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/recovered/real/suite_rg_kr100_T2000/full/seed3009.json",
+      "sha256": "5b9bac1c2cec32c2a7a6411c7762aa230098fdd636b9715855df0a71f6e10093",
+      "bytes": 2126772,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3009,
+          "method": "Full",
+          "raw_method": "nnagp_cov_full"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_full"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3000_7874de5c18aa.json",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/real/suite_rg_kr100_T2000/hard/seed3000.json",
+      "sha256": "7874de5c18aafd8010898f824659fbf71b96536ccdbd86f06550977ce4ddb397",
+      "bytes": 3354665,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3000,
+          "method": "Relative",
+          "raw_method": "nnagp_cov_hard"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_hard"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3001_a5f1584c5979.json",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3001.json",
+      "sha256": "a5f1584c5979fc687feeda162af913a5dafcd7f42d6d79c2dc75ce36e050ed10",
+      "bytes": 3368183,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3001,
+          "method": "Relative",
+          "raw_method": "nnagp_cov_hard"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_hard"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3002_97519ced2eaf.json",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3002.json",
+      "sha256": "97519ced2eaf2d8d30d8e4f2f5d8988391917f5571cf7786b5edffd383f082c3",
+      "bytes": 3365950,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3002,
+          "method": "Relative",
+          "raw_method": "nnagp_cov_hard"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_hard"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3003_7a1645128bf7.json",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3003.json",
+      "sha256": "7a1645128bf7ec54b9015508802392863a25702a373aafdf6430b613503b995e",
+      "bytes": 3377930,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3003,
+          "method": "Relative",
+          "raw_method": "nnagp_cov_hard"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_hard"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3004_d1dc79fcc17f.json",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3004.json",
+      "sha256": "d1dc79fcc17f65db0a5ef2310f4f72bb153fd3585fd6917abcb4684e588396f9",
+      "bytes": 3370304,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3004,
+          "method": "Relative",
+          "raw_method": "nnagp_cov_hard"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_hard"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3005_170023019280.json",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3005.json",
+      "sha256": "170023019280765532c7255abc37d6bdc2a913ecdbec32091dd8831b0458b98e",
+      "bytes": 3362730,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3005,
+          "method": "Relative",
+          "raw_method": "nnagp_cov_hard"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_hard"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3006_cda734733358.json",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3006.json",
+      "sha256": "cda734733358167f9fab76ed679817f0217cd3f8eafbfa908d998b3e15aee573",
+      "bytes": 3386081,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3006,
+          "method": "Relative",
+          "raw_method": "nnagp_cov_hard"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_hard"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3007_1c022a2cb17d.json",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3007.json",
+      "sha256": "1c022a2cb17d7c2e773531758f982d1f727a3059fd1fbe8e39c33bbaae4ba005",
+      "bytes": 3368549,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3007,
+          "method": "Relative",
+          "raw_method": "nnagp_cov_hard"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_hard"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3008_a75474f69d58.json",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3008.json",
+      "sha256": "a75474f69d58bfe10c2161f99fa3f536dce60789d6d18bbc9807ddd102647cbb",
+      "bytes": 3367660,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3008,
+          "method": "Relative",
+          "raw_method": "nnagp_cov_hard"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_hard"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP284/results/seed3009_9150c72ed62c.json",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3009.json",
+      "sha256": "9150c72ed62c41d69b413c44bc3691bc889fc72dff80986ab58b6c3ad93deda6",
+      "bytes": 3369229,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 3009,
+          "method": "Relative",
+          "raw_method": "nnagp_cov_hard"
+        }
+      ],
+      "native_methods": [
+        "nnagp_cov_hard"
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3000,
+      "method": "Full",
+      "raw_method": "nnagp_cov_full",
+      "rounds": 2000,
+      "regret": 3151.9561471743577,
+      "regret_after_100": 2905.7977243364653,
+      "regret_after_300": 2525.2938215033246,
+      "mean_gp_rank": 100.0,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 70.21715399999994,
+      "wall_s": 70.46163870790042,
+      "peak_rss_mib": null,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3000_f138caac2ce5.json",
+      "source_sha256": "f138caac2ce5688576d2dcee73fa6cbdf6ee8d874e4fcf30659fb12a72133095",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/real/suite_rg_kr100_T2000/full/seed3000.json",
+      "configuration": "67ae87ddde00645f581b6803e930b60146696eabe2c567bc297953d8907f0cd3",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 2905.7977243364653,
+      "regret_after100": 2905.7977243364653,
+      "mean_rank": 100.0,
+      "cpu": 70.21715399999994,
+      "wall": 70.46163870790042,
+      "rss": null,
+      "bbp_regret": null,
+      "full_regret": 3151.9561471743577,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3001,
+      "method": "Full",
+      "raw_method": "nnagp_cov_full",
+      "rounds": 2000,
+      "regret": 4466.583915870045,
+      "regret_after_100": 4174.632160158042,
+      "regret_after_300": 3708.1581052713123,
+      "mean_gp_rank": 100.0,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 60.2521099999999,
+      "wall_s": 60.48001479101367,
+      "peak_rss_mib": null,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3001_09ca2c00ce7a.json",
+      "source_sha256": "09ca2c00ce7ac7cf4d5e77c8836531a9d5e8c834cdcc59905816278c3a331724",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/real/suite_rg_kr100_T2000/full/seed3001.json",
+      "configuration": "049cff4a60c5e04fde4120f33466fb18bb4a83d3cef4274f6d6285fd65fa5e72",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 4174.632160158042,
+      "regret_after100": 4174.632160158042,
+      "mean_rank": 100.0,
+      "cpu": 60.2521099999999,
+      "wall": 60.48001479101367,
+      "rss": null,
+      "bbp_regret": null,
+      "full_regret": 4466.583915870045,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3002,
+      "method": "Full",
+      "raw_method": "nnagp_cov_full",
+      "rounds": 2000,
+      "regret": 5018.696350243564,
+      "regret_after_100": 4770.677566847721,
+      "regret_after_300": 4279.160230072669,
+      "mean_gp_rank": 100.0,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 483.11737700000003,
+      "wall_s": 1207.930276375031,
+      "peak_rss_mib": null,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3002_fe6a7896bf4b.json",
+      "source_sha256": "fe6a7896bf4be3a1bee643cba9d041aa8bf83351d2b4d783f3bd799a08bc89fb",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/recovered/real/suite_rg_kr100_T2000/full/seed3002.json",
+      "configuration": "d25e9a7d411e29bcffd4d97283cce9a9a4df2f6c982d38c2da1dea45244ae80b",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 4770.677566847721,
+      "regret_after100": 4770.677566847721,
+      "mean_rank": 100.0,
+      "cpu": 483.11737700000003,
+      "wall": 1207.930276375031,
+      "rss": null,
+      "bbp_regret": null,
+      "full_regret": 5018.696350243564,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3003,
+      "method": "Full",
+      "raw_method": "nnagp_cov_full",
+      "rounds": 2000,
+      "regret": 4257.7474537261305,
+      "regret_after_100": 4007.913099230665,
+      "regret_after_300": 3504.4976324742515,
+      "mean_gp_rank": 100.0,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 330.90849699999995,
+      "wall_s": 346.17957825004123,
+      "peak_rss_mib": null,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3003_2ef8ea38f522.json",
+      "source_sha256": "2ef8ea38f522d3d44c27c7b376191e0a3dbea9675067714fea3d03113614c250",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/recovered/real/suite_rg_kr100_T2000/full/seed3003.json",
+      "configuration": "08e75f2bb8bee57671643d9c2b838527b9fdd843f3a475d8c1db7a279e10c000",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 4007.913099230665,
+      "regret_after100": 4007.913099230665,
+      "mean_rank": 100.0,
+      "cpu": 330.90849699999995,
+      "wall": 346.17957825004123,
+      "rss": null,
+      "bbp_regret": null,
+      "full_regret": 4257.7474537261305,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3004,
+      "method": "Full",
+      "raw_method": "nnagp_cov_full",
+      "rounds": 2000,
+      "regret": 3158.1563818790873,
+      "regret_after_100": 2922.409396635966,
+      "regret_after_300": 2540.9630719410975,
+      "mean_gp_rank": 100.0,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 66.667825,
+      "wall_s": 67.97404300002381,
+      "peak_rss_mib": null,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3004_f5c2b80c4fbc.json",
+      "source_sha256": "f5c2b80c4fbccf3fe8b62d39fb881f546bb58c56504a107430eb17f78aa24c07",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/recovered/real/suite_rg_kr100_T2000/full/seed3004.json",
+      "configuration": "a06646eaee9c3d8ed32674a081722fffffa1b03c9b2116cf92f03d7bc6673be0",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 2922.409396635966,
+      "regret_after100": 2922.409396635966,
+      "mean_rank": 100.0,
+      "cpu": 66.667825,
+      "wall": 67.97404300002381,
+      "rss": null,
+      "bbp_regret": null,
+      "full_regret": 3158.1563818790873,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3005,
+      "method": "Full",
+      "raw_method": "nnagp_cov_full",
+      "rounds": 2000,
+      "regret": 3667.5868599784467,
+      "regret_after_100": 3413.753726169681,
+      "regret_after_300": 2974.1058936429467,
+      "mean_gp_rank": 100.0,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 68.10328699999997,
+      "wall_s": 69.57563304202631,
+      "peak_rss_mib": null,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3005_cea94ffaaddc.json",
+      "source_sha256": "cea94ffaaddcbaf057413495b1d52523743bd4cdd04d95a82c3533e2e5030d41",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/recovered/real/suite_rg_kr100_T2000/full/seed3005.json",
+      "configuration": "8ce29d0d06cf4ad9dcb763a541db1d9f931cd562ebf4f9dea2b6f73ffe09a0f3",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 3413.753726169681,
+      "regret_after100": 3413.753726169681,
+      "mean_rank": 100.0,
+      "cpu": 68.10328699999997,
+      "wall": 69.57563304202631,
+      "rss": null,
+      "bbp_regret": null,
+      "full_regret": 3667.5868599784467,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3006,
+      "method": "Full",
+      "raw_method": "nnagp_cov_full",
+      "rounds": 2000,
+      "regret": 4608.640654169656,
+      "regret_after_100": 4345.64947445936,
+      "regret_after_300": 3867.069770988573,
+      "mean_gp_rank": 100.0,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 66.52797299999997,
+      "wall_s": 67.46861312491819,
+      "peak_rss_mib": null,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3006_f5d6941a0468.json",
+      "source_sha256": "f5d6941a0468331124a01a768e986e3e02a438f769d48707d4f870f2ae09cc25",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/recovered/real/suite_rg_kr100_T2000/full/seed3006.json",
+      "configuration": "5afe228f4727d90b7b0859a20f4799ad935dc1b08375706f6a4617be66282aae",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 4345.64947445936,
+      "regret_after100": 4345.64947445936,
+      "mean_rank": 100.0,
+      "cpu": 66.52797299999997,
+      "wall": 67.46861312491819,
+      "rss": null,
+      "bbp_regret": null,
+      "full_regret": 4608.640654169656,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3007,
+      "method": "Full",
+      "raw_method": "nnagp_cov_full",
+      "rounds": 2000,
+      "regret": 3601.0656401870165,
+      "regret_after_100": 3360.3695487873138,
+      "regret_after_300": 2905.5675298981982,
+      "mean_gp_rank": 100.0,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 65.0510999999999,
+      "wall_s": 66.18968841712922,
+      "peak_rss_mib": null,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3007_15ee785705ed.json",
+      "source_sha256": "15ee785705edea93cb4bf98f551a9bc3bad165e15e0e7304a51e623d8adc62ff",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/recovered/real/suite_rg_kr100_T2000/full/seed3007.json",
+      "configuration": "dfdf997a84b4c5e9fc57b639a9e9620cf1775f1ea3268a2574ff38aa392ac70e",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 3360.3695487873138,
+      "regret_after100": 3360.3695487873138,
+      "mean_rank": 100.0,
+      "cpu": 65.0510999999999,
+      "wall": 66.18968841712922,
+      "rss": null,
+      "bbp_regret": null,
+      "full_regret": 3601.0656401870165,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3008,
+      "method": "Full",
+      "raw_method": "nnagp_cov_full",
+      "rounds": 2000,
+      "regret": 4420.045563259237,
+      "regret_after_100": 4180.883298135668,
+      "regret_after_300": 3670.5402704125568,
+      "mean_gp_rank": 100.0,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 64.23660600000002,
+      "wall_s": 64.95581275015138,
+      "peak_rss_mib": null,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3008_eaf7e2315e8c.json",
+      "source_sha256": "eaf7e2315e8c94be37c526dd30d1f03d46a99fad698a72b13cd3e73ea7802deb",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/recovered/real/suite_rg_kr100_T2000/full/seed3008.json",
+      "configuration": "0b63eed0d613c176546bfe4ec83dfac7d6a64564d400d6ef510f7f0fdd0d2149",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 4180.883298135668,
+      "regret_after100": 4180.883298135668,
+      "mean_rank": 100.0,
+      "cpu": 64.23660600000002,
+      "wall": 64.95581275015138,
+      "rss": null,
+      "bbp_regret": null,
+      "full_regret": 4420.045563259237,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3009,
+      "method": "Full",
+      "raw_method": "nnagp_cov_full",
+      "rounds": 2000,
+      "regret": 4879.806280639202,
+      "regret_after_100": 4617.390419819942,
+      "regret_after_300": 4149.519112043228,
+      "mean_gp_rank": 100.0,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 64.25510000000003,
+      "wall_s": 64.94335300009698,
+      "peak_rss_mib": null,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3009_5b9bac1c2cec.json",
+      "source_sha256": "5b9bac1c2cec32c2a7a6411c7762aa230098fdd636b9715855df0a71f6e10093",
+      "original_source": "offline/archive/work/nnagp_unification_2026-10-05/results/recovered/real/suite_rg_kr100_T2000/full/seed3009.json",
+      "configuration": "85b24e03a84c0ae0f966b8bf7bcaa53c013f8f05b39bb3eea171373b01f2eaa8",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 4617.390419819942,
+      "regret_after100": 4617.390419819942,
+      "mean_rank": 100.0,
+      "cpu": 64.25510000000003,
+      "wall": 64.94335300009698,
+      "rss": null,
+      "bbp_regret": null,
+      "full_regret": 4879.806280639202,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3000,
+      "method": "Relative",
+      "raw_method": "nnagp_cov_hard",
+      "rounds": 2000,
+      "regret": 2986.598104168214,
+      "regret_after_100": 2740.4396813303215,
+      "regret_after_300": 2377.006013150581,
+      "mean_gp_rank": 4.815789473684211,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 74.76225199999999,
+      "wall_s": 76.52984195784666,
+      "peak_rss_mib": 1984.21875,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3000_7874de5c18aa.json",
+      "source_sha256": "7874de5c18aafd8010898f824659fbf71b96536ccdbd86f06550977ce4ddb397",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/real/suite_rg_kr100_T2000/hard/seed3000.json",
+      "configuration": "67ae87ddde00645f581b6803e930b60146696eabe2c567bc297953d8907f0cd3",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 2740.4396813303215,
+      "regret_after100": 2740.4396813303215,
+      "mean_rank": 4.815789473684211,
+      "cpu": 74.76225199999999,
+      "wall": 76.52984195784666,
+      "rss": 1984.21875,
+      "bbp_regret": null,
+      "full_regret": 3151.9561471743577,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3001,
+      "method": "Relative",
+      "raw_method": "nnagp_cov_hard",
+      "rounds": 2000,
+      "regret": 4745.749587874535,
+      "regret_after_100": 4453.797832162532,
+      "regret_after_300": 4009.3538369097623,
+      "mean_gp_rank": 6.973684210526316,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 75.01198000000001,
+      "wall_s": 77.02180158300325,
+      "peak_rss_mib": 1911.40625,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3001_a5f1584c5979.json",
+      "source_sha256": "a5f1584c5979fc687feeda162af913a5dafcd7f42d6d79c2dc75ce36e050ed10",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3001.json",
+      "configuration": "049cff4a60c5e04fde4120f33466fb18bb4a83d3cef4274f6d6285fd65fa5e72",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 4453.797832162532,
+      "regret_after100": 4453.797832162532,
+      "mean_rank": 6.973684210526316,
+      "cpu": 75.01198000000001,
+      "wall": 77.02180158300325,
+      "rss": 1911.40625,
+      "bbp_regret": null,
+      "full_regret": 4466.583915870045,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3002,
+      "method": "Relative",
+      "raw_method": "nnagp_cov_hard",
+      "rounds": 2000,
+      "regret": 4566.488581893805,
+      "regret_after_100": 4318.469798497962,
+      "regret_after_300": 3793.7980800565306,
+      "mean_gp_rank": 7.168421052631579,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 74.75933900000001,
+      "wall_s": 76.81545966607518,
+      "peak_rss_mib": 1976.734375,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3002_97519ced2eaf.json",
+      "source_sha256": "97519ced2eaf2d8d30d8e4f2f5d8988391917f5571cf7786b5edffd383f082c3",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3002.json",
+      "configuration": "d25e9a7d411e29bcffd4d97283cce9a9a4df2f6c982d38c2da1dea45244ae80b",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 4318.469798497962,
+      "regret_after100": 4318.469798497962,
+      "mean_rank": 7.168421052631579,
+      "cpu": 74.75933900000001,
+      "wall": 76.81545966607518,
+      "rss": 1976.734375,
+      "bbp_regret": null,
+      "full_regret": 5018.696350243564,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3003,
+      "method": "Relative",
+      "raw_method": "nnagp_cov_hard",
+      "rounds": 2000,
+      "regret": 4080.1121389163186,
+      "regret_after_100": 3830.277784420853,
+      "regret_after_300": 3326.739628001608,
+      "mean_gp_rank": 6.410526315789474,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 71.08989299999999,
+      "wall_s": 72.26057758391835,
+      "peak_rss_mib": 2013.078125,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3003_7a1645128bf7.json",
+      "source_sha256": "7a1645128bf7ec54b9015508802392863a25702a373aafdf6430b613503b995e",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3003.json",
+      "configuration": "08e75f2bb8bee57671643d9c2b838527b9fdd843f3a475d8c1db7a279e10c000",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 3830.277784420853,
+      "regret_after100": 3830.277784420853,
+      "mean_rank": 6.410526315789474,
+      "cpu": 71.08989299999999,
+      "wall": 72.26057758391835,
+      "rss": 2013.078125,
+      "bbp_regret": null,
+      "full_regret": 4257.7474537261305,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3004,
+      "method": "Relative",
+      "raw_method": "nnagp_cov_hard",
+      "rounds": 2000,
+      "regret": 3103.2758092139356,
+      "regret_after_100": 2867.528823970814,
+      "regret_after_300": 2515.1889359627844,
+      "mean_gp_rank": 5.521052631578947,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 70.046254,
+      "wall_s": 70.82848491705954,
+      "peak_rss_mib": 1924.125,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3004_d1dc79fcc17f.json",
+      "source_sha256": "d1dc79fcc17f65db0a5ef2310f4f72bb153fd3585fd6917abcb4684e588396f9",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3004.json",
+      "configuration": "a06646eaee9c3d8ed32674a081722fffffa1b03c9b2116cf92f03d7bc6673be0",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 2867.528823970814,
+      "regret_after100": 2867.528823970814,
+      "mean_rank": 5.521052631578947,
+      "cpu": 70.046254,
+      "wall": 70.82848491705954,
+      "rss": 1924.125,
+      "bbp_regret": null,
+      "full_regret": 3158.1563818790873,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3005,
+      "method": "Relative",
+      "raw_method": "nnagp_cov_hard",
+      "rounds": 2000,
+      "regret": 3844.752908289053,
+      "regret_after_100": 3590.9197744802877,
+      "regret_after_300": 3143.3463823114857,
+      "mean_gp_rank": 6.463157894736842,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 72.89609200000001,
+      "wall_s": 74.38483012490906,
+      "peak_rss_mib": 1963.125,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3005_170023019280.json",
+      "source_sha256": "170023019280765532c7255abc37d6bdc2a913ecdbec32091dd8831b0458b98e",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3005.json",
+      "configuration": "8ce29d0d06cf4ad9dcb763a541db1d9f931cd562ebf4f9dea2b6f73ffe09a0f3",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 3590.9197744802877,
+      "regret_after100": 3590.9197744802877,
+      "mean_rank": 6.463157894736842,
+      "cpu": 72.89609200000001,
+      "wall": 74.38483012490906,
+      "rss": 1963.125,
+      "bbp_regret": null,
+      "full_regret": 3667.5868599784467,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3006,
+      "method": "Relative",
+      "raw_method": "nnagp_cov_hard",
+      "rounds": 2000,
+      "regret": 4498.676967655509,
+      "regret_after_100": 4235.685787945213,
+      "regret_after_300": 3753.5449951738156,
+      "mean_gp_rank": 7.394736842105263,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 74.76594899999999,
+      "wall_s": 76.94469549995847,
+      "peak_rss_mib": 1929.09375,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3006_cda734733358.json",
+      "source_sha256": "cda734733358167f9fab76ed679817f0217cd3f8eafbfa908d998b3e15aee573",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3006.json",
+      "configuration": "5afe228f4727d90b7b0859a20f4799ad935dc1b08375706f6a4617be66282aae",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 4235.685787945213,
+      "regret_after100": 4235.685787945213,
+      "mean_rank": 7.394736842105263,
+      "cpu": 74.76594899999999,
+      "wall": 76.94469549995847,
+      "rss": 1929.09375,
+      "bbp_regret": null,
+      "full_regret": 4608.640654169656,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3007,
+      "method": "Relative",
+      "raw_method": "nnagp_cov_hard",
+      "rounds": 2000,
+      "regret": 3716.207832215737,
+      "regret_after_100": 3475.5117408160345,
+      "regret_after_300": 3011.028205358724,
+      "mean_gp_rank": 6.447368421052632,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 74.70756899999999,
+      "wall_s": 76.06294075003825,
+      "peak_rss_mib": 1997.046875,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3007_1c022a2cb17d.json",
+      "source_sha256": "1c022a2cb17d7c2e773531758f982d1f727a3059fd1fbe8e39c33bbaae4ba005",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3007.json",
+      "configuration": "dfdf997a84b4c5e9fc57b639a9e9620cf1775f1ea3268a2574ff38aa392ac70e",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 3475.5117408160345,
+      "regret_after100": 3475.5117408160345,
+      "mean_rank": 6.447368421052632,
+      "cpu": 74.70756899999999,
+      "wall": 76.06294075003825,
+      "rss": 1997.046875,
+      "bbp_regret": null,
+      "full_regret": 3601.0656401870165,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3008,
+      "method": "Relative",
+      "raw_method": "nnagp_cov_hard",
+      "rounds": 2000,
+      "regret": 4713.648957841522,
+      "regret_after_100": 4474.486692717954,
+      "regret_after_300": 3983.2551292439057,
+      "mean_gp_rank": 7.689473684210526,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 72.173269,
+      "wall_s": 73.00878183310851,
+      "peak_rss_mib": 2078.671875,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3008_a75474f69d58.json",
+      "source_sha256": "a75474f69d58bfe10c2161f99fa3f536dce60789d6d18bbc9807ddd102647cbb",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3008.json",
+      "configuration": "0b63eed0d613c176546bfe4ec83dfac7d6a64564d400d6ef510f7f0fdd0d2149",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 4474.486692717954,
+      "regret_after100": 4474.486692717954,
+      "mean_rank": 7.689473684210526,
+      "cpu": 72.173269,
+      "wall": 73.00878183310851,
+      "rss": 2078.671875,
+      "bbp_regret": null,
+      "full_regret": 4420.045563259237,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    },
+    {
+      "id": "EXP284",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 3009,
+      "method": "Relative",
+      "raw_method": "nnagp_cov_hard",
+      "rounds": 2000,
+      "regret": 4901.514682334642,
+      "regret_after_100": 4639.098821515382,
+      "regret_after_300": 4152.137664372611,
+      "mean_gp_rank": 7.931578947368421,
+      "nn_params_final": null,
+      "total_params_final": null,
+      "cpu_s": 75.05944099999999,
+      "wall_s": 77.02217041701078,
+      "peak_rss_mib": 1998.140625,
+      "result_file": "KuaiRec_100_users/EXP284/results/seed3009_9150c72ed62c.json",
+      "source_sha256": "9150c72ed62c41d69b413c44bc3691bc889fc72dff80986ab58b6c3ad93deda6",
+      "original_source": "offline/archive/work/dimension_benefits_2026-10-05/svd_fix/policy/recovered/real/suite_rg_kr100_T2000/hard/seed3009.json",
+      "configuration": "85b24e03a84c0ae0f966b8bf7bcaa53c013f8f05b39bb3eea171373b01f2eaa8",
+      "paper_refs": [
+        "tab:kuairec",
+        "app:relative-results"
+      ],
+      "post100": 4639.098821515382,
+      "regret_after100": 4639.098821515382,
+      "mean_rank": 7.931578947368421,
+      "cpu": 75.05944099999999,
+      "wall": 77.02217041701078,
+      "rss": 1998.140625,
+      "bbp_regret": null,
+      "full_regret": 4879.806280639202,
+      "expected_vs_full": null,
+      "expected_vs_baseline": null
+    }
+  ],
+  "configurations": {
+    "67ae87ddde00645f581b6803e930b60146696eabe2c567bc297953d8907f0cd3": {
+      "name": "suite_rg_kr100",
+      "T": 2000,
+      "seed0": 300,
+      "seeds": 3,
+      "methods": [
+        "greedy",
+        "egreedy"
+      ],
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.5093801792572608
+      }
+    },
+    "049cff4a60c5e04fde4120f33466fb18bb4a83d3cef4274f6d6285fd65fa5e72": {
+      "name": "suite_rg_kr100",
+      "T": 2000,
+      "seed0": 300,
+      "seeds": 3,
+      "methods": [
+        "greedy",
+        "egreedy"
+      ],
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.5024463922511557
+      }
+    },
+    "d25e9a7d411e29bcffd4d97283cce9a9a4df2f6c982d38c2da1dea45244ae80b": {
+      "name": "suite_rg_kr100",
+      "T": 2000,
+      "seed0": 300,
+      "seeds": 3,
+      "methods": [
+        "greedy",
+        "egreedy"
+      ],
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.5011702203891936
+      }
+    },
+    "08e75f2bb8bee57671643d9c2b838527b9fdd843f3a475d8c1db7a279e10c000": {
+      "name": "suite_rg_kr100",
+      "T": 2000,
+      "seed0": 300,
+      "seeds": 3,
+      "methods": [
+        "greedy",
+        "egreedy"
+      ],
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.5049865837521164
+      }
+    },
+    "a06646eaee9c3d8ed32674a081722fffffa1b03c9b2116cf92f03d7bc6673be0": {
+      "name": "suite_rg_kr100",
+      "T": 2000,
+      "seed0": 300,
+      "seeds": 3,
+      "methods": [
+        "greedy",
+        "egreedy"
+      ],
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.5401054009977331
+      }
+    },
+    "8ce29d0d06cf4ad9dcb763a541db1d9f931cd562ebf4f9dea2b6f73ffe09a0f3": {
+      "name": "suite_rg_kr100",
+      "T": 2000,
+      "seed0": 300,
+      "seeds": 3,
+      "methods": [
+        "greedy",
+        "egreedy"
+      ],
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.4983433933910503
+      }
+    },
+    "5afe228f4727d90b7b0859a20f4799ad935dc1b08375706f6a4617be66282aae": {
+      "name": "suite_rg_kr100",
+      "T": 2000,
+      "seed0": 300,
+      "seeds": 3,
+      "methods": [
+        "greedy",
+        "egreedy"
+      ],
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.4860362887020942
+      }
+    },
+    "dfdf997a84b4c5e9fc57b639a9e9620cf1775f1ea3268a2574ff38aa392ac70e": {
+      "name": "suite_rg_kr100",
+      "T": 2000,
+      "seed0": 300,
+      "seeds": 3,
+      "methods": [
+        "greedy",
+        "egreedy"
+      ],
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.5093919552654199
+      }
+    },
+    "0b63eed0d613c176546bfe4ec83dfac7d6a64564d400d6ef510f7f0fdd0d2149": {
+      "name": "suite_rg_kr100",
+      "T": 2000,
+      "seed0": 300,
+      "seeds": 3,
+      "methods": [
+        "greedy",
+        "egreedy"
+      ],
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.5280465025323479
+      }
+    },
+    "85b24e03a84c0ae0f966b8bf7bcaa53c013f8f05b39bb3eea171373b01f2eaa8": {
+      "name": "suite_rg_kr100",
+      "T": 2000,
+      "seed0": 300,
+      "seeds": 3,
+      "methods": [
+        "greedy",
+        "egreedy"
+      ],
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.5107680905721853
+      }
+    }
+  },
+  "plots": [
+    {
+      "file": "KuaiRec_100_users/EXP284/plots/regret.png",
+      "role": "mean_curves",
+      "sha256": "1fe207b06cb18105459c3a7c4c1fb41047d5fb3e81b53b4e2daefc56b8b6f192",
+      "bytes": 45964
+    }
+  ],
+  "method_configurations": {},
+  "notes": [
+    "Author-approved SVD correction only: Relative mean 4115.7025570403275; final-after-update median rank 8. Original uncorrected results are excluded."
+  ],
+  "paper_seed_order": [
+    3000,
+    3001,
+    3002,
+    3003,
+    3004,
+    3005,
+    3006,
+    3007,
+    3008,
+    3009
+  ],
+  "methods": [
+    "Full",
+    "Relative"
+  ],
+  "seeds": [
+    3000,
+    3001,
+    3002,
+    3003,
+    3004,
+    3005,
+    3006,
+    3007,
+    3008,
+    3009
+  ],
+  "method_seeds": {
+    "Full": [
+      3000,
+      3001,
+      3002,
+      3003,
+      3004,
+      3005,
+      3006,
+      3007,
+      3008,
+      3009
+    ],
+    "Relative": [
+      3000,
+      3001,
+      3002,
+      3003,
+      3004,
+      3005,
+      3006,
+      3007,
+      3008,
+      3009
+    ]
+  },
+  "completion": "complete",
+  "availability": "Full native seed histories",
+  "aggregation": "Only listed run rows; same-seed pairing within this numerical protocol. No pooling by date or study stage.",
+  "raw_container_policy": "Byte-exact source containers are retained. Any native methods not in selected_runs are provenance only and excluded from every table, plot and run count.",
+  "timing_note": "Original measured timings retained; paced/concurrent timings are descriptive, not an unpaced speed benchmark."
+}

@@ -1,0 +1,745 @@
+{
+  "id": "EXP268",
+  "environment": "Weak",
+  "paper_key": "physical_fold300.weak",
+  "title": "Physical output-layer reduction at round 300: weak",
+  "horizon": 800,
+  "paper_refs": [
+    "tab:network-cost",
+    "tab:network-cost-detail",
+    "app:network-cost"
+  ],
+  "folder": "Weak/EXP268",
+  "settings": {
+    "calibration": {
+      "family": "physical_late",
+      "policy": "implementation-defined"
+    },
+    "config": {
+      "agent": {
+        "M": 100,
+        "T_spec": 10,
+        "batch": null,
+        "c": 1,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "decision_rank": null,
+        "delta": 0.1,
+        "eps": 0.01,
+        "equal": false,
+        "hidden": [
+          64,
+          32
+        ],
+        "ho_frac": 0.1,
+        "ho_uniform": false,
+        "holdout": 0.1,
+        "hyp": "train",
+        "m_fix": null,
+        "mle_every": 10,
+        "mle_max": 2048,
+        "n_min": 50,
+        "noise_sd": 0.25,
+        "policy": "ucb",
+        "rule": "old",
+        "s2n": 0.01,
+        "sd": null,
+        "t1": 500,
+        "weights": false
+      },
+      "env": {
+        "d_theta": 16,
+        "d_x": 1
+      }
+    },
+    "environment": "Weak",
+    "environment_model": "gaussian_rbf_rewards",
+    "family": "physical_late",
+    "horizon": 800,
+    "numerical_sources": {
+      "agents.py": [
+        "50223bc1f0f4eba987dc4b01256b59c1b58ef5e7f0dafa004d28670b45a5063c"
+      ],
+      "gaussian_environment_and_model": [
+        "837dd1447fe2d872c0f883d13687f4f390afc21844920282e2e4b70152c42fc8"
+      ],
+      "rank.py": [
+        "a4ee24c58815d1310532a43e6156fdd31dfa78eeeead093fac56b4b32e1c0448"
+      ]
+    },
+    "reward_specification": {
+      "actions": 16,
+      "baseline": 12,
+      "d_theta": 16,
+      "noise": 0.25,
+      "nuisance_correlation": 0,
+      "weak": 0.25
+    },
+    "method_implementations": {
+      "BBP": [
+        {
+          "family": "physical_late",
+          "sources": {
+            "agents.py": [
+              "50223bc1f0f4eba987dc4b01256b59c1b58ef5e7f0dafa004d28670b45a5063c"
+            ],
+            "rank.py": [
+              "a4ee24c58815d1310532a43e6156fdd31dfa78eeeead093fac56b4b32e1c0448"
+            ],
+            "accelerate.py": [
+              "20e442191ae3362c551cd74f1b213bd508d30daf00c1925391853a1b8282c221"
+            ],
+            "online.py": [
+              "323d00ee7b59f50bebd47b5a9447a46d323b3491f22fa4a4b64a82758a9aca10",
+              "3ac09de74c2fbacd281fe1de631e19786ef2200c2c28aa61de491bbfe9e89459"
+            ],
+            "catalog_profile.py": [
+              "51b0ffc7ea6965b57ed30619b86401f90cc21e8c2768bdb911bab228bec04bb3"
+            ]
+          }
+        }
+      ],
+      "Late": [
+        {
+          "family": "physical_late",
+          "sources": {
+            "agents.py": [
+              "50223bc1f0f4eba987dc4b01256b59c1b58ef5e7f0dafa004d28670b45a5063c"
+            ],
+            "rank.py": [
+              "a4ee24c58815d1310532a43e6156fdd31dfa78eeeead093fac56b4b32e1c0448"
+            ],
+            "accelerate.py": [
+              "20e442191ae3362c551cd74f1b213bd508d30daf00c1925391853a1b8282c221"
+            ],
+            "online.py": [
+              "323d00ee7b59f50bebd47b5a9447a46d323b3491f22fa4a4b64a82758a9aca10",
+              "3ac09de74c2fbacd281fe1de631e19786ef2200c2c28aa61de491bbfe9e89459"
+            ],
+            "catalog_profile.py": [
+              "51b0ffc7ea6965b57ed30619b86401f90cc21e8c2768bdb911bab228bec04bb3"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "file": "Weak/EXP268/results/seed8300_3e58e8761f2f.json",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8300_BBP.json",
+      "sha256": "3e58e8761f2f8782424da8fa2f64252d636ff57f0f0c137f73f6aabd9beea2b1",
+      "bytes": 482818,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 8300,
+          "method": "BBP",
+          "raw_method": "BBP"
+        }
+      ],
+      "native_methods": [
+        "BBP"
+      ]
+    },
+    {
+      "file": "Weak/EXP268/results/seed8300_26603cb907fe.json",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8300_Late.json",
+      "sha256": "26603cb907fe996fa689b5f2002ef285656b48a2d71ecd0d535427c30604cf5b",
+      "bytes": 482612,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 8300,
+          "method": "Late",
+          "raw_method": "Late"
+        }
+      ],
+      "native_methods": [
+        "Late"
+      ]
+    },
+    {
+      "file": "Weak/EXP268/results/seed8301_234090aa00df.json",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8301_BBP.json",
+      "sha256": "234090aa00df972c3eb560fc30748dfceacf0068578a772f3194e05d921e3591",
+      "bytes": 484283,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 8301,
+          "method": "BBP",
+          "raw_method": "BBP"
+        }
+      ],
+      "native_methods": [
+        "BBP"
+      ]
+    },
+    {
+      "file": "Weak/EXP268/results/seed8301_6b9095d87cef.json",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8301_Late.json",
+      "sha256": "6b9095d87cef8e8d2f04d56a59b05792df40cabc80642c7e6883892205fb23e0",
+      "bytes": 484311,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 8301,
+          "method": "Late",
+          "raw_method": "Late"
+        }
+      ],
+      "native_methods": [
+        "Late"
+      ]
+    },
+    {
+      "file": "Weak/EXP268/results/seed8302_d969a424981e.json",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8302_BBP.json",
+      "sha256": "d969a424981ea8e71b9c215e1feec5717fbc1ed16a2f52589b87a0365412baf4",
+      "bytes": 481140,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 8302,
+          "method": "BBP",
+          "raw_method": "BBP"
+        }
+      ],
+      "native_methods": [
+        "BBP"
+      ]
+    },
+    {
+      "file": "Weak/EXP268/results/seed8302_9457594ef9b4.json",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8302_Late.json",
+      "sha256": "9457594ef9b437dce573f51f3b0d5e636ccbff30f1b30fce44ef1722c777a7ee",
+      "bytes": 480278,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 8302,
+          "method": "Late",
+          "raw_method": "Late"
+        }
+      ],
+      "native_methods": [
+        "Late"
+      ]
+    },
+    {
+      "file": "Weak/EXP268/results/seed8303_c3fde0abec42.json",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8303_BBP.json",
+      "sha256": "c3fde0abec42ff5fcdae61fde76025274efb82567b687f3bc3e11783c40c1310",
+      "bytes": 479478,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 8303,
+          "method": "BBP",
+          "raw_method": "BBP"
+        }
+      ],
+      "native_methods": [
+        "BBP"
+      ]
+    },
+    {
+      "file": "Weak/EXP268/results/seed8303_db3903d3b44e.json",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8303_Late.json",
+      "sha256": "db3903d3b44e791f68ef6373b3a07d1cebe29aecbf2f2cba4b915d820c7edbfa",
+      "bytes": 479457,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 8303,
+          "method": "Late",
+          "raw_method": "Late"
+        }
+      ],
+      "native_methods": [
+        "Late"
+      ]
+    },
+    {
+      "file": "Weak/EXP268/results/seed8304_2f0a977c0712.json",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8304_BBP.json",
+      "sha256": "2f0a977c07129c997d6abf5aa2c50403f041dfe2c1a0ca45e90eb83d8ad1a3be",
+      "bytes": 479394,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 8304,
+          "method": "BBP",
+          "raw_method": "BBP"
+        }
+      ],
+      "native_methods": [
+        "BBP"
+      ]
+    },
+    {
+      "file": "Weak/EXP268/results/seed8304_e5dee14fd4c3.json",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8304_Late.json",
+      "sha256": "e5dee14fd4c38f105b0d2ef65a7ef9125ed72dc58ed90b558b1eb4da1d758654",
+      "bytes": 479434,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 8304,
+          "method": "Late",
+          "raw_method": "Late"
+        }
+      ],
+      "native_methods": [
+        "Late"
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "id": "EXP268",
+      "environment": "Weak",
+      "env": "Weak",
+      "seed": 8300,
+      "method": "BBP",
+      "raw_method": "BBP",
+      "rounds": 800,
+      "regret": 359.18848421271247,
+      "regret_after_100": 252.13592191230913,
+      "regret_after_300": 109.22837609274923,
+      "mean_gp_rank": 28.62857142857143,
+      "nn_params_final": 7588,
+      "total_params_final": 17591,
+      "cpu_s": 13.156502,
+      "wall_s": 13.378937250003219,
+      "peak_rss_mib": 599.921875,
+      "result_file": "Weak/EXP268/results/seed8300_3e58e8761f2f.json",
+      "source_sha256": "3e58e8761f2f8782424da8fa2f64252d636ff57f0f0c137f73f6aabd9beea2b1",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8300_BBP.json",
+      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
+      "paper_refs": [
+        "tab:network-cost",
+        "tab:network-cost-detail",
+        "app:network-cost"
+      ],
+      "post100": 252.13592191230913,
+      "regret_after100": 252.13592191230913,
+      "mean_rank": 28.62857142857143,
+      "cpu": 13.156502,
+      "wall": 13.378937250003219,
+      "rss": 599.921875,
+      "bbp_regret": 359.18848421271247,
+      "full_regret": null,
+      "expected_vs_full": null,
+      "expected_vs_baseline": 0.0
+    },
+    {
+      "id": "EXP268",
+      "environment": "Weak",
+      "env": "Weak",
+      "seed": 8300,
+      "method": "Late",
+      "raw_method": "Late",
+      "rounds": 800,
+      "regret": 361.7899839106621,
+      "regret_after_100": 254.73742161025868,
+      "regret_after_300": 111.82987579069875,
+      "mean_gp_rank": 27.557142857142857,
+      "nn_params_final": 2908,
+      "total_params_final": 3695,
+      "cpu_s": 12.408629000000001,
+      "wall_s": 12.610512749990448,
+      "peak_rss_mib": 517.65625,
+      "result_file": "Weak/EXP268/results/seed8300_26603cb907fe.json",
+      "source_sha256": "26603cb907fe996fa689b5f2002ef285656b48a2d71ecd0d535427c30604cf5b",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8300_Late.json",
+      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
+      "paper_refs": [
+        "tab:network-cost",
+        "tab:network-cost-detail",
+        "app:network-cost"
+      ],
+      "post100": 254.73742161025868,
+      "regret_after100": 254.73742161025868,
+      "mean_rank": 27.557142857142857,
+      "cpu": 12.408629000000001,
+      "wall": 12.610512749990448,
+      "rss": 517.65625,
+      "bbp_regret": 359.18848421271247,
+      "full_regret": null,
+      "expected_vs_full": null,
+      "expected_vs_baseline": -0.007190634936405593
+    },
+    {
+      "id": "EXP268",
+      "environment": "Weak",
+      "env": "Weak",
+      "seed": 8301,
+      "method": "BBP",
+      "raw_method": "BBP",
+      "rounds": 800,
+      "regret": 420.63490373942386,
+      "regret_after_100": 326.7651686674163,
+      "regret_after_300": 185.57074369375533,
+      "mean_gp_rank": 28.885714285714286,
+      "nn_params_final": 7588,
+      "total_params_final": 17591,
+      "cpu_s": 12.966266000000001,
+      "wall_s": 13.15052229189314,
+      "peak_rss_mib": 469.234375,
+      "result_file": "Weak/EXP268/results/seed8301_234090aa00df.json",
+      "source_sha256": "234090aa00df972c3eb560fc30748dfceacf0068578a772f3194e05d921e3591",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8301_BBP.json",
+      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
+      "paper_refs": [
+        "tab:network-cost",
+        "tab:network-cost-detail",
+        "app:network-cost"
+      ],
+      "post100": 326.7651686674163,
+      "regret_after100": 326.7651686674163,
+      "mean_rank": 28.885714285714286,
+      "cpu": 12.966266000000001,
+      "wall": 13.15052229189314,
+      "rss": 469.234375,
+      "bbp_regret": 420.63490373942386,
+      "full_regret": null,
+      "expected_vs_full": null,
+      "expected_vs_baseline": 0.0
+    },
+    {
+      "id": "EXP268",
+      "environment": "Weak",
+      "env": "Weak",
+      "seed": 8301,
+      "method": "Late",
+      "raw_method": "Late",
+      "rounds": 800,
+      "regret": 418.4497452289063,
+      "regret_after_100": 324.5800101568986,
+      "regret_after_300": 183.38558518323762,
+      "mean_gp_rank": 26.942857142857143,
+      "nn_params_final": 2843,
+      "total_params_final": 3575,
+      "cpu_s": 11.90071,
+      "wall_s": 11.961687083123252,
+      "peak_rss_mib": 580.34375,
+      "result_file": "Weak/EXP268/results/seed8301_6b9095d87cef.json",
+      "source_sha256": "6b9095d87cef8e8d2f04d56a59b05792df40cabc80642c7e6883892205fb23e0",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8301_Late.json",
+      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
+      "paper_refs": [
+        "tab:network-cost",
+        "tab:network-cost-detail",
+        "app:network-cost"
+      ],
+      "post100": 324.5800101568986,
+      "regret_after100": 324.5800101568986,
+      "mean_rank": 26.942857142857143,
+      "cpu": 11.90071,
+      "wall": 11.961687083123252,
+      "rss": 580.34375,
+      "bbp_regret": 420.63490373942386,
+      "full_regret": null,
+      "expected_vs_full": null,
+      "expected_vs_baseline": 0.00522203331566673
+    },
+    {
+      "id": "EXP268",
+      "environment": "Weak",
+      "env": "Weak",
+      "seed": 8302,
+      "method": "BBP",
+      "raw_method": "BBP",
+      "rounds": 800,
+      "regret": 343.52489782158887,
+      "regret_after_100": 229.2918833597535,
+      "regret_after_300": 49.145253137179395,
+      "mean_gp_rank": 28.571428571428573,
+      "nn_params_final": 7588,
+      "total_params_final": 17591,
+      "cpu_s": 13.178921,
+      "wall_s": 13.4551439168863,
+      "peak_rss_mib": 409.546875,
+      "result_file": "Weak/EXP268/results/seed8302_d969a424981e.json",
+      "source_sha256": "d969a424981ea8e71b9c215e1feec5717fbc1ed16a2f52589b87a0365412baf4",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8302_BBP.json",
+      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
+      "paper_refs": [
+        "tab:network-cost",
+        "tab:network-cost-detail",
+        "app:network-cost"
+      ],
+      "post100": 229.2918833597535,
+      "regret_after100": 229.2918833597535,
+      "mean_rank": 28.571428571428573,
+      "cpu": 13.178921,
+      "wall": 13.4551439168863,
+      "rss": 409.546875,
+      "bbp_regret": 343.52489782158887,
+      "full_regret": null,
+      "expected_vs_full": null,
+      "expected_vs_baseline": 0.0
+    },
+    {
+      "id": "EXP268",
+      "environment": "Weak",
+      "env": "Weak",
+      "seed": 8302,
+      "method": "Late",
+      "raw_method": "Late",
+      "rounds": 800,
+      "regret": 344.1643349981406,
+      "regret_after_100": 229.93132053630555,
+      "regret_after_300": 49.784690313731424,
+      "mean_gp_rank": 27.571428571428573,
+      "nn_params_final": 2908,
+      "total_params_final": 3695,
+      "cpu_s": 12.154001,
+      "wall_s": 12.308712124824524,
+      "peak_rss_mib": 507.84375,
+      "result_file": "Weak/EXP268/results/seed8302_9457594ef9b4.json",
+      "source_sha256": "9457594ef9b437dce573f51f3b0d5e636ccbff30f1b30fce44ef1722c777a7ee",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8302_Late.json",
+      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
+      "paper_refs": [
+        "tab:network-cost",
+        "tab:network-cost-detail",
+        "app:network-cost"
+      ],
+      "post100": 229.93132053630555,
+      "regret_after100": 229.93132053630555,
+      "mean_rank": 27.571428571428573,
+      "cpu": 12.154001,
+      "wall": 12.308712124824524,
+      "rss": 507.84375,
+      "bbp_regret": 343.52489782158887,
+      "full_regret": null,
+      "expected_vs_full": null,
+      "expected_vs_baseline": -0.001857941429506904
+    },
+    {
+      "id": "EXP268",
+      "environment": "Weak",
+      "env": "Weak",
+      "seed": 8303,
+      "method": "BBP",
+      "raw_method": "BBP",
+      "rounds": 800,
+      "regret": 334.48958956975406,
+      "regret_after_100": 186.5313521174313,
+      "regret_after_300": 97.98950148189239,
+      "mean_gp_rank": 28.67142857142857,
+      "nn_params_final": 7588,
+      "total_params_final": 17591,
+      "cpu_s": 12.922903,
+      "wall_s": 13.290122125064954,
+      "peak_rss_mib": 571.375,
+      "result_file": "Weak/EXP268/results/seed8303_c3fde0abec42.json",
+      "source_sha256": "c3fde0abec42ff5fcdae61fde76025274efb82567b687f3bc3e11783c40c1310",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8303_BBP.json",
+      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
+      "paper_refs": [
+        "tab:network-cost",
+        "tab:network-cost-detail",
+        "app:network-cost"
+      ],
+      "post100": 186.5313521174313,
+      "regret_after100": 186.5313521174313,
+      "mean_rank": 28.67142857142857,
+      "cpu": 12.922903,
+      "wall": 13.290122125064954,
+      "rss": 571.375,
+      "bbp_regret": 334.48958956975406,
+      "full_regret": null,
+      "expected_vs_full": null,
+      "expected_vs_baseline": 0.0
+    },
+    {
+      "id": "EXP268",
+      "environment": "Weak",
+      "env": "Weak",
+      "seed": 8303,
+      "method": "Late",
+      "raw_method": "Late",
+      "rounds": 800,
+      "regret": 331.9901807003301,
+      "regret_after_100": 184.0319432480075,
+      "regret_after_300": 95.49009261246859,
+      "mean_gp_rank": 26.142857142857142,
+      "nn_params_final": 2778,
+      "total_params_final": 3457,
+      "cpu_s": 11.801103999999999,
+      "wall_s": 11.835825999965891,
+      "peak_rss_mib": 551.078125,
+      "result_file": "Weak/EXP268/results/seed8303_db3903d3b44e.json",
+      "source_sha256": "db3903d3b44e791f68ef6373b3a07d1cebe29aecbf2f2cba4b915d820c7edbfa",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8303_Late.json",
+      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
+      "paper_refs": [
+        "tab:network-cost",
+        "tab:network-cost-detail",
+        "app:network-cost"
+      ],
+      "post100": 184.0319432480075,
+      "regret_after100": 184.0319432480075,
+      "mean_rank": 26.142857142857142,
+      "cpu": 11.801103999999999,
+      "wall": 11.835825999965891,
+      "rss": 551.078125,
+      "bbp_regret": 334.48958956975406,
+      "full_regret": null,
+      "expected_vs_full": null,
+      "expected_vs_baseline": 0.0075285626344474554
+    },
+    {
+      "id": "EXP268",
+      "environment": "Weak",
+      "env": "Weak",
+      "seed": 8304,
+      "method": "BBP",
+      "raw_method": "BBP",
+      "rounds": 800,
+      "regret": 356.31770043499466,
+      "regret_after_100": 217.77150856292903,
+      "regret_after_300": 46.12822650771211,
+      "mean_gp_rank": 28.62857142857143,
+      "nn_params_final": 7588,
+      "total_params_final": 17591,
+      "cpu_s": 12.565443,
+      "wall_s": 12.599033916834742,
+      "peak_rss_mib": 616.296875,
+      "result_file": "Weak/EXP268/results/seed8304_2f0a977c0712.json",
+      "source_sha256": "2f0a977c07129c997d6abf5aa2c50403f041dfe2c1a0ca45e90eb83d8ad1a3be",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8304_BBP.json",
+      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
+      "paper_refs": [
+        "tab:network-cost",
+        "tab:network-cost-detail",
+        "app:network-cost"
+      ],
+      "post100": 217.77150856292903,
+      "regret_after100": 217.77150856292903,
+      "mean_rank": 28.62857142857143,
+      "cpu": 12.565443,
+      "wall": 12.599033916834742,
+      "rss": 616.296875,
+      "bbp_regret": 356.31770043499466,
+      "full_regret": null,
+      "expected_vs_full": null,
+      "expected_vs_baseline": 0.0
+    },
+    {
+      "id": "EXP268",
+      "environment": "Weak",
+      "env": "Weak",
+      "seed": 8304,
+      "method": "Late",
+      "raw_method": "Late",
+      "rounds": 800,
+      "regret": 350.1143525361231,
+      "regret_after_100": 211.56816066405756,
+      "regret_after_300": 39.924878608840636,
+      "mean_gp_rank": 26.214285714285715,
+      "nn_params_final": 2778,
+      "total_params_final": 3457,
+      "cpu_s": 12.455589999999999,
+      "wall_s": 12.725800292100757,
+      "peak_rss_mib": 495.90625,
+      "result_file": "Weak/EXP268/results/seed8304_e5dee14fd4c3.json",
+      "source_sha256": "e5dee14fd4c38f105b0d2ef65a7ef9125ed72dc58ed90b558b1eb4da1d758654",
+      "original_source": "offline/nn_shrink_late_2026-10-15/results/weak/seed8304_Late.json",
+      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
+      "paper_refs": [
+        "tab:network-cost",
+        "tab:network-cost-detail",
+        "app:network-cost"
+      ],
+      "post100": 211.56816066405756,
+      "regret_after100": 211.56816066405756,
+      "mean_rank": 26.214285714285715,
+      "cpu": 12.455589999999999,
+      "wall": 12.725800292100757,
+      "rss": 495.90625,
+      "bbp_regret": 356.31770043499466,
+      "full_regret": null,
+      "expected_vs_full": null,
+      "expected_vs_baseline": 0.017718062267189083
+    }
+  ],
+  "configurations": {
+    "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2": {
+      "env": {
+        "d_theta": 16,
+        "d_x": 1
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "noise_sd": 0.25,
+        "cov_lr": 0.001,
+        "cov_steps": 10,
+        "cov_mle_max": 256,
+        "cov_start": 100,
+        "T_spec": 10,
+        "eps": 0.01,
+        "c": 1.0
+      }
+    }
+  },
+  "plots": [
+    {
+      "file": "Weak/EXP268/plots/regret.png",
+      "role": "mean_curves",
+      "sha256": "eaa174a4c59c30057055fa9db347da76a56f25ddae42e22ff88e75ccc46bac6b",
+      "bytes": 43936
+    }
+  ],
+  "method_configurations": {},
+  "notes": [],
+  "paper_seed_order": [
+    8300,
+    8301,
+    8302,
+    8303,
+    8304
+  ],
+  "methods": [
+    "BBP",
+    "Late"
+  ],
+  "seeds": [
+    8300,
+    8301,
+    8302,
+    8303,
+    8304
+  ],
+  "method_seeds": {
+    "BBP": [
+      8300,
+      8301,
+      8302,
+      8303,
+      8304
+    ],
+    "Late": [
+      8300,
+      8301,
+      8302,
+      8303,
+      8304
+    ]
+  },
+  "completion": "complete",
+  "availability": "Full native seed histories",
+  "aggregation": "Only listed run rows; same-seed pairing within this numerical protocol. No pooling by date or study stage.",
+  "raw_container_policy": "Byte-exact source containers are retained. Any native methods not in selected_runs are provenance only and excluded from every table, plot and run count.",
+  "timing_note": "Original measured timings retained; paced/concurrent timings are descriptive, not an unpaced speed benchmark."
+}

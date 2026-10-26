@@ -1,3 +1,4 @@
+import math
 import numpy as np
 import torch
 import torch.nn as nn
@@ -36,7 +37,8 @@ class NeuralUCB:
                  C1: float = 1.0,
                  C2: float = 1.0,
                  C3: float = 1.0,
-                 device: str = "cpu"):
+                 device: str = "cpu",
+                 dual: bool = False):
         self.device = device
         self.input_dim = input_dim
         self.T = T
@@ -51,12 +53,17 @@ class NeuralUCB:
         self.C1 = C1
         self.C2 = C2
         self.C3 = C3
+        self.dual = dual
 
         self.model = MLP(input_dim, m, L).to(self.device)
         self.theta0_vec = self._get_param_vector(self.model).copy()
 
         self.p = self.theta0_vec.size
-        self.Z = (lambd * np.eye(self.p)).astype(np.float64)
+        if self.dual:
+            from .neural_ucb_dual import Gram
+            self.Z = Gram(self.p, lambd)
+        else:
+            self.Z = (lambd * np.eye(self.p)).astype(np.float64)
 
         self.history_X = []
         self.history_y = []
@@ -102,8 +109,12 @@ class NeuralUCB:
         C1, C2, C3 = self.C1, self.C2, self.C3
         m, L, lambd, eta, J, nu, delta, S = self.m, self.L, self.lambd, self.eta, self.J, self.nu, self.delta, self.S
 
-        signZ, logdetZ = np.linalg.slogdet(self.Z + self._eps*np.eye(self.p))
-        signLam, logdetLam = np.linalg.slogdet(lambd * np.eye(self.p))
+        if self.dual:
+            logdetZ = self.Z.logdet(self._eps)
+            logdetLam = self.p * math.log(lambd)
+        else:
+            signZ, logdetZ = np.linalg.slogdet(self.Z + self._eps*np.eye(self.p))
+            signLam, logdetLam = np.linalg.slogdet(lambd * np.eye(self.p))
         log_det_ratio = logdetZ - logdetLam
         if log_det_ratio < 0:
             log_det_ratio = max(log_det_ratio, -1e6)
@@ -136,10 +147,13 @@ class NeuralUCB:
 
     def _ensure_Z_inv(self):
         if not self._Z_inv_valid:
-            try:
-                self._Z_inv_cache = np.linalg.inv(self.Z + self._eps*np.eye(self.p))
-            except np.linalg.LinAlgError:
-                self._Z_inv_cache = np.linalg.pinv(self.Z + self._eps*np.eye(self.p))
+            if self.dual:
+                self._Z_inv_cache = self.Z.inverse(self._eps)
+            else:
+                try:
+                    self._Z_inv_cache = np.linalg.inv(self.Z + self._eps*np.eye(self.p))
+                except np.linalg.LinAlgError:
+                    self._Z_inv_cache = np.linalg.pinv(self.Z + self._eps*np.eye(self.p))
             self._Z_inv_valid = True
         return self._Z_inv_cache
 
@@ -178,7 +192,10 @@ class NeuralUCB:
         self.history_y.append(float(reward))
 
         g_vec = self._grad_wrt_params(x_chosen)
-        self.Z += np.outer(g_vec, g_vec) / float(self.m)
+        if self.dual:
+            self.Z.add(g_vec, float(self.m))
+        else:
+            self.Z += np.outer(g_vec, g_vec) / float(self.m)
         self._Z_inv_valid = False
         self._train_nn()
 
@@ -209,7 +226,11 @@ class NeuralUCB:
     def reset(self):
         self.history_X = []
         self.history_y = []
-        self.Z = (self.lambd * np.eye(self.p)).astype(np.float64)
+        if self.dual:
+            from .neural_ucb_dual import Gram
+            self.Z = Gram(self.p, self.lambd)
+        else:
+            self.Z = (self.lambd * np.eye(self.p)).astype(np.float64)
         self._Z_inv_valid = False
         self._set_param_vector(self.model, self.theta0_vec.copy())
 

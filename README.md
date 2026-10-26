@@ -27,3 +27,26 @@ Computations use float64. Compression starts after 100 observations and repeats 
 
 `eps_prune` applies to joint covariance eigenvalues, rather than encoder singular values.
 Calibration uses recorded contexts; fresh contexts can be passed as `calibration_contexts` to `update`.
+
+## Paper experiments
+
+With Python 3.11, rebuild the article's tables and figures from saved results:
+
+```sh
+python -m pip install -r requirements-paper.txt
+python plot_paper.py
+```
+
+Run one experiment, or retrain all models:
+
+```sh
+python run_paper.py --list
+python run_paper.py --experiment EXP248 --method BBP --seed 6100
+python run_paper.py --all
+python plot_paper.py --runs paper_experiments/reruns
+```
+
+Models are in `bandits/`, environments in `paper_envs.py`, and the spectral
+diagnostic in `paper_bbp.py`. Prepared KuaiRec features are in `datasets/`.
+Settings, per-seed results, plots, and the Excel table are in
+[`paper_experiments/`](paper_experiments/README.md).

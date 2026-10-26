@@ -1,0 +1,186 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Output-layer reduction relative to BBP with the full encoder. Geometric mean ratios.}
+\label{tab:network-cost}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Task & Parameters & Wall time & Regret \\
+\midrule
+Weak & 0.203 & 0.933 & 0.996 \\
+Balanced & 0.203 & 0.925 & 0.994 \\
+KuaiRec & 0.207 & 0.996 & 1.019 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Synthetic environments. The nominal latent width is 100.}
+\label{tab:environments-direct}
+\begin{tabular}{@{}cp{10.4cm}@{}}
+\toprule
+Exp & Description \\
+\midrule
+1 & Five dominant factors and 95 weak components \\
+2 & Rank 3 with separated eigenvalues \\
+3 & Rank 10 with 40 weak components \\
+4 & $\tanh$ of a rank-8 bilinear core \\
+5 & Sparse rank-5 factors and heavy-tailed noise \\
+6 & Rank grows from 3 to 8 \\
+7 & Nuisance directions near the cutoff \\
+8 & Transient rank burst $5\to15\to5$ \\
+9 & Slowly rotating rank-5 subspace \\
+10 & Abrupt rank-5 subspace rotation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Online evaluation settings.}
+\label{tab:online-protocol}
+\begin{tabular}{@{}lrrrl@{}}
+\toprule
+Task & Inputs (context, action) & Actions & Rounds & Calibration \\
+\midrule
+Weak & $(16,1)$ & 16 & 800 & Fresh \\
+Balanced & $(16,1)$ & 16 & 800 & Fresh \\
+KuaiRec & $(20,20)$ & 200 & 600 & History \\
+Rank 12 & $(5,5)$ & 40 & 400 & History \\
+Rank 3 & $(5,5)$ & 40 & 400 & History \\
+Rank 3, 128 inputs & $(128,5)$ & 40 & 400 & History \\
+Exp. 1--10 & $(10,5)$ & 20 & 200 & History \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering\small
+\caption{BBP versus Full on paired seeds. Ratios of mean regret with 95\% paired bootstrap intervals.}
+\label{tab:bbp-results}
+\begin{tabular}{@{}lrrrrl@{}}
+\toprule
+Task & Seeds & Full & BBP & GP dimension & BBP/Full \\
+\midrule
+Weak & 64 & 413.9 & 396.5 & 28.7 & 0.958 [0.938, 0.977] \\
+Balanced & 65 & 581.9 & 564.5 & 28.8 & 0.970 [0.954, 0.985] \\
+KuaiRec & 73 & 1374.4 & 1369.9 & 26.4 & 0.997 [0.990, 1.003] \\
+Rank 12 & 14 & 644.2 & 641.1 & 23.9 & 0.995 [0.979, 1.010] \\
+Rank 3 & 16 & 429.2 & 427.9 & 24.0 & 0.997 [0.977, 1.019] \\
+Rank 3, 128 inputs & 18 & 679.7 & 670.1 & 24.3 & 0.986 [0.973, 1.001] \\
+Exp. 1 & 13 & 325.4 & 323.5 & 23.3 & 0.994 [0.984, 1.000] \\
+Exp. 2 & 14 & 62.4 & 62.4 & 34.4 & 1.001 [0.999, 1.005] \\
+Exp. 3 & 15 & 674.7 & 673.9 & 24.0 & 0.999 [0.996, 1.000] \\
+Exp. 4 & 14 & 169.3 & 167.8 & 22.9 & 0.991 [0.980, 1.001] \\
+Exp. 5 & 15 & 261.2 & 261.3 & 23.2 & 1.000 [0.992, 1.009] \\
+Exp. 6 & 15 & 531.0 & 526.6 & 23.7 & 0.992 [0.977, 1.004] \\
+Exp. 7 & 13 & 471.3 & 469.8 & 23.9 & 0.997 [0.992, 1.000] \\
+Exp. 8 & 15 & 658.1 & 649.5 & 24.1 & 0.987 [0.976, 0.996] \\
+Exp. 9 & 14 & 448.1 & 446.4 & 23.7 & 0.996 [0.989, 1.001] \\
+Exp. 10 & 15 & 382.4 & 383.8 & 23.5 & 1.004 [0.997, 1.016] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Change in mean cumulative regret of BBP relative to each control, in percent.}
+\label{tab:bbp-controls}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+Task & Full & Rank 10 & Rank 25 & $10^{-2}$ & $10^{-4}$ & $10^{-5}$ & $10^{-6}$ \\
+\midrule
+Weak & -4.20 & -- & -1.20 & -21.96 & -4.14 & -- & -2.09 \\
+Balanced & -2.98 & -- & -1.65 & -17.64 & -4.26 & -- & -2.21 \\
+KuaiRec & -0.33 & +0.12 & +0.03 & -1.21 & +0.03 & -- & -0.23 \\
+Rank 12 & -0.47 & -0.28 & -0.81 & -0.28 & +0.01 & +0.05 & +0.48 \\
+Rank 3 & -0.28 & -0.84 & +0.72 & -1.89 & -1.53 & -0.45 & -0.25 \\
+Rank 3, 128 inputs & -1.42 & +0.06 & -0.23 & -1.49 & -0.93 & +0.04 & -0.66 \\
+Exp. 1 & -0.58 & +0.03 & -0.25 & -2.19 & -0.13 & -0.26 & -0.61 \\
+Exp. 2 & +0.13 & -2.55 & -0.16 & -0.71 & -0.20 & -0.16 & +0.26 \\
+Exp. 3 & -0.13 & -0.54 & 0.00 & +0.20 & -0.76 & 0.00 & -0.13 \\
+Exp. 4 & -0.88 & +0.40 & 0.00 & -0.39 & +0.24 & -0.89 & -1.38 \\
+Exp. 5 & +0.03 & +0.88 & +0.22 & -0.27 & +0.54 & +0.06 & -0.20 \\
+Exp. 6 & -0.83 & -0.62 & +0.15 & -2.15 & -0.56 & +0.17 & -0.14 \\
+Exp. 7 & -0.33 & -1.39 & -0.14 & -1.36 & -0.68 & -0.14 & -0.33 \\
+Exp. 8 & -1.32 & +0.13 & +0.08 & +0.52 & +0.63 & -0.11 & -0.44 \\
+Exp. 9 & -0.40 & +0.01 & 0.00 & -0.48 & -0.09 & -0.03 & -0.08 \\
+Exp. 10 & +0.36 & +2.10 & -0.04 & +0.59 & +1.78 & -0.14 & -0.03 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Output-layer reduction relative to BBP with the full encoder. Geometric mean ratios and 95\% paired t intervals in log space.}
+\label{tab:network-cost-detail}
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Quantity & & Weak & Balanced & KuaiRec \\
+\midrule
+Parameters & Ratio & 0.203 & 0.203 & 0.207 \\
+ & 95\% interval & [0.195, 0.212] & [0.203, 0.203] & [0.196, 0.218] \\
+Wall time & Ratio & 0.933 & 0.925 & 0.996 \\
+ & 95\% interval & [0.878, 0.991] & [0.908, 0.942] & [0.911, 1.088] \\
+CPU time & Ratio & 0.937 & 0.930 & 0.976 \\
+ & 95\% interval & [0.899, 0.977] & [0.916, 0.943] & [0.936, 1.017] \\
+Regret & Ratio & 0.996 & 0.994 & 1.019 \\
+ & 95\% interval & [0.984, 1.008] & [0.961, 1.029] & [1.009, 1.028] \\
+Peak RSS & Ratio & 1.005 & 1.089 & 0.915 \\
+ & 95\% interval & [0.783, 1.290] & [0.859, 1.381] & [0.818, 1.022] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Relative-cutoff NN--AGP versus Full. Geometric paired regret ratios and 95\% t intervals.}
+\label{tab:direct-control}
+\begin{tabular}{crr}
+\toprule
+Exp & Regret / Full & GP dimension \\
+\midrule
+1 & 1.02 [0.99, 1.05] & 4 \\
+2 & 0.99 [0.97, 1.01] & 3 \\
+3 & 1.01 [1.00, 1.03] & 3 \\
+4 & 1.00 [0.98, 1.03] & 4 \\
+5 & 1.01 [0.99, 1.02] & 4 \\
+6 & 0.98 [0.94, 1.02] & 3 \\
+7 & 1.01 [0.99, 1.03] & 3 \\
+8 & 1.00 [0.99, 1.02] & 3 \\
+9 & 1.00 [0.99, 1.02] & 3 \\
+10 & 1.01 [0.98, 1.03] & 4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Relative cutoff versus prescribed GP dimensions over rounds 101--200. Paired log ratios averaged equally over ten environments.}
+\label{tab:fixed-rank}
+\begin{tabular}{cr}
+\toprule
+Fixed rank & Regret / Fixed \\
+\midrule
+3 & 0.994 [0.981, 1.008] \\
+5 & 1.007 [0.995, 1.019] \\
+10 & 1.006 [0.993, 1.019] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Relative-cutoff KuaiRec simulations at $T=2000$. Mean cumulative regret with 95\% t intervals.}
+\label{tab:kuairec}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+ & 10 users & 100 users \\
+\midrule
+Seeds & 20 & 10 \\
+Full & \shortstack{3616.2\\ {[3186.2, 4046.1]}} & \shortstack{4123.0\\ {[3635.0, 4611.1]}} \\
+$\varepsilon_{\mathrm{prune}}=10^{-2}$ & \shortstack{3504.2\\ {[3058.7, 3949.8]}} & \shortstack{4115.7\\ {[3623.8, 4607.6]}} \\
+GP dimension & 6 & 8 \\
+\bottomrule
+\end{tabular}
+\end{table}
