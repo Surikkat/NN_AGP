@@ -1,0 +1,7222 @@
+{
+  "status": "complete",
+  "experiment": "EXP001",
+  "method": "Full",
+  "seed": 6103,
+  "horizon": 800,
+  "trajectory": [
+    {
+      "t": 1,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 2,
+      "action": 15,
+      "regret": 6.524738770818027,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 3,
+      "action": 8,
+      "regret": 2.831608454031983,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 4,
+      "action": 15,
+      "regret": 3.0568322416855587,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 5,
+      "action": 13,
+      "regret": 4.533873257331681,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 6,
+      "action": 4,
+      "regret": 0.7588859973869209,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 7,
+      "action": 15,
+      "regret": 8.235532723084905,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 8,
+      "action": 3,
+      "regret": 2.538715150578314,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 9,
+      "action": 5,
+      "regret": 3.217387127235717,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 10,
+      "action": 2,
+      "regret": 2.295440536129778,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 11,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 12,
+      "action": 10,
+      "regret": 1.3555059183306,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 13,
+      "action": 6,
+      "regret": 1.8918826314446289,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 14,
+      "action": 0,
+      "regret": 0.3928086370481827,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 15,
+      "action": 10,
+      "regret": 0.13931375009327396,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 16,
+      "action": 8,
+      "regret": 1.8398624825473142,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 17,
+      "action": 15,
+      "regret": 1.3683740090389058,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 18,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 19,
+      "action": 12,
+      "regret": 0.9560630761752584,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 20,
+      "action": 0,
+      "regret": 8.233841133340379,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 21,
+      "action": 13,
+      "regret": 2.4164237196361285,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 22,
+      "action": 14,
+      "regret": 0.1806234590024438,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 23,
+      "action": 10,
+      "regret": 1.7099006893322226,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 24,
+      "action": 3,
+      "regret": 0.11659801127357028,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 25,
+      "action": 15,
+      "regret": 5.3927321105895505,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 26,
+      "action": 0,
+      "regret": 2.244254500223594,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 27,
+      "action": 10,
+      "regret": 0.41264813865685035,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 28,
+      "action": 0,
+      "regret": 6.649669527001986,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 29,
+      "action": 8,
+      "regret": 1.7362989747278448,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 30,
+      "action": 5,
+      "regret": 3.5102499598420662,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 31,
+      "action": 5,
+      "regret": 0.7872256296533697,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 32,
+      "action": 4,
+      "regret": 0.251628837696245,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 33,
+      "action": 6,
+      "regret": 0.4529001792789451,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 34,
+      "action": 9,
+      "regret": 1.124614922368325,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 35,
+      "action": 10,
+      "regret": 3.6864236856725507,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 36,
+      "action": 15,
+      "regret": 1.9519154372711434,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 37,
+      "action": 0,
+      "regret": 5.224231751533496,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 38,
+      "action": 4,
+      "regret": 2.083754612372852,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 39,
+      "action": 12,
+      "regret": 2.293714463020467,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 40,
+      "action": 15,
+      "regret": 5.372084094985991,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 41,
+      "action": 4,
+      "regret": 2.417673615894431,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 42,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 43,
+      "action": 6,
+      "regret": 1.7688350582978778,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 44,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 45,
+      "action": 12,
+      "regret": 1.1564792152839694,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 46,
+      "action": 2,
+      "regret": 3.071669620175687,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 47,
+      "action": 15,
+      "regret": 2.0660214264217736,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 48,
+      "action": 15,
+      "regret": 2.0573768916126385,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 49,
+      "action": 15,
+      "regret": 0.35090409989519067,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 50,
+      "action": 2,
+      "regret": 0.7836259407227111,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 51,
+      "action": 1,
+      "regret": 0.7103137246273921,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 52,
+      "action": 12,
+      "regret": 1.1878836836233404,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 53,
+      "action": 2,
+      "regret": 4.02284704739726,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 54,
+      "action": 9,
+      "regret": 5.9188367520314,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 55,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 56,
+      "action": 0,
+      "regret": 2.4228901549702044,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 57,
+      "action": 7,
+      "regret": 6.533203415203518,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 58,
+      "action": 10,
+      "regret": 4.717192699718947,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 59,
+      "action": 6,
+      "regret": 2.884582786700955,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 60,
+      "action": 11,
+      "regret": 1.8887490330094998,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 61,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 62,
+      "action": 10,
+      "regret": 0.05491803392469485,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 63,
+      "action": 5,
+      "regret": 1.9141875788176002,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 64,
+      "action": 6,
+      "regret": 1.8991394544810447,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 65,
+      "action": 5,
+      "regret": 0.41424184481661364,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 66,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 67,
+      "action": 4,
+      "regret": 0.19951012133985735,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 68,
+      "action": 0,
+      "regret": 3.5268474626635573,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 69,
+      "action": 11,
+      "regret": 0.5893851715722995,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 70,
+      "action": 11,
+      "regret": 0.41274482046268623,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 71,
+      "action": 15,
+      "regret": 5.878211448101589,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 72,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 73,
+      "action": 5,
+      "regret": 3.3792028476855656,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 74,
+      "action": 2,
+      "regret": 0.11365375361926922,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 75,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 76,
+      "action": 15,
+      "regret": 0.20444176847139062,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 77,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 78,
+      "action": 15,
+      "regret": 3.7748936913476214,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 79,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 80,
+      "action": 12,
+      "regret": 4.088922380607858,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 81,
+      "action": 6,
+      "regret": 5.942102337454023,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 82,
+      "action": 0,
+      "regret": 1.4757034885895066,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 83,
+      "action": 15,
+      "regret": 1.148260549523875,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 84,
+      "action": 0,
+      "regret": 0.3733775338666421,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 85,
+      "action": 1,
+      "regret": 1.701016005340152,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 86,
+      "action": 15,
+      "regret": 4.618080864544764,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 87,
+      "action": 11,
+      "regret": 3.5696544086928768,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 88,
+      "action": 1,
+      "regret": 0.21865623832612435,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 89,
+      "action": 6,
+      "regret": 4.57732045870393,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 90,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 91,
+      "action": 3,
+      "regret": 0.4190658637199336,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 92,
+      "action": 15,
+      "regret": 0.3464108764211167,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 93,
+      "action": 5,
+      "regret": 0.5533549703107611,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 94,
+      "action": 1,
+      "regret": 1.7224554050741174,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 95,
+      "action": 1,
+      "regret": 5.834400657238676,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 96,
+      "action": 1,
+      "regret": 4.602930832910818,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 97,
+      "action": 6,
+      "regret": 2.6758666193946623,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 98,
+      "action": 6,
+      "regret": 7.327992777489964,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 99,
+      "action": 6,
+      "regret": 0.9800104231945266,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 100,
+      "action": 7,
+      "regret": 2.644887502145425,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 101,
+      "action": 12,
+      "regret": 1.2128041581217923,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 102,
+      "action": 6,
+      "regret": 4.869870607556924,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 103,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 104,
+      "action": 1,
+      "regret": 2.578292091614685,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 105,
+      "action": 1,
+      "regret": 4.370007791710426,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 106,
+      "action": 15,
+      "regret": 1.871189373804036,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 107,
+      "action": 15,
+      "regret": 0.2126668777888976,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 108,
+      "action": 6,
+      "regret": 2.6241872043050205,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 109,
+      "action": 15,
+      "regret": 0.11256624207846055,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 110,
+      "action": 1,
+      "regret": 3.1784178263766787,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 111,
+      "action": 12,
+      "regret": 1.6282778565667115,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 112,
+      "action": 12,
+      "regret": 1.2928359914818237,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 113,
+      "action": 12,
+      "regret": 2.3838391602463136,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 114,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 115,
+      "action": 15,
+      "regret": 0.7216551583616564,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 116,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 117,
+      "action": 12,
+      "regret": 1.4379660328348862,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 118,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 119,
+      "action": 15,
+      "regret": 0.2044999411813606,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 120,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 121,
+      "action": 7,
+      "regret": 1.6624116046919148,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 122,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 123,
+      "action": 15,
+      "regret": 0.4621177978604436,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 124,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 125,
+      "action": 12,
+      "regret": 0.43259747578298047,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 126,
+      "action": 5,
+      "regret": 0.4957145708326163,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 127,
+      "action": 3,
+      "regret": 0.023058345631721266,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 128,
+      "action": 12,
+      "regret": 0.8590829266949171,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 129,
+      "action": 15,
+      "regret": 0.16850163838187449,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 130,
+      "action": 6,
+      "regret": 4.342336388239474,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 131,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 132,
+      "action": 12,
+      "regret": 1.482528758449373,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 133,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 134,
+      "action": 15,
+      "regret": 3.044907958485472,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 135,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 136,
+      "action": 15,
+      "regret": 0.04883017823128988,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 137,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 138,
+      "action": 4,
+      "regret": 0.6820010807631789,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 139,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 140,
+      "action": 12,
+      "regret": 3.518083874152942,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 141,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 142,
+      "action": 10,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 143,
+      "action": 6,
+      "regret": 2.9206729364561976,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 144,
+      "action": 15,
+      "regret": 2.463602342933349,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 145,
+      "action": 11,
+      "regret": 0.5162965106335715,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 146,
+      "action": 11,
+      "regret": 0.4070912096610515,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 147,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 148,
+      "action": 12,
+      "regret": 0.5364867545357264,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 149,
+      "action": 6,
+      "regret": 1.6612649354363427,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 150,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 151,
+      "action": 0,
+      "regret": 3.3452414668590875,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 152,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 153,
+      "action": 0,
+      "regret": 2.5847377273345398,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 154,
+      "action": 15,
+      "regret": 0.34056124545892663,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 155,
+      "action": 0,
+      "regret": 0.5691009833553053,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 156,
+      "action": 0,
+      "regret": 1.2004635439654887,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 157,
+      "action": 0,
+      "regret": 0.260994951665797,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 158,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 159,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 160,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 161,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 162,
+      "action": 0,
+      "regret": 0.28989394618328834,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 163,
+      "action": 13,
+      "regret": 0.7260056520576939,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 164,
+      "action": 15,
+      "regret": 0.21887302893906124,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 165,
+      "action": 6,
+      "regret": 4.247541919486519,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 166,
+      "action": 0,
+      "regret": 3.3442393270394497,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 167,
+      "action": 5,
+      "regret": 1.5751209830791684,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 168,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 169,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 170,
+      "action": 13,
+      "regret": 0.683081229337458,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 171,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 172,
+      "action": 15,
+      "regret": 2.308107813199174,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 173,
+      "action": 0,
+      "regret": 0.4133650315781221,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 174,
+      "action": 15,
+      "regret": 0.7648032330571422,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 175,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 176,
+      "action": 15,
+      "regret": 1.125260150086012,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 177,
+      "action": 0,
+      "regret": 0.1048859670942992,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 178,
+      "action": 0,
+      "regret": 2.926985295205121,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 179,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 180,
+      "action": 4,
+      "regret": 0.4110734964711975,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 181,
+      "action": 12,
+      "regret": 2.740544208342712,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 182,
+      "action": 4,
+      "regret": 3.676654883442077,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 183,
+      "action": 4,
+      "regret": 8.355449873802817,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 184,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 185,
+      "action": 15,
+      "regret": 0.15390387855402032,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 186,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 187,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 188,
+      "action": 12,
+      "regret": 1.5736747070998902,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 189,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 190,
+      "action": 13,
+      "regret": 2.6469578703481025,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 191,
+      "action": 0,
+      "regret": 1.7233790381540004,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 192,
+      "action": 3,
+      "regret": 2.381692312761915,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 193,
+      "action": 0,
+      "regret": 0.7225036400614075,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 194,
+      "action": 13,
+      "regret": 0.8071734718255659,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 195,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 196,
+      "action": 12,
+      "regret": 0.6671370274528332,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 197,
+      "action": 12,
+      "regret": 1.3183136028739548,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 198,
+      "action": 0,
+      "regret": 1.9283831183982536,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 199,
+      "action": 12,
+      "regret": 2.052692948348902,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 200,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 201,
+      "action": 0,
+      "regret": 3.4826996603490423,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 202,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 203,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 204,
+      "action": 0,
+      "regret": 2.135309274051018,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 205,
+      "action": 4,
+      "regret": 5.1461618854864,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 206,
+      "action": 12,
+      "regret": 2.7001721887038492,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 207,
+      "action": 0,
+      "regret": 5.503995500780583,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 208,
+      "action": 0,
+      "regret": 3.4177955508437483,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 209,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 210,
+      "action": 15,
+      "regret": 0.14787544965038624,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 211,
+      "action": 15,
+      "regret": 0.7642295996678161,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 212,
+      "action": 15,
+      "regret": 3.0734103593896194,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 213,
+      "action": 15,
+      "regret": 0.4992474706716967,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 214,
+      "action": 15,
+      "regret": 0.3272952211348841,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 215,
+      "action": 6,
+      "regret": 1.4292516006455482,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 216,
+      "action": 15,
+      "regret": 0.8217854739847255,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 217,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 218,
+      "action": 0,
+      "regret": 0.183348811352964,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 219,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 220,
+      "action": 6,
+      "regret": 1.7177223457176054,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 221,
+      "action": 15,
+      "regret": 0.43181088747783525,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 222,
+      "action": 15,
+      "regret": 0.26161872084175997,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 223,
+      "action": 15,
+      "regret": 0.8483394956703412,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 224,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 225,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 226,
+      "action": 12,
+      "regret": 1.5023841439174852,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 227,
+      "action": 15,
+      "regret": 1.3711011330655332,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 228,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 229,
+      "action": 15,
+      "regret": 1.6552286605325588,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 230,
+      "action": 15,
+      "regret": 1.6413473975023087,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 231,
+      "action": 15,
+      "regret": 3.0603045866929155,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 232,
+      "action": 12,
+      "regret": 0.6105321622482669,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 233,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 234,
+      "action": 13,
+      "regret": 0.6686507026379562,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 235,
+      "action": 0,
+      "regret": 0.0017151039921139422,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 236,
+      "action": 5,
+      "regret": 1.1915383750093307,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 237,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 238,
+      "action": 0,
+      "regret": 3.5698795953276594,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 239,
+      "action": 15,
+      "regret": 2.6755221091997328,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 240,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 241,
+      "action": 15,
+      "regret": 3.3599478982990103,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 242,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 243,
+      "action": 15,
+      "regret": 0.4828524134556691,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 244,
+      "action": 4,
+      "regret": 0.4680841497222241,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 245,
+      "action": 12,
+      "regret": 1.7380143457045065,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 246,
+      "action": 15,
+      "regret": 0.27187579685295304,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 247,
+      "action": 0,
+      "regret": 0.1904542440399215,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 248,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 249,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 250,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 251,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 252,
+      "action": 15,
+      "regret": 1.8155024007315976,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 253,
+      "action": 13,
+      "regret": 1.9795591020783423,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 254,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 255,
+      "action": 12,
+      "regret": 0.4370960433685296,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 256,
+      "action": 0,
+      "regret": 0.4458920704875111,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 257,
+      "action": 12,
+      "regret": 1.4569229997333473,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 258,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 259,
+      "action": 0,
+      "regret": 0.20257447014466656,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 260,
+      "action": 12,
+      "regret": 0.09585998204470236,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 261,
+      "action": 15,
+      "regret": 2.776275789001163,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 262,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 263,
+      "action": 6,
+      "regret": 1.8535124828520502,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 264,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 265,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 266,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 267,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 268,
+      "action": 12,
+      "regret": 1.6976117128293495,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 269,
+      "action": 12,
+      "regret": 0.2189627685435518,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 270,
+      "action": 0,
+      "regret": 4.61950981051211,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 271,
+      "action": 13,
+      "regret": 1.0093644246782478,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 272,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 273,
+      "action": 12,
+      "regret": 2.028514286118128,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 274,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 275,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 276,
+      "action": 0,
+      "regret": 0.8351930880282339,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 277,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 278,
+      "action": 0,
+      "regret": 3.8148297995370584,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 279,
+      "action": 13,
+      "regret": 1.318880230882682,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 280,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 281,
+      "action": 4,
+      "regret": 2.418114228141426,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 282,
+      "action": 13,
+      "regret": 1.2425624743249504,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 283,
+      "action": 11,
+      "regret": 0.10778099037581867,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 284,
+      "action": 11,
+      "regret": 0.8840788186966666,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 285,
+      "action": 11,
+      "regret": 0.027465334496071137,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 286,
+      "action": 0,
+      "regret": 1.38671865694797,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 287,
+      "action": 15,
+      "regret": 0.12084955464474323,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 288,
+      "action": 15,
+      "regret": 0.009565662463552727,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 289,
+      "action": 0,
+      "regret": 0.700256705661233,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 290,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 291,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 292,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 293,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 294,
+      "action": 11,
+      "regret": 1.5968537618417713,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 295,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 296,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 297,
+      "action": 13,
+      "regret": 1.4078675172034716,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 298,
+      "action": 15,
+      "regret": 0.31748873864334204,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 299,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 300,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 301,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 302,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 303,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 304,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 305,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 306,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 307,
+      "action": 15,
+      "regret": 0.012477978207568796,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 308,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 309,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 310,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 311,
+      "action": 2,
+      "regret": 0.789565909988525,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 312,
+      "action": 0,
+      "regret": 1.9567832313920288,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 313,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 314,
+      "action": 0,
+      "regret": 0.7413051696940975,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 315,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 316,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 317,
+      "action": 1,
+      "regret": 0.2628986861250766,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 318,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 319,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 320,
+      "action": 15,
+      "regret": 0.13053946678543937,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 321,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 322,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 323,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 324,
+      "action": 15,
+      "regret": 1.1103312847727183,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 325,
+      "action": 10,
+      "regret": 0.2283389388982835,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 326,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 327,
+      "action": 9,
+      "regret": 0.5145488215471201,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 328,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 329,
+      "action": 3,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 330,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 331,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 332,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 333,
+      "action": 15,
+      "regret": 0.4318562940035555,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 334,
+      "action": 15,
+      "regret": 0.4692548548920463,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 335,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 336,
+      "action": 15,
+      "regret": 1.246980015127991,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 337,
+      "action": 15,
+      "regret": 1.3039803583737253,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 338,
+      "action": 11,
+      "regret": 1.6235181925488895,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 339,
+      "action": 15,
+      "regret": 0.48331434057531864,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 340,
+      "action": 2,
+      "regret": 5.531263942942653,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 341,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 342,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 343,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 344,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 345,
+      "action": 7,
+      "regret": 0.9138301449614197,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 346,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 347,
+      "action": 0,
+      "regret": 2.197943648191944,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 348,
+      "action": 5,
+      "regret": 0.35862168625647667,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 349,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 350,
+      "action": 15,
+      "regret": 0.3867605196176651,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 351,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 352,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 353,
+      "action": 0,
+      "regret": 0.7534104393431482,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 354,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 355,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 356,
+      "action": 11,
+      "regret": 1.162801039012617,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 357,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 358,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 359,
+      "action": 10,
+      "regret": 0.08883080615661143,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 360,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 361,
+      "action": 3,
+      "regret": 0.07560505455295896,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 362,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 363,
+      "action": 11,
+      "regret": 0.5141763156909764,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 364,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 365,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 366,
+      "action": 15,
+      "regret": 0.06284255217879098,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 367,
+      "action": 10,
+      "regret": 1.7430617192326565,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 368,
+      "action": 12,
+      "regret": 0.26881316606845473,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 369,
+      "action": 15,
+      "regret": 0.10901012245652697,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 370,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 371,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 372,
+      "action": 0,
+      "regret": 0.06578063044523574,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 373,
+      "action": 15,
+      "regret": 2.185596389026582,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 374,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 375,
+      "action": 15,
+      "regret": 0.28419370702162183,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 376,
+      "action": 6,
+      "regret": 2.9243207310825046,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 377,
+      "action": 0,
+      "regret": 1.4006032127479706,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 378,
+      "action": 15,
+      "regret": 1.8204682219663715,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 379,
+      "action": 15,
+      "regret": 0.10483404996131862,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 380,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 381,
+      "action": 10,
+      "regret": 0.009119431334503658,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 382,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 383,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 384,
+      "action": 4,
+      "regret": 1.0569223461832902,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 385,
+      "action": 15,
+      "regret": 1.3050272818560682,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 386,
+      "action": 15,
+      "regret": 0.7074362226892346,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 387,
+      "action": 15,
+      "regret": 0.344319228613188,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 388,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 389,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 390,
+      "action": 13,
+      "regret": 0.853121674886939,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 391,
+      "action": 14,
+      "regret": 0.5893978630321159,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 392,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 393,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 394,
+      "action": 15,
+      "regret": 1.543634772804812,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 395,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 396,
+      "action": 15,
+      "regret": 0.1735170902061256,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 397,
+      "action": 10,
+      "regret": 0.6684537580212524,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 398,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 399,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 400,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 401,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 402,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 403,
+      "action": 15,
+      "regret": 0.15153805178740853,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 404,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 405,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 406,
+      "action": 3,
+      "regret": 0.1732163900217345,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 407,
+      "action": 7,
+      "regret": 2.381405192247301,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 408,
+      "action": 15,
+      "regret": 1.1715788946348393,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 409,
+      "action": 15,
+      "regret": 0.22023240588911897,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 410,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 411,
+      "action": 11,
+      "regret": 0.16762279379101852,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 412,
+      "action": 11,
+      "regret": 0.20154254255461268,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 413,
+      "action": 15,
+      "regret": 0.1590572476552241,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 414,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 415,
+      "action": 0,
+      "regret": 0.2586737388731386,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 416,
+      "action": 15,
+      "regret": 2.1847879183896044,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 417,
+      "action": 0,
+      "regret": 3.137450256842411,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 418,
+      "action": 15,
+      "regret": 0.30249246669992225,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 419,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 420,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 421,
+      "action": 15,
+      "regret": 0.6528837673514687,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 422,
+      "action": 15,
+      "regret": 1.043119761597648,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 423,
+      "action": 15,
+      "regret": 2.064081842789811,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 424,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 425,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 426,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 427,
+      "action": 0,
+      "regret": 0.3720273050278182,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 428,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 429,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 430,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 431,
+      "action": 15,
+      "regret": 0.5209974792825154,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 432,
+      "action": 0,
+      "regret": 0.17488376649821546,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 433,
+      "action": 0,
+      "regret": 1.9379830963666587,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 434,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 435,
+      "action": 14,
+      "regret": 0.182647543713383,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 436,
+      "action": 14,
+      "regret": 0.03575435304534125,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 437,
+      "action": 0,
+      "regret": 0.45811416714789743,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 438,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 439,
+      "action": 15,
+      "regret": 0.008416089548044958,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 440,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 441,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 442,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 443,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 444,
+      "action": 9,
+      "regret": 0.2012182769946982,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 445,
+      "action": 0,
+      "regret": 0.05802485768932719,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 446,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 447,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 448,
+      "action": 15,
+      "regret": 0.2675497722965954,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 449,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 450,
+      "action": 4,
+      "regret": 0.7020037564718367,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 451,
+      "action": 15,
+      "regret": 1.5637575379133999,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 452,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 453,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 454,
+      "action": 0,
+      "regret": 2.932125698560293,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 455,
+      "action": 0,
+      "regret": 0.5675075548864579,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 456,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 457,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 458,
+      "action": 0,
+      "regret": 2.2594828076345665,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 459,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 460,
+      "action": 15,
+      "regret": 0.7506103469151579,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 461,
+      "action": 15,
+      "regret": 0.43536640210945166,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 462,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 463,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 464,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 465,
+      "action": 15,
+      "regret": 0.695552206930671,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 466,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 467,
+      "action": 15,
+      "regret": 0.18068373990636832,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 468,
+      "action": 15,
+      "regret": 0.02214131117587037,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 469,
+      "action": 0,
+      "regret": 0.556534231286367,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 470,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 471,
+      "action": 0,
+      "regret": 0.5811611616852077,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 472,
+      "action": 8,
+      "regret": 0.35829069211433495,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 473,
+      "action": 0,
+      "regret": 3.159550465375638,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 474,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 475,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 476,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 477,
+      "action": 9,
+      "regret": 0.6587168013280138,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 478,
+      "action": 3,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 479,
+      "action": 8,
+      "regret": 2.203907953696035,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 480,
+      "action": 0,
+      "regret": 0.5207487236565509,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 481,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 482,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 483,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 484,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 485,
+      "action": 15,
+      "regret": 0.35638939427296634,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 486,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 487,
+      "action": 15,
+      "regret": 0.12779703859209235,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 488,
+      "action": 7,
+      "regret": 2.4505116533264615,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 489,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 490,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 491,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 492,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 493,
+      "action": 0,
+      "regret": 0.6168391215079847,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 494,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 495,
+      "action": 5,
+      "regret": 1.8115462128857196,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 496,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 497,
+      "action": 15,
+      "regret": 0.12003501351642587,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 498,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 499,
+      "action": 11,
+      "regret": 0.5540701103175101,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 500,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 501,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 502,
+      "action": 15,
+      "regret": 1.956217953834205,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 503,
+      "action": 7,
+      "regret": 2.7338743726982146,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 504,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 505,
+      "action": 10,
+      "regret": 0.22604720571663495,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 506,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 507,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 508,
+      "action": 6,
+      "regret": 2.3941324421826167,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 509,
+      "action": 10,
+      "regret": 0.2428924470702647,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 510,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 511,
+      "action": 6,
+      "regret": 2.379384675273432,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 512,
+      "action": 15,
+      "regret": 0.27959638900524286,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 513,
+      "action": 0,
+      "regret": 2.5724490728002216,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 514,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 515,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 516,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 517,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 518,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 519,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 520,
+      "action": 15,
+      "regret": 0.16144002996827922,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 521,
+      "action": 15,
+      "regret": 0.5674503601536927,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 522,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 523,
+      "action": 15,
+      "regret": 0.06156017032141037,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 524,
+      "action": 0,
+      "regret": 1.028607357411328,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 525,
+      "action": 0,
+      "regret": 0.5922372152513375,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 526,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 527,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 528,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 529,
+      "action": 15,
+      "regret": 0.04034044466299669,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 530,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 531,
+      "action": 4,
+      "regret": 0.5772928820399272,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 532,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 533,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 534,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 535,
+      "action": 8,
+      "regret": 3.3149610398204192,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 536,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 537,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 538,
+      "action": 0,
+      "regret": 0.29475415213908995,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 539,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 540,
+      "action": 0,
+      "regret": 1.0780066284733696,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 541,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 542,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 543,
+      "action": 12,
+      "regret": 0.834896824070329,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 544,
+      "action": 2,
+      "regret": 0.03110334992525754,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 545,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 546,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 547,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 548,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 549,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 550,
+      "action": 8,
+      "regret": 1.093598755536199,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 551,
+      "action": 0,
+      "regret": 1.5703863389309127,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 552,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 553,
+      "action": 5,
+      "regret": 0.6894167818661856,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 554,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 555,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 556,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 557,
+      "action": 15,
+      "regret": 0.9339136175274629,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 558,
+      "action": 12,
+      "regret": 0.9722675935302316,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 559,
+      "action": 15,
+      "regret": 0.012747901565141273,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 560,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 561,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 562,
+      "action": 14,
+      "regret": 2.7161291662365876,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 563,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 564,
+      "action": 15,
+      "regret": 1.1018050438233393,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 565,
+      "action": 0,
+      "regret": 0.008390386301660335,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 566,
+      "action": 15,
+      "regret": 0.9203652139089815,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 567,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 568,
+      "action": 0,
+      "regret": 0.3586140212502116,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 569,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 570,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 571,
+      "action": 15,
+      "regret": 0.11595552057601921,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 572,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 573,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 574,
+      "action": 11,
+      "regret": 0.09001791451247065,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 575,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 576,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 577,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 578,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 579,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 580,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 581,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 582,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 583,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 584,
+      "action": 12,
+      "regret": 0.7734376863829615,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 585,
+      "action": 9,
+      "regret": 0.8752722726597308,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 586,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 587,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 588,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 589,
+      "action": 15,
+      "regret": 0.03735313962446263,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 590,
+      "action": 0,
+      "regret": 0.4041397506012121,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 591,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 592,
+      "action": 0,
+      "regret": 1.532630809828824,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 593,
+      "action": 0,
+      "regret": 0.29384270755748965,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 594,
+      "action": 3,
+      "regret": 0.0700506191214938,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 595,
+      "action": 9,
+      "regret": 0.5319316293695273,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 596,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 597,
+      "action": 6,
+      "regret": 2.990750080035161,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 598,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 599,
+      "action": 0,
+      "regret": 0.37197105343579384,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 600,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 601,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 602,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 603,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 604,
+      "action": 15,
+      "regret": 0.2691718100811298,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 605,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 606,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 607,
+      "action": 15,
+      "regret": 0.11062500890386184,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 608,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 609,
+      "action": 6,
+      "regret": 1.2649938888749181,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 610,
+      "action": 0,
+      "regret": 1.9898125112297809,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 611,
+      "action": 15,
+      "regret": 0.3673335219541247,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 612,
+      "action": 11,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 613,
+      "action": 7,
+      "regret": 2.717153972942262,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 614,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 615,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 616,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 617,
+      "action": 15,
+      "regret": 0.04488068215506247,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 618,
+      "action": 15,
+      "regret": 0.09003968583813027,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 619,
+      "action": 0,
+      "regret": 0.1368625857046748,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 620,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 621,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 622,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 623,
+      "action": 12,
+      "regret": 0.9542049374063479,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 624,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 625,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 626,
+      "action": 15,
+      "regret": 0.32254174913684963,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 627,
+      "action": 11,
+      "regret": 0.16337224563229658,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 628,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 629,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 630,
+      "action": 3,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 631,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 632,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 633,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 634,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 635,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 636,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 637,
+      "action": 0,
+      "regret": 0.3570018113933999,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 638,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 639,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 640,
+      "action": 0,
+      "regret": 1.0210950190078005,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 641,
+      "action": 15,
+      "regret": 0.5365776295169162,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 642,
+      "action": 15,
+      "regret": 0.02732582456673427,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 643,
+      "action": 12,
+      "regret": 0.6530963626819712,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 644,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 645,
+      "action": 8,
+      "regret": 0.9454425530581645,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 646,
+      "action": 0,
+      "regret": 0.16313680238078732,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 647,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 648,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 649,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 650,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 651,
+      "action": 15,
+      "regret": 0.9330557469201781,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 652,
+      "action": 0,
+      "regret": 0.9029694631228757,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 653,
+      "action": 8,
+      "regret": 0.7195045472267925,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 654,
+      "action": 0,
+      "regret": 0.30049609742614436,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 655,
+      "action": 15,
+      "regret": 0.7389498447595297,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 656,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 657,
+      "action": 0,
+      "regret": 0.10253457462111304,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 658,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 659,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 660,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 661,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 662,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 663,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 664,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 665,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 666,
+      "action": 0,
+      "regret": 3.007473260235142,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 667,
+      "action": 0,
+      "regret": 0.17914257874407968,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 668,
+      "action": 0,
+      "regret": 0.19401322301591684,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 669,
+      "action": 10,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 670,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 671,
+      "action": 15,
+      "regret": 0.005015061656191477,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 672,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 673,
+      "action": 0,
+      "regret": 0.1569305475790035,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 674,
+      "action": 0,
+      "regret": 1.5839472797654146,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 675,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 676,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 677,
+      "action": 6,
+      "regret": 1.8426564470272222,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 678,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 679,
+      "action": 10,
+      "regret": 0.10353886106667742,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 680,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 681,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 682,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 683,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 684,
+      "action": 7,
+      "regret": 4.174836853266384,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 685,
+      "action": 8,
+      "regret": 0.9372071765530094,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 686,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 687,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 688,
+      "action": 0,
+      "regret": 1.1661296766753146,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 689,
+      "action": 0,
+      "regret": 0.3331597297865372,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 690,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 691,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 692,
+      "action": 7,
+      "regret": 2.6749504289354036,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 693,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 694,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 695,
+      "action": 15,
+      "regret": 1.0052543240009744,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 696,
+      "action": 3,
+      "regret": 0.14378205105248298,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 697,
+      "action": 6,
+      "regret": 0.46428127396169216,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 698,
+      "action": 12,
+      "regret": 0.42816187730082156,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 699,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 700,
+      "action": 7,
+      "regret": 1.5815625693988045,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 701,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 702,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 703,
+      "action": 0,
+      "regret": 1.0759991759391596,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 704,
+      "action": 9,
+      "regret": 1.0536767365602167,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 705,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 706,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 707,
+      "action": 15,
+      "regret": 0.8670681242841054,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 708,
+      "action": 0,
+      "regret": 0.45024584516369526,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 709,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 710,
+      "action": 15,
+      "regret": 0.005318272534873714,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 711,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 712,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 713,
+      "action": 15,
+      "regret": 0.38834650717226005,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 714,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 715,
+      "action": 13,
+      "regret": 1.697377736491934,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 716,
+      "action": 8,
+      "regret": 2.135104872274006,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 717,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 718,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 719,
+      "action": 0,
+      "regret": 0.4081575979359844,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 720,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 721,
+      "action": 15,
+      "regret": 0.7929198010647944,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 722,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 723,
+      "action": 2,
+      "regret": 0.08979194612857455,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 724,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 725,
+      "action": 15,
+      "regret": 0.7668137348594364,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 726,
+      "action": 15,
+      "regret": 0.011700019470074707,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 727,
+      "action": 0,
+      "regret": 0.38329824775578913,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 728,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 729,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 730,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 731,
+      "action": 10,
+      "regret": 0.30396570671655776,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 732,
+      "action": 0,
+      "regret": 0.16414630138761832,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 733,
+      "action": 0,
+      "regret": 1.2314838209115475,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 734,
+      "action": 0,
+      "regret": 1.9548978982824101,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 735,
+      "action": 15,
+      "regret": 0.025329498524035543,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 736,
+      "action": 9,
+      "regret": 0.5872040222945923,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 737,
+      "action": 15,
+      "regret": 0.036188871333518335,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 738,
+      "action": 9,
+      "regret": 0.8778922658470307,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 739,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 740,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 741,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 742,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 743,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 744,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 745,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 746,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 747,
+      "action": 0,
+      "regret": 0.3391887080031051,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 748,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 749,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 750,
+      "action": 15,
+      "regret": 0.10370459121445919,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 751,
+      "action": 8,
+      "regret": 2.2448518252043312,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 752,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 753,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 754,
+      "action": 15,
+      "regret": 0.054978913507385485,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 755,
+      "action": 6,
+      "regret": 1.6844745543397908,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 756,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 757,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 758,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 759,
+      "action": 15,
+      "regret": 0.008767323690394235,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 760,
+      "action": 4,
+      "regret": 1.3894881237755925,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 761,
+      "action": 0,
+      "regret": 0.6130329068445057,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 762,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 763,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 764,
+      "action": 11,
+      "regret": 0.19373705237405403,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 765,
+      "action": 3,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 766,
+      "action": 0,
+      "regret": 1.768985620020401,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 767,
+      "action": 10,
+      "regret": 0.07825808928659583,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 768,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 769,
+      "action": 15,
+      "regret": 1.8711195962164417,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 770,
+      "action": 15,
+      "regret": 2.401665777804176,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 771,
+      "action": 11,
+      "regret": 0.08484721923899041,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 772,
+      "action": 10,
+      "regret": 0.2529763887439245,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 773,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 774,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 775,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 776,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 777,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 778,
+      "action": 6,
+      "regret": 0.9266725345626536,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 779,
+      "action": 15,
+      "regret": 0.06594864984659043,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 780,
+      "action": 11,
+      "regret": 0.33932473247811856,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 781,
+      "action": 11,
+      "regret": 0.8886776750185472,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 782,
+      "action": 8,
+      "regret": 1.1530073579009392,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 783,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 784,
+      "action": 10,
+      "regret": 0.11927284353668277,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 785,
+      "action": 7,
+      "regret": 1.6447164595193104,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 786,
+      "action": 0,
+      "regret": 0.3261470165559692,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 787,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 788,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 789,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 790,
+      "action": 0,
+      "regret": 0.6822140914983805,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 791,
+      "action": 15,
+      "regret": 0.9762471476772188,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 792,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 793,
+      "action": 15,
+      "regret": 0.23872806692178017,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 794,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 795,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 796,
+      "action": 15,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 797,
+      "action": 4,
+      "regret": 0.8247876814149437,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 798,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 799,
+      "action": 0,
+      "regret": 0.0,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    },
+    {
+      "t": 800,
+      "action": 0,
+      "regret": 0.26041116008716614,
+      "rank": 100,
+      "epsilon": null,
+      "proposed_rank": 100,
+      "no_peak": false
+    }
+  ],
+  "timing": {
+    "wall": 95.08722221897915,
+    "cpu": 89.55559999999514
+  },
+  "summary": {
+    "regret": 622.3737748013701,
+    "regret_after_prefix": 403.4642828444894,
+    "mean_rank_after_prefix": 100.0,
+    "final_rank": 100,
+    "wall": 95.08722221897915,
+    "cpu": 89.55559999999514
+  },
+  "spectra": []
+}

@@ -1,0 +1,365 @@
+{
+  "id": "EXP104",
+  "title": "KuaiRec / physical compression at round 300",
+  "environment": "KuaiRec",
+  "paper_key": "physical.kuairec",
+  "folder": "KuaiRec/EXP104",
+  "horizon": 600,
+  "settings": {
+    "calibration": {
+      "family": "physical_late",
+      "policy": "implementation-defined"
+    },
+    "fold_round": 300
+  },
+  "configurations": {
+    "config1": {
+      "T": 2000,
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "hidden": [
+          64,
+          32
+        ],
+        "rule": "old",
+        "s2n": 0.01,
+        "mle_every": 10,
+        "batch": null,
+        "mle_max": 2048,
+        "holdout": 0.1,
+        "ho_frac": 0.1,
+        "ho_uniform": false,
+        "n_min": 50,
+        "delta": 0.1,
+        "m_fix": null,
+        "decision_rank": null,
+        "sd": null,
+        "c": 1.0,
+        "policy": "ucb",
+        "hyp": "train",
+        "weights": false,
+        "equal": false,
+        "t1": 500,
+        "M": 100,
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "noise_sd": 0.5388157946099896
+      }
+    },
+    "config2": {
+      "T": 2000,
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "hidden": [
+          64,
+          32
+        ],
+        "rule": "old",
+        "s2n": 0.01,
+        "mle_every": 10,
+        "batch": null,
+        "mle_max": 2048,
+        "holdout": 0.1,
+        "ho_frac": 0.1,
+        "ho_uniform": false,
+        "n_min": 50,
+        "delta": 0.1,
+        "m_fix": null,
+        "decision_rank": null,
+        "sd": null,
+        "c": 1.0,
+        "policy": "ucb",
+        "hyp": "train",
+        "weights": false,
+        "equal": false,
+        "t1": 500,
+        "M": 100,
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "noise_sd": 0.5075857547144921
+      }
+    },
+    "config3": {
+      "T": 2000,
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "hidden": [
+          64,
+          32
+        ],
+        "rule": "old",
+        "s2n": 0.01,
+        "mle_every": 10,
+        "batch": null,
+        "mle_max": 2048,
+        "holdout": 0.1,
+        "ho_frac": 0.1,
+        "ho_uniform": false,
+        "n_min": 50,
+        "delta": 0.1,
+        "m_fix": null,
+        "decision_rank": null,
+        "sd": null,
+        "c": 1.0,
+        "policy": "ucb",
+        "hyp": "train",
+        "weights": false,
+        "equal": false,
+        "t1": 500,
+        "M": 100,
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "noise_sd": 0.5035349088911169
+      }
+    },
+    "config4": {
+      "T": 2000,
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "hidden": [
+          64,
+          32
+        ],
+        "rule": "old",
+        "s2n": 0.01,
+        "mle_every": 10,
+        "batch": null,
+        "mle_max": 2048,
+        "holdout": 0.1,
+        "ho_frac": 0.1,
+        "ho_uniform": false,
+        "n_min": 50,
+        "delta": 0.1,
+        "m_fix": null,
+        "decision_rank": null,
+        "sd": null,
+        "c": 1.0,
+        "policy": "ucb",
+        "hyp": "train",
+        "weights": false,
+        "equal": false,
+        "t1": 500,
+        "M": 100,
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "noise_sd": 0.532670014907522
+      }
+    },
+    "config5": {
+      "T": 2000,
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "hidden": [
+          64,
+          32
+        ],
+        "rule": "old",
+        "s2n": 0.01,
+        "mle_every": 10,
+        "batch": null,
+        "mle_max": 2048,
+        "holdout": 0.1,
+        "ho_frac": 0.1,
+        "ho_uniform": false,
+        "n_min": 50,
+        "delta": 0.1,
+        "m_fix": null,
+        "decision_rank": null,
+        "sd": null,
+        "c": 1.0,
+        "policy": "ucb",
+        "hyp": "train",
+        "weights": false,
+        "equal": false,
+        "t1": 500,
+        "M": 100,
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "noise_sd": 0.4937734564583949
+      }
+    }
+  },
+  "methods": [
+    "BBP",
+    "BBP + physical compression"
+  ],
+  "seeds": [
+    8400,
+    8401,
+    8402,
+    8403,
+    8404
+  ],
+  "paper_refs": [
+    "tab:network-cost",
+    "tab:network-cost-detail",
+    "app:network-cost"
+  ],
+  "runs": [
+    {
+      "method": "BBP",
+      "seed": 8400,
+      "configuration": "config1",
+      "result_file": "KuaiRec/EXP104/results/seed8400_BBP.json",
+      "regret": 1255.5562710274266
+    },
+    {
+      "method": "BBP + physical compression",
+      "seed": 8400,
+      "configuration": "config1",
+      "result_file": "KuaiRec/EXP104/results/seed8400_BBP_physical_compression.json",
+      "regret": 1284.5220458962635
+    },
+    {
+      "method": "BBP",
+      "seed": 8401,
+      "configuration": "config2",
+      "result_file": "KuaiRec/EXP104/results/seed8401_BBP.json",
+      "regret": 1410.5205068549424
+    },
+    {
+      "method": "BBP + physical compression",
+      "seed": 8401,
+      "configuration": "config2",
+      "result_file": "KuaiRec/EXP104/results/seed8401_BBP_physical_compression.json",
+      "regret": 1430.1472264763415
+    },
+    {
+      "method": "BBP",
+      "seed": 8402,
+      "configuration": "config3",
+      "result_file": "KuaiRec/EXP104/results/seed8402_BBP.json",
+      "regret": 1325.8348633556204
+    },
+    {
+      "method": "BBP + physical compression",
+      "seed": 8402,
+      "configuration": "config3",
+      "result_file": "KuaiRec/EXP104/results/seed8402_BBP_physical_compression.json",
+      "regret": 1365.5934850465776
+    },
+    {
+      "method": "BBP",
+      "seed": 8403,
+      "configuration": "config4",
+      "result_file": "KuaiRec/EXP104/results/seed8403_BBP.json",
+      "regret": 1166.8731377742236
+    },
+    {
+      "method": "BBP + physical compression",
+      "seed": 8403,
+      "configuration": "config4",
+      "result_file": "KuaiRec/EXP104/results/seed8403_BBP_physical_compression.json",
+      "regret": 1184.0311555052851
+    },
+    {
+      "method": "BBP",
+      "seed": 8404,
+      "configuration": "config5",
+      "result_file": "KuaiRec/EXP104/results/seed8404_BBP.json",
+      "regret": 1411.3640736632294
+    },
+    {
+      "method": "BBP + physical compression",
+      "seed": 8404,
+      "configuration": "config5",
+      "result_file": "KuaiRec/EXP104/results/seed8404_BBP_physical_compression.json",
+      "regret": 1427.8596364505506
+    }
+  ]
+}

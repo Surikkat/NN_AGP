@@ -1,0 +1,963 @@
+{
+  "id": "EXP083",
+  "title": "Exp. 10 / abrupt rotation / history calibration",
+  "environment": "Exp. 10",
+  "paper_key": "online.exp10",
+  "folder": "Exp_10/EXP083",
+  "horizon": 200,
+  "settings": {
+    "calibration": {
+      "n": "t",
+      "policy": "observed_history"
+    }
+  },
+  "configurations": {
+    "default": {
+      "T": 200,
+      "env": {
+        "d_theta": 10,
+        "d_x": 5,
+        "n_actions": 20,
+        "mask": null,
+        "lam": [
+          1.0,
+          0.5623,
+          0.3162,
+          0.1778,
+          0.1
+        ],
+        "active": null,
+        "osc": null,
+        "decay": null,
+        "J_sp": 0,
+        "lam_sp": [
+          0.0,
+          0.0
+        ],
+        "rotation": {
+          "rate": 0.0,
+          "start": 0,
+          "angle": 0.7853981633974483,
+          "at": 101
+        },
+        "link": "id",
+        "c_z": null,
+        "omega": null,
+        "nuisance": null,
+        "sparse": null,
+        "noise": {
+          "kind": "gauss",
+          "sd": 0.1
+        }
+      },
+      "agent": {
+        "hidden": [
+          64,
+          32
+        ],
+        "rule": "old",
+        "s2n": 0.01,
+        "mle_every": 10,
+        "batch": null,
+        "mle_max": 2048,
+        "holdout": 0.1,
+        "ho_frac": 0.1,
+        "ho_uniform": false,
+        "n_min": 50,
+        "delta": 0.1,
+        "m_fix": null,
+        "decision_rank": null,
+        "sd": null,
+        "c": 1.0,
+        "policy": "ucb",
+        "hyp": "train",
+        "weights": false,
+        "equal": false,
+        "t1": 500,
+        "M": 100,
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "noise_sd": 0.1
+      }
+    }
+  },
+  "methods": [
+    "BBP",
+    "Relative cutoff 1e-5",
+    "Fixed rank 10",
+    "Fixed rank 25",
+    "Relative cutoff 1e-6",
+    "Full",
+    "Relative cutoff 1e-2",
+    "Relative cutoff 1e-4"
+  ],
+  "seeds": [
+    20284363,
+    151801615,
+    159359747,
+    254786210,
+    280737676,
+    304444453,
+    319922324,
+    560889375,
+    666829030,
+    748076223,
+    806884711,
+    954779777,
+    1084613802,
+    1390358485,
+    1711112905
+  ],
+  "paper_refs": [
+    "tab:bbp-results",
+    "tab:bbp-controls",
+    "tab:online-protocol",
+    "fig:synthetic-curves"
+  ],
+  "runs": [
+    {
+      "method": "Full",
+      "seed": 20284363,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed20284363_Full.json",
+      "regret": 317.5747534697689
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 20284363,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed20284363_Relative_cutoff_1e-2.json",
+      "regret": 315.5076862311325
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 20284363,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed20284363_Relative_cutoff_1e-4.json",
+      "regret": 306.1940136062582
+    },
+    {
+      "method": "BBP",
+      "seed": 20284363,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed20284363_BBP.json",
+      "regret": 317.5747534697689
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 20284363,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed20284363_Fixed_rank_10.json",
+      "regret": 306.1940136062582
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 20284363,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed20284363_Fixed_rank_25.json",
+      "regret": 317.5747534697689
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 20284363,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed20284363_Relative_cutoff_1e-5.json",
+      "regret": 317.5747534697689
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 20284363,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed20284363_Relative_cutoff_1e-6.json",
+      "regret": 317.5747534697689
+    },
+    {
+      "method": "Full",
+      "seed": 151801615,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed151801615_Full.json",
+      "regret": 396.7243877159425
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 151801615,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed151801615_Relative_cutoff_1e-2.json",
+      "regret": 405.17947580692964
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 151801615,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed151801615_Relative_cutoff_1e-4.json",
+      "regret": 396.7243877159425
+    },
+    {
+      "method": "BBP",
+      "seed": 151801615,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed151801615_BBP.json",
+      "regret": 396.7243877159425
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 151801615,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed151801615_Fixed_rank_10.json",
+      "regret": 396.7243877159425
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 151801615,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed151801615_Fixed_rank_25.json",
+      "regret": 396.7243877159425
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 151801615,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed151801615_Relative_cutoff_1e-5.json",
+      "regret": 396.7243877159425
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 151801615,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed151801615_Relative_cutoff_1e-6.json",
+      "regret": 396.7243877159425
+    },
+    {
+      "method": "Full",
+      "seed": 159359747,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed159359747_Full.json",
+      "regret": 375.37188440744814
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 159359747,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed159359747_Relative_cutoff_1e-2.json",
+      "regret": 385.61435377826785
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 159359747,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed159359747_Relative_cutoff_1e-4.json",
+      "regret": 375.29808542809275
+    },
+    {
+      "method": "BBP",
+      "seed": 159359747,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed159359747_BBP.json",
+      "regret": 375.29808542809275
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 159359747,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed159359747_Fixed_rank_10.json",
+      "regret": 381.6474506870462
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 159359747,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed159359747_Fixed_rank_25.json",
+      "regret": 375.29808542809275
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 159359747,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed159359747_Relative_cutoff_1e-5.json",
+      "regret": 385.3043079987325
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 159359747,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed159359747_Relative_cutoff_1e-6.json",
+      "regret": 375.37188440744814
+    },
+    {
+      "method": "Full",
+      "seed": 254786210,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed254786210_Full.json",
+      "regret": 453.4636434246628
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 254786210,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed254786210_Relative_cutoff_1e-2.json",
+      "regret": 459.9047571225368
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 254786210,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed254786210_Relative_cutoff_1e-4.json",
+      "regret": 432.8876487816911
+    },
+    {
+      "method": "BBP",
+      "seed": 254786210,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed254786210_BBP.json",
+      "regret": 446.8128543514273
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 254786210,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed254786210_Fixed_rank_10.json",
+      "regret": 448.1783316303979
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 254786210,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed254786210_Fixed_rank_25.json",
+      "regret": 446.8128543514273
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 254786210,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed254786210_Relative_cutoff_1e-5.json",
+      "regret": 446.8128543514273
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 254786210,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed254786210_Relative_cutoff_1e-6.json",
+      "regret": 446.8128543514273
+    },
+    {
+      "method": "Full",
+      "seed": 280737676,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed280737676_Full.json",
+      "regret": 426.2359589208457
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 280737676,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed280737676_Relative_cutoff_1e-2.json",
+      "regret": 432.0621273685381
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 280737676,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed280737676_Relative_cutoff_1e-4.json",
+      "regret": 404.8038165836244
+    },
+    {
+      "method": "BBP",
+      "seed": 280737676,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed280737676_BBP.json",
+      "regret": 426.2359589208457
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 280737676,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed280737676_Fixed_rank_10.json",
+      "regret": 404.8038165836244
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 280737676,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed280737676_Fixed_rank_25.json",
+      "regret": 426.2359589208457
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 280737676,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed280737676_Relative_cutoff_1e-5.json",
+      "regret": 426.2359589208457
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 280737676,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed280737676_Relative_cutoff_1e-6.json",
+      "regret": 426.2359589208457
+    },
+    {
+      "method": "Full",
+      "seed": 304444453,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed304444453_Full.json",
+      "regret": 346.433765373659
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 304444453,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed304444453_Relative_cutoff_1e-2.json",
+      "regret": 367.5275747509526
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 304444453,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed304444453_Relative_cutoff_1e-4.json",
+      "regret": 378.260662181965
+    },
+    {
+      "method": "BBP",
+      "seed": 304444453,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed304444453_BBP.json",
+      "regret": 375.6921802991811
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 304444453,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed304444453_Fixed_rank_10.json",
+      "regret": 366.9784688631496
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 304444453,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed304444453_Fixed_rank_25.json",
+      "regret": 375.6921802991811
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 304444453,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed304444453_Relative_cutoff_1e-5.json",
+      "regret": 377.8013946451072
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 304444453,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed304444453_Relative_cutoff_1e-6.json",
+      "regret": 375.6921802991811
+    },
+    {
+      "method": "Full",
+      "seed": 319922324,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed319922324_Full.json",
+      "regret": 373.9326461744248
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 319922324,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed319922324_Relative_cutoff_1e-2.json",
+      "regret": 367.14497492160126
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 319922324,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed319922324_Relative_cutoff_1e-4.json",
+      "regret": 373.9326461744248
+    },
+    {
+      "method": "BBP",
+      "seed": 319922324,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed319922324_BBP.json",
+      "regret": 373.9326461744248
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 319922324,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed319922324_Fixed_rank_10.json",
+      "regret": 370.1894716446582
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 319922324,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed319922324_Fixed_rank_25.json",
+      "regret": 373.9326461744248
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 319922324,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed319922324_Relative_cutoff_1e-5.json",
+      "regret": 373.9326461744248
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 319922324,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed319922324_Relative_cutoff_1e-6.json",
+      "regret": 373.9326461744248
+    },
+    {
+      "method": "Full",
+      "seed": 560889375,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed560889375_Full.json",
+      "regret": 411.89589879146604
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 560889375,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed560889375_Relative_cutoff_1e-2.json",
+      "regret": 419.4203846420508
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 560889375,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed560889375_Relative_cutoff_1e-4.json",
+      "regret": 412.09928671696883
+    },
+    {
+      "method": "BBP",
+      "seed": 560889375,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed560889375_BBP.json",
+      "regret": 412.4147364080254
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 560889375,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed560889375_Fixed_rank_10.json",
+      "regret": 412.09928671696883
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 560889375,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed560889375_Fixed_rank_25.json",
+      "regret": 412.4147364080254
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 560889375,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed560889375_Relative_cutoff_1e-5.json",
+      "regret": 408.6332009223824
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 560889375,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed560889375_Relative_cutoff_1e-6.json",
+      "regret": 411.89589879146604
+    },
+    {
+      "method": "Full",
+      "seed": 666829030,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed666829030_Full.json",
+      "regret": 403.2556042674849
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 666829030,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed666829030_Relative_cutoff_1e-2.json",
+      "regret": 391.54284366945114
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 666829030,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed666829030_Relative_cutoff_1e-4.json",
+      "regret": 403.2556042674849
+    },
+    {
+      "method": "BBP",
+      "seed": 666829030,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed666829030_BBP.json",
+      "regret": 403.2556042674849
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 666829030,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed666829030_Fixed_rank_10.json",
+      "regret": 403.2556042674849
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 666829030,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed666829030_Fixed_rank_25.json",
+      "regret": 403.2556042674849
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 666829030,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed666829030_Relative_cutoff_1e-5.json",
+      "regret": 403.2556042674849
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 666829030,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed666829030_Relative_cutoff_1e-6.json",
+      "regret": 403.2556042674849
+    },
+    {
+      "method": "Full",
+      "seed": 748076223,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed748076223_Full.json",
+      "regret": 440.72885518071456
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 748076223,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed748076223_Relative_cutoff_1e-2.json",
+      "regret": 432.64286081256563
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 748076223,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed748076223_Relative_cutoff_1e-4.json",
+      "regret": 419.08733142077546
+    },
+    {
+      "method": "BBP",
+      "seed": 748076223,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed748076223_BBP.json",
+      "regret": 440.72885518071456
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 748076223,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed748076223_Fixed_rank_10.json",
+      "regret": 419.08733142077546
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 748076223,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed748076223_Fixed_rank_25.json",
+      "regret": 440.72885518071456
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 748076223,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed748076223_Relative_cutoff_1e-5.json",
+      "regret": 440.72885518071456
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 748076223,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed748076223_Relative_cutoff_1e-6.json",
+      "regret": 440.72885518071456
+    },
+    {
+      "method": "Full",
+      "seed": 806884711,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed806884711_Full.json",
+      "regret": 421.93779409064484
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 806884711,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed806884711_Relative_cutoff_1e-2.json",
+      "regret": 400.82583283443034
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 806884711,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed806884711_Relative_cutoff_1e-4.json",
+      "regret": 415.27259689491973
+    },
+    {
+      "method": "BBP",
+      "seed": 806884711,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed806884711_BBP.json",
+      "regret": 421.93779409064484
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 806884711,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed806884711_Fixed_rank_10.json",
+      "regret": 415.27259689491973
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 806884711,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed806884711_Fixed_rank_25.json",
+      "regret": 421.93779409064484
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 806884711,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed806884711_Relative_cutoff_1e-5.json",
+      "regret": 421.93779409064484
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 806884711,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed806884711_Relative_cutoff_1e-6.json",
+      "regret": 421.93779409064484
+    },
+    {
+      "method": "Full",
+      "seed": 954779777,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed954779777_Full.json",
+      "regret": 304.41318835498953
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 954779777,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed954779777_Relative_cutoff_1e-2.json",
+      "regret": 310.00124954384694
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 954779777,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed954779777_Relative_cutoff_1e-4.json",
+      "regret": 298.90389049384703
+    },
+    {
+      "method": "BBP",
+      "seed": 954779777,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed954779777_BBP.json",
+      "regret": 304.41318835498953
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 954779777,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed954779777_Fixed_rank_10.json",
+      "regret": 298.90389049384703
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 954779777,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed954779777_Fixed_rank_25.json",
+      "regret": 304.41318835498953
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 954779777,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed954779777_Relative_cutoff_1e-5.json",
+      "regret": 304.41318835498953
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 954779777,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed954779777_Relative_cutoff_1e-6.json",
+      "regret": 304.41318835498953
+    },
+    {
+      "method": "Full",
+      "seed": 1084613802,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1084613802_Full.json",
+      "regret": 367.92343835775165
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1084613802,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1084613802_Relative_cutoff_1e-2.json",
+      "regret": 368.01815939371414
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 1084613802,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1084613802_Relative_cutoff_1e-4.json",
+      "regret": 367.92343835775165
+    },
+    {
+      "method": "BBP",
+      "seed": 1084613802,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1084613802_BBP.json",
+      "regret": 367.92343835775165
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1084613802,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1084613802_Fixed_rank_10.json",
+      "regret": 346.7665683079241
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 1084613802,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1084613802_Fixed_rank_25.json",
+      "regret": 367.92343835775165
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 1084613802,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1084613802_Relative_cutoff_1e-5.json",
+      "regret": 367.92343835775165
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 1084613802,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1084613802_Relative_cutoff_1e-6.json",
+      "regret": 367.92343835775165
+    },
+    {
+      "method": "Full",
+      "seed": 1390358485,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1390358485_Full.json",
+      "regret": 411.99215327398014
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1390358485,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1390358485_Relative_cutoff_1e-2.json",
+      "regret": 396.8835104000109
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 1390358485,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1390358485_Relative_cutoff_1e-4.json",
+      "regret": 387.68526558185783
+    },
+    {
+      "method": "BBP",
+      "seed": 1390358485,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1390358485_BBP.json",
+      "regret": 409.82452864871607
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1390358485,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1390358485_Fixed_rank_10.json",
+      "regret": 384.4900982095133
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 1390358485,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1390358485_Fixed_rank_25.json",
+      "regret": 411.99215327398014
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 1390358485,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1390358485_Relative_cutoff_1e-5.json",
+      "regret": 409.82452864871607
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 1390358485,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1390358485_Relative_cutoff_1e-6.json",
+      "regret": 411.99215327398014
+    },
+    {
+      "method": "Full",
+      "seed": 1711112905,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1711112905_Full.json",
+      "regret": 284.79775951265066
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1711112905,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1711112905_Relative_cutoff_1e-2.json",
+      "regret": 271.5653305119504
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 1711112905,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1711112905_Relative_cutoff_1e-4.json",
+      "regret": 284.79775951265066
+    },
+    {
+      "method": "BBP",
+      "seed": 1711112905,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1711112905_BBP.json",
+      "regret": 284.79775951265066
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1711112905,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1711112905_Fixed_rank_10.json",
+      "regret": 284.79775951265066
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 1711112905,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1711112905_Fixed_rank_25.json",
+      "regret": 284.79775951265066
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 1711112905,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1711112905_Relative_cutoff_1e-5.json",
+      "regret": 284.79775951265066
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 1711112905,
+      "configuration": "default",
+      "result_file": "Exp_10/EXP083/results/seed1711112905_Relative_cutoff_1e-6.json",
+      "regret": 284.79775951265066
+    }
+  ]
+}

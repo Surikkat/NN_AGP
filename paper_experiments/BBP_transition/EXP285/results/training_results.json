@@ -317,7 +317,6 @@
     "B": 0.20666697784714352,
     "hyp": 1.1216457408589005
   },
-  "source_unchanged": true,
   "first_geometry": {
     "method": "Batched Monte Carlo of unchanged raw features; uncentered J",
     "contexts": 262144,

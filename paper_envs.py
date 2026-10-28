@@ -1,4 +1,4 @@
-"""Seeded bandit environments and dataset loaders."""
+"""Environment generators for Weak/Balanced, Smooth, Exp. 1–10 and KuaiRec."""
 import itertools
 import math
 import urllib.request
@@ -14,7 +14,7 @@ DATA = Path(__file__).resolve().parent / "datasets"
 KUAIREC = "https://zenodo.org/records/18164998/files/KuaiRec.zip"
 
 
-class Environment:
+class WeakBalancedEnv:
     """Gaussian contexts; context baseline plus two RBF action preference factors."""
     def __init__(self, spec, seed, horizon):
         self.spec = spec
@@ -220,7 +220,7 @@ def smooth_basis(rng, Z, ell, m):
     return np.linalg.qr(L @ rng.standard_normal((len(Z), m)))[0] * math.sqrt(len(Z))
 
 
-def svd_env(cfg, seed):
+def smooth_env(cfg, seed):
     """Smooth rewards with the given spectrum and uniformly sampled contexts."""
     e, T = {**cfg["env"], "T": cfg["T"]}, cfg["T"]
     sig = np.array(e["sigma"], float)
@@ -237,8 +237,8 @@ def make_env(cfg, seed):
     """Draw all environment randomness; rows 1..T are rounds, row 0 is initial state."""
     if cfg["env"].get("data") == "kuairec":
         return kuairec_env(cfg, seed)
-    if cfg["env"].get("kind") == "svd":
-        return svd_env(cfg, seed)
+    if cfg["env"].get("kind") == "smooth":
+        return smooth_env(cfg, seed)
     e = {**cfg["env"], "T": cfg["T"]}
     T, K, dg, dp = cfg["T"], e["n_actions"], e["d_theta"], e["d_x"]
     rth, rx, reps, rmask, rrows = map(np.random.default_rng, np.random.SeedSequence(seed).spawn(5))

@@ -3,10 +3,10 @@ from __future__ import annotations
 
 import argparse
 from functools import lru_cache
-import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import sys
 import tempfile
 
@@ -15,42 +15,29 @@ for name in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS",
     os.environ[name] = "1"
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parent / "paper_experiments"
-ONLINE = ["online.weak", "online.balanced", "online.kuairec600", "online.rank12",
-          "online.rank3", "online.rank3_d128"] + [f"v4.exp{i:02d}" for i in range(1, 11)]
+ONLINE = ["online.weak", "online.balanced", "online.kuairec", "online.smooth12",
+          "online.smooth3", "online.smooth3_128"] + [f"online.exp{i:02d}" for i in range(1, 11)]
 NAMES = dict(zip(ONLINE, ["Weak", "Balanced", "KuaiRec", "Smooth 12", "Smooth 3",
              "Smooth 3 (128 inputs)"] + [f"Exp. {i}" for i in range(1, 11)]))
 TITLES = [NAMES[key] for key in ONLINE]
-COLOR = dict(Full="#555555", BBP="#0072B2", Relative="#CC79A7", Small="#D55E00",
-             FixedEps1e6="#009E73", Eps1e5="#999999", Fixed10="#7A5195", Fixed25="#A0782C")
+COLOR = {"Full": "#555555", "BBP": "#0072B2", "Relative cutoff 1e-2": "#CC79A7",
+         "Relative cutoff 1e-4": "#D55E00", "Relative cutoff 1e-6": "#009E73",
+         "Relative cutoff 1e-5": "#999999", "Fixed rank 10": "#7A5195", "Fixed rank 25": "#A0782C"}
 
 
-def environment_name(plan):
-    key = plan["paper_key"]
-    if key.startswith("legacy.exp"):
-        key = "v4." + key.split(".")[1]
-    if key in NAMES:
-        return NAMES[key]
-    return {"Weak": "Weak", "Balanced": "Balanced",
-            "KuaiRec_100_users": "KuaiRec", "KuaiRec_10_users": "KuaiRec"}.get(
-                plan["environment"], plan.get("title", plan["environment"]))
-
-
-def method_name(method, plain=False):
-    exponent = {"Relative": 2, "Small": 4, "Eps1e5": 5, "FixedEps1e6": 6}.get(method)
-    if exponent is not None:
-        return (f"Relative cutoff 1e-{exponent}" if plain else
-                rf"Relative cutoff $\varepsilon_{{\mathrm{{prune}}}}=10^{{-{exponent}}}$")
-    return {"Full": "Full", "BBP": "BBP", "Fixed3": "Fixed rank 3",
-            "Fixed5": "Fixed rank 5", "Fixed10": "Fixed rank 10", "Fixed25": "Fixed rank 25",
-            "Fixed": "NN-AGP (m=7)", "GP mult": "GP-UCB (product)",
-            "GP add": "GP-UCB (weighted sum)", "NeuralUCB": "NeuralUCB", "NN-UCB": "NN-UCB",
-            "Late": "BBP + physical compression"}.get(method, method)
+def method_name(method):
+    prefix = "Relative cutoff 1e-"
+    exponent = method.removeprefix(prefix)
+    if method.startswith(prefix) and exponent.isdecimal():
+        return rf"Relative cutoff $\varepsilon_{{\mathrm{{prune}}}}=10^{{-{exponent}}}$"
+    return method
 
 
 LABEL = {method: method_name(method) for method in COLOR}
-STYLE = {"BBP": "-", "Small": "--", "FixedEps1e6": "-.", "Fixed10": ":",
-         "Fixed25": (0, (5, 2)), "Relative": (0, (1, 1)), "Eps1e5": (0, (5, 1, 1, 1))}
-BASELINES = ("Fixed", "GP mult", "GP add", "NeuralUCB", "NN-UCB")
+STYLE = {"BBP": "-", "Relative cutoff 1e-4": "--", "Relative cutoff 1e-6": "-.", "Fixed rank 10": ":",
+         "Fixed rank 25": (0, (5, 2)), "Relative cutoff 1e-2": (0, (1, 1)),
+         "Relative cutoff 1e-5": (0, (5, 1, 1, 1))}
+BASELINES = ("NN-AGP (m=7)", "GP-UCB (product)", "GP-UCB (weighted sum)", "NeuralUCB", "NN-UCB")
 BASELINE_LABELS = tuple(method_name(method) for method in BASELINES)
 
 
@@ -59,12 +46,9 @@ def read(path):
     return json.loads(Path(path).read_text())
 
 
-def sha(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
-
-
 def result_path(directory, plan, method, seed):
-    return directory / plan["id"] / f"seed{seed}_{method.replace(' ', '_')}" / "result.json"
+    name = re.sub(r'[^A-Za-z0-9.-]+', '_', method).strip('_')
+    return directory / plan["id"] / f"seed{seed}_{name}" / "result.json"
 
 
 def load(plans, directory):
@@ -77,44 +61,31 @@ def load(plans, directory):
         for method in plan["methods"]:
             records = {r["seed"]: r for r in plan["runs"] if r["method"] == method}
             rows = []
-            for seed in plan["paper_seed_order"]:
+            for seed in plan["seeds"]:
                 if seed not in records:
                     continue
                 record = records[seed]
                 path = ROOT / record["result_file"] if directory is None else result_path(directory, plan, method, seed)
                 raw = read(path)
-                if raw.get("status") != "complete" or raw["seed"] != seed:
-                    raise ValueError(f"Incomplete result: {path}")
-                if directory is not None:
-                    verify_run(raw, plan, method, seed, path)
-                if directory is None and sha(path) != record["source_sha256"]:
-                    raise ValueError(f"Saved result changed: {path}")
-                if "r" in raw:
-                    regret, rank = raw["r"], raw["mhat"]
-                    epsilon = [None] * len(regret)
-                    width = [plan["configurations"][record["configuration"]]["agent"]["M"]] * len(regret)
-                    final_rank = raw.get("mhat_after", rank)[-1]
-                else:
-                    sequence = raw["trajectory"]
-                    if "method" not in raw:
-                        sequence = [row[record["raw_method"]] for row in sequence]
-                    regret = [row["regret"] for row in sequence]
-                    rank = [row.get("rank") for row in sequence]
-                    epsilon = [row.get("epsilon") for row in sequence]
-                    width = [row.get("nn_width") for row in sequence]
-                    final_rank = raw.get("summary", {}).get("final_rank", rank[-1])
+                verify_run(raw, plan, method, seed, path)
+                sequence = raw["trajectory"]
+                regret = [row["regret"] for row in sequence]
+                rank = [row.get("rank") for row in sequence]
+                epsilon = [row.get("epsilon") for row in sequence]
+                width = [row.get("nn_width") for row in sequence]
+                final_rank = raw.get("summary", {}).get("final_rank", rank[-1])
                 if len(regret) != plan["horizon"] or not np.isfinite(regret).all():
                     raise ValueError(f"Invalid trajectory: {path}")
                 regret = np.cumsum(regret)
                 if directory is None and not np.isclose(regret[-1], record["regret"], rtol=1e-12, atol=1e-8):
                     raise ValueError(f"Regret sum differs: {path}")
-                timing = raw.get("times", {}).get(record["raw_method"], raw.get("timing", {}))
+                timing = raw["timing"]
                 parameters = raw.get("parameters", {}).get("final") or {}
-                rss = raw.get("peak_rss_bytes", raw.get("memory", {}).get("peak_rss_bytes"))
+                rss = raw.get("peak_rss_bytes")
                 rows.append(dict(seed=seed, regret=regret, rank=rank, epsilon=epsilon, width=width,
-                    final_rank=final_rank, wall=timing.get("wall", raw.get("wall")),
-                    cpu=timing.get("cpu", raw.get("sec")), rss=rss,
-                    parameters=parameters.get("total"), neural=parameters.get("neural", parameters.get("nn"))))
+                    final_rank=final_rank, wall=timing.get("wall"),
+                    cpu=timing.get("cpu"), rss=rss,
+                    parameters=parameters.get("total"), neural=parameters.get("neural")))
             by_method[method] = {key: np.asarray([r[key] for r in rows], dtype=float)
                                  for key in rows[0] if key != "seed"}
             by_method[method]["seeds"] = [r["seed"] for r in rows]
@@ -126,7 +97,7 @@ def load(plans, directory):
 def paired(e, method, baseline="Full", metric="regret", post=0):
     import numpy as np
     a, b = e["data"][method], e["data"][baseline]
-    seeds = [s for s in e["plan"]["paper_seed_order"] if s in a["seeds"] and s in b["seeds"]]
+    seeds = [s for s in e["plan"]["seeds"] if s in a["seeds"] and s in b["seeds"]]
     def values(data):
         v = data[metric][[data["seeds"].index(s) for s in seeds]]
         return v[:, -1] - (v[:, post - 1] if post else 0) if metric == "regret" else v
@@ -177,12 +148,12 @@ def tables(experiments, output):
     summary, content = {}, []
     def add(*args):
         content.append(table(*args))
-    physical = [experiments["physical_fold300." + k] for k in ("weak", "balanced", "kuairec")]
+    physical = [experiments["physical." + k] for k in ("weak", "balanced", "kuairec")]
     physical_stats = {}
     for name, e in zip(("Weak", "Balanced", "KuaiRec"), physical):
         physical_stats[name] = {metric: interval(a / b, True).tolist()
             for metric in ("parameters", "wall", "cpu", "regret", "rss")
-            for a, b in [paired(e, "Late", "BBP", metric)]}
+            for a, b in [paired(e, "BBP + physical compression", "BBP", metric)]}
     add("tab:network-cost", "Output-layer reduction relative to BBP with the full encoder. Geometric mean ratios.",
         "@{}lrrr@{}", r"Task & Parameters & Wall time & Regret",
         [[name, *[f"{physical_stats[name][m][0]:.3f}" for m in ("parameters", "wall", "regret")]]
@@ -236,7 +207,7 @@ def tables(experiments, output):
         main.append([NAMES[key], len(a), f"{b.mean():.1f}", f"{a.mean():.1f}", f"{rank:.1f}",
             f"{ratio[0]:.3f} [{ratio[1]:.3f}, {ratio[2]:.3f}]"])
         row = [NAMES[key]]
-        for method in ("Full", "Fixed10", "Fixed25", "Relative", "Small", "Eps1e5", "FixedEps1e6"):
+        for method in ("Full", "Fixed rank 10", "Fixed rank 25", "Relative cutoff 1e-2", "Relative cutoff 1e-4", "Relative cutoff 1e-5", "Relative cutoff 1e-6"):
             if method not in e["data"]:
                 row.append("--")
             else:
@@ -248,9 +219,9 @@ def tables(experiments, output):
     add("tab:bbp-results", "BBP versus Full on paired seeds. Ratios of mean regret with 95\\% paired bootstrap intervals.",
         "@{}lrrrrl@{}", "Task & Seeds & Full & BBP & GP dimension & BBP/Full", main)
     add("tab:bbp-controls", "Change in mean cumulative regret of BBP relative to each control, in percent.",
-        "@{}lrrrrrrr@{}", "Task & " + " & ".join(r"\shortstack{" + method_name(m, plain=True).replace(
+        "@{}lrrrrrrr@{}", "Task & " + " & ".join(r"\shortstack{" + m.replace(
             " rank ", r" rank\\").replace(" cutoff ", r"\\cutoff\\") + "}" for m in
-            ("Full", "Fixed10", "Fixed25", "Relative", "Small", "Eps1e5", "FixedEps1e6")), controls)
+            ("Full", "Fixed rank 10", "Fixed rank 25", "Relative cutoff 1e-2", "Relative cutoff 1e-4", "Relative cutoff 1e-5", "Relative cutoff 1e-6")), controls)
     detail = []
     for metric, label in (("parameters", "Parameters"), ("wall", "Wall time"),
                           ("cpu", "CPU time"), ("regret", "Regret")):
@@ -261,13 +232,13 @@ def tables(experiments, output):
     relative = []
     fixed = {k: [] for k in (3, 5, 10)}
     for i in range(1, 11):
-        e = experiments[f"legacy.exp{i:02d}.relative_fixed"]
-        a, b = paired(e, "Relative")
+        e = experiments[f"relative.exp{i:02d}"]
+        a, b = paired(e, "Relative cutoff 1e-2")
         v = interval(a / b, True)
-        dimension = float(np.median(e["data"]["Relative"]["rank"][:, -1]))
+        dimension = float(np.median(e["data"]["Relative cutoff 1e-2"]["rank"][:, -1]))
         relative.append([i, f"{v[0]:.2f} [{v[1]:.2f}, {v[2]:.2f}]", f"{dimension:g}"])
         for k in fixed:
-            a, b = paired(e, "Relative", f"Fixed{k}", post=100)
+            a, b = paired(e, "Relative cutoff 1e-2", f"Fixed rank {k}", post=100)
             fixed[k].append(np.log(a / b))
     add("tab:direct-control", "Relative-cutoff NN--AGP versus Full. Geometric paired regret ratios and 95\\% t intervals.",
         "crr", "Exp & Regret / Full & GP dimension", relative)
@@ -277,15 +248,15 @@ def tables(experiments, output):
         fixed_rows.append([k, f"{v[0]:.3f} [{v[1]:.3f}, {v[2]:.3f}]"])
     add("tab:fixed-rank", "Relative cutoff versus prescribed GP dimensions over rounds 101--200. Paired log ratios averaged equally over ten environments.",
         "cr", "Fixed rank & Regret / Fixed rank", fixed_rows)
-    kuai = [experiments[f"legacy.kuairec{k}.T2000"] for k in (10, 100)]
+    kuai = [experiments[f"relative.kuairec{k}"] for k in (10, 100)]
     kuai_rows = [["Seeds", *[len(e["data"]["Full"]["seeds"]) for e in kuai]]]
-    for method, label in (("Full", "Full"), ("Relative", r"$\varepsilon_{\mathrm{prune}}=10^{-2}$")):
+    for method, label in (("Full", "Full"), ("Relative cutoff 1e-2", r"$\varepsilon_{\mathrm{prune}}=10^{-2}$")):
         row = [label]
         for e in kuai:
             v = interval(e["data"][method]["regret"][:, -1])
             row.append(r"\shortstack{" + f"{v[0]:.1f}" + r"\\ {[" + f"{v[1]:.1f}, {v[2]:.1f}" + "]}}")
         kuai_rows.append(row)
-    kuai_rows.append(["GP dimension", *[f"{np.median(e['data']['Relative']['final_rank']):g}" for e in kuai]])
+    kuai_rows.append(["GP dimension", *[f"{np.median(e['data']['Relative cutoff 1e-2']['final_rank']):g}" for e in kuai]])
     add("tab:kuairec", r"Relative-cutoff KuaiRec simulations at $T=2000$. Mean cumulative regret with 95\% t intervals.",
         "@{}lcc@{}", " & 10 users & 100 users", kuai_rows)
     (output / "tables.tex").write_text("\n".join(content))
@@ -325,7 +296,7 @@ def figures(experiments, phase, selector, output, summary):
     rank_grid = grid[1].subgridspec(2, 1, height_ratios=[.16, 1], hspace=.10)
     top = fig.add_subplot(rank_grid[0])
     bottom = fig.add_subplot(rank_grid[1], sharex=top)
-    methods = ["Small", "FixedEps1e6", "Fixed10", "Fixed25", "BBP"]
+    methods = ["Relative cutoff 1e-4", "Relative cutoff 1e-6", "Fixed rank 10", "Fixed rank 25", "BBP"]
     for j, e in enumerate(selected):
         for i, method in enumerate(methods):
             if method not in e["data"]:
@@ -335,11 +306,11 @@ def figures(experiments, phase, selector, output, summary):
             left.plot([low, high], [y, y], color=COLOR[method], lw=1.1)
             left.plot(mid, y, "o", color=COLOR[method], ms=4.2 if method == "BBP" else 2.8)
     left.axvline(1, color=".4", ls="--", lw=.7)
-    left.set(yticks=range(3), yticklabels=[environment_name(e["plan"]) for e in selected], ylim=(2.5, -.5),
+    left.set(yticks=range(3), yticklabels=[e["plan"]["environment"] for e in selected], ylim=(2.5, -.5),
              title="(a) Regret relative to Full", xlabel=r"$\bar R_T/\bar R_T^{\mathrm{Full}}$")
     left.grid(axis="x", alpha=.18)
     for e, color, style, name in zip(selected, ["#0072B2", "#D55E00", "#009E73"],
-                                    ["-", "--", "-."], [environment_name(e["plan"]) for e in selected]):
+                                    ["-", "--", "-."], [e["plan"]["environment"] for e in selected]):
         q = np.quantile(e["data"]["BBP"]["rank"], [.25, .5, .75], axis=0)
         x = np.arange(1, e["plan"]["horizon"] + 1)
         for ax in (top, bottom):
@@ -367,9 +338,9 @@ def figures(experiments, phase, selector, output, summary):
         x = np.arange(101, e["plan"]["horizon"] + 1)
         ax.step(x, q[1], where="post", color=COLOR["BBP"], lw=1.5, label=method_name("BBP"))
         ax.fill_between(x, q[0], q[2], step="post", color=COLOR["BBP"], alpha=.17, lw=0)
-        for value, method in ((1e-4, "Small"), (1e-6, "FixedEps1e6")):
+        for value, method in ((1e-4, "Relative cutoff 1e-4"), (1e-6, "Relative cutoff 1e-6")):
             ax.axhline(value, color=COLOR[method], ls=STYLE[method], lw=1.1, label=LABEL[method])
-        ax.set(title=f"({chr(97 + j)}) {environment_name(e['plan'])}", yscale="log", xlabel="Round",
+        ax.set(title=f"({chr(97 + j)}) {e['plan']['environment']}", yscale="log", xlabel="Round",
                xlim=(100, e["plan"]["horizon"]),
                ylim=(min(7e-9, float(q.min()) / 1.2), max(2e-4, float(q.max()) * 1.2)))
         ax.grid(axis="y", alpha=.18)
@@ -380,7 +351,7 @@ def figures(experiments, phase, selector, output, summary):
     save("threshold_dynamics", fig)
     summary["baselines"] = {}
     fig, axes = plt.subplots(1, 2, figsize=(7, 2.4), sharex=True, sharey=True)
-    for j, (ax, key) in enumerate(zip(axes, ("v4.exp02", "v4.exp05"))):
+    for j, (ax, key) in enumerate(zip(axes, ("online.exp02", "online.exp05"))):
         e = experiments[key]
         summary["baselines"][key] = {}
         ax.axvline(1, color=".4", ls="--", lw=.7)
@@ -393,7 +364,7 @@ def figures(experiments, phase, selector, output, summary):
                 ax.plot([lo, hi], [y + offset] * 2, color=color, lw=1.1)
                 ax.plot(mid, y + offset, "o", color=color,
                         ms=4.2 if model == "BBP" else 2.8)
-        ax.set(title=f"({chr(97 + j)}) {environment_name(e['plan'])}", xlim=(.4, 1.3), ylim=(4.5, -.5),
+        ax.set(title=f"({chr(97 + j)}) {e['plan']['environment']}", xlim=(.4, 1.3), ylim=(4.5, -.5),
                xticks=[.4, .6, .8, 1, 1.2], yticks=range(5), yticklabels=BASELINE_LABELS,
                xlabel=r"$\bar R_T/\bar R_T^{\mathrm{baseline}}$")
         ax.grid(axis="x", alpha=.18)
@@ -404,9 +375,9 @@ def figures(experiments, phase, selector, output, summary):
                loc="lower center", ncol=2, frameon=False,
                columnspacing=1.4, handletextpad=.4, bbox_to_anchor=(.645, -.005))
     save("baseline_examples", fig)
-    methods = ["Relative", "Small", "FixedEps1e6", "Eps1e5", "Fixed10", "Fixed25", "BBP"]
+    methods = ["Relative cutoff 1e-2", "Relative cutoff 1e-4", "Relative cutoff 1e-6", "Relative cutoff 1e-5", "Fixed rank 10", "Fixed rank 25", "BBP"]
     for keys, name, shape, height in ((ONLINE[:6], "appendix_regret_online", (3, 2), 5.75),
-                                      (ONLINE[6:], "appendix_regret_v4", (5, 2), 8.5)):
+                                      (ONLINE[6:], "appendix_regret_synthetic", (5, 2), 8.5)):
         fig, axes = plt.subplots(*shape, figsize=(7, height))
         used = [m for m in methods if any(m in experiments[k]["data"] for k in keys)]
         for i, (key, ax) in enumerate(zip(keys, np.asarray(axes).flat)):
@@ -426,7 +397,7 @@ def figures(experiments, phase, selector, output, summary):
                 if method == "BBP":
                     ax.fill_between(x, mean - half, mean + half, color=COLOR[method], alpha=.16, lw=0)
             ax.axhline(0, color=".35", lw=.6)
-            ax.set(title=f"({chr(97 + i)}) {environment_name(e['plan'])}", xlabel="Round",
+            ax.set(title=f"({chr(97 + i)}) {e['plan']['environment']}", xlabel="Round",
                    xlim=(1, e["plan"]["horizon"]))
             ax.grid(axis="y", alpha=.16)
             ax.tick_params(labelsize=7)
@@ -562,12 +533,6 @@ def main():
         parser.error("Choose a generated-output directory, not a source/result directory")
     if directory is not None and directory.is_relative_to(ROOT) and not directory.is_relative_to(ROOT / "reruns"):
         parser.error("New model results inside the package belong under reruns/")
-    import run_paper as runner
-    hashes = runner.source_hashes()
-    for plan in plans:
-        for source in plan["sources"]:
-            if sha(ROOT / source["file"]) != source["sha256"]:
-                raise ValueError(f"Saved source changed: {source['file']}")
     output.mkdir(parents=True, exist_ok=True)
     experiments = load(plans, directory)
     phase_plan = next(p for p in plans if p.get("kind") == "spectral_diagnostic")
@@ -589,7 +554,6 @@ def main():
         figures(experiments, phase, selector, output, summary)
     summary["runs"] = sum(len(p["runs"]) for p in plans)
     summary["input"] = "saved" if directory is None else str(directory)
-    summary["code_sha256"] = hashes
     (output / "summary.json").write_text(json.dumps(summary, indent=2, allow_nan=False) + "\n")
     print(json.dumps(dict(output=str(output), runs=summary["runs"], tables=9, figures=7)))
 

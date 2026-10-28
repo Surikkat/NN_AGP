@@ -1,5 +1,4 @@
 import copy
-import hashlib
 import math
 from functools import lru_cache
 from typing import List, Optional
@@ -138,11 +137,11 @@ class NN_AGP_UCB_Adaptive:
         self.epsilon = None
         self.spectral_history = []
         self.proposed_rank, self.no_peak = self.m, False
-        self.method = {"none": "Full", "relative": "Relative", "bbp": "BBP"}[prune_rule]
+        self.method = {"none": "Full", "relative": "Relative cutoff 1e-2", "bbp": "BBP"}[prune_rule]
         self.calibration_mode, self.calibration = "auto", None
         self._spectral_backend = "support" if prune_rule == "bbp" else "numpy"
         self.decision_rank = None
-        self.legacy, self.corrected_svd = False, True
+        self.history_svd, self.corrected_svd = False, True
         self.fold_round, self._spectral_frozen = None, False
         self.transfer = None
         self.catalog = False
@@ -167,33 +166,33 @@ class NN_AGP_UCB_Adaptive:
         self.m_history: List[int] = []
 
     @classmethod
-    def from_config(cls, cfg, seed, method, calibration="history", legacy=False,
+    def from_config(cls, cfg, seed, method, calibration="history", history_svd=False,
                     corrected_svd=True, fold_round=None, catalog=False):
-        method = {"Eps1e5": "FixedEps1e5"}.get(method, method)
-        thresholds = {"Relative": .01, "Small": .0001, "FixedEps1e6": 1e-6, "FixedEps1e5": 1e-5}
-        ranks = {"Fixed25": 25, "Fixed10": 10}
-        if legacy:
-            ranks.update(Fixed3=3, Fixed5=5)
+        thresholds = {"Relative cutoff 1e-2": .01, "Relative cutoff 1e-4": .0001,
+                      "Relative cutoff 1e-6": 1e-6, "Relative cutoff 1e-5": 1e-5}
+        ranks = {"Fixed rank 25": 25, "Fixed rank 10": 10}
+        if history_svd:
+            ranks.update({"Fixed rank 3": 3, "Fixed rank 5": 5})
         if method not in ("Full", "BBP", *thresholds, *ranks):
             raise ValueError(f"Unknown adaptive method: {method}")
         if calibration not in ("history", "fresh"):
             raise ValueError("calibration must be 'history' or 'fresh'")
-        if legacy and (method == "BBP" or calibration != "history" or catalog):
-            raise ValueError("Legacy uses a history SVD and Torch posterior; BBP/catalog are native methods")
+        if history_svd and (method == "BBP" or calibration != "history" or catalog):
+            raise ValueError("history_svd requires history calibration and a Torch posterior; BBP/catalog are incompatible")
         e, c = cfg["env"], cfg["agent"]
         width = c["M"]
-        decision_rank = c.get("decision_rank") if legacy else None
+        decision_rank = c.get("decision_rank") if history_svd else None
         if decision_rank is None:
             decision_rank = ranks.get(method)
         if decision_rank is not None and (method == "Full" or type(decision_rank) is not int or
                                           not 1 <= decision_rank <= width):
             raise ValueError("decision_rank requires hard mode and an integer in [1, M]")
-        start = c.get("cov_start", width if legacy else 100)
+        start = c.get("cov_start", width if history_svd else 100)
         period = c["T_spec"]
         if fold_round is not None and (type(fold_round) is not int or fold_round < max(1, start) or
                                        fold_round % period or method != "BBP"):
             raise ValueError("fold_round must be a BBP spectral round at or after cov_start")
-        epsilon = c.get("eps", .01) if legacy and method == "Relative" else thresholds.get(method, .01)
+        epsilon = c.get("eps", .01) if history_svd and method == "Relative cutoff 1e-2" else thresholds.get(method, .01)
         obj = cls(e["d_theta"], e["d_x"], m=width, hidden_dim=c["hidden"][0],
                   init_noise=c.get("noise_sd", .1), lr=c.get("cov_lr", 1e-3),
                   mll_steps=c.get("cov_steps", 10), T_spec=period, eps_prune=epsilon,
@@ -201,12 +200,13 @@ class NN_AGP_UCB_Adaptive:
                   burn_in=start, seed=seed)
         obj.cfg, obj.c = cfg, c
         obj.method, obj.calibration_mode = method, calibration
-        obj.legacy, obj.corrected_svd = legacy, corrected_svd
+        obj.history_svd, obj.corrected_svd = history_svd, corrected_svd
         obj.fold_round, obj.catalog = fold_round, catalog
         obj.decision_rank = decision_rank
-        obj._spectral_backend = ("torch" if legacy else "support" if
-            method in ("BBP", "Relative") or (method == "Small" and calibration == "history") else "numpy")
-        obj.epsilon = .01 if method == "Relative" and not legacy else None
+        obj._spectral_backend = ("torch" if history_svd else "support" if
+            method in ("BBP", "Relative cutoff 1e-2") or
+            (method == "Relative cutoff 1e-4" and calibration == "history") else "numpy")
+        obj.epsilon = .01 if method == "Relative cutoff 1e-2" and not history_svd else None
         return obj
 
 
@@ -312,7 +312,7 @@ class NN_AGP_UCB_Adaptive:
 
     def _posterior(self, X: np.ndarray, theta: np.ndarray):
         self.catalog_diagnostics = {}
-        if self.legacy:
+        if self.history_svd:
             return self._torch_posterior(X, theta)
         if self.catalog and len(X) * self.m < len(self.ys):
             return self._catalog_posterior(X, theta)
@@ -497,11 +497,10 @@ class NN_AGP_UCB_Adaptive:
             raise ValueError("Fixed rank exceeds the available calibration SVD directions")
         self._set_projection(vectors[:k].T, k)
         self.proposed_rank, self.no_peak, self.epsilon = k, False, epsilon
-        rule = "fixed" if epsilon is None else "fixed_epsilon" if self.method.startswith("FixedEps") else "relative"
+        rule = "fixed" if epsilon is None else "fixed_epsilon" if self.method in (
+            "Relative cutoff 1e-5", "Relative cutoff 1e-6") else "relative"
         row = dict(t=t, rule=rule, n_cal=len(H), rank=k, proposed_rank=k, no_peak=False,
                    epsilon=epsilon, lambda1=float(values[0]), eigenvalues=values.tolist())
-        if self.calibration_mode == "fresh" or rule == "fixed_epsilon":
-            row["calibration_sha256"] = hashlib.sha256(contexts.cpu().numpy().tobytes()).hexdigest()
         if self.calibration_mode == "auto":
             row.update(n=len(H), dimension=self.m_max, cutoff=float(epsilon * values[0]), background=None)
         self.spectral_history.append(row)
@@ -578,7 +577,7 @@ class NN_AGP_UCB_Adaptive:
                 _, singular, vectors = torch.linalg.svd(h, full_matrices=full)
             values = self.B.new_zeros(self.m_max)
             values[:len(singular)] = singular.square() / len(h)
-            epsilon = self.c.get("eps", self.eps_prune) if self.method == "Relative" else self.eps_prune
+            epsilon = self.c.get("eps", self.eps_prune) if self.method == "Relative cutoff 1e-2" else self.eps_prune
             k = self.decision_rank or max(1, int((values > epsilon * values[0]).sum()))
             self.projection, self.w, self.m = vectors.T[:, :k], self.B.new_ones(k), k
             self.proposed_rank, self.no_peak = k, False

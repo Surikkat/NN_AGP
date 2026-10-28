@@ -1,24 +1,4 @@
 {
-  "config": {
-    "T": 134217728,
-    "env": {
-      "d_theta": 128,
-      "d_x": 262144
-    },
-    "agent": {
-      "M": 128,
-      "hidden": [
-        1024,
-        1024
-      ],
-      "noise_sd": 0.005,
-      "cov_lr": 0.001,
-      "cov_mle_max": 134217728,
-      "cov_steps": 1,
-      "T_spec": 10,
-      "eps": 0.01
-    }
-  },
   "seed": 96015,
   "M": 128,
   "C": 512,
@@ -40,7 +20,6 @@
     "dense_nll_absolute_error": 0.0,
     "all_parameter_gradient_max_absolute_error": 1.5347723092418164e-12
   },
-  "source_sha256": "50223bc1f0f4eba987dc4b01256b59c1b58ef5e7f0dafa004d28670b45a5063c",
   "geometry_gates": {
     "mean_energy_share": 0.01,
     "tail_cv": 0.1,
@@ -49,9 +28,6 @@
     "teacher_top2_r2": 0.8,
     "leading_kurtosis_distance_from_3": 0.3
   },
-  "context_algorithm": "Paired SD*sqrt(M) coordinate basis, then M IID Gaussian context draws and their negatives",
-  "rng_algorithm": "NumPy default_rng(seed96015): Gaussian context MxM; QR Gaussian MxM teacher U; one common_u 1xM; then action blocks",
-  "action_block_algorithm": "Block size4096: draw independent Z[block,M], P=sqrt(1-rho)*Z+sqrt(rho)*common_u; then Gaussian noise[C,block]",
   "genuine_actions": "x_a=R e_a in R^A, implicit compound RBF covariance (1-rho)I+rho11'; no diagonal substitute",
   "statistics": "Parallel Welford merging action means and centered reward scatter S; z=sqrt(A)*mean; no full CxA reward allocation",
   "teacher_q": [

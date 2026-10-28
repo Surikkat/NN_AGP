@@ -1,0 +1,1395 @@
+{
+  "id": "EXP029",
+  "title": "Exp. 2 / rank 3 / history calibration",
+  "environment": "Exp. 2",
+  "paper_key": "online.exp02",
+  "folder": "Exp_2/EXP029",
+  "horizon": 200,
+  "settings": {
+    "calibration": {
+      "n": "t",
+      "policy": "observed_history"
+    }
+  },
+  "configurations": {
+    "config1": {
+      "T": 200,
+      "env": {
+        "d_theta": 10,
+        "d_x": 5,
+        "n_actions": 20,
+        "mask": 0.1,
+        "lam": [
+          1.0,
+          0.5,
+          0.2
+        ],
+        "active": null,
+        "osc": null,
+        "decay": null,
+        "J_sp": 0,
+        "lam_sp": [
+          0.0,
+          0.0
+        ],
+        "rotation": null,
+        "link": "id",
+        "c_z": null,
+        "omega": null,
+        "nuisance": null,
+        "sparse": null,
+        "noise": {
+          "kind": "gauss",
+          "sd": 0.1
+        }
+      },
+      "agent": {
+        "hidden": [
+          64,
+          32
+        ],
+        "rule": "old",
+        "s2n": 0.01,
+        "mle_every": 10,
+        "batch": null,
+        "mle_max": 2048,
+        "holdout": 0.1,
+        "ho_frac": 0.1,
+        "ho_uniform": false,
+        "n_min": 50,
+        "delta": 0.1,
+        "m_fix": null,
+        "decision_rank": null,
+        "sd": null,
+        "c": 1.0,
+        "policy": "ucb",
+        "hyp": "train",
+        "weights": false,
+        "equal": false,
+        "t1": 500,
+        "M": 100,
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "noise_sd": 0.1
+      }
+    }
+  },
+  "methods": [
+    "BBP",
+    "Relative cutoff 1e-5",
+    "NN-AGP (m=7)",
+    "Fixed rank 10",
+    "Fixed rank 25",
+    "Relative cutoff 1e-6",
+    "Full",
+    "GP-UCB (weighted sum)",
+    "GP-UCB (product)",
+    "NN-UCB",
+    "NeuralUCB",
+    "Relative cutoff 1e-2",
+    "Relative cutoff 1e-4"
+  ],
+  "seeds": [
+    20284363,
+    151801615,
+    159359747,
+    254786210,
+    280737676,
+    304444453,
+    560889375,
+    666829030,
+    748076223,
+    806884711,
+    954779777,
+    1084613802,
+    1390358485,
+    1711112905
+  ],
+  "paper_refs": [
+    "tab:bbp-results",
+    "tab:bbp-controls",
+    "tab:online-protocol",
+    "fig:synthetic-curves",
+    "fig:baseline-examples"
+  ],
+  "runs": [
+    {
+      "method": "Full",
+      "seed": 20284363,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed20284363_Full.json",
+      "regret": 54.741565075230774
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 20284363,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed20284363_Relative_cutoff_1e-2.json",
+      "regret": 59.21615711479086
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 20284363,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed20284363_Relative_cutoff_1e-4.json",
+      "regret": 54.741565075230774
+    },
+    {
+      "method": "BBP",
+      "seed": 20284363,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed20284363_BBP.json",
+      "regret": 54.741565075230774
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 20284363,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed20284363_Fixed_rank_10.json",
+      "regret": 54.741565075230774
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 20284363,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed20284363_Fixed_rank_25.json",
+      "regret": 54.741565075230774
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 20284363,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed20284363_Relative_cutoff_1e-5.json",
+      "regret": 54.741565075230774
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 20284363,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed20284363_Relative_cutoff_1e-6.json",
+      "regret": 54.741565075230774
+    },
+    {
+      "method": "Full",
+      "seed": 151801615,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed151801615_Full.json",
+      "regret": 73.49276181905068
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 151801615,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed151801615_Relative_cutoff_1e-2.json",
+      "regret": 82.7976902470536
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 151801615,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed151801615_Relative_cutoff_1e-4.json",
+      "regret": 73.49276181905068
+    },
+    {
+      "method": "BBP",
+      "seed": 151801615,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed151801615_BBP.json",
+      "regret": 73.49276181905068
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 151801615,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed151801615_Fixed_rank_10.json",
+      "regret": 84.04282589458205
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 151801615,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed151801615_Fixed_rank_25.json",
+      "regret": 73.49276181905068
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 151801615,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed151801615_Relative_cutoff_1e-5.json",
+      "regret": 73.49276181905068
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 151801615,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed151801615_Relative_cutoff_1e-6.json",
+      "regret": 73.49276181905068
+    },
+    {
+      "method": "Full",
+      "seed": 159359747,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed159359747_Full.json",
+      "regret": 58.49666839770045
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 159359747,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed159359747_Relative_cutoff_1e-2.json",
+      "regret": 61.31687109971783
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 159359747,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed159359747_Relative_cutoff_1e-4.json",
+      "regret": 61.030266054174845
+    },
+    {
+      "method": "BBP",
+      "seed": 159359747,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed159359747_BBP.json",
+      "regret": 58.49666839770045
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 159359747,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed159359747_Fixed_rank_10.json",
+      "regret": 61.030266054174845
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 159359747,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed159359747_Fixed_rank_25.json",
+      "regret": 58.49666839770045
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 159359747,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed159359747_Relative_cutoff_1e-5.json",
+      "regret": 58.49666839770045
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 159359747,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed159359747_Relative_cutoff_1e-6.json",
+      "regret": 58.49666839770045
+    },
+    {
+      "method": "Full",
+      "seed": 254786210,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed254786210_Full.json",
+      "regret": 82.90496634553028
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 254786210,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed254786210_Relative_cutoff_1e-2.json",
+      "regret": 75.48131538630416
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 254786210,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed254786210_Relative_cutoff_1e-4.json",
+      "regret": 82.90496634553028
+    },
+    {
+      "method": "BBP",
+      "seed": 254786210,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed254786210_BBP.json",
+      "regret": 82.90496634553028
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 254786210,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed254786210_Fixed_rank_10.json",
+      "regret": 82.90496634553028
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 254786210,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed254786210_Fixed_rank_25.json",
+      "regret": 82.90496634553028
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 254786210,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed254786210_Relative_cutoff_1e-5.json",
+      "regret": 82.90496634553028
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 254786210,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed254786210_Relative_cutoff_1e-6.json",
+      "regret": 82.90496634553028
+    },
+    {
+      "method": "Full",
+      "seed": 280737676,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed280737676_Full.json",
+      "regret": 55.73831477617874
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 280737676,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed280737676_Relative_cutoff_1e-2.json",
+      "regret": 57.12179695119005
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 280737676,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed280737676_Relative_cutoff_1e-4.json",
+      "regret": 57.2391672371337
+    },
+    {
+      "method": "BBP",
+      "seed": 280737676,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed280737676_BBP.json",
+      "regret": 55.73831477617874
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 280737676,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed280737676_Fixed_rank_10.json",
+      "regret": 57.2391672371337
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 280737676,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed280737676_Fixed_rank_25.json",
+      "regret": 55.73831477617874
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 280737676,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed280737676_Relative_cutoff_1e-5.json",
+      "regret": 55.73831477617874
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 280737676,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed280737676_Relative_cutoff_1e-6.json",
+      "regret": 55.73831477617874
+    },
+    {
+      "method": "Full",
+      "seed": 304444453,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed304444453_Full.json",
+      "regret": 58.76192322264744
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 304444453,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed304444453_Relative_cutoff_1e-2.json",
+      "regret": 55.69941513643394
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 304444453,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed304444453_Relative_cutoff_1e-4.json",
+      "regret": 58.82150579382002
+    },
+    {
+      "method": "BBP",
+      "seed": 304444453,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed304444453_BBP.json",
+      "regret": 58.76192322264744
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 304444453,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed304444453_Fixed_rank_10.json",
+      "regret": 64.21568938968683
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 304444453,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed304444453_Fixed_rank_25.json",
+      "regret": 58.76192322264744
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 304444453,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed304444453_Relative_cutoff_1e-5.json",
+      "regret": 58.76192322264744
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 304444453,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed304444453_Relative_cutoff_1e-6.json",
+      "regret": 58.76192322264744
+    },
+    {
+      "method": "Full",
+      "seed": 560889375,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed560889375_Full.json",
+      "regret": 62.30985796910537
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 560889375,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed560889375_Relative_cutoff_1e-2.json",
+      "regret": 61.823166361795295
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 560889375,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed560889375_Relative_cutoff_1e-4.json",
+      "regret": 63.95129280828106
+    },
+    {
+      "method": "BBP",
+      "seed": 560889375,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed560889375_BBP.json",
+      "regret": 62.30985796910537
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 560889375,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed560889375_Fixed_rank_10.json",
+      "regret": 62.5922022829078
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 560889375,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed560889375_Fixed_rank_25.json",
+      "regret": 63.6860051155468
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 560889375,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed560889375_Relative_cutoff_1e-5.json",
+      "regret": 63.6860051155468
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 560889375,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed560889375_Relative_cutoff_1e-6.json",
+      "regret": 62.30985796910537
+    },
+    {
+      "method": "Full",
+      "seed": 666829030,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed666829030_Full.json",
+      "regret": 62.25919292626016
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 666829030,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed666829030_Relative_cutoff_1e-2.json",
+      "regret": 55.76982033409399
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 666829030,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed666829030_Relative_cutoff_1e-4.json",
+      "regret": 62.25919292626016
+    },
+    {
+      "method": "BBP",
+      "seed": 666829030,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed666829030_BBP.json",
+      "regret": 62.25919292626016
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 666829030,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed666829030_Fixed_rank_10.json",
+      "regret": 62.25919292626016
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 666829030,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed666829030_Fixed_rank_25.json",
+      "regret": 62.25919292626016
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 666829030,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed666829030_Relative_cutoff_1e-5.json",
+      "regret": 62.25919292626016
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 666829030,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed666829030_Relative_cutoff_1e-6.json",
+      "regret": 62.25919292626016
+    },
+    {
+      "method": "Full",
+      "seed": 748076223,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed748076223_Full.json",
+      "regret": 73.72912289079915
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 748076223,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed748076223_Relative_cutoff_1e-2.json",
+      "regret": 72.30636072622407
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 748076223,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed748076223_Relative_cutoff_1e-4.json",
+      "regret": 72.57200391949075
+    },
+    {
+      "method": "BBP",
+      "seed": 748076223,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed748076223_BBP.json",
+      "regret": 75.08670064208204
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 748076223,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed748076223_Fixed_rank_10.json",
+      "regret": 72.57200391949075
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 748076223,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed748076223_Fixed_rank_25.json",
+      "regret": 75.08670064208204
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 748076223,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed748076223_Relative_cutoff_1e-5.json",
+      "regret": 75.08670064208204
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 748076223,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed748076223_Relative_cutoff_1e-6.json",
+      "regret": 72.8050329658232
+    },
+    {
+      "method": "Full",
+      "seed": 806884711,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed806884711_Full.json",
+      "regret": 77.68183918206503
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 806884711,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed806884711_Relative_cutoff_1e-2.json",
+      "regret": 78.23773430785724
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 806884711,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed806884711_Relative_cutoff_1e-4.json",
+      "regret": 77.68183918206503
+    },
+    {
+      "method": "BBP",
+      "seed": 806884711,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed806884711_BBP.json",
+      "regret": 77.68183918206503
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 806884711,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed806884711_Fixed_rank_10.json",
+      "regret": 78.9874203129168
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 806884711,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed806884711_Fixed_rank_25.json",
+      "regret": 77.68183918206503
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 806884711,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed806884711_Relative_cutoff_1e-5.json",
+      "regret": 77.68183918206503
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 806884711,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed806884711_Relative_cutoff_1e-6.json",
+      "regret": 77.68183918206503
+    },
+    {
+      "method": "Full",
+      "seed": 954779777,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed954779777_Full.json",
+      "regret": 58.27971723016892
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 954779777,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed954779777_Relative_cutoff_1e-2.json",
+      "regret": 64.56885827545591
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 954779777,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed954779777_Relative_cutoff_1e-4.json",
+      "regret": 58.27971723016892
+    },
+    {
+      "method": "BBP",
+      "seed": 954779777,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed954779777_BBP.json",
+      "regret": 58.27971723016892
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 954779777,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed954779777_Fixed_rank_10.json",
+      "regret": 63.573684953994295
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 954779777,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed954779777_Fixed_rank_25.json",
+      "regret": 58.27971723016892
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 954779777,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed954779777_Relative_cutoff_1e-5.json",
+      "regret": 58.27971723016892
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 954779777,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed954779777_Relative_cutoff_1e-6.json",
+      "regret": 58.27971723016892
+    },
+    {
+      "method": "Full",
+      "seed": 1084613802,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1084613802_Full.json",
+      "regret": 61.938607192217944
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1084613802,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1084613802_Relative_cutoff_1e-2.json",
+      "regret": 62.0033969654057
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 1084613802,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1084613802_Relative_cutoff_1e-4.json",
+      "regret": 59.48455605949112
+    },
+    {
+      "method": "BBP",
+      "seed": 1084613802,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1084613802_BBP.json",
+      "regret": 61.75463990069174
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1084613802,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1084613802_Fixed_rank_10.json",
+      "regret": 60.230888121213944
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 1084613802,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1084613802_Fixed_rank_25.json",
+      "regret": 61.75463990069174
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 1084613802,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1084613802_Relative_cutoff_1e-5.json",
+      "regret": 61.75463990069174
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 1084613802,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1084613802_Relative_cutoff_1e-6.json",
+      "regret": 61.75463990069174
+    },
+    {
+      "method": "Full",
+      "seed": 1390358485,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1390358485_Full.json",
+      "regret": 44.54043365192232
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1390358485,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1390358485_Relative_cutoff_1e-2.json",
+      "regret": 45.930045046620435
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 1390358485,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1390358485_Relative_cutoff_1e-4.json",
+      "regret": 45.304212454215104
+    },
+    {
+      "method": "BBP",
+      "seed": 1390358485,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1390358485_BBP.json",
+      "regret": 44.54043365192232
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1390358485,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1390358485_Fixed_rank_10.json",
+      "regret": 44.54043365192232
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 1390358485,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1390358485_Fixed_rank_25.json",
+      "regret": 44.54043365192232
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 1390358485,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1390358485_Relative_cutoff_1e-5.json",
+      "regret": 44.54043365192232
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 1390358485,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1390358485_Relative_cutoff_1e-6.json",
+      "regret": 44.54043365192232
+    },
+    {
+      "method": "Full",
+      "seed": 1711112905,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1711112905_Full.json",
+      "regret": 48.15009100055834
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1711112905,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1711112905_Relative_cutoff_1e-2.json",
+      "regret": 48.15009100055834
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 1711112905,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1711112905_Relative_cutoff_1e-4.json",
+      "regret": 48.15009100055834
+    },
+    {
+      "method": "BBP",
+      "seed": 1711112905,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1711112905_BBP.json",
+      "regret": 48.15009100055834
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1711112905,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1711112905_Fixed_rank_10.json",
+      "regret": 48.15009100055834
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 1711112905,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1711112905_Fixed_rank_25.json",
+      "regret": 48.15009100055834
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 1711112905,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1711112905_Relative_cutoff_1e-5.json",
+      "regret": 48.15009100055834
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 1711112905,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1711112905_Relative_cutoff_1e-6.json",
+      "regret": 48.15009100055834
+    },
+    {
+      "method": "NN-AGP (m=7)",
+      "seed": 20284363,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed20284363_NN-AGP_m_7.json",
+      "regret": 75.01615268473891
+    },
+    {
+      "method": "GP-UCB (product)",
+      "seed": 20284363,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed20284363_GP-UCB_product.json",
+      "regret": 95.63517915369556
+    },
+    {
+      "method": "GP-UCB (weighted sum)",
+      "seed": 20284363,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed20284363_GP-UCB_weighted_sum.json",
+      "regret": 90.9154411681385
+    },
+    {
+      "method": "NeuralUCB",
+      "seed": 20284363,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed20284363_NeuralUCB.json",
+      "regret": 84.30962018244082
+    },
+    {
+      "method": "NN-UCB",
+      "seed": 20284363,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed20284363_NN-UCB.json",
+      "regret": 94.70202203833911
+    },
+    {
+      "method": "NN-AGP (m=7)",
+      "seed": 151801615,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed151801615_NN-AGP_m_7.json",
+      "regret": 92.12174854803702
+    },
+    {
+      "method": "GP-UCB (product)",
+      "seed": 151801615,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed151801615_GP-UCB_product.json",
+      "regret": 79.69922616890263
+    },
+    {
+      "method": "GP-UCB (weighted sum)",
+      "seed": 151801615,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed151801615_GP-UCB_weighted_sum.json",
+      "regret": 103.64624840869801
+    },
+    {
+      "method": "NeuralUCB",
+      "seed": 151801615,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed151801615_NeuralUCB.json",
+      "regret": 108.19974608777306
+    },
+    {
+      "method": "NN-UCB",
+      "seed": 151801615,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed151801615_NN-UCB.json",
+      "regret": 97.35452199848794
+    },
+    {
+      "method": "NN-AGP (m=7)",
+      "seed": 159359747,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed159359747_NN-AGP_m_7.json",
+      "regret": 59.289207866935136
+    },
+    {
+      "method": "GP-UCB (product)",
+      "seed": 159359747,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed159359747_GP-UCB_product.json",
+      "regret": 91.46010706072077
+    },
+    {
+      "method": "GP-UCB (weighted sum)",
+      "seed": 159359747,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed159359747_GP-UCB_weighted_sum.json",
+      "regret": 93.1712438958188
+    },
+    {
+      "method": "NeuralUCB",
+      "seed": 159359747,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed159359747_NeuralUCB.json",
+      "regret": 102.16086353333709
+    },
+    {
+      "method": "NN-UCB",
+      "seed": 159359747,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed159359747_NN-UCB.json",
+      "regret": 100.85496373490372
+    },
+    {
+      "method": "NN-AGP (m=7)",
+      "seed": 254786210,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed254786210_NN-AGP_m_7.json",
+      "regret": 83.96570060055929
+    },
+    {
+      "method": "GP-UCB (product)",
+      "seed": 254786210,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed254786210_GP-UCB_product.json",
+      "regret": 76.01496526540515
+    },
+    {
+      "method": "GP-UCB (weighted sum)",
+      "seed": 254786210,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed254786210_GP-UCB_weighted_sum.json",
+      "regret": 90.78507366262748
+    },
+    {
+      "method": "NeuralUCB",
+      "seed": 254786210,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed254786210_NeuralUCB.json",
+      "regret": 95.55721288662421
+    },
+    {
+      "method": "NN-UCB",
+      "seed": 254786210,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed254786210_NN-UCB.json",
+      "regret": 91.58942447728029
+    },
+    {
+      "method": "NN-AGP (m=7)",
+      "seed": 280737676,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed280737676_NN-AGP_m_7.json",
+      "regret": 74.8147666179832
+    },
+    {
+      "method": "GP-UCB (product)",
+      "seed": 280737676,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed280737676_GP-UCB_product.json",
+      "regret": 68.78389839111057
+    },
+    {
+      "method": "GP-UCB (weighted sum)",
+      "seed": 280737676,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed280737676_GP-UCB_weighted_sum.json",
+      "regret": 69.7925933549517
+    },
+    {
+      "method": "NeuralUCB",
+      "seed": 280737676,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed280737676_NeuralUCB.json",
+      "regret": 90.14833066330655
+    },
+    {
+      "method": "NN-UCB",
+      "seed": 280737676,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed280737676_NN-UCB.json",
+      "regret": 92.21157222229581
+    },
+    {
+      "method": "NN-AGP (m=7)",
+      "seed": 304444453,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed304444453_NN-AGP_m_7.json",
+      "regret": 44.70624463715269
+    },
+    {
+      "method": "GP-UCB (product)",
+      "seed": 304444453,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed304444453_GP-UCB_product.json",
+      "regret": 81.67697826131224
+    },
+    {
+      "method": "GP-UCB (weighted sum)",
+      "seed": 304444453,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed304444453_GP-UCB_weighted_sum.json",
+      "regret": 91.56772524579577
+    },
+    {
+      "method": "NeuralUCB",
+      "seed": 304444453,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed304444453_NeuralUCB.json",
+      "regret": 107.49941152743635
+    },
+    {
+      "method": "NN-UCB",
+      "seed": 304444453,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed304444453_NN-UCB.json",
+      "regret": 107.78458381106365
+    },
+    {
+      "method": "NN-AGP (m=7)",
+      "seed": 560889375,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed560889375_NN-AGP_m_7.json",
+      "regret": 104.18915096828682
+    },
+    {
+      "method": "GP-UCB (product)",
+      "seed": 560889375,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed560889375_GP-UCB_product.json",
+      "regret": 76.57931326693348
+    },
+    {
+      "method": "GP-UCB (weighted sum)",
+      "seed": 560889375,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed560889375_GP-UCB_weighted_sum.json",
+      "regret": 96.12949166558279
+    },
+    {
+      "method": "NeuralUCB",
+      "seed": 560889375,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed560889375_NeuralUCB.json",
+      "regret": 95.92642530217164
+    },
+    {
+      "method": "NN-UCB",
+      "seed": 560889375,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed560889375_NN-UCB.json",
+      "regret": 90.85856142024225
+    },
+    {
+      "method": "NN-AGP (m=7)",
+      "seed": 666829030,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed666829030_NN-AGP_m_7.json",
+      "regret": 96.75974677235575
+    },
+    {
+      "method": "GP-UCB (product)",
+      "seed": 666829030,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed666829030_GP-UCB_product.json",
+      "regret": 73.21727321730722
+    },
+    {
+      "method": "GP-UCB (weighted sum)",
+      "seed": 666829030,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed666829030_GP-UCB_weighted_sum.json",
+      "regret": 96.80961699274624
+    },
+    {
+      "method": "NeuralUCB",
+      "seed": 666829030,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed666829030_NeuralUCB.json",
+      "regret": 97.5108636939823
+    },
+    {
+      "method": "NN-UCB",
+      "seed": 666829030,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed666829030_NN-UCB.json",
+      "regret": 90.74666422140065
+    },
+    {
+      "method": "NN-AGP (m=7)",
+      "seed": 748076223,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed748076223_NN-AGP_m_7.json",
+      "regret": 118.31705547400213
+    },
+    {
+      "method": "GP-UCB (product)",
+      "seed": 748076223,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed748076223_GP-UCB_product.json",
+      "regret": 103.94695932857199
+    },
+    {
+      "method": "GP-UCB (weighted sum)",
+      "seed": 748076223,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed748076223_GP-UCB_weighted_sum.json",
+      "regret": 100.4583609790874
+    },
+    {
+      "method": "NeuralUCB",
+      "seed": 748076223,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed748076223_NeuralUCB.json",
+      "regret": 117.48537241730858
+    },
+    {
+      "method": "NN-UCB",
+      "seed": 748076223,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed748076223_NN-UCB.json",
+      "regret": 115.97507994731272
+    },
+    {
+      "method": "NN-AGP (m=7)",
+      "seed": 806884711,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed806884711_NN-AGP_m_7.json",
+      "regret": 76.22180207122324
+    },
+    {
+      "method": "GP-UCB (product)",
+      "seed": 806884711,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed806884711_GP-UCB_product.json",
+      "regret": 74.00974495464281
+    },
+    {
+      "method": "GP-UCB (weighted sum)",
+      "seed": 806884711,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed806884711_GP-UCB_weighted_sum.json",
+      "regret": 89.90936105764872
+    },
+    {
+      "method": "NeuralUCB",
+      "seed": 806884711,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed806884711_NeuralUCB.json",
+      "regret": 101.96411409639296
+    },
+    {
+      "method": "NN-UCB",
+      "seed": 806884711,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed806884711_NN-UCB.json",
+      "regret": 103.33848193943155
+    },
+    {
+      "method": "NN-AGP (m=7)",
+      "seed": 954779777,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed954779777_NN-AGP_m_7.json",
+      "regret": 68.74368781705235
+    },
+    {
+      "method": "GP-UCB (product)",
+      "seed": 954779777,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed954779777_GP-UCB_product.json",
+      "regret": 70.70624806738107
+    },
+    {
+      "method": "GP-UCB (weighted sum)",
+      "seed": 954779777,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed954779777_GP-UCB_weighted_sum.json",
+      "regret": 73.3721138777926
+    },
+    {
+      "method": "NeuralUCB",
+      "seed": 954779777,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed954779777_NeuralUCB.json",
+      "regret": 76.18744352937794
+    },
+    {
+      "method": "NN-UCB",
+      "seed": 954779777,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed954779777_NN-UCB.json",
+      "regret": 74.59907092264616
+    },
+    {
+      "method": "NN-AGP (m=7)",
+      "seed": 1084613802,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1084613802_NN-AGP_m_7.json",
+      "regret": 83.78652308633559
+    },
+    {
+      "method": "GP-UCB (product)",
+      "seed": 1084613802,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1084613802_GP-UCB_product.json",
+      "regret": 105.3737804904571
+    },
+    {
+      "method": "GP-UCB (weighted sum)",
+      "seed": 1084613802,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1084613802_GP-UCB_weighted_sum.json",
+      "regret": 96.1511623122762
+    },
+    {
+      "method": "NeuralUCB",
+      "seed": 1084613802,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1084613802_NeuralUCB.json",
+      "regret": 114.18721768898783
+    },
+    {
+      "method": "NN-UCB",
+      "seed": 1084613802,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1084613802_NN-UCB.json",
+      "regret": 111.77746937950874
+    },
+    {
+      "method": "NN-AGP (m=7)",
+      "seed": 1390358485,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1390358485_NN-AGP_m_7.json",
+      "regret": 49.97809235610658
+    },
+    {
+      "method": "GP-UCB (product)",
+      "seed": 1390358485,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1390358485_GP-UCB_product.json",
+      "regret": 87.90991069633881
+    },
+    {
+      "method": "GP-UCB (weighted sum)",
+      "seed": 1390358485,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1390358485_GP-UCB_weighted_sum.json",
+      "regret": 81.53382154808264
+    },
+    {
+      "method": "NeuralUCB",
+      "seed": 1390358485,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1390358485_NeuralUCB.json",
+      "regret": 79.10747391465486
+    },
+    {
+      "method": "NN-UCB",
+      "seed": 1390358485,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1390358485_NN-UCB.json",
+      "regret": 78.95443336773322
+    },
+    {
+      "method": "NN-AGP (m=7)",
+      "seed": 1711112905,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1711112905_NN-AGP_m_7.json",
+      "regret": 38.94067578984409
+    },
+    {
+      "method": "GP-UCB (product)",
+      "seed": 1711112905,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1711112905_GP-UCB_product.json",
+      "regret": 86.59692566837634
+    },
+    {
+      "method": "GP-UCB (weighted sum)",
+      "seed": 1711112905,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1711112905_GP-UCB_weighted_sum.json",
+      "regret": 74.47211320089703
+    },
+    {
+      "method": "NeuralUCB",
+      "seed": 1711112905,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1711112905_NeuralUCB.json",
+      "regret": 66.76910944598575
+    },
+    {
+      "method": "NN-UCB",
+      "seed": 1711112905,
+      "configuration": "config1",
+      "result_file": "Exp_2/EXP029/results/seed1711112905_NN-UCB.json",
+      "regret": 67.75476168893913
+    }
+  ]
+}

@@ -1,5 +1,4 @@
 {
-  "source": "/Users/rknza/research/bandits/offline/bbp_v4_match_2026-10-13/crossed_m128",
   "repetitions": 400,
   "seed": 97013,
   "sizes": [
@@ -38,11 +37,6 @@
     128.0739929814161,
     508.11962041236694
   ],
-  "input_hashes": {
-    "/Users/rknza/research/bandits/offline/bbp_v4_match_2026-10-13/crossed_m128/checkpoint.pt": "36cdc3368b6cf2a0c2c050c2bb37f70cce971f910e1473baccc9dcc3044beef9",
-    "/Users/rknza/research/bandits/offline/bbp_v4_match_2026-10-13/crossed_m128/calibration.npz": "396e8b0cf4c8b2a531eb3b93dc4e8bb7050de4190111cde079c79e8f9e729718",
-    "/Users/rknza/research/bandits/code/agents.py": "50223bc1f0f4eba987dc4b01256b59c1b58ef5e7f0dafa004d28670b45a5063c"
-  },
   "statistic": "Unmodified trained h=g(theta)B; raw H.T@H/n on fresh IID contexts",
   "calibration": "Independent large Monte Carlo calibration; fixed raw J and directions before fresh tests",
   "controls": "Finite Gaussian with isotropic tail; finite Gaussian with actual mean and covariance. Diagnostic only",
