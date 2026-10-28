@@ -13,7 +13,7 @@ for name in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS",
              "VECLIB_MAXIMUM_THREADS", "NUMEXPR_NUM_THREADS"):
     os.environ[name] = "1"
 sys.dont_write_bytecode = True
-ROOT = Path(__file__).resolve().parent / "paper_experiments"
+ROOT = Path(__file__).resolve().parents[1] / "experiments"
 ONLINE = ["online.weak", "online.balanced", "online.kuairec", "online.smooth12",
           "online.smooth3", "online.smooth3_128"] + [f"online.exp{i:02d}" for i in range(1, 11)]
 NAMES = dict(zip(ONLINE, ["Weak", "Balanced", "KuaiRec", "Smooth 12", "Smooth 3",
@@ -253,9 +253,7 @@ def tables(experiments, output):
     ranks = [summary[key]["dimension"] for key in ONLINE[:6]]
     reductions = [100 * (1 - summary[key]["bbp_full"][0]) for key in ONLINE[:6]]
     macros = dict(RankRange=f"{min(ranks):.0f}--{max(ranks):.0f}",
-                  RegretReductionRange=f"{min(reductions):.1f}--{max(reductions):.1f}",
-                  WeakSeeds=summary[ONLINE[0]]["n"], BalancedSeeds=summary[ONLINE[1]]["n"],
-                  KuaiSeeds=summary[ONLINE[2]]["n"])
+                  RegretReductionRange=f"{min(reductions):.1f}--{max(reductions):.1f}")
     (output / "results.tex").write_text("".join(f"\\newcommand{{\\{k}}}{{{v}}}\n"
                                               for k, v in macros.items()))
     return dict(online=summary, physical=physical_stats, macros=macros)

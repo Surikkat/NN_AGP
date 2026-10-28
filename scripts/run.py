@@ -13,8 +13,8 @@ import subprocess
 import sys
 import time
 
-ROOT = Path(__file__).resolve().parent
-DATA = ROOT / 'paper_experiments'
+ROOT = Path(__file__).resolve().parents[1]
+DATA = ROOT / 'experiments'
 BASELINES = ('NN-AGP (m=7)', 'GP-UCB (product)', 'GP-UCB (weighted sum)', 'NeuralUCB', 'NN-UCB')
 
 
@@ -34,19 +34,19 @@ def configuration(plan, record):
 
 def environment(plan, cfg, seed):
     import numpy as np
-    import paper_envs
+    from scripts import environments
     fresh = plan['environment'] in ('Weak', 'Balanced')
     if fresh:
         spec = plan['settings'].get('reward_specification') or dict(
             baseline=12., weak=.25 if plan['environment']=='Weak' else 1., noise=.25,
             d_theta=16, nuisance_correlation=0., actions=16)
-        env = paper_envs.WeakBalancedEnv(spec, seed, plan['horizon'])
+        env = environments.WeakBalancedEnv(spec, seed, plan['horizon'])
     else:
         settings = copy.deepcopy(cfg)
         nuisance = plan['paper_key']=='online.smooth3_128'
         if nuisance:
             settings['env']['d_theta'] = 5
-        env = paper_envs.make_env(settings, seed)
+        env = environments.make_env(settings, seed)
         if nuisance:
             extra = np.random.default_rng([seed,77091]).standard_normal((cfg['T']+1,123))
             env['theta'] = np.column_stack((env['theta'], extra))
@@ -116,7 +116,7 @@ def checkpoint(model):
 def train(plan, record):
     import numpy as np
     import torch
-    import paper_envs
+    from scripts import environments
     import resource
     cfg = configuration(plan,record)
     method, seed = record['method'],record['seed']
@@ -129,7 +129,7 @@ def train(plan, record):
         if fresh:
             theta,X,rewards,noise = env.theta[t-1],env.X,env.rewards[t-1],float(env.noise[t-1])
         else:
-            theta,X,rewards = paper_envs.step(env,t)
+            theta,X,rewards = environments.step(env,t)
             noise = float(env['eps'][t])
         if t==1 and method in ('GP-UCB (product)','GP-UCB (weighted sum)'):
             order = [m for m in np.roll(BASELINES,(1+seed)%len(BASELINES))
@@ -208,9 +208,9 @@ def main():
             parser.error('Use --all with --output only.')
         for plan in plans.values():
             for method,seed in jobs(plan):
-                subprocess.run([sys.executable,'-B',str(Path(__file__)),'--experiment',plan['id'],
+                subprocess.run([sys.executable,'-B','-m','scripts.run','--experiment',plan['id'],
                     '--method',method,'--seed',str(seed),
-                    '--output',str(output/plan['folder']/'results')],check=True)
+                    '--output',str(output/plan['folder']/'results')],check=True,cwd=ROOT)
         return
     if args.experiment not in plans or args.seed is None:
         parser.error('Choose --experiment, --method and --seed from --list.')
@@ -224,16 +224,16 @@ def main():
     import torch
     torch.set_num_threads(1);torch.set_num_interop_threads(1)
     if plan.get('kind')=='spectral_diagnostic':
-        import paper_bbp
+        from scripts import bbp
         if args.from_checkpoint:
             source = DATA/plan['folder']/'results'
             for name in ('checkpoint.pt','calibration.npz'):
                 if (source/name).resolve() != output/name:
                     shutil.copy2(source/name,output/name)
         else:
-            if not paper_bbp.train(output)['geometry_pass']:
+            if not bbp.train(output)['geometry_pass']:
                 raise RuntimeError('BBP calibration failed.')
-        paper_bbp.sample(output)
+        bbp.sample(output)
     else:
         record = next(r for r in plan['runs'] if r['method']==method and r['seed']==args.seed)
         result,model = train(plan,record)
