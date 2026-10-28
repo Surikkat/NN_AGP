@@ -9,7 +9,6 @@ import numpy as np
 
 RHO, SD_ETA = 0.9, 0.1
 SIG = SD_ETA / math.sqrt(1 - RHO**2)
-NNZ = {"kdd5": 2, "draft2": 5}
 DATA = Path(__file__).resolve().parent / "datasets"
 KUAIREC = "https://zenodo.org/records/18164998/files/KuaiRec.zip"
 
@@ -69,9 +68,9 @@ def haar(rng, n):
 
 
 def rows(rng, d, J_s, J_x, sparse=None):
-    """Signal and extra feature rows Q, plus their Hermite degree D (env spec §4)."""
+    """Signal and extra feature rows, with their Hermite degree."""
     if sparse:
-        s, Q = NNZ[sparse], np.zeros((J_s, d))
+        s, Q = sparse, np.zeros((J_s, d))
         perm = rng.permutation(d)
         for j in range(J_s):
             if s * J_s <= d:
@@ -266,7 +265,7 @@ def step(env, t):
     """Context, arm pool, and noiseless rewards at round t; noise is env['eps'][t]."""
     if env.get("data") == "kuairec":
         return env["theta"][t], env["X"], env["F"][env["users"][t]]
-    if env.get("kind") == "svd":
+    if env.get("kind") == "smooth":
         return env["theta"][t], env["X"], env["F"][t]
     a, b, n, Jn = env["a"][t], env["b"][t], env["J"] + env["J_sp"], env["Jn"]
     z = b @ pmat(env, t).T @ a[:n]
