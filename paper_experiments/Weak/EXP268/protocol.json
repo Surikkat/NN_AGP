@@ -2,7 +2,7 @@
   "id": "EXP268",
   "environment": "Weak",
   "paper_key": "physical_fold300.weak",
-  "title": "Physical output-layer reduction at round 300: weak",
+  "title": "Weak / physical compression at round 300",
   "horizon": 800,
   "paper_refs": [
     "tab:network-cost",

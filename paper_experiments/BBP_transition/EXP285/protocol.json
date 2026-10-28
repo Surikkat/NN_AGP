@@ -6,7 +6,8 @@
   "horizon": null,
   "paper_refs": [
     "fig:joint-bbp",
-    "app:bbp-experiment"
+    "app:bbp-experiment",
+    "fig:bbp-selector"
   ],
   "folder": "BBP_transition/EXP285",
   "settings": {
@@ -79,6 +80,20 @@
       "sha256": "262208ab8e67a213a8883a616d5c6f9bc99f772554331f571b2e766bea9345f3",
       "bytes": 1705,
       "role": "spectral_protocol"
+    },
+    {
+      "file": "BBP_transition/EXP285/results/selector_results.json",
+      "original_source": "offline/bbp_selector_check/results.json",
+      "sha256": "1a70187f6601172a98f2704a1b5f33b4f1c2d94a39b3d938647e3e624ba6bd59",
+      "bytes": 36913,
+      "role": "selector_results"
+    },
+    {
+      "file": "BBP_transition/EXP285/results/selector_samples.npz",
+      "original_source": "offline/bbp_selector_check/samples.npz",
+      "sha256": "e627ff21ff07df1eaec66b23299c712a7a14f59c2d7524737e719b30fbfacdec",
+      "bytes": 7066115,
+      "role": "selector_samples"
     }
   ],
   "runs": [],
@@ -86,9 +101,16 @@
   "plots": [
     {
       "file": "BBP_transition/EXP285/plots/bbp_phases.pdf",
-      "original_source": "new_paper/figures/bbp_phases.pdf",
-      "sha256": "2e53d0f926a8d65e4c476bf4dc77f2c4227d0a3b0f73a97d78bb7108124aa4b4",
-      "bytes": 53156,
+      "original_source": "nn_agp_pr/paper_experiments/paper/figures/bbp_phases.pdf",
+      "sha256": "84cf0564df320c665ee2c2aa795e6c26107f6d0a085e912151a20e942f807d13",
+      "bytes": 30479,
+      "role": "final_manuscript_figure"
+    },
+    {
+      "file": "BBP_transition/EXP285/plots/bbp_selector.pdf",
+      "original_source": "nn_agp_pr/paper_experiments/paper/figures/bbp_selector.pdf",
+      "sha256": "9b2c04d2f9c82115045aa24008389237e90549b4f40d91fecbefc17f5807df16",
+      "bytes": 21158,
       "role": "final_manuscript_figure"
     }
   ],

@@ -337,7 +337,7 @@ def sample(output):
     out = output / "classical_transition"
     out.mkdir(exist_ok=True)
     state = torch.load(output/"checkpoint.pt", weights_only=False)
-    agent = NN_AGP_UCB_Adaptive.from_config(state["config"], state["seed"], "Full")
+    agent = NN_AGP_UCB_Adaptive.from_config(state["config"], state["seed"], "BBP", calibration="fresh")
     agent.encoder.net.load_state_dict(state["g"])
     with torch.no_grad():
         agent.B.copy_(state["B"])
@@ -376,6 +376,8 @@ def sample(output):
         intervals="80% Monte Carlo confidence for means, conditional on this learned checkpoint")
     (out/"protocol.json").write_text(json.dumps(protocol, indent=2)+"\n")
     data = {kind: {n: [] for n in sizes} for kind in ("actual", "classical_Gaussian", "measured_Gaussian")}
+    selector = {key: np.zeros((len(sizes), REPS)) for key in
+                ("threshold", "support_dimension", "rank", "background", "raw_count")}
     chunk = min(CHUNK, max(1, 256//M))
     for start in range(0, REPS, chunk):
         count = min(chunk, REPS-start)
@@ -385,12 +387,23 @@ def sample(output):
             flat = z.reshape(-1, M)
             H = np.concatenate([agent.features(f64(sd*flat[i:i+4096])).numpy()
                                 for i in range(0, len(flat), 4096)]).reshape(z.shape)
+        if not agent.thetas:
+            # Fresh selection reads history only for an unused relative-rank diagnostic.
+            agent.thetas = [f64(sd*flat[0])]
         control_z = rng.standard_normal(z.shape)
         classic = control_z @ classical_root.T
         measured = mean+control_z @ measured_root.T
-        for n in sizes:
+        for j, n in enumerate(sizes):
             for name, features in (("actual", H), ("classical_Gaussian", classic), ("measured_Gaussian", measured)):
                 data[name][n].append(measure(features, n, targets))
+            with torch.no_grad():
+                for k in range(count):
+                    agent._support_projection(H[k, :n], n)
+                    row = agent.spectral_history.pop()
+                    for key, source_key in (("threshold", "edge"), ("support_dimension", "support_dimension"),
+                                            ("rank", "rank"), ("background", "sigma_background")):
+                        selector[key][j, start+k] = row[source_key]
+                    selector["raw_count"][j, start+k] = np.count_nonzero(np.asarray(row["eigenvalues"]) > row["edge"])
         if (start+count)%100==0:
             print(f"Fresh repetitions {start+count}/{REPS}", flush=True)
     rows, arrays = [], {}
@@ -410,5 +423,12 @@ def sample(output):
     result = dict(protocol=protocol, observations=rows,
                   inputs_unchanged=all(digest(inputs[name])==sha for name,sha in hashes.items()))
     (out/"results.json").write_text(json.dumps(result, indent=2)+"\n")
+    np.savez_compressed(out/"selector_samples.npz", sizes=np.array(sizes), **selector)
+    write_json(out/"selector_results.json", dict(
+        protocol=dict(repetitions=REPS, sizes=sizes, seed=SAMPLE_SEED, nominal_width=agent.m_max,
+                      reference_background=background,
+                      selector="NN_AGP_UCB_Adaptive._support_projection, calibration_mode=fresh, BBP"),
+        observations=[dict(n=n, **{key: summary(value[j]) for key, value in selector.items()})
+                      for j, n in enumerate(sizes)]))
     print(json.dumps(dict(ncrit=critical.tolist(), inputs_unchanged=result["inputs_unchanged"], last=rows[-1])), flush=True)
     return result

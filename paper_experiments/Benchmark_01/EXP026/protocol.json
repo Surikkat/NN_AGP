@@ -2,7 +2,7 @@
   "id": "EXP026",
   "environment": "Benchmark_01",
   "paper_key": "legacy.exp01.relative_fixed",
-  "title": "Exp. 1: relative cutoff 0.01 and fixed decision ranks 3/5/10",
+  "title": "Exp. 1 / Relative cutoff 1e-2 / fixed ranks 3, 5, 10",
   "horizon": 200,
   "paper_refs": [
     "tab:direct-control",

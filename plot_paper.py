@@ -17,26 +17,41 @@ sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parent / "paper_experiments"
 ONLINE = ["online.weak", "online.balanced", "online.kuairec600", "online.rank12",
           "online.rank3", "online.rank3_d128"] + [f"v4.exp{i:02d}" for i in range(1, 11)]
-NAMES = dict(zip(ONLINE, ["Weak", "Balanced", "KuaiRec", "Rank 12", "Rank 3",
-             "Rank 3, 128 inputs"] + [f"Exp. {i}" for i in range(1, 11)]))
-TITLES = ["Weak", "Balanced", "KuaiRec 100 users (T=600)", "Rank 12 (noise 0.5)",
-          "Rank 3 (noise 0.5)", "Rank 3, 128 inputs (noise 0.5)",
-          "Exp 1: Dominant factors", "Exp 2: Rank 3", "Exp 3: Rank 10 with weak factors",
-          "Exp 4: Nonlinear rewards", "Exp 5: Heavy-tailed noise", "Exp 6: Growing rank",
-          "Exp 7: Near-cutoff nuisance", "Exp 8: Rank spike", "Exp 9: Gradual rotation",
-          "Exp 10: Abrupt rotation"]
+NAMES = dict(zip(ONLINE, ["Weak", "Balanced", "KuaiRec", "Smooth 12", "Smooth 3",
+             "Smooth 3 (128 inputs)"] + [f"Exp. {i}" for i in range(1, 11)]))
+TITLES = [NAMES[key] for key in ONLINE]
 COLOR = dict(Full="#555555", BBP="#0072B2", Relative="#CC79A7", Small="#D55E00",
              FixedEps1e6="#009E73", Eps1e5="#999999", Fixed10="#7A5195", Fixed25="#A0782C")
-LABEL = dict(Full="Full", BBP="BBP", Relative=r"$\varepsilon_{\mathrm{prune}}=10^{-2}$",
-             Small=r"$\varepsilon_{\mathrm{prune}}=10^{-4}$",
-             Eps1e5=r"$\varepsilon_{\mathrm{prune}}=10^{-5}$",
-             FixedEps1e6=r"$\varepsilon_{\mathrm{prune}}=10^{-6}$",
-             Fixed10="Rank 10", Fixed25="Rank 25")
+
+
+def environment_name(plan):
+    key = plan["paper_key"]
+    if key.startswith("legacy.exp"):
+        key = "v4." + key.split(".")[1]
+    if key in NAMES:
+        return NAMES[key]
+    return {"Weak": "Weak", "Balanced": "Balanced",
+            "KuaiRec_100_users": "KuaiRec", "KuaiRec_10_users": "KuaiRec"}.get(
+                plan["environment"], plan.get("title", plan["environment"]))
+
+
+def method_name(method, plain=False):
+    exponent = {"Relative": 2, "Small": 4, "Eps1e5": 5, "FixedEps1e6": 6}.get(method)
+    if exponent is not None:
+        return (f"Relative cutoff 1e-{exponent}" if plain else
+                rf"Relative cutoff $\varepsilon_{{\mathrm{{prune}}}}=10^{{-{exponent}}}$")
+    return {"Full": "Full", "BBP": "BBP", "Fixed3": "Fixed rank 3",
+            "Fixed5": "Fixed rank 5", "Fixed10": "Fixed rank 10", "Fixed25": "Fixed rank 25",
+            "Fixed": "NN-AGP (m=7)", "GP mult": "GP-UCB (product)",
+            "GP add": "GP-UCB (weighted sum)", "NeuralUCB": "NeuralUCB", "NN-UCB": "NN-UCB",
+            "Late": "BBP + physical compression"}.get(method, method)
+
+
+LABEL = {method: method_name(method) for method in COLOR}
 STYLE = {"BBP": "-", "Small": "--", "FixedEps1e6": "-.", "Fixed10": ":",
          "Fixed25": (0, (5, 2)), "Relative": (0, (1, 1)), "Eps1e5": (0, (5, 1, 1, 1))}
 BASELINES = ("Fixed", "GP mult", "GP add", "NeuralUCB", "NN-UCB")
-BASELINE_LABELS = ("Fixed NN-AGP ($m=7$)", "GP-UCB multiplicative",
-                   "GP-UCB weighted-additive", "NeuralUCB", "NN-UCB")
+BASELINE_LABELS = tuple(method_name(method) for method in BASELINES)
 
 
 @lru_cache(maxsize=128)
@@ -172,24 +187,44 @@ def tables(experiments, output):
         "@{}lrrr@{}", r"Task & Parameters & Wall time & Regret",
         [[name, *[f"{physical_stats[name][m][0]:.3f}" for m in ("parameters", "wall", "regret")]]
          for name in physical_stats])
-    descriptions = ["Five dominant factors and 95 weak components", "Rank 3 with separated eigenvalues",
-        "Rank 10 with 40 weak components", r"$\tanh$ of a rank-8 bilinear core",
-        "Sparse rank-5 factors and heavy-tailed noise", "Rank grows from 3 to 8",
-        "Nuisance directions near the cutoff", r"Transient rank burst $5\to15\to5$",
-        "Slowly rotating rank-5 subspace", "Abrupt rank-5 subspace rotation"]
-    add("tab:environments-direct", "Synthetic environments. The nominal latent width is 100.",
-        "@{}cp{10.4cm}@{}", "Exp & Description", list(enumerate(descriptions, 1)))
-    settings = []
-    for key in ONLINE[:6]:
-        e = experiments[key]
-        cfg = next(c for c in e["plan"]["configurations"].values() if "env" in c)
-        dims = cfg["env"]
-        settings.append([NAMES[key], f"$({dims['d_theta']},{dims['d_x']})$",
-            dims.get("n_actions", 16 if key in ONLINE[:2] else 200),
-            e["plan"]["horizon"], "Fresh" if key in ONLINE[:2] else "History"])
-    settings.append(["Exp. 1--10", "$(10,5)$", 20, 200, "History"])
-    add("tab:online-protocol", "Online evaluation settings.", "@{}lrrrl@{}",
-        "Task & Inputs (context, action) & Actions & Rounds & Calibration", settings)
+    environments = [
+        ['Weak', '$a=0.25$'],
+        ['Balanced', '$a=1$'],
+        ['KuaiRec', '100-user catalogue'],
+        ['Smooth 12', '$r=12$'],
+        ['Smooth 3', '$r=3$'],
+        ['Smooth 3 (128 inputs)',
+         '$r=3$; append 123 independent standard Gaussian coordinates each round, ignored by the reward'],
+        ['Exp. 1', 'Five base factors and 95 weak factors with $s_j^2=10^{-4}$'],
+        ['Exp. 2',
+         'Three factors with $s_j^2=(1,0.5,0.2)$; retain each context coordinate independently with probability $0.1$'],
+        ['Exp. 3', 'Ten base factors and 40 weak factors with $s_j^2\\sim\\mathrm{Uniform}(0,0.005)$, drawn once'],
+        ['Exp. 4', 'Eight factors; apply $\\tanh$ to the sum'],
+        ['Exp. 5',
+         'Five linear factors with two nonzero Gaussian coefficients per loading, normalized to unit norm. Context supports are disjoint random pairs; action loading $j$ uses coordinate $j$ and one uniformly chosen different coordinate'],
+        ['Exp. 6', 'Eight available factors; active counts $3,4,5,6,7,8$ from rounds $1,40,80,120,160,200$'],
+        ['Exp. 7',
+         'Ten jointly generated factors: five geometric squared weights and five with $s_{6+k}^2(t)=0.01[1+0.5\\sin(2\\pi(t/20+k/5))]$, $k=0,\\ldots,4$'],
+        ['Exp. 8',
+         'Fifteen available factors; first five active at rounds 1--80, all fifteen at 81--120, first five at 121--200'],
+        ['Exp. 9', 'Five factors; $\\varphi_t=0.02t$'],
+        ['Exp. 10', 'Five factors; angle zero through round 100 and $\\pi/4$ afterwards'],
+    ]
+    add("tab:environments-direct", "Online environments and reward parameters.",
+        "@{}p{3.2cm}p{12cm}@{}", "Environment & Reward parameters or variation", environments)
+    settings = [
+        ['Weak', '$(16,1)$', '16', '800', '$N(0,0.25^2)$', 'Fresh'],
+        ['Balanced', '$(16,1)$', '16', '800', '$N(0,0.25^2)$', 'Fresh'],
+        ['KuaiRec', '$(20,20)$', '200', '600', '$N(0,\\sigma_K^2)$', 'History'],
+        ['Smooth 12', '$(5,5)$', '40', '400', '$N(0,0.5^2)$', 'History'],
+        ['Smooth 3', '$(5,5)$', '40', '400', '$N(0,0.5^2)$', 'History'],
+        ['Smooth 3 (128 inputs)', '$(128,5)$', '40', '400', '$N(0,0.5^2)$', 'History'],
+        ['Exp. 1--4, 6--10', '$(10,5)$', '20', '200', '$N(0,0.1^2)$', 'History'],
+        ['Exp. 5', '$(10,5)$', '20', '200', '$0.1t_3$', 'History'],
+    ]
+    add("tab:online-protocol",
+        r"Online evaluation settings. Noise is additive and independent. $t_3$ denotes a Student random variable with three degrees of freedom. Fresh calibration uses $n=\max(128,t)$ independent unlabeled contexts; history calibration uses the $t$ recorded contexts.",
+        "@{}lrrrll@{}", r"Task & Inputs $(d_\theta,d_x)$ & Actions & Rounds & Noise & Calibration", settings)
     main, controls = [], []
     for key in ONLINE:
         e = experiments[key]
@@ -213,15 +248,16 @@ def tables(experiments, output):
     add("tab:bbp-results", "BBP versus Full on paired seeds. Ratios of mean regret with 95\\% paired bootstrap intervals.",
         "@{}lrrrrl@{}", "Task & Seeds & Full & BBP & GP dimension & BBP/Full", main)
     add("tab:bbp-controls", "Change in mean cumulative regret of BBP relative to each control, in percent.",
-        "@{}lrrrrrrr@{}", r"Task & Full & Rank 10 & Rank 25 & $10^{-2}$ & $10^{-4}$ & $10^{-5}$ & $10^{-6}$", controls)
+        "@{}lrrrrrrr@{}", "Task & " + " & ".join(r"\shortstack{" + method_name(m, plain=True).replace(
+            " rank ", r" rank\\").replace(" cutoff ", r"\\cutoff\\") + "}" for m in
+            ("Full", "Fixed10", "Fixed25", "Relative", "Small", "Eps1e5", "FixedEps1e6")), controls)
     detail = []
     for metric, label in (("parameters", "Parameters"), ("wall", "Wall time"),
-                          ("cpu", "CPU time"), ("regret", "Regret"), ("rss", "Peak RSS")):
-        detail.append([label, "Ratio", *[f"{v[metric][0]:.3f}" for v in physical_stats.values()]])
-        detail.append(["", r"95\% interval", *[f"[{v[metric][1]:.3f}, {v[metric][2]:.3f}]"
-                                                for v in physical_stats.values()]])
+                          ("cpu", "CPU time"), ("regret", "Regret")):
+        detail.append([label, *[f"{v[metric][0]:.3f} [{v[metric][1]:.3f}, {v[metric][2]:.3f}]"
+                                for v in physical_stats.values()]])
     add("tab:network-cost-detail", "Output-layer reduction relative to BBP with the full encoder. Geometric mean ratios and 95\\% paired t intervals in log space.",
-        "@{}llrrr@{}", "Quantity & & Weak & Balanced & KuaiRec", detail)
+        "@{}lrrr@{}", "Quantity & Weak & Balanced & KuaiRec", detail)
     relative = []
     fixed = {k: [] for k in (3, 5, 10)}
     for i in range(1, 11):
@@ -240,7 +276,7 @@ def tables(experiments, output):
         v = interval(np.exp(np.asarray(values).mean(0)), True)
         fixed_rows.append([k, f"{v[0]:.3f} [{v[1]:.3f}, {v[2]:.3f}]"])
     add("tab:fixed-rank", "Relative cutoff versus prescribed GP dimensions over rounds 101--200. Paired log ratios averaged equally over ten environments.",
-        "cr", "Fixed rank & Regret / Fixed", fixed_rows)
+        "cr", "Fixed rank & Regret / Fixed rank", fixed_rows)
     kuai = [experiments[f"legacy.kuairec{k}.T2000"] for k in (10, 100)]
     kuai_rows = [["Seeds", *[len(e["data"]["Full"]["seeds"]) for e in kuai]]]
     for method, label in (("Full", "Full"), ("Relative", r"$\varepsilon_{\mathrm{prune}}=10^{-2}$")):
@@ -264,22 +300,23 @@ def tables(experiments, output):
     return dict(online=summary, physical=physical_stats, macros=macros)
 
 
-def figures(experiments, phase, output, summary):
+def figures(experiments, phase, selector, output, summary):
     import numpy as np
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     from matplotlib.lines import Line2D
+    from matplotlib.patches import Patch
     from scipy.stats import norm, t
     plt.rcParams.update({"font.size": 8.5, "axes.titlesize": 9, "legend.fontsize": 7.5,
         "axes.spines.top": False, "axes.spines.right": False, "pdf.fonttype": 42,
         "savefig.facecolor": "white"})
     folder = output / "figures"
     folder.mkdir(exist_ok=True)
-    def save(name, fig):
-        fig.savefig(folder / f"{name}.pdf", bbox_inches="tight", pad_inches=.035,
+    def save(name, fig, pad=.035):
+        fig.savefig(folder / f"{name}.pdf", bbox_inches="tight", pad_inches=pad,
                     metadata={"CreationDate": None, "ModDate": None})
-        fig.savefig(folder / f"{name}.png", bbox_inches="tight", pad_inches=.035, dpi=160)
+        fig.savefig(folder / f"{name}.png", bbox_inches="tight", pad_inches=pad, dpi=160)
         plt.close(fig)
     selected = [experiments[key] for key in ONLINE[:3]]
     fig = plt.figure(figsize=(7, 3.15))
@@ -298,11 +335,11 @@ def figures(experiments, phase, output, summary):
             left.plot([low, high], [y, y], color=COLOR[method], lw=1.1)
             left.plot(mid, y, "o", color=COLOR[method], ms=4.2 if method == "BBP" else 2.8)
     left.axvline(1, color=".4", ls="--", lw=.7)
-    left.set(yticks=range(3), yticklabels=["Weak", "Balanced", "KuaiRec"], ylim=(2.5, -.5),
+    left.set(yticks=range(3), yticklabels=[environment_name(e["plan"]) for e in selected], ylim=(2.5, -.5),
              title="(a) Regret relative to Full", xlabel=r"$\bar R_T/\bar R_T^{\mathrm{Full}}$")
     left.grid(axis="x", alpha=.18)
     for e, color, style, name in zip(selected, ["#0072B2", "#D55E00", "#009E73"],
-                                    ["-", "--", "-."], ["Weak", "Balanced", "KuaiRec"]):
+                                    ["-", "--", "-."], [environment_name(e["plan"]) for e in selected]):
         q = np.quantile(e["data"]["BBP"]["rank"], [.25, .5, .75], axis=0)
         x = np.arange(1, e["plan"]["horizon"] + 1)
         for ax in (top, bottom):
@@ -328,11 +365,11 @@ def figures(experiments, phase, output, summary):
         e = experiments[key]
         q = np.quantile(e["data"]["BBP"]["epsilon"][:, 100:], [.25, .5, .75], axis=0)
         x = np.arange(101, e["plan"]["horizon"] + 1)
-        ax.step(x, q[1], where="post", color=COLOR["BBP"], lw=1.5, label="BBP")
+        ax.step(x, q[1], where="post", color=COLOR["BBP"], lw=1.5, label=method_name("BBP"))
         ax.fill_between(x, q[0], q[2], step="post", color=COLOR["BBP"], alpha=.17, lw=0)
         for value, method in ((1e-4, "Small"), (1e-6, "FixedEps1e6")):
             ax.axhline(value, color=COLOR[method], ls=STYLE[method], lw=1.1, label=LABEL[method])
-        ax.set(title=f"({chr(97 + j)}) {NAMES[key]}", yscale="log", xlabel="Round",
+        ax.set(title=f"({chr(97 + j)}) {environment_name(e['plan'])}", yscale="log", xlabel="Round",
                xlim=(100, e["plan"]["horizon"]),
                ylim=(min(7e-9, float(q.min()) / 1.2), max(2e-4, float(q.max()) * 1.2)))
         ax.grid(axis="y", alpha=.18)
@@ -342,38 +379,31 @@ def figures(experiments, phase, output, summary):
     fig.subplots_adjust(left=.11, right=.99, top=.90, bottom=.25, wspace=.15)
     save("threshold_dynamics", fig)
     summary["baselines"] = {}
-    previous_style = plt.rcParams.copy()
-    plt.rcParams.update({"font.size": 9, "axes.titlesize": 10, "axes.labelsize": 9,
-        "axes.linewidth": .65, "ps.fonttype": 42})
-    fig, axes = plt.subplots(1, 2, figsize=(8.3, 2.35), sharex=True, sharey=True)
-    for ax, key, title in zip(axes, ("v4.exp02", "v4.exp05"),
-                             ("(a) Exp. 2: rank 3", "(b) Exp. 5: heavy-tailed noise")):
+    fig, axes = plt.subplots(1, 2, figsize=(7, 2.4), sharex=True, sharey=True)
+    for j, (ax, key) in enumerate(zip(axes, ("v4.exp02", "v4.exp05"))):
         e = experiments[key]
         summary["baselines"][key] = {}
-        ax.axvline(0, color="#888888", lw=.8, zorder=1)
-        for model, offset, marker, color in (("BBP", -.16, "o", "#0072B2"),
-                                             ("Full", .16, "s", "#009E73")):
+        ax.axvline(1, color=".4", ls="--", lw=.7)
+        for model, offset, color in (("BBP", -.12, COLOR["BBP"]), ("Full", .12, "#009E73")):
             summary["baselines"][key][model] = {}
             for y, method in enumerate(BASELINES):
                 values = (np.asarray(bootstrap(*paired(e, model, method))) - 1) * 100
                 summary["baselines"][key][model][method] = values.tolist()
-                mid, lo, hi = values
-                ax.errorbar(mid, y + offset, xerr=[[mid - lo], [hi - mid]], fmt=marker,
-                            markersize=4.5, color=color, elinewidth=1.1, capsize=2.1,
-                            capthick=.8, zorder=3)
-        ax.set(title=title, xlim=(-60, 30), ylim=(4.65, -.65),
-               xticks=[-60, -40, -20, 0, 20], yticks=range(5), yticklabels=BASELINE_LABELS)
-        ax.tick_params(axis="y", length=0, pad=6)
-        ax.tick_params(axis="x", length=3, width=.65)
-        ax.grid(axis="x", color="#DEDEDE", lw=.45, zorder=0)
-    fig.subplots_adjust(left=.285, right=.985, top=.865, bottom=.28, wspace=.24)
-    fig.legend(handles=[Line2D([], [], color=c, marker=m, lw=1.1, ms=4.5, label=l)
-        for c, m, l in (("#0072B2", "o", "BBP"), ("#009E73", "s", "Full NN-AGP"))],
-        loc="lower center", bbox_to_anchor=(.625, .095), ncol=2, frameon=False,
-        fontsize=9, columnspacing=2.5)
-    fig.supxlabel("Change in mean cumulative regret relative to baseline (%)", x=.625, y=.025, fontsize=9)
+                mid, lo, hi = 1 + values / 100
+                ax.plot([lo, hi], [y + offset] * 2, color=color, lw=1.1)
+                ax.plot(mid, y + offset, "o", color=color,
+                        ms=4.2 if model == "BBP" else 2.8)
+        ax.set(title=f"({chr(97 + j)}) {environment_name(e['plan'])}", xlim=(.4, 1.3), ylim=(4.5, -.5),
+               xticks=[.4, .6, .8, 1, 1.2], yticks=range(5), yticklabels=BASELINE_LABELS,
+               xlabel=r"$\bar R_T/\bar R_T^{\mathrm{baseline}}$")
+        ax.grid(axis="x", alpha=.18)
+    axes[0].set_ylabel("Baseline")
+    fig.subplots_adjust(left=.30, right=.99, top=.88, bottom=.24, wspace=.30)
+    fig.legend(handles=[Line2D([], [], color=c, marker="o", ms=3, lw=1, label=method_name(m))
+                        for m, c in (("BBP", COLOR["BBP"]), ("Full", "#009E73"))],
+               loc="lower center", ncol=2, frameon=False,
+               columnspacing=1.4, handletextpad=.4, bbox_to_anchor=(.645, -.005))
     save("baseline_examples", fig)
-    plt.rcParams.update(previous_style)
     methods = ["Relative", "Small", "FixedEps1e6", "Eps1e5", "Fixed10", "Fixed25", "BBP"]
     for keys, name, shape, height in ((ONLINE[:6], "appendix_regret_online", (3, 2), 5.75),
                                       (ONLINE[6:], "appendix_regret_v4", (5, 2), 8.5)):
@@ -396,7 +426,7 @@ def figures(experiments, phase, output, summary):
                 if method == "BBP":
                     ax.fill_between(x, mean - half, mean + half, color=COLOR[method], alpha=.16, lw=0)
             ax.axhline(0, color=".35", lw=.6)
-            ax.set(title=f"({chr(97 + i)}) {TITLES[ONLINE.index(key)]}", xlabel="Round",
+            ax.set(title=f"({chr(97 + i)}) {environment_name(e['plan'])}", xlabel="Round",
                    xlim=(1, e["plan"]["horizon"]))
             ax.grid(axis="y", alpha=.16)
             ax.tick_params(labelsize=7)
@@ -461,6 +491,64 @@ def figures(experiments, phase, output, summary):
     save("bbp_phases", fig)
     summary["bbp_phase"] = dict(critical_sizes=protocol["ncrit"], repetitions=repetitions)
 
+    result, data = selector
+    n, rank = data["sizes"], data["rank"]
+    width = result["protocol"]["nominal_width"]
+    reference = result["protocol"]["reference_background"] * (
+        1 + np.sqrt(data["support_dimension"] / n[:, None])) ** 2
+    ratio = data["threshold"] / reference
+    frequencies = 100 * np.array([(rank == 1).mean(1), (rank == 2).mean(1),
+        ((rank > 2) & (rank < width)).mean(1), (rank == width).mean(1)])
+    blue, green, orange, gray = "#0072B2", "#009E73", "#C47824", "#C7CED3"
+    with plt.rc_context({"font.family": "DejaVu Sans", "font.size": 9,
+            "axes.titlesize": 10, "axes.labelsize": 9, "xtick.labelsize": 8.5,
+            "ytick.labelsize": 8.5, "legend.fontsize": 8.5, "axes.linewidth": .7,
+            "axes.edgecolor": "#72818A", "text.color": "#243743", "axes.labelcolor": "#243743",
+            "xtick.color": "#43535D", "ytick.color": "#43535D"}):
+        fig, axes = plt.subplots(1, 2, figsize=(7.2, 2.6))
+        fig.subplots_adjust(left=.095, right=.985, top=.94, bottom=.26, wspace=.40)
+        low, high = np.quantile(ratio, [.025, .975], axis=1)
+        axes[0].fill_between(n, low, high, color=blue, alpha=.13, lw=0)
+        axes[0].axhline(1, color="#77828A", ls=(0, (4, 3)), lw=1)
+        axes[0].plot(n, ratio.mean(1), color=blue, marker="o", markersize=2.5, lw=1.6)
+        axes[0].set(title="(a) BBP threshold", ylabel="Estimated / reference BBP threshold",
+                    ylim=(.895, 1.11), yticks=[.9, .95, 1, 1.05, 1.1])
+        axes[0].legend(handles=[Line2D([], [], color=blue, marker="o", ms=3, lw=1.6, label="Mean"),
+            Patch(facecolor=blue, alpha=.13, edgecolor="none", label="Central 95% range"),
+            Line2D([], [], color="#77828A", ls=(0, (4, 3)), lw=1, label="Reference")],
+            loc="upper left", bbox_to_anchor=(-.01, -.20), frameon=False, ncol=2,
+            columnspacing=1.1, handlelength=2.1)
+        positions = np.arange(len(n))
+        ticks = np.array([0, 2, 5, 8, 10, 13, 15, 17, len(n) - 1])
+        ticks = np.unique(ticks[ticks < len(n)])
+        left = np.zeros(len(n))
+        for frequency, color, label in zip(frequencies, [blue, green, orange, gray],
+                ["1 direction", "2 directions", "3+ directions", f"Full fallback ({width})"]):
+            axes[1].barh(positions, frequency, left=left, height=.77, color=color,
+                         edgecolor="white", linewidth=.35, label=label)
+            left += frequency
+        axes[1].set(title="(b) Retained dimension", xlabel="Share of batches (%)",
+                    ylabel=r"Calibration contexts, $n$", xlim=(0, 100), xticks=[0, 25, 50, 75, 100],
+                    ylim=(len(n) - .4, -.6), yticks=ticks, yticklabels=[str(n[i]) for i in ticks])
+        axes[1].tick_params(axis="y", labelsize=8.25, length=0)
+        offset = 0.
+        for frequency in frequencies[:, -1]:
+            if frequency >= 12:
+                axes[1].text(offset + frequency / 2, positions[-1], f"{frequency:g}%", color="white",
+                             fontsize=6.25, ha="center", va="center")
+            offset += frequency
+        axes[1].legend(loc="upper left", bbox_to_anchor=(-.015, -.20), frameon=False,
+                       ncol=2, columnspacing=1.1, handlelength=1.4)
+        axes[0].set_xscale("log", base=2)
+        axes[0].set_xlim(14, 9500)
+        axes[0].set_xticks([16, 128, 1024, 8130], ["16", "128", "1024", "8130"])
+        axes[0].set_xlabel(r"Calibration contexts, $n$", labelpad=5)
+        for ax, grid_axis in zip(axes, ("y", "x")):
+            ax.grid(axis=grid_axis, color="#E7ECEF", linewidth=.65)
+            ax.set_axisbelow(True)
+            ax.tick_params(length=3, width=.65)
+        save("bbp_selector", fig, pad=.07)
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -492,16 +580,18 @@ def main():
     with np.load(phase_dir / "samples.npz", allow_pickle=False) as archive:
         samples = {k: archive[k] for k in archive.files}
     phase = read(phase_dir / "results.json"), samples
+    with np.load(phase_dir / "selector_samples.npz", allow_pickle=False) as archive:
+        selector = read(phase_dir / "selector_results.json"), {k: archive[k] for k in archive.files}
     summary = tables(experiments, output)
     with tempfile.TemporaryDirectory(prefix="paper-plots-") as cache:
         os.environ["MPLCONFIGDIR"] = cache
         os.environ["XDG_CACHE_HOME"] = cache
-        figures(experiments, phase, output, summary)
+        figures(experiments, phase, selector, output, summary)
     summary["runs"] = sum(len(p["runs"]) for p in plans)
     summary["input"] = "saved" if directory is None else str(directory)
     summary["code_sha256"] = hashes
     (output / "summary.json").write_text(json.dumps(summary, indent=2, allow_nan=False) + "\n")
-    print(json.dumps(dict(output=str(output), runs=summary["runs"], tables=9, figures=6)))
+    print(json.dumps(dict(output=str(output), runs=summary["runs"], tables=9, figures=7)))
 
 
 if __name__ == "__main__":

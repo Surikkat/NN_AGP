@@ -1,52 +1,43 @@
 # NN–AGP
 
-Spectral compression uses the joint features `encoder(contexts) @ B`.
-The full network keeps training; GP predictions use the selected directions.
+Code for *Beyond Dimensions: Spectral Compression for Neural–GP Bandits*.
 
-Install: `python -m pip install numpy scipy torch`.
+We compress the GP decision space using fixed relative or adaptive BBP
+cutoffs while the full encoder continues training. The selected subspace
+also supports physical compression of the network output layer.
 
-Initialize once; call `select_action` and `update` each round with your environment’s data:
+## Installation
 
-```python
-from bandits.nn_agp_adaptive import NN_AGP_UCB_Adaptive
-
-agent = NN_AGP_UCB_Adaptive(theta_dim=6, x_dim=1, prune_rule="bbp", seed=0)
-x, mean, variance = agent.select_action(actions, context)
-agent.update(context, x, reward)
-```
-
-- `bbp`: estimates the cutoff from the spectral background; keeps Full if no reliable peak is found.
-- `relative` (default): fixed relative cutoff, e.g. `eps_prune=1e-4` (default `0.01`).
-- `none`: full GP.
-
-Defaults: 100 outputs, 64 hidden units, ten Adam steps per observation at `lr=1e-3`.
-Fitting uses at most 256 sampled observations; GP conditioning uses the full history.
-Computations use float64. Compression starts after 100 observations and repeats every ten.
-`beta=None` uses the v5 UCB schedule; a number sets a constant beta.
-`init_noise` is the observation-noise standard deviation; its variance is learned.
-
-`eps_prune` applies to joint covariance eigenvalues, rather than encoder singular values.
-Calibration uses recorded contexts; fresh contexts can be passed as `calibration_contexts` to `update`.
-
-## Paper experiments
-
-With Python 3.11, rebuild the article's tables and figures from saved results:
+Python 3.11.
 
 ```sh
 python -m pip install -r requirements-paper.txt
-python plot_paper.py
 ```
 
-Run one experiment, or retrain all models:
+## Paper experiments
+
+List experiments and run one:
 
 ```sh
 python run_paper.py --list
 python run_paper.py --experiment EXP248 --method BBP --seed 6100
+```
+
+Build the paper's tables and figures from saved results:
+
+```sh
+python plot_paper.py
+```
+
+Run all experiments and build their tables and figures:
+
+```sh
 python run_paper.py --all
 python plot_paper.py --runs paper_experiments/reruns
 ```
 
-Models are in `bandits/`, environments in `paper_envs.py`, and the spectral
-diagnostic in `paper_bbp.py`. Prepared KuaiRec features are in `datasets/`.
-Settings, per-seed results, plots, and the Excel table are in
-[`paper_experiments/`](paper_experiments/README.md).
+Settings, results, figures and the Excel summary are in
+[paper_experiments](paper_experiments/README.md).
+
+Model implementations are in `bandits/`, environment generators in
+`paper_envs.py`, and the BBP experiment in `paper_bbp.py`.

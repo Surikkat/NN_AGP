@@ -2,7 +2,7 @@
   "id": "EXP095",
   "environment": "KuaiRec_100_users",
   "paper_key": "online.kuairec600",
-  "title": "KuaiRec 100 users / d=20 / noise rho=0.16 / history n=t / T=600",
+  "title": "KuaiRec / 100 users / history calibration",
   "horizon": 600,
   "paper_refs": [
     "tab:bbp-results",
@@ -89,6 +89,45 @@
       ],
       "rank.py": [
         "a4ee24c58815d1310532a43e6156fdd31dfa78eeeead093fac56b4b32e1c0448"
+      ],
+      "bandits/__init__.py": [
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      ],
+      "bandits/gp_ucb_multikernel.py": [
+        "ac01f06097406f4f72b35605b57fe153c00ac79ec0521eba71428d6cf3dbaa99"
+      ],
+      "bandits/neural_ucb.py": [
+        "cffc68c867da94cd7cb56b14daf465c9c4272f08b83c3145bc3706b2afa21a9f"
+      ],
+      "bandits/neural_ucb_dual.py": [
+        "f265afe0af98106768a06d51e6863dafee859951a81297cc14cfcdfa70723d56"
+      ],
+      "bandits/nn_agp.py": [
+        "c4a5f029aae7ba2cc8aa18ebe839266bc3a6bb04a36a9e29197c4c55ec0f8c26"
+      ],
+      "bandits/nn_agp_adaptive.py": [
+        "5daae7bbacec2a4b23c029ed56a901ce9743a90ceef2a8f897605fff5fe6f36d"
+      ],
+      "bandits/nn_ucb.py": [
+        "9e46988ead1ae354b98c6e34185627fd463fba94b0c3f9d1a0c460fc6d9e047a"
+      ],
+      "datasets/kuairec_c5.0_d20_r5.0_i15.npz": [
+        "b9d589682071a3d93685b76c1445c466cbd21d3eb2ef00cfac3537c2b1f60087"
+      ],
+      "paper_bbp.py": [
+        "20215ad2e1eecf2bde87de662b1d83dfb8988dc39fc4de579ff09ec6f5adb703"
+      ],
+      "paper_envs.py": [
+        "65bba056854a453c6a676f855537b3f2ee3a4d5f5e3a33eadf6b5806e35962e4"
+      ],
+      "plot_paper.py": [
+        "1256ceb2297f3f068f4df29ea593efdca9491660fa411086ebb70ba70669cd91"
+      ],
+      "requirements-paper.txt": [
+        "5038ad8a0ec6d1894e574f81a7f443e866556278f722eeda2d0b26f5add745d0"
+      ],
+      "run_paper.py": [
+        "5d8519649b52d744f2c6a02815316ffe5a40a2159a9b259824972f1b312cd213"
       ]
     },
     "method_implementations": {
@@ -207,6 +246,53 @@
             ],
             "article.py": [
               "f36fbce4868ae42b2ed67ca3cd133159975ab4c754c3c772e4846f9c027af900"
+            ]
+          }
+        }
+      ],
+      "Eps1e5": [
+        {
+          "family": "online_covariance",
+          "method": "Eps1e5",
+          "sources": {
+            "bandits/__init__.py": [
+              "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            ],
+            "bandits/gp_ucb_multikernel.py": [
+              "ac01f06097406f4f72b35605b57fe153c00ac79ec0521eba71428d6cf3dbaa99"
+            ],
+            "bandits/neural_ucb.py": [
+              "cffc68c867da94cd7cb56b14daf465c9c4272f08b83c3145bc3706b2afa21a9f"
+            ],
+            "bandits/neural_ucb_dual.py": [
+              "f265afe0af98106768a06d51e6863dafee859951a81297cc14cfcdfa70723d56"
+            ],
+            "bandits/nn_agp.py": [
+              "c4a5f029aae7ba2cc8aa18ebe839266bc3a6bb04a36a9e29197c4c55ec0f8c26"
+            ],
+            "bandits/nn_agp_adaptive.py": [
+              "5daae7bbacec2a4b23c029ed56a901ce9743a90ceef2a8f897605fff5fe6f36d"
+            ],
+            "bandits/nn_ucb.py": [
+              "9e46988ead1ae354b98c6e34185627fd463fba94b0c3f9d1a0c460fc6d9e047a"
+            ],
+            "datasets/kuairec_c5.0_d20_r5.0_i15.npz": [
+              "b9d589682071a3d93685b76c1445c466cbd21d3eb2ef00cfac3537c2b1f60087"
+            ],
+            "paper_bbp.py": [
+              "20215ad2e1eecf2bde87de662b1d83dfb8988dc39fc4de579ff09ec6f5adb703"
+            ],
+            "paper_envs.py": [
+              "65bba056854a453c6a676f855537b3f2ee3a4d5f5e3a33eadf6b5806e35962e4"
+            ],
+            "plot_paper.py": [
+              "1256ceb2297f3f068f4df29ea593efdca9491660fa411086ebb70ba70669cd91"
+            ],
+            "requirements-paper.txt": [
+              "5038ad8a0ec6d1894e574f81a7f443e866556278f722eeda2d0b26f5add745d0"
+            ],
+            "run_paper.py": [
+              "5d8519649b52d744f2c6a02815316ffe5a40a2159a9b259824972f1b312cd213"
             ]
           }
         }
@@ -4136,6 +4222,1247 @@
         "Fixed25",
         "BBP",
         "Fixed10"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed7200_c0e8d6d4d56a.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7200_Eps1e5/result.json",
+      "sha256": "c0e8d6d4d56a479aab3b3ee26a7ac0c03896781ed07b01c5839e7e3cb6885e9e",
+      "bytes": 1088272,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 7200,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed7201_4d922ca24cc9.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7201_Eps1e5/result.json",
+      "sha256": "4d922ca24cc989ce65e43b4f71d80bbe3c5fdcb0dc972996c94bc98f30b3990d",
+      "bytes": 1085863,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 7201,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed7202_5cc4229430f2.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7202_Eps1e5/result.json",
+      "sha256": "5cc4229430f2d88e6b6ee1eae230bea664a195a5335fd056750ffefb5a4b2c1d",
+      "bytes": 1084793,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 7202,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed7203_04ab5d945510.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7203_Eps1e5/result.json",
+      "sha256": "04ab5d94551084f5853c13513db32edfa8896fdee0112939fe11e8215d63a3c1",
+      "bytes": 1087756,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 7203,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed7204_847c3133cd0c.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7204_Eps1e5/result.json",
+      "sha256": "847c3133cd0c546cdc36e0841f6c42dfdb5de44f45c9a4497545345da7926886",
+      "bytes": 1086875,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 7204,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed7205_6af0d85205b0.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7205_Eps1e5/result.json",
+      "sha256": "6af0d85205b01e5fe27ebaae93f5d33e2c6386b03ecb7222171b6fb8e6f6965a",
+      "bytes": 1088358,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 7205,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed7206_7604a41e8439.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7206_Eps1e5/result.json",
+      "sha256": "7604a41e8439e76b448a4ce087b2bcf4e16020e497587dbac58e6a6fc156ba99",
+      "bytes": 1088263,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 7206,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed7207_7e3d344d3ac7.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7207_Eps1e5/result.json",
+      "sha256": "7e3d344d3ac705eba692cd94d2d65572d29f6c52633c5475d5167995d86dd95e",
+      "bytes": 1086975,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 7207,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed7208_850a5e50150e.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7208_Eps1e5/result.json",
+      "sha256": "850a5e50150eeb36f9f71b03a759ea19faee1a07d122e6cde3d2cdb282e725ad",
+      "bytes": 1088654,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 7208,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed7209_972e625bb433.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7209_Eps1e5/result.json",
+      "sha256": "972e625bb43350345eaeabfec45e658581c6c4cf56780ea380c73d5ff10856dc",
+      "bytes": 1087330,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 7209,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed7210_39159c644764.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7210_Eps1e5/result.json",
+      "sha256": "39159c644764f39f6e721e8e48c8e7bced1bdcdab5989dab746a236d6ec5ef6a",
+      "bytes": 1086175,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 7210,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed7211_c0524025bd44.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7211_Eps1e5/result.json",
+      "sha256": "c0524025bd44dea035e1c4d857e5d29547bffadff6200c976222fe72eae9dda2",
+      "bytes": 1086504,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 7211,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed7212_d1f88df30f24.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7212_Eps1e5/result.json",
+      "sha256": "d1f88df30f247a490d50a7dfd77db7ef05a580c8ed16d102fdae592b1061187a",
+      "bytes": 1087179,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 7212,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed7213_159e93e0a2af.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7213_Eps1e5/result.json",
+      "sha256": "159e93e0a2af91f87f5ddc24306ef3f68a4b9e12b24c5e66a0198bb05b0572a4",
+      "bytes": 1086670,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 7213,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed7214_91d18c3e9242.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7214_Eps1e5/result.json",
+      "sha256": "91d18c3e9242161e7d93a2d72ed762fe9ef27c503d9e1391a4ab02ef67bc1aa7",
+      "bytes": 1088525,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 7214,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed5524256_f81b90cb8944.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed5524256_Eps1e5/result.json",
+      "sha256": "f81b90cb8944b2c600077cc62487fd9bda0cb585b600ae5faaae634843156f95",
+      "bytes": 1083869,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 5524256,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed43992497_0f90296fed5b.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed43992497_Eps1e5/result.json",
+      "sha256": "0f90296fed5bfcca32a9d4915feb45ac96b484b53770ac1d87875fec79201f0b",
+      "bytes": 1086760,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 43992497,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed44579598_3abec715df1d.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed44579598_Eps1e5/result.json",
+      "sha256": "3abec715df1d4cd626249b545b46ec17d50a89edc2b66f5afe9599ddd8274be8",
+      "bytes": 1089205,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 44579598,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed83498340_b5713263e5c3.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed83498340_Eps1e5/result.json",
+      "sha256": "b5713263e5c3f5414a0362814d862475b48a672ccfb506d15357e812875db3ed",
+      "bytes": 1088167,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 83498340,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed162494215_fc96adc44411.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed162494215_Eps1e5/result.json",
+      "sha256": "fc96adc44411d4ae80f6ecef383da8e686f6390cf9371062412e3d121609cbc4",
+      "bytes": 1087569,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 162494215,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed295340044_5e199497770e.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed295340044_Eps1e5/result.json",
+      "sha256": "5e199497770e575f7b9d26123d0fe794877dde3fa7dadd73ffcc9b7fca2dd351",
+      "bytes": 1088087,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 295340044,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed302645401_4e4483c3c53a.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed302645401_Eps1e5/result.json",
+      "sha256": "4e4483c3c53a666faabfc0aa62bc5ed3cf20bad007549b165548bff53ba31b18",
+      "bytes": 1088173,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 302645401,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed343947955_4875046ad01d.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed343947955_Eps1e5/result.json",
+      "sha256": "4875046ad01d9ea985f9c2ab09abab5540e99c284e1e74ee0c88ae7f464ca57f",
+      "bytes": 1085703,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 343947955,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed583910462_1bf69b69d944.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed583910462_Eps1e5/result.json",
+      "sha256": "1bf69b69d944da88a16821db05dffe539925b2598d5550f0c70de6c0a4244585",
+      "bytes": 1088876,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 583910462,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed626863097_fdebb7ff69c9.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed626863097_Eps1e5/result.json",
+      "sha256": "fdebb7ff69c944feb878043ea326a104e62ee61596d88e8f14b22caba5ce080f",
+      "bytes": 1087879,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 626863097,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed676755751_3590f4a6da1d.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed676755751_Eps1e5/result.json",
+      "sha256": "3590f4a6da1d502413c882b72fb9d29f761c69c3b6f4e9ad7f9aac7db3fe3721",
+      "bytes": 1087685,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 676755751,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed709255664_82a2fbd08691.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed709255664_Eps1e5/result.json",
+      "sha256": "82a2fbd086915ee0f22664fdad86ebc4e8628ba0edb969f06d8e844c22824eb5",
+      "bytes": 1086733,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 709255664,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed764712097_8eefb05b8f46.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed764712097_Eps1e5/result.json",
+      "sha256": "8eefb05b8f46c43ea1aedca766f19d589a2f857664bd26dbb08235ee5a181a73",
+      "bytes": 1086933,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 764712097,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed784820884_991610138551.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed784820884_Eps1e5/result.json",
+      "sha256": "991610138551d94f62023deccd9ad9b543eebcc8d9ad516e45521f91ff845aa3",
+      "bytes": 1087362,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 784820884,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed806485893_99967c92daa5.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed806485893_Eps1e5/result.json",
+      "sha256": "99967c92daa5fa376be74a2c0940d592fe51fd38f2fdf7a6c5d220b79b5ab7ce",
+      "bytes": 1089205,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 806485893,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed833816902_2c08e16a49aa.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed833816902_Eps1e5/result.json",
+      "sha256": "2c08e16a49aa0b7b36d99923c163ae2f40c45c08967bb69779f80af590a67481",
+      "bytes": 1085544,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 833816902,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed842701295_ae402bbaf4b2.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed842701295_Eps1e5/result.json",
+      "sha256": "ae402bbaf4b23831bd72c1d8415e5812d0583bc76d5de52b460af2b9b93ff36b",
+      "bytes": 1086731,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 842701295,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed844327520_4b48237a352c.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed844327520_Eps1e5/result.json",
+      "sha256": "4b48237a352c2d400a2ead898097ed9f1f4116187f66485e363532ece16e240d",
+      "bytes": 1088080,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 844327520,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed856092563_627fd1367575.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed856092563_Eps1e5/result.json",
+      "sha256": "627fd13675755a8f00ff066cd4d565898e9624dc135fbe49302e1b56611287b3",
+      "bytes": 1088189,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 856092563,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed906338870_f1b7c3b1c914.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed906338870_Eps1e5/result.json",
+      "sha256": "f1b7c3b1c914b6002db830b1d568f2ddd205d49851ed6596008f73d0b98df8cf",
+      "bytes": 1086823,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 906338870,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed939142453_bef6e51c8266.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed939142453_Eps1e5/result.json",
+      "sha256": "bef6e51c82669626cfbb0fe0d6d4aea0718d2d8c1c914dbc9378dac678667008",
+      "bytes": 1086180,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 939142453,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed964415178_3e95e1bd0392.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed964415178_Eps1e5/result.json",
+      "sha256": "3e95e1bd0392a3622f6253be9648aca86ee56d210a3963e3c770431e4c2872f1",
+      "bytes": 1087147,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 964415178,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed977002178_962e3793f30c.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed977002178_Eps1e5/result.json",
+      "sha256": "962e3793f30c9adf193bd94228fe870adda790046f761e777cf42d5876bbdd98",
+      "bytes": 1088323,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 977002178,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1004566682_79b9455c4f10.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1004566682_Eps1e5/result.json",
+      "sha256": "79b9455c4f10ed5e1cc8eac95b772de2f7415496fa9864dfeea9a05ab2cc1bdc",
+      "bytes": 1087673,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1004566682,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1204695200_a1541361b4d8.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1204695200_Eps1e5/result.json",
+      "sha256": "a1541361b4d87bfa7f34ef2617f0b3bd80b4a354b5ed62729fd586c3c6f17cf0",
+      "bytes": 1085570,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1204695200,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1216733727_a86960b79f04.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1216733727_Eps1e5/result.json",
+      "sha256": "a86960b79f0411efe1a874aa9b24dc34650f42079e53629894b68c7fb1348ebf",
+      "bytes": 1086635,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1216733727,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1295017899_c693d3acb01d.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1295017899_Eps1e5/result.json",
+      "sha256": "c693d3acb01d5fbddd31ede587ef6bd1925065e40f8dbf35cd24c4378d011b26",
+      "bytes": 1087142,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1295017899,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1405645881_15808f594b7a.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1405645881_Eps1e5/result.json",
+      "sha256": "15808f594b7ac66480496ab8e5c9b94f9adf7f22e6ff18871320d191bac3cebb",
+      "bytes": 1087795,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1405645881,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1441187591_ba5ace385d80.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1441187591_Eps1e5/result.json",
+      "sha256": "ba5ace385d80ce5f95db184dc46618f9baec383e6cfb3d6f01649b02e24a0e5a",
+      "bytes": 1087564,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1441187591,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1447778654_b74945fad709.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1447778654_Eps1e5/result.json",
+      "sha256": "b74945fad709f067dcaf641bb48b0644dfe4d610635f3ee82d70196f58ec682e",
+      "bytes": 1086571,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1447778654,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1463307338_6d45ff30dbfb.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1463307338_Eps1e5/result.json",
+      "sha256": "6d45ff30dbfbb1f8ef701e2db9bb8cc9cc081b7804a21a7f4b43a51734659a15",
+      "bytes": 1086615,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1463307338,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1467670520_d69bc4555eb3.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1467670520_Eps1e5/result.json",
+      "sha256": "d69bc4555eb31811bd34ec5eefe6fe8f9b44e054b4ee93a06139934d0ed6cce1",
+      "bytes": 1089048,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1467670520,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1474419226_e235a9f6ae27.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1474419226_Eps1e5/result.json",
+      "sha256": "e235a9f6ae27fedeba29d94df362fc73898960ee01b293476064cbd6e5fda02b",
+      "bytes": 1086931,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1474419226,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1489502826_cb91f45ccca1.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1489502826_Eps1e5/result.json",
+      "sha256": "cb91f45ccca18ca3f79ddadba165b1905a6633349afb51633cd58d9a4c8ebfad",
+      "bytes": 1086564,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1489502826,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1574110263_2c52f5508a4b.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1574110263_Eps1e5/result.json",
+      "sha256": "2c52f5508a4b9c2aae21a7e74565f196ffd50c561fdfc0a3124741b764fc4177",
+      "bytes": 1087486,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1574110263,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1612499641_93422ffb6ef1.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1612499641_Eps1e5/result.json",
+      "sha256": "93422ffb6ef13ab476675dca44f221b47f91d94bafb25a7377f3eec3891b7857",
+      "bytes": 1086181,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1612499641,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1670897433_8dddd0901ed6.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1670897433_Eps1e5/result.json",
+      "sha256": "8dddd0901ed6850ed58df3226600394af1ab79dcd9e22c84a0d1afc952da9764",
+      "bytes": 1088065,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1670897433,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1675250178_37eca7f49ee8.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1675250178_Eps1e5/result.json",
+      "sha256": "37eca7f49ee8e216e1c94dda2eabbc258fd321ac038ee38112f273ccda939997",
+      "bytes": 1086528,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1675250178,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1692532192_c37bedd3ebc2.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1692532192_Eps1e5/result.json",
+      "sha256": "c37bedd3ebc2ed2b67a44e626c3a10a857a3c06aef195f7393b689a1ec5a10d0",
+      "bytes": 1086975,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1692532192,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1825741997_30f8e30f3d22.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1825741997_Eps1e5/result.json",
+      "sha256": "30f8e30f3d223f801af14d8ca50055257443ff42cf548f06775bb04b25d3d97e",
+      "bytes": 1086772,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1825741997,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1843916749_c0bdf41e7d9c.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1843916749_Eps1e5/result.json",
+      "sha256": "c0bdf41e7d9cf1c0f9bcf755c590fef495f9043ffb0bfa99c0f8e201f96c42ca",
+      "bytes": 1085705,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1843916749,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1931708228_5b08f942fda6.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1931708228_Eps1e5/result.json",
+      "sha256": "5b08f942fda66ba96a831de457f79a7585d604e7b9bb8738804985ed783bf670",
+      "bytes": 1087554,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1931708228,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1985066759_45a9dcee35f6.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1985066759_Eps1e5/result.json",
+      "sha256": "45a9dcee35f6362af23c2c1e09df299acbc46f54ebc5a4a91f85de9b29e7da16",
+      "bytes": 1085675,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1985066759,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed162854674_6453f0b13c5f.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed162854674_Eps1e5/result.json",
+      "sha256": "6453f0b13c5f44d7bd216ca4274b6aeb4cdcc4a0130bf909bbb0f2ac6fcaa557",
+      "bytes": 1086694,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 162854674,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed458737337_f00d971bf8c4.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed458737337_Eps1e5/result.json",
+      "sha256": "f00d971bf8c4428cff4b8cf5459a7f129f8aa4012fa964b88c37ecfd77c959f0",
+      "bytes": 1088649,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 458737337,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1937092903_22cba6670857.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1937092903_Eps1e5/result.json",
+      "sha256": "22cba6670857a0ffdd5b2ffcb8dd0dd35604fd210ae383f46b4a914fecb64924",
+      "bytes": 1087215,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1937092903,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed642579509_d2c41774011e.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed642579509_Eps1e5/result.json",
+      "sha256": "d2c41774011e17b2001761edbc5b37b77306239ad707ffcf0689a8ce76648b69",
+      "bytes": 1087685,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 642579509,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed998733448_3d301d14e809.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed998733448_Eps1e5/result.json",
+      "sha256": "3d301d14e8091ec65df43564b9d2010a35f42aefdb8f3ca37fd3475bc75ba2ee",
+      "bytes": 1086767,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 998733448,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed567341557_c16b7f375832.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed567341557_Eps1e5/result.json",
+      "sha256": "c16b7f3758325a75acf859fc89d6de19a85e7e89adc6dc9e7f30ffb4630a2ccd",
+      "bytes": 1088338,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 567341557,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed726091954_8aefded17855.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed726091954_Eps1e5/result.json",
+      "sha256": "8aefded17855334e39a93fa99369c9d5f05ad78ad30e498613b419a37d1e0137",
+      "bytes": 1088668,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 726091954,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1420037105_9ea6d2fcc12e.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1420037105_Eps1e5/result.json",
+      "sha256": "9ea6d2fcc12e9ec110de6888b6c5e5a3600b3cfcea9004563896bfa91af8ed84",
+      "bytes": 1088048,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1420037105,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed488895996_00cb8df4981f.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed488895996_Eps1e5/result.json",
+      "sha256": "00cb8df4981fbbac5a1fd9762343e3cec265d928397ab4006d3826400ca98d6c",
+      "bytes": 1087579,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 488895996,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1800891344_6c3139e7eb06.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1800891344_Eps1e5/result.json",
+      "sha256": "6c3139e7eb067ad71ad05d3314c9bd7d25103c8cb3cc75ef8615e0c7d0af45d1",
+      "bytes": 1087122,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1800891344,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1448742623_ecd42b3e8a48.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1448742623_Eps1e5/result.json",
+      "sha256": "ecd42b3e8a4823a7345ee30ddb5cc56197c913c45080764aff819a2a1cea5054",
+      "bytes": 1085820,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1448742623,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1786198063_18680a9557a5.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1786198063_Eps1e5/result.json",
+      "sha256": "18680a9557a512f772d8554304a207673bebeef677ca0b9dd052380202d18ef5",
+      "bytes": 1087460,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1786198063,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed1176065761_48ad6f6786ae.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1176065761_Eps1e5/result.json",
+      "sha256": "48ad6f6786ae2425008dcd50bdda7ca23489cf235c20733e7d56e6d7d938835c",
+      "bytes": 1087174,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 1176065761,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed998350375_f82759c557db.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed998350375_Eps1e5/result.json",
+      "sha256": "f82759c557dbccdf1de54c0fc8647c65d5dd2f27b18234e64192ed881b3a3165",
+      "bytes": 1088067,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 998350375,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
+      ]
+    },
+    {
+      "file": "KuaiRec_100_users/EXP095/results/seed651056294_f964835c428f.json",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed651056294_Eps1e5/result.json",
+      "sha256": "f964835c428f6143d7a0a44590ef237178be09dd24fa2d40b1fc76f163d32297",
+      "bytes": 1088547,
+      "role": "raw_result",
+      "selected_runs": [
+        {
+          "seed": 651056294,
+          "method": "Eps1e5",
+          "raw_method": "Eps1e5"
+        }
+      ],
+      "native_methods": [
+        "Eps1e5"
       ]
     }
   ],
@@ -24579,6 +25906,2926 @@
       "full_regret": 1367.5432605978651,
       "expected_vs_full": 0.0,
       "expected_vs_baseline": -0.004973910270590687
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 7200,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1435.8627196234613,
+      "regret_after_100": 1176.5871524862205,
+      "regret_after_300": 712.9264859402435,
+      "mean_gp_rank": 14.5,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.577375,
+      "wall_s": 12.685114708998299,
+      "peak_rss_mib": 541.828125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed7200_c0e8d6d4d56a.json",
+      "source_sha256": "c0e8d6d4d56a479aab3b3ee26a7ac0c03896781ed07b01c5839e7e3cb6885e9e",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7200_Eps1e5/result.json",
+      "configuration": "e5972597036d195ac386a8ba4d7bd6c6d460cbb805d8cba1420565517996a061",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1176.5871524862205,
+      "regret_after100": 1176.5871524862205,
+      "mean_rank": 14.5,
+      "cpu": 12.577375,
+      "wall": 12.685114708998299,
+      "rss": 541.828125,
+      "bbp_regret": 1430.9641726032276,
+      "full_regret": 1423.0104462202353,
+      "expected_vs_full": 0.005589366124555628,
+      "expected_vs_baseline": -0.003411570586301149
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 7201,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1518.7430933235826,
+      "regret_after_100": 1249.4521272456673,
+      "regret_after_300": 723.8359578975985,
+      "mean_gp_rank": 15.92,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.578342,
+      "wall_s": 12.685115915999631,
+      "peak_rss_mib": 537.078125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed7201_4d922ca24cc9.json",
+      "source_sha256": "4d922ca24cc989ce65e43b4f71d80bbe3c5fdcb0dc972996c94bc98f30b3990d",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7201_Eps1e5/result.json",
+      "configuration": "5a22ab490054a00878ce8ec19dc791c09be1d76fff33acb624dfaa1a7675b9f8",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1249.4521272456673,
+      "regret_after100": 1249.4521272456673,
+      "mean_rank": 15.92,
+      "cpu": 12.578342,
+      "wall": 12.685115915999631,
+      "rss": 537.078125,
+      "bbp_regret": 1518.7430933235817,
+      "full_regret": 1518.7430933235817,
+      "expected_vs_full": 0.0,
+      "expected_vs_baseline": -5.551115123125783e-16
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 7202,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1235.4482858365982,
+      "regret_after_100": 1005.5425247310385,
+      "regret_after_300": 586.0324082692201,
+      "mean_gp_rank": 12.66,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.919834000000002,
+      "wall_s": 11.938111540999671,
+      "peak_rss_mib": 537.34375,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed7202_5cc4229430f2.json",
+      "source_sha256": "5cc4229430f2d88e6b6ee1eae230bea664a195a5335fd056750ffefb5a4b2c1d",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7202_Eps1e5/result.json",
+      "configuration": "24dd043b7871b482acaf78fe6cdaefda0f1c0823fb9461ae1ab3f6e870b27a7e",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1005.5425247310385,
+      "regret_after100": 1005.5425247310385,
+      "mean_rank": 12.66,
+      "cpu": 11.919834000000002,
+      "wall": 11.938111540999671,
+      "rss": 537.34375,
+      "bbp_regret": 1268.1770032309605,
+      "full_regret": 1231.7025126904948,
+      "expected_vs_full": 0.0296130682243978,
+      "expected_vs_baseline": 0.026491369788254282
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 7203,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1432.3737995510417,
+      "regret_after_100": 1177.4230748929813,
+      "regret_after_300": 698.1177613670471,
+      "mean_gp_rank": 15.08,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.914161,
+      "wall_s": 11.93101608300276,
+      "peak_rss_mib": 543.125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed7203_04ab5d945510.json",
+      "source_sha256": "04ab5d94551084f5853c13513db32edfa8896fdee0112939fe11e8215d63a3c1",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7203_Eps1e5/result.json",
+      "configuration": "fcf13ec4de13340a444af33659f6590e75eec5d19cffd1481e5e5508e336083d",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1177.4230748929813,
+      "regret_after100": 1177.4230748929813,
+      "mean_rank": 15.08,
+      "cpu": 11.914161,
+      "wall": 11.93101608300276,
+      "rss": 543.125,
+      "bbp_regret": 1437.1930096959622,
+      "full_regret": 1460.008810586672,
+      "expected_vs_full": -0.015627166579591956,
+      "expected_vs_baseline": 0.003364491968808059
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 7204,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1416.4300216662084,
+      "regret_after_100": 1179.096066906292,
+      "regret_after_300": 695.2239715577294,
+      "mean_gp_rank": 14.72,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.904898000000001,
+      "wall_s": 11.91482358400026,
+      "peak_rss_mib": 543.640625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed7204_847c3133cd0c.json",
+      "source_sha256": "847c3133cd0c546cdc36e0841f6c42dfdb5de44f45c9a4497545345da7926886",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7204_Eps1e5/result.json",
+      "configuration": "c0e670290f6fc0475f2c28da95a5a0df5fe4da694f89a8f313a9ea0e897bc84f",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1179.096066906292,
+      "regret_after100": 1179.096066906292,
+      "mean_rank": 14.72,
+      "cpu": 11.904898000000001,
+      "wall": 11.91482358400026,
+      "rss": 543.640625,
+      "bbp_regret": 1348.940576505737,
+      "full_regret": 1338.304140402632,
+      "expected_vs_full": 0.007947697225165307,
+      "expected_vs_baseline": -0.04764756756643762
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 7205,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1359.4070850811681,
+      "regret_after_100": 1130.1780604903195,
+      "regret_after_300": 683.9744641758881,
+      "mean_gp_rank": 18.52,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.888874000000001,
+      "wall_s": 11.895207207999192,
+      "peak_rss_mib": 538.796875,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed7205_6af0d85205b0.json",
+      "source_sha256": "6af0d85205b01e5fe27ebaae93f5d33e2c6386b03ecb7222171b6fb8e6f6965a",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7205_Eps1e5/result.json",
+      "configuration": "52d2fafd0f0f7e42dbd316f92007d0bfe817e478eb465d26e18602e41741ae22",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1130.1780604903195,
+      "regret_after100": 1130.1780604903195,
+      "mean_rank": 18.52,
+      "cpu": 11.888874000000001,
+      "wall": 11.895207207999192,
+      "rss": 538.796875,
+      "bbp_regret": 1359.6157681839168,
+      "full_regret": 1374.536719011523,
+      "expected_vs_full": -0.010855258081673091,
+      "expected_vs_baseline": 0.00015351038334210365
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 7206,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1423.319290859124,
+      "regret_after_100": 1211.8639581317093,
+      "regret_after_300": 771.4809107174027,
+      "mean_gp_rank": 17.64,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.88613,
+      "wall_s": 11.903170541998406,
+      "peak_rss_mib": 544.3125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed7206_7604a41e8439.json",
+      "source_sha256": "7604a41e8439e76b448a4ce087b2bcf4e16020e497587dbac58e6a6fc156ba99",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7206_Eps1e5/result.json",
+      "configuration": "402e6bdeecd8b1e181d53a1e00c099b6755f6ae87f39d7c9bfd4a6384fae6e25",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1211.8639581317093,
+      "regret_after100": 1211.8639581317093,
+      "mean_rank": 17.64,
+      "cpu": 11.88613,
+      "wall": 11.903170541998406,
+      "rss": 544.3125,
+      "bbp_regret": 1328.9515497871764,
+      "full_regret": 1385.8733042545855,
+      "expected_vs_full": -0.04107284142977652,
+      "expected_vs_baseline": -0.06630117478066833
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 7207,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1225.1539391375024,
+      "regret_after_100": 996.3377751530824,
+      "regret_after_300": 550.3008999237848,
+      "mean_gp_rank": 13.8,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.886085,
+      "wall_s": 11.90411533400038,
+      "peak_rss_mib": 540.890625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed7207_7e3d344d3ac7.json",
+      "source_sha256": "7e3d344d3ac705eba692cd94d2d65572d29f6c52633c5475d5167995d86dd95e",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7207_Eps1e5/result.json",
+      "configuration": "5554badcfa93d2bf461a64195b2739646441b2f60a5754d4f569503b9633b690",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 996.3377751530824,
+      "regret_after100": 996.3377751530824,
+      "mean_rank": 13.8,
+      "cpu": 11.886085,
+      "wall": 11.90411533400038,
+      "rss": 540.890625,
+      "bbp_regret": 1224.7683500102714,
+      "full_regret": 1243.5332138749573,
+      "expected_vs_full": -0.015089957916132324,
+      "expected_vs_baseline": -0.00031472708442048525
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 7208,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1432.460804469961,
+      "regret_after_100": 1183.6721674398063,
+      "regret_after_300": 711.8710324526737,
+      "mean_gp_rank": 16.36,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.855124,
+      "wall_s": 11.877285124999617,
+      "peak_rss_mib": 543.90625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed7208_850a5e50150e.json",
+      "source_sha256": "850a5e50150eeb36f9f71b03a759ea19faee1a07d122e6cde3d2cdb282e725ad",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7208_Eps1e5/result.json",
+      "configuration": "5bc3a40677061d8e8cd6724b27c432b45dcb2997cf51808f97f1b5134bc78821",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1183.6721674398063,
+      "regret_after100": 1183.6721674398063,
+      "mean_rank": 16.36,
+      "cpu": 11.855124,
+      "wall": 11.877285124999617,
+      "rss": 543.90625,
+      "bbp_regret": 1434.937557836571,
+      "full_regret": 1447.5933747821077,
+      "expected_vs_full": -0.008742660173781003,
+      "expected_vs_baseline": 0.001729019990551528
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 7209,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1226.9084249485593,
+      "regret_after_100": 1020.9423358353924,
+      "regret_after_300": 600.5494127303516,
+      "mean_gp_rank": 14.54,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.862367,
+      "wall_s": 11.883409791000304,
+      "peak_rss_mib": 543.1875,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed7209_972e625bb433.json",
+      "source_sha256": "972e625bb43350345eaeabfec45e658581c6c4cf56780ea380c73d5ff10856dc",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7209_Eps1e5/result.json",
+      "configuration": "9deb65277567950fb45c5b634292d354306dbcbfcdc1b6a5524b90bfd5478a42",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1020.9423358353924,
+      "regret_after100": 1020.9423358353924,
+      "mean_rank": 14.54,
+      "cpu": 11.862367,
+      "wall": 11.883409791000304,
+      "rss": 543.1875,
+      "bbp_regret": 1261.1096737574335,
+      "full_regret": 1237.3296204201265,
+      "expected_vs_full": 0.01921885077739649,
+      "expected_vs_baseline": 0.027875958884468588
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 7210,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1317.49108019693,
+      "regret_after_100": 1080.7507485983128,
+      "regret_after_300": 612.9422743071246,
+      "mean_gp_rank": 14.76,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.620040999999999,
+      "wall_s": 12.737376541997946,
+      "peak_rss_mib": 541.78125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed7210_39159c644764.json",
+      "source_sha256": "39159c644764f39f6e721e8e48c8e7bced1bdcdab5989dab746a236d6ec5ef6a",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7210_Eps1e5/result.json",
+      "configuration": "299caec7e3d504dea06b0dedeba82c0c866de37df84687fbf69fe8572a6a5d6c",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1080.7507485983128,
+      "regret_after100": 1080.7507485983128,
+      "mean_rank": 14.76,
+      "cpu": 12.620040999999999,
+      "wall": 12.737376541997946,
+      "rss": 541.78125,
+      "bbp_regret": 1411.9295540487694,
+      "full_regret": 1351.590131427382,
+      "expected_vs_full": 0.0446432843939637,
+      "expected_vs_baseline": 0.0716805413496413
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 7211,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1455.2923706798483,
+      "regret_after_100": 1213.250599647887,
+      "regret_after_300": 717.1926854232082,
+      "mean_gp_rank": 15.64,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.620028,
+      "wall_s": 12.739597167001193,
+      "peak_rss_mib": 542.375,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed7211_c0524025bd44.json",
+      "source_sha256": "c0524025bd44dea035e1c4d857e5d29547bffadff6200c976222fe72eae9dda2",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7211_Eps1e5/result.json",
+      "configuration": "2e04f79f18813b9210838235862e09dc6cc6354783f1d64ac2062c509687716e",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1213.250599647887,
+      "regret_after100": 1213.250599647887,
+      "mean_rank": 15.64,
+      "cpu": 12.620028,
+      "wall": 12.739597167001193,
+      "rss": 542.375,
+      "bbp_regret": 1479.8434273032917,
+      "full_regret": 1479.8434273032917,
+      "expected_vs_full": 0.0,
+      "expected_vs_baseline": 0.016870188505127892
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 7212,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1348.051302762371,
+      "regret_after_100": 1102.3913714247533,
+      "regret_after_300": 590.0093115430831,
+      "mean_gp_rank": 16.5,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.371311,
+      "wall_s": 12.412136416001886,
+      "peak_rss_mib": 543.234375,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed7212_d1f88df30f24.json",
+      "source_sha256": "d1f88df30f247a490d50a7dfd77db7ef05a580c8ed16d102fdae592b1061187a",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7212_Eps1e5/result.json",
+      "configuration": "7adde8e2789bb76f84f66c326e751257adadd4b9f98591d64c535d554a88eb68",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1102.3913714247533,
+      "regret_after100": 1102.3913714247533,
+      "mean_rank": 16.5,
+      "cpu": 12.371311,
+      "wall": 12.412136416001886,
+      "rss": 543.234375,
+      "bbp_regret": 1378.4958559600614,
+      "full_regret": 1312.652148117557,
+      "expected_vs_full": 0.0501608197852943,
+      "expected_vs_baseline": 0.02258412060082926
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 7213,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1414.942422839293,
+      "regret_after_100": 1178.284065061946,
+      "regret_after_300": 674.6538804536129,
+      "mean_gp_rank": 10.98,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.372105999999999,
+      "wall_s": 12.414129291999416,
+      "peak_rss_mib": 542.609375,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed7213_159e93e0a2af.json",
+      "source_sha256": "159e93e0a2af91f87f5ddc24306ef3f68a4b9e12b24c5e66a0198bb05b0572a4",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7213_Eps1e5/result.json",
+      "configuration": "941c23a4b6957f0e17ffe5d388a79f76c203afd040041681cae4fb6619661326",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1178.284065061946,
+      "regret_after100": 1178.284065061946,
+      "mean_rank": 10.98,
+      "cpu": 12.372105999999999,
+      "wall": 12.414129291999416,
+      "rss": 542.609375,
+      "bbp_regret": 1492.0856400893824,
+      "full_regret": 1449.8846001452848,
+      "expected_vs_full": 0.029106481950266216,
+      "expected_vs_baseline": 0.05452039320108182
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 7214,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1372.715528781679,
+      "regret_after_100": 1128.338287723439,
+      "regret_after_300": 660.3678366448352,
+      "mean_gp_rank": 19.56,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.514040999999999,
+      "wall_s": 12.61717362499985,
+      "peak_rss_mib": 537.265625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed7214_91d18c3e9242.json",
+      "source_sha256": "91d18c3e9242161e7d93a2d72ed762fe9ef27c503d9e1391a4ab02ef67bc1aa7",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed7214_Eps1e5/result.json",
+      "configuration": "32b786c64f41cc0c6ed447d61d3dd4fa34da217f5531136acb1708afd612bde2",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1128.338287723439,
+      "regret_after100": 1128.338287723439,
+      "mean_rank": 19.56,
+      "cpu": 12.514040999999999,
+      "wall": 12.61717362499985,
+      "rss": 537.265625,
+      "bbp_regret": 1382.7611524497618,
+      "full_regret": 1318.578110080651,
+      "expected_vs_full": 0.04867595016057491,
+      "expected_vs_baseline": 0.007318066604082629
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 5524256,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1242.2608709639767,
+      "regret_after_100": 980.5724648622783,
+      "regret_after_300": 568.9806711678459,
+      "mean_gp_rank": 12.0,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.51215,
+      "wall_s": 12.614776583999628,
+      "peak_rss_mib": 541.5625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed5524256_f81b90cb8944.json",
+      "source_sha256": "f81b90cb8944b2c600077cc62487fd9bda0cb585b600ae5faaae634843156f95",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed5524256_Eps1e5/result.json",
+      "configuration": "3114461e9dfeb181f7c718706f78228d8d9f5575bcc26e8260a6dfcc9d053fc0",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 980.5724648622783,
+      "regret_after100": 980.5724648622783,
+      "mean_rank": 12.0,
+      "cpu": 12.51215,
+      "wall": 12.614776583999628,
+      "rss": 541.5625,
+      "bbp_regret": 1238.7436895675482,
+      "full_regret": 1238.7436895675482,
+      "expected_vs_full": 0.0,
+      "expected_vs_baseline": -0.002831274395448946
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 43992497,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1379.106903963531,
+      "regret_after_100": 1124.3291677655989,
+      "regret_after_300": 663.6848908336902,
+      "mean_gp_rank": 17.0,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.751183999999999,
+      "wall_s": 11.86564883399842,
+      "peak_rss_mib": 547.8125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed43992497_0f90296fed5b.json",
+      "source_sha256": "0f90296fed5bfcca32a9d4915feb45ac96b484b53770ac1d87875fec79201f0b",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed43992497_Eps1e5/result.json",
+      "configuration": "88a530c14bcf8ab432318833631701207641e344ae4e57f0c86da84dd49be856",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1124.3291677655989,
+      "regret_after100": 1124.3291677655989,
+      "mean_rank": 17.0,
+      "cpu": 11.751183999999999,
+      "wall": 11.86564883399842,
+      "rss": 547.8125,
+      "bbp_regret": 1340.5949909203653,
+      "full_regret": 1353.3401426888784,
+      "expected_vs_full": -0.009417552444125676,
+      "expected_vs_baseline": -0.027925255781464986
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 44579598,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1285.8534427947081,
+      "regret_after_100": 1077.3898749423986,
+      "regret_after_300": 652.981941130355,
+      "mean_gp_rank": 18.9,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.734357000000001,
+      "wall_s": 11.845839749999868,
+      "peak_rss_mib": 539.640625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed44579598_3abec715df1d.json",
+      "source_sha256": "3abec715df1d4cd626249b545b46ec17d50a89edc2b66f5afe9599ddd8274be8",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed44579598_Eps1e5/result.json",
+      "configuration": "3e471c05316b48a4dc1fa69a6d4798075968c8b0a8ca85e3926889fd65bc23a8",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1077.3898749423986,
+      "regret_after100": 1077.3898749423986,
+      "mean_rank": 18.9,
+      "cpu": 11.734357000000001,
+      "wall": 11.845839749999868,
+      "rss": 539.640625,
+      "bbp_regret": 1335.173907459162,
+      "full_regret": 1258.5200036892013,
+      "expected_vs_full": 0.06090797408484483,
+      "expected_vs_baseline": 0.038356209987088
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 83498340,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1511.8709932621039,
+      "regret_after_100": 1233.0308433815794,
+      "regret_after_300": 726.8411216305437,
+      "mean_gp_rank": 15.5,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.513781,
+      "wall_s": 12.629546500000288,
+      "peak_rss_mib": 539.0625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed83498340_b5713263e5c3.json",
+      "source_sha256": "b5713263e5c3f5414a0362814d862475b48a672ccfb506d15357e812875db3ed",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed83498340_Eps1e5/result.json",
+      "configuration": "ad9ed3d41fcf8ea2a2557e2ee5671ef48939844e0e42fd2f0c32967fc54b64ff",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1233.0308433815794,
+      "regret_after100": 1233.0308433815794,
+      "mean_rank": 15.5,
+      "cpu": 12.513781,
+      "wall": 12.629546500000288,
+      "rss": 539.0625,
+      "bbp_regret": 1508.2651322684085,
+      "full_regret": 1508.2651322684085,
+      "expected_vs_full": 0.0,
+      "expected_vs_baseline": -0.0023850321950520392
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 162494215,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1314.7494689552475,
+      "regret_after_100": 1063.38942833094,
+      "regret_after_300": 600.2952343293098,
+      "mean_gp_rank": 17.6,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.513358,
+      "wall_s": 12.629546042000584,
+      "peak_rss_mib": 543.71875,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed162494215_fc96adc44411.json",
+      "source_sha256": "fc96adc44411d4ae80f6ecef383da8e686f6390cf9371062412e3d121609cbc4",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed162494215_Eps1e5/result.json",
+      "configuration": "4f75635bbe4fe9ef4169ec87afc86094f563e14eabd075998c4b054fc11f2785",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1063.38942833094,
+      "regret_after100": 1063.38942833094,
+      "mean_rank": 17.6,
+      "cpu": 12.513358,
+      "wall": 12.629546042000584,
+      "rss": 543.71875,
+      "bbp_regret": 1311.0422023743201,
+      "full_regret": 1311.0422023743201,
+      "expected_vs_full": 0.0,
+      "expected_vs_baseline": -0.0028197513431006405
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 295340044,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1460.1016071151998,
+      "regret_after_100": 1212.5423441426622,
+      "regret_after_300": 719.3765838106738,
+      "mean_gp_rank": 15.8,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.596095,
+      "wall_s": 12.654380249998212,
+      "peak_rss_mib": 508.203125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed295340044_5e199497770e.json",
+      "source_sha256": "5e199497770e575f7b9d26123d0fe794877dde3fa7dadd73ffcc9b7fca2dd351",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed295340044_Eps1e5/result.json",
+      "configuration": "71c14612cba61ca1e377e4af61f2b4cffd0529b16efccf2cd56fbdadddf4427f",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1212.5423441426622,
+      "regret_after100": 1212.5423441426622,
+      "mean_rank": 15.8,
+      "cpu": 12.596095,
+      "wall": 12.654380249998212,
+      "rss": 508.203125,
+      "bbp_regret": 1460.1016071152005,
+      "full_regret": 1429.1729157684263,
+      "expected_vs_full": 0.021640972205343445,
+      "expected_vs_baseline": 4.440892098500626e-16
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 302645401,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1439.5370401804282,
+      "regret_after_100": 1207.5001084252617,
+      "regret_after_300": 693.8987086349559,
+      "mean_gp_rank": 15.54,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.596219999999999,
+      "wall_s": 12.655603416998929,
+      "peak_rss_mib": 507.28125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed302645401_4e4483c3c53a.json",
+      "source_sha256": "4e4483c3c53a666faabfc0aa62bc5ed3cf20bad007549b165548bff53ba31b18",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed302645401_Eps1e5/result.json",
+      "configuration": "afafaf04599935fe61cdc5d8d8834bf8559a7afdbf3f3ea8a991b6f07a99fa1d",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1207.5001084252617,
+      "regret_after100": 1207.5001084252617,
+      "mean_rank": 15.54,
+      "cpu": 12.596219999999999,
+      "wall": 12.655603416998929,
+      "rss": 507.28125,
+      "bbp_regret": 1429.6492746636802,
+      "full_regret": 1440.016601556994,
+      "expected_vs_full": -0.007199449563362159,
+      "expected_vs_baseline": -0.006868712121161358
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 343947955,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1299.7771029990922,
+      "regret_after_100": 1073.7826821746542,
+      "regret_after_300": 668.9227519328974,
+      "mean_gp_rank": 11.44,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.032331000000001,
+      "wall_s": 12.063775750000787,
+      "peak_rss_mib": 544.359375,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed343947955_4875046ad01d.json",
+      "source_sha256": "4875046ad01d9ea985f9c2ab09abab5540e99c284e1e74ee0c88ae7f464ca57f",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed343947955_Eps1e5/result.json",
+      "configuration": "adddfb5314a39c89fa7965e4a0f3821a866263028ce3ec380cdf67e7904171cc",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1073.7826821746542,
+      "regret_after100": 1073.7826821746542,
+      "mean_rank": 11.44,
+      "cpu": 12.032331000000001,
+      "wall": 12.063775750000787,
+      "rss": 544.359375,
+      "bbp_regret": 1220.5518894932,
+      "full_regret": 1218.1223860728696,
+      "expected_vs_full": 0.001994465784479038,
+      "expected_vs_baseline": -0.06095292286892029
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 583910462,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1527.3861945645967,
+      "regret_after_100": 1250.3663632568246,
+      "regret_after_300": 695.6768342497697,
+      "mean_gp_rank": 11.68,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.027251,
+      "wall_s": 12.056429791999108,
+      "peak_rss_mib": 538.296875,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed583910462_1bf69b69d944.json",
+      "source_sha256": "1bf69b69d944da88a16821db05dffe539925b2598d5550f0c70de6c0a4244585",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed583910462_Eps1e5/result.json",
+      "configuration": "37540ad50d935e98e62316029da9208bd20514ed70467abd246390341b548693",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1250.3663632568246,
+      "regret_after100": 1250.3663632568246,
+      "mean_rank": 11.68,
+      "cpu": 12.027251,
+      "wall": 12.056429791999108,
+      "rss": 538.296875,
+      "bbp_regret": 1605.4494048472684,
+      "full_regret": 1622.6795440675755,
+      "expected_vs_full": -0.010618325277655383,
+      "expected_vs_baseline": 0.05110901915996746
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 626863097,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1454.5096509222687,
+      "regret_after_100": 1201.4578379039976,
+      "regret_after_300": 720.7836474133884,
+      "mean_gp_rank": 12.68,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.101051,
+      "wall_s": 12.215395291001187,
+      "peak_rss_mib": 545.046875,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed626863097_fdebb7ff69c9.json",
+      "source_sha256": "fdebb7ff69c944feb878043ea326a104e62ee61596d88e8f14b22caba5ce080f",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed626863097_Eps1e5/result.json",
+      "configuration": "b6241f36065577701df3c29249faa3d8e3c58ce11de56441b35c66b5abfda72b",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1201.4578379039976,
+      "regret_after100": 1201.4578379039976,
+      "mean_rank": 12.68,
+      "cpu": 12.101051,
+      "wall": 12.215395291001187,
+      "rss": 545.046875,
+      "bbp_regret": 1453.0764678274709,
+      "full_regret": 1411.4432394141381,
+      "expected_vs_full": 0.02949692006786897,
+      "expected_vs_baseline": -0.0009853376317504603
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 676755751,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1291.1741588174127,
+      "regret_after_100": 1069.5211754507395,
+      "regret_after_300": 635.214891159984,
+      "mean_gp_rank": 15.22,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.10017,
+      "wall_s": 12.213634458003071,
+      "peak_rss_mib": 538.90625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed676755751_3590f4a6da1d.json",
+      "source_sha256": "3590f4a6da1d502413c882b72fb9d29f761c69c3b6f4e9ad7f9aac7db3fe3721",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed676755751_Eps1e5/result.json",
+      "configuration": "172ba344e938c2e0af76200ae2170f0823f02b5333ce93786e4428050b501769",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1069.5211754507395,
+      "regret_after100": 1069.5211754507395,
+      "mean_rank": 15.22,
+      "cpu": 12.10017,
+      "wall": 12.213634458003071,
+      "rss": 538.90625,
+      "bbp_regret": 1291.1741588174127,
+      "full_regret": 1291.1741588174127,
+      "expected_vs_full": 0.0,
+      "expected_vs_baseline": 0.0
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 709255664,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1283.9041899477406,
+      "regret_after_100": 1043.189337391317,
+      "regret_after_300": 633.4349021683287,
+      "mean_gp_rank": 13.22,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.473446000000001,
+      "wall_s": 12.5170442919989,
+      "peak_rss_mib": 543.234375,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed709255664_82a2fbd08691.json",
+      "source_sha256": "82a2fbd086915ee0f22664fdad86ebc4e8628ba0edb969f06d8e844c22824eb5",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed709255664_Eps1e5/result.json",
+      "configuration": "bc73800d427aa2945d27af98f21745edc583b8673d6067e5537170294faef77d",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1043.189337391317,
+      "regret_after100": 1043.189337391317,
+      "mean_rank": 13.22,
+      "cpu": 12.473446000000001,
+      "wall": 12.5170442919989,
+      "rss": 543.234375,
+      "bbp_regret": 1338.5165591534503,
+      "full_regret": 1378.5896077024124,
+      "expected_vs_full": -0.029068149306412328,
+      "expected_vs_baseline": 0.042536171805726886
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 764712097,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1354.2690250356195,
+      "regret_after_100": 1117.3644264355544,
+      "regret_after_300": 679.8800414858936,
+      "mean_gp_rank": 14.04,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.474129,
+      "wall_s": 12.515117582999665,
+      "peak_rss_mib": 542.90625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed764712097_8eefb05b8f46.json",
+      "source_sha256": "8eefb05b8f46c43ea1aedca766f19d589a2f857664bd26dbb08235ee5a181a73",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed764712097_Eps1e5/result.json",
+      "configuration": "bf00ad7cb4e79307385128d83cfb44964723e423eb42c3d30a8eff739c380e75",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1117.3644264355544,
+      "regret_after100": 1117.3644264355544,
+      "mean_rank": 14.04,
+      "cpu": 12.474129,
+      "wall": 12.515117582999665,
+      "rss": 542.90625,
+      "bbp_regret": 1231.6853830985824,
+      "full_regret": 1205.3314550091475,
+      "expected_vs_full": 0.02186446556249111,
+      "expected_vs_baseline": -0.09051646288211679
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 784820884,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1375.4705750405606,
+      "regret_after_100": 1105.8663488261707,
+      "regret_after_300": 643.5484812391674,
+      "mean_gp_rank": 14.24,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.846136,
+      "wall_s": 11.963235499999428,
+      "peak_rss_mib": 541.015625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed784820884_991610138551.json",
+      "source_sha256": "991610138551d94f62023deccd9ad9b543eebcc8d9ad516e45521f91ff845aa3",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed784820884_Eps1e5/result.json",
+      "configuration": "8c6564464628f67ed660b22b605d0aef68ba28959581ec7cd61b01beb317bcbb",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1105.8663488261707,
+      "regret_after100": 1105.8663488261707,
+      "mean_rank": 14.24,
+      "cpu": 11.846136,
+      "wall": 11.963235499999428,
+      "rss": 541.015625,
+      "bbp_regret": 1382.3790515287185,
+      "full_regret": 1396.8802381982152,
+      "expected_vs_full": -0.01038112378782119,
+      "expected_vs_baseline": 0.005022627610884456
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 806485893,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1310.52952653536,
+      "regret_after_100": 1084.3510390309796,
+      "regret_after_300": 644.3476370346306,
+      "mean_gp_rank": 17.02,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.842984000000001,
+      "wall_s": 11.959856875000696,
+      "peak_rss_mib": 544.75,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed806485893_99967c92daa5.json",
+      "source_sha256": "99967c92daa5fa376be74a2c0940d592fe51fd38f2fdf7a6c5d220b79b5ab7ce",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed806485893_Eps1e5/result.json",
+      "configuration": "66482160de83b490b51dface9756ed1252e5bdf24fd62b76c0af8d1a796b66c9",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1084.3510390309796,
+      "regret_after100": 1084.3510390309796,
+      "mean_rank": 17.02,
+      "cpu": 11.842984000000001,
+      "wall": 11.959856875000696,
+      "rss": 544.75,
+      "bbp_regret": 1310.5295265353595,
+      "full_regret": 1333.9043543110329,
+      "expected_vs_full": -0.017523616067470216,
+      "expected_vs_baseline": -3.3306690738754696e-16
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 833816902,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1247.501504602958,
+      "regret_after_100": 981.1367823508343,
+      "regret_after_300": 533.2590625311799,
+      "mean_gp_rank": 12.7,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.191310999999999,
+      "wall_s": 12.305403667000064,
+      "peak_rss_mib": 547.4375,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed833816902_2c08e16a49aa.json",
+      "source_sha256": "2c08e16a49aa0b7b36d99923c163ae2f40c45c08967bb69779f80af590a67481",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed833816902_Eps1e5/result.json",
+      "configuration": "975869f16f00690528acbc1f75790e71ec96ab116f2f8452a1091a60941f4435",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 981.1367823508343,
+      "regret_after100": 981.1367823508343,
+      "mean_rank": 12.7,
+      "cpu": 12.191310999999999,
+      "wall": 12.305403667000064,
+      "rss": 547.4375,
+      "bbp_regret": 1247.501504602959,
+      "full_regret": 1239.9883306331685,
+      "expected_vs_full": 0.006059068286516922,
+      "expected_vs_baseline": 6.661338147750939e-16
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 842701295,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1414.575283823812,
+      "regret_after_100": 1133.5125966332848,
+      "regret_after_300": 639.2848416496292,
+      "mean_gp_rank": 14.18,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.18923,
+      "wall_s": 12.306988000000274,
+      "peak_rss_mib": 543.75,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed842701295_ae402bbaf4b2.json",
+      "source_sha256": "ae402bbaf4b23831bd72c1d8415e5812d0583bc76d5de52b460af2b9b93ff36b",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed842701295_Eps1e5/result.json",
+      "configuration": "df05dc64979e440b55c0df1c1330da9c9d8f3875a36805d5aaec798b09e10731",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1133.5125966332848,
+      "regret_after100": 1133.5125966332848,
+      "mean_rank": 14.18,
+      "cpu": 12.18923,
+      "wall": 12.306988000000274,
+      "rss": 543.75,
+      "bbp_regret": 1353.6019988273695,
+      "full_regret": 1365.370147807565,
+      "expected_vs_full": -0.008619017340530055,
+      "expected_vs_baseline": -0.04310359843954181
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 844327520,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1460.2567437906882,
+      "regret_after_100": 1242.0786237427146,
+      "regret_after_300": 757.1991600986703,
+      "mean_gp_rank": 16.18,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.254871,
+      "wall_s": 12.375127167000755,
+      "peak_rss_mib": 539.09375,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed844327520_4b48237a352c.json",
+      "source_sha256": "4b48237a352c2d400a2ead898097ed9f1f4116187f66485e363532ece16e240d",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed844327520_Eps1e5/result.json",
+      "configuration": "55606094a2004bf43a6e60f18f0bb6afe1c62f80f39ba3aa151fcce31084b43e",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1242.0786237427146,
+      "regret_after100": 1242.0786237427146,
+      "mean_rank": 16.18,
+      "cpu": 12.254871,
+      "wall": 12.375127167000755,
+      "rss": 539.09375,
+      "bbp_regret": 1461.4466426337808,
+      "full_regret": 1455.797881424464,
+      "expected_vs_full": 0.003880182325715076,
+      "expected_vs_baseline": 0.0008148559136276212
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 856092563,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1490.640157616506,
+      "regret_after_100": 1242.3248641995044,
+      "regret_after_300": 759.5705428085275,
+      "mean_gp_rank": 14.4,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.258564999999999,
+      "wall_s": 12.376416417002474,
+      "peak_rss_mib": 541.4375,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed856092563_627fd1367575.json",
+      "source_sha256": "627fd13675755a8f00ff066cd4d565898e9624dc135fbe49302e1b56611287b3",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed856092563_Eps1e5/result.json",
+      "configuration": "7f95cd9d9d09b28f17f28da882d58acdcf228acbd6646d006f155642dd2999ff",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1242.3248641995044,
+      "regret_after100": 1242.3248641995044,
+      "mean_rank": 14.4,
+      "cpu": 12.258564999999999,
+      "wall": 12.376416417002474,
+      "rss": 541.4375,
+      "bbp_regret": 1492.1486103310579,
+      "full_regret": 1499.2033087740817,
+      "expected_vs_full": -0.004705631585613657,
+      "expected_vs_baseline": 0.0010119496022191754
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 906338870,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1375.5803060270362,
+      "regret_after_100": 1131.8239430778626,
+      "regret_after_300": 648.3537556527933,
+      "mean_gp_rank": 13.46,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.885307999999998,
+      "wall_s": 11.997657124997204,
+      "peak_rss_mib": 538.5,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed906338870_f1b7c3b1c914.json",
+      "source_sha256": "f1b7c3b1c914b6002db830b1d568f2ddd205d49851ed6596008f73d0b98df8cf",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed906338870_Eps1e5/result.json",
+      "configuration": "a11b8fe1fd71a53542634340f50992ab2975558ab155271c11fa333dfee775df",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1131.8239430778626,
+      "regret_after100": 1131.8239430778626,
+      "mean_rank": 13.46,
+      "cpu": 11.885307999999998,
+      "wall": 11.997657124997204,
+      "rss": 538.5,
+      "bbp_regret": 1338.6543799594233,
+      "full_regret": 1442.816237262269,
+      "expected_vs_full": -0.072193432963086,
+      "expected_vs_baseline": -0.026843889742986127
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 939142453,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1247.7492507132151,
+      "regret_after_100": 1009.8062986682652,
+      "regret_after_300": 565.4082480173251,
+      "mean_gp_rank": 11.44,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.864205,
+      "wall_s": 11.977961000000505,
+      "peak_rss_mib": 541.765625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed939142453_bef6e51c8266.json",
+      "source_sha256": "bef6e51c82669626cfbb0fe0d6d4aea0718d2d8c1c914dbc9378dac678667008",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed939142453_Eps1e5/result.json",
+      "configuration": "217dc8d71e5f826b3e10829333d83e69148ca7167acf0de3635e94be4e2f1688",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1009.8062986682652,
+      "regret_after100": 1009.8062986682652,
+      "mean_rank": 11.44,
+      "cpu": 11.864205,
+      "wall": 11.977961000000505,
+      "rss": 541.765625,
+      "bbp_regret": 1287.2351449166665,
+      "full_regret": 1287.2351449166665,
+      "expected_vs_full": 0.0,
+      "expected_vs_baseline": 0.03164569658597771
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 964415178,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1258.0473782403783,
+      "regret_after_100": 1011.3416810847615,
+      "regret_after_300": 567.7515828033145,
+      "mean_gp_rank": 16.84,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.493176,
+      "wall_s": 12.608211583999946,
+      "peak_rss_mib": 538.53125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed964415178_3e95e1bd0392.json",
+      "source_sha256": "3e95e1bd0392a3622f6253be9648aca86ee56d210a3963e3c770431e4c2872f1",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed964415178_Eps1e5/result.json",
+      "configuration": "24637c768d65bdf2625a9affc7907a77dd454e6c80c5c82f07bbe8b3fc0bb493",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1011.3416810847615,
+      "regret_after100": 1011.3416810847615,
+      "mean_rank": 16.84,
+      "cpu": 12.493176,
+      "wall": 12.608211583999946,
+      "rss": 538.53125,
+      "bbp_regret": 1299.9299569197694,
+      "full_regret": 1312.115139929897,
+      "expected_vs_full": -0.009286672060485834,
+      "expected_vs_baseline": 0.03329173400287355
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 977002178,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1469.1680271482824,
+      "regret_after_100": 1210.4325103017732,
+      "regret_after_300": 743.5838270660632,
+      "mean_gp_rank": 14.06,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.492975000000001,
+      "wall_s": 12.60550433300159,
+      "peak_rss_mib": 543.609375,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed977002178_962e3793f30c.json",
+      "source_sha256": "962e3793f30c9adf193bd94228fe870adda790046f761e777cf42d5876bbdd98",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed977002178_Eps1e5/result.json",
+      "configuration": "8dc8dffebe3bdd6ce2378d2cc934d216f8858e608577a4260532b459f62126f5",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1210.4325103017732,
+      "regret_after100": 1210.4325103017732,
+      "mean_rank": 14.06,
+      "cpu": 12.492975000000001,
+      "wall": 12.60550433300159,
+      "rss": 543.609375,
+      "bbp_regret": 1426.4985159017024,
+      "full_regret": 1472.7764431557525,
+      "expected_vs_full": -0.03142223483347506,
+      "expected_vs_baseline": -0.02904331598435561
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1004566682,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1394.254328278845,
+      "regret_after_100": 1164.488656745711,
+      "regret_after_300": 691.7879585690133,
+      "mean_gp_rank": 14.26,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.554231,
+      "wall_s": 12.66916054199828,
+      "peak_rss_mib": 543.8125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1004566682_79b9455c4f10.json",
+      "source_sha256": "79b9455c4f10ed5e1cc8eac95b772de2f7415496fa9864dfeea9a05ab2cc1bdc",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1004566682_Eps1e5/result.json",
+      "configuration": "fdd64764725f668b9c83dee21382981ad15f9a33078c8537398b5f37749ca8c8",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1164.488656745711,
+      "regret_after100": 1164.488656745711,
+      "mean_rank": 14.26,
+      "cpu": 12.554231,
+      "wall": 12.66916054199828,
+      "rss": 543.8125,
+      "bbp_regret": 1352.472545458901,
+      "full_regret": 1396.5273030392393,
+      "expected_vs_full": -0.031545933605782395,
+      "expected_vs_baseline": -0.0299671171697361
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1204695200,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1197.8455737096808,
+      "regret_after_100": 926.3444505548042,
+      "regret_after_300": 504.0518375539816,
+      "mean_gp_rank": 16.32,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.554211,
+      "wall_s": 12.669151958001748,
+      "peak_rss_mib": 507.28125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1204695200_a1541361b4d8.json",
+      "source_sha256": "a1541361b4d87bfa7f34ef2617f0b3bd80b4a354b5ed62729fd586c3c6f17cf0",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1204695200_Eps1e5/result.json",
+      "configuration": "0a572b9afdce5baa853d3ca6cd17c3e4e837815cf2a04ba239f5a7d63481d8d5",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 926.3444505548042,
+      "regret_after100": 926.3444505548042,
+      "mean_rank": 16.32,
+      "cpu": 12.554211,
+      "wall": 12.669151958001748,
+      "rss": 507.28125,
+      "bbp_regret": 1288.0266406233823,
+      "full_regret": 1322.995514803084,
+      "expected_vs_full": -0.02643158936552148,
+      "expected_vs_baseline": 0.07528605430699575
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1216733727,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1383.3259770594377,
+      "regret_after_100": 1135.6225412435028,
+      "regret_after_300": 679.8787093174817,
+      "mean_gp_rank": 15.16,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.069821000000001,
+      "wall_s": 12.186553167000966,
+      "peak_rss_mib": 542.390625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1216733727_a86960b79f04.json",
+      "source_sha256": "a86960b79f0411efe1a874aa9b24dc34650f42079e53629894b68c7fb1348ebf",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1216733727_Eps1e5/result.json",
+      "configuration": "662096f4fd118641fefd9c1aea14b8d0d46b537fdecba2cf22f36dc5c755e7a8",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1135.6225412435028,
+      "regret_after100": 1135.6225412435028,
+      "mean_rank": 15.16,
+      "cpu": 12.069821000000001,
+      "wall": 12.186553167000966,
+      "rss": 542.390625,
+      "bbp_regret": 1351.4638840316347,
+      "full_regret": 1355.1033579842247,
+      "expected_vs_full": -0.0026857537701063805,
+      "expected_vs_baseline": -0.023032960817762405
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1295017899,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1295.1762469109453,
+      "regret_after_100": 1032.5035694283795,
+      "regret_after_300": 598.6829426788897,
+      "mean_gp_rank": 18.66,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.075865,
+      "wall_s": 12.193477542001347,
+      "peak_rss_mib": 542.078125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1295017899_c693d3acb01d.json",
+      "source_sha256": "c693d3acb01d5fbddd31ede587ef6bd1925065e40f8dbf35cd24c4378d011b26",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1295017899_Eps1e5/result.json",
+      "configuration": "6b700511ee45bedef1f9aceb4b23fe8b6f9ecff7ba8aabeeeeffc0e80225bf32",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1032.5035694283795,
+      "regret_after100": 1032.5035694283795,
+      "mean_rank": 18.66,
+      "cpu": 12.075865,
+      "wall": 12.193477542001347,
+      "rss": 542.078125,
+      "bbp_regret": 1285.5014563016334,
+      "full_regret": 1289.5281552298866,
+      "expected_vs_full": -0.0031226141995599477,
+      "expected_vs_baseline": -0.007469864145815519
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1405645881,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1433.7003087044573,
+      "regret_after_100": 1177.7640092377642,
+      "regret_after_300": 716.5582469063966,
+      "mean_gp_rank": 14.9,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.067555,
+      "wall_s": 12.17506370800038,
+      "peak_rss_mib": 543.375,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1405645881_15808f594b7a.json",
+      "source_sha256": "15808f594b7ac66480496ab8e5c9b94f9adf7f22e6ff18871320d191bac3cebb",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1405645881_Eps1e5/result.json",
+      "configuration": "8d2309b142375c87a048cf8413b5766d1e1222738560cf5641cdeefae379128f",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1177.7640092377642,
+      "regret_after100": 1177.7640092377642,
+      "mean_rank": 14.9,
+      "cpu": 12.067555,
+      "wall": 12.17506370800038,
+      "rss": 543.375,
+      "bbp_regret": 1406.758380144132,
+      "full_regret": 1411.5007282414065,
+      "expected_vs_full": -0.0033597914633618498,
+      "expected_vs_baseline": -0.018791883071205495
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1441187591,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1427.2366842414422,
+      "regret_after_100": 1182.9440947948544,
+      "regret_after_300": 701.1115698162124,
+      "mean_gp_rank": 14.9,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.062321,
+      "wall_s": 12.168878542001039,
+      "peak_rss_mib": 537.828125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1441187591_ba5ace385d80.json",
+      "source_sha256": "ba5ace385d80ce5f95db184dc46618f9baec383e6cfb3d6f01649b02e24a0e5a",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1441187591_Eps1e5/result.json",
+      "configuration": "3a11d6ae80c85836296a21295e7930de2e90b0d1ddf7d27f6ed3676a8dc9724b",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1182.9440947948544,
+      "regret_after100": 1182.9440947948544,
+      "mean_rank": 14.9,
+      "cpu": 12.062321,
+      "wall": 12.168878542001039,
+      "rss": 537.828125,
+      "bbp_regret": 1409.4527079305892,
+      "full_regret": 1502.7650436705483,
+      "expected_vs_full": -0.06209376251662124,
+      "expected_vs_baseline": -0.012460425455154911
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1447778654,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1162.5294801471161,
+      "regret_after_100": 951.640780127711,
+      "regret_after_300": 566.5502466494293,
+      "mean_gp_rank": 15.42,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.033230999999999,
+      "wall_s": 12.14049087499734,
+      "peak_rss_mib": 544.640625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1447778654_b74945fad709.json",
+      "source_sha256": "b74945fad709f067dcaf641bb48b0644dfe4d610635f3ee82d70196f58ec682e",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1447778654_Eps1e5/result.json",
+      "configuration": "bafbcc697b24161b5eab7f434e0d850531b65d9e61d6945036bd36760ae49178",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 951.640780127711,
+      "regret_after100": 951.640780127711,
+      "mean_rank": 15.42,
+      "cpu": 12.033230999999999,
+      "wall": 12.14049087499734,
+      "rss": 544.640625,
+      "bbp_regret": 1204.8679334970036,
+      "full_regret": 1204.8679334970036,
+      "expected_vs_full": 0.0,
+      "expected_vs_baseline": 0.03641925135913948
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1463307338,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1358.0767421846476,
+      "regret_after_100": 1122.104031886455,
+      "regret_after_300": 620.7403634682719,
+      "mean_gp_rank": 13.7,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.010126,
+      "wall_s": 12.117320208999445,
+      "peak_rss_mib": 543.875,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1463307338_6d45ff30dbfb.json",
+      "source_sha256": "6d45ff30dbfbb1f8ef701e2db9bb8cc9cc081b7804a21a7f4b43a51734659a15",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1463307338_Eps1e5/result.json",
+      "configuration": "4f678446011f8a11ed66bd1765084135bd91f14b7d25aa31aefbd6cb244fd144",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1122.104031886455,
+      "regret_after100": 1122.104031886455,
+      "mean_rank": 13.7,
+      "cpu": 12.010126,
+      "wall": 12.117320208999445,
+      "rss": 543.875,
+      "bbp_regret": 1322.8920190439921,
+      "full_regret": 1355.0687997507325,
+      "expected_vs_full": -0.023745495957592233,
+      "expected_vs_baseline": -0.025907757675060483
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1467670520,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1397.2898392349762,
+      "regret_after_100": 1151.1407141677905,
+      "regret_after_300": 703.6158613558853,
+      "mean_gp_rank": 13.9,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.510214000000001,
+      "wall_s": 12.618170666999504,
+      "peak_rss_mib": 539.015625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1467670520_d69bc4555eb3.json",
+      "source_sha256": "d69bc4555eb31811bd34ec5eefe6fe8f9b44e054b4ee93a06139934d0ed6cce1",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1467670520_Eps1e5/result.json",
+      "configuration": "65062be29aa483cd8bbfd42cf515cb269868a639ed398665d661779f2af6e941",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1151.1407141677905,
+      "regret_after100": 1151.1407141677905,
+      "mean_rank": 13.9,
+      "cpu": 12.510214000000001,
+      "wall": 12.618170666999504,
+      "rss": 539.015625,
+      "bbp_regret": 1397.0801763788347,
+      "full_regret": 1403.6517578463186,
+      "expected_vs_full": -0.004681774828228735,
+      "expected_vs_baseline": -0.00015004965344644905
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1474419226,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1505.0735888786144,
+      "regret_after_100": 1245.1859860251468,
+      "regret_after_300": 725.4742286138162,
+      "mean_gp_rank": 13.6,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.509207,
+      "wall_s": 12.62077170900011,
+      "peak_rss_mib": 542.140625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1474419226_e235a9f6ae27.json",
+      "source_sha256": "e235a9f6ae27fedeba29d94df362fc73898960ee01b293476064cbd6e5fda02b",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1474419226_Eps1e5/result.json",
+      "configuration": "f513445f8380c242395ed2d996df79a99a78e78577b6bb1a9b9b7cc4ac6f40da",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1245.1859860251468,
+      "regret_after100": 1245.1859860251468,
+      "mean_rank": 13.6,
+      "cpu": 12.509207,
+      "wall": 12.62077170900011,
+      "rss": 542.140625,
+      "bbp_regret": 1529.1021399235563,
+      "full_regret": 1501.4664020378384,
+      "expected_vs_full": 0.018405831691078678,
+      "expected_vs_baseline": 0.01596503401727012
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1489502826,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1328.2488097290088,
+      "regret_after_100": 1075.7918334837564,
+      "regret_after_300": 637.569435702428,
+      "mean_gp_rank": 17.44,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.067725,
+      "wall_s": 12.075246915999742,
+      "peak_rss_mib": 543.125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1489502826_cb91f45ccca1.json",
+      "source_sha256": "cb91f45ccca18ca3f79ddadba165b1905a6633349afb51633cd58d9a4c8ebfad",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1489502826_Eps1e5/result.json",
+      "configuration": "edb6bf6e5df085feccc158c4a4bd318aca426e0630fb2df0c21b44ee20b45cc6",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1075.7918334837564,
+      "regret_after100": 1075.7918334837564,
+      "mean_rank": 17.44,
+      "cpu": 12.067725,
+      "wall": 12.075246915999742,
+      "rss": 543.125,
+      "bbp_regret": 1315.3779495226145,
+      "full_regret": 1262.2778689425606,
+      "expected_vs_full": 0.04206687123853081,
+      "expected_vs_baseline": -0.009690097301137679
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1574110263,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1246.4551861604716,
+      "regret_after_100": 1037.9181706371498,
+      "regret_after_300": 638.2149845163067,
+      "mean_gp_rank": 16.9,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.059979,
+      "wall_s": 12.066984749999392,
+      "peak_rss_mib": 537.015625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1574110263_2c52f5508a4b.json",
+      "source_sha256": "2c52f5508a4b9c2aae21a7e74565f196ffd50c561fdfc0a3124741b764fc4177",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1574110263_Eps1e5/result.json",
+      "configuration": "88cbbdd0fca62ce74a83cf6d5a000f123b3ca814f458a809ec56590ff83ec1a7",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1037.9181706371498,
+      "regret_after100": 1037.9181706371498,
+      "mean_rank": 16.9,
+      "cpu": 12.059979,
+      "wall": 12.066984749999392,
+      "rss": 537.015625,
+      "bbp_regret": 1255.2096707906273,
+      "full_regret": 1253.5082073790616,
+      "expected_vs_full": 0.0013573612055746143,
+      "expected_vs_baseline": 0.007023505319210699
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1612499641,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1321.0948205508548,
+      "regret_after_100": 1062.552083656463,
+      "regret_after_300": 675.4137146950661,
+      "mean_gp_rank": 16.04,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.512469000000001,
+      "wall_s": 12.537025416000688,
+      "peak_rss_mib": 543.71875,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1612499641_93422ffb6ef1.json",
+      "source_sha256": "93422ffb6ef13ab476675dca44f221b47f91d94bafb25a7377f3eec3891b7857",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1612499641_Eps1e5/result.json",
+      "configuration": "55e09133902814c4a6dc8592276576deb085803340687e3bb360610991911d99",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1062.552083656463,
+      "regret_after100": 1062.552083656463,
+      "mean_rank": 16.04,
+      "cpu": 12.512469000000001,
+      "wall": 12.537025416000688,
+      "rss": 543.71875,
+      "bbp_regret": 1272.188130704436,
+      "full_regret": 1245.83199456524,
+      "expected_vs_full": 0.021155449734932885,
+      "expected_vs_baseline": -0.03701981802186338
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1670897433,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1510.350328235986,
+      "regret_after_100": 1285.539910910952,
+      "regret_after_300": 760.889813729988,
+      "mean_gp_rank": 18.38,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.511037,
+      "wall_s": 12.534239249998791,
+      "peak_rss_mib": 543.65625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1670897433_8dddd0901ed6.json",
+      "source_sha256": "8dddd0901ed6850ed58df3226600394af1ab79dcd9e22c84a0d1afc952da9764",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1670897433_Eps1e5/result.json",
+      "configuration": "f27b0de76e0787dfb57447d91dd3cb59379ef493e7f1d0ca859bfce8440733b0",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1285.539910910952,
+      "regret_after100": 1285.539910910952,
+      "mean_rank": 18.38,
+      "cpu": 12.511037,
+      "wall": 12.534239249998791,
+      "rss": 543.65625,
+      "bbp_regret": 1510.3503282359866,
+      "full_regret": 1510.3981030515924,
+      "expected_vs_full": -3.163061149857871e-05,
+      "expected_vs_baseline": 4.440892098500626e-16
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1675250178,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1399.0799142342012,
+      "regret_after_100": 1153.8368220681264,
+      "regret_after_300": 659.4768131069522,
+      "mean_gp_rank": 12.22,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.484258,
+      "wall_s": 12.609245999999985,
+      "peak_rss_mib": 544.515625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1675250178_37eca7f49ee8.json",
+      "source_sha256": "37eca7f49ee8e216e1c94dda2eabbc258fd321ac038ee38112f273ccda939997",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1675250178_Eps1e5/result.json",
+      "configuration": "b91e28aa7ae37e43d9e18ff865a9da16ea0a5a4ff1e37f9593a580648552fae5",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1153.8368220681264,
+      "regret_after100": 1153.8368220681264,
+      "mean_rank": 12.22,
+      "cpu": 12.484258,
+      "wall": 12.609245999999985,
+      "rss": 544.515625,
+      "bbp_regret": 1389.9952041659105,
+      "full_regret": 1389.9952041659105,
+      "expected_vs_full": 0.0,
+      "expected_vs_baseline": -0.00649334607398977
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1692532192,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1438.239704617353,
+      "regret_after_100": 1165.76776548788,
+      "regret_after_300": 691.0039846951182,
+      "mean_gp_rank": 15.6,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.484903,
+      "wall_s": 12.611770915998932,
+      "peak_rss_mib": 539.453125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1692532192_c37bedd3ebc2.json",
+      "source_sha256": "c37bedd3ebc2ed2b67a44e626c3a10a857a3c06aef195f7393b689a1ec5a10d0",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1692532192_Eps1e5/result.json",
+      "configuration": "2c9865bdc10084ae8b95ff9888049769c97db4e21490fd0e086884708ebecb4e",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1165.76776548788,
+      "regret_after100": 1165.76776548788,
+      "mean_rank": 15.6,
+      "cpu": 12.484903,
+      "wall": 12.611770915998932,
+      "rss": 539.453125,
+      "bbp_regret": 1438.2397046173535,
+      "full_regret": 1445.8011970089615,
+      "expected_vs_full": -0.005229966891195703,
+      "expected_vs_baseline": 2.220446049250313e-16
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1825741997,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1269.7258898542837,
+      "regret_after_100": 1020.0886946286248,
+      "regret_after_300": 594.5919862097228,
+      "mean_gp_rank": 16.1,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.499732,
+      "wall_s": 12.610110499997973,
+      "peak_rss_mib": 502.296875,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1825741997_30f8e30f3d22.json",
+      "source_sha256": "30f8e30f3d223f801af14d8ca50055257443ff42cf548f06775bb04b25d3d97e",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1825741997_Eps1e5/result.json",
+      "configuration": "58298b4f1aa0927e221044fa03b6808905c4fec7ea89b02847db8dce13c935e0",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1020.0886946286248,
+      "regret_after100": 1020.0886946286248,
+      "mean_rank": 16.1,
+      "cpu": 12.499732,
+      "wall": 12.610110499997973,
+      "rss": 502.296875,
+      "bbp_regret": 1278.5231993452041,
+      "full_regret": 1383.981480951252,
+      "expected_vs_full": -0.07619919995863189,
+      "expected_vs_baseline": 0.006928510760641382
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1843916749,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1287.8204710129023,
+      "regret_after_100": 1034.5279557560266,
+      "regret_after_300": 618.9413147048791,
+      "mean_gp_rank": 17.22,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.500891000000001,
+      "wall_s": 12.612293458001659,
+      "peak_rss_mib": 502.140625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1843916749_c0bdf41e7d9c.json",
+      "source_sha256": "c0bdf41e7d9cf1c0f9bcf755c590fef495f9043ffb0bfa99c0f8e201f96c42ca",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1843916749_Eps1e5/result.json",
+      "configuration": "9c955b2f422b6a97c7fd69917d6817ae24f38cc06e71573f1fb3d698c7123b56",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1034.5279557560266,
+      "regret_after100": 1034.5279557560266,
+      "mean_rank": 17.22,
+      "cpu": 12.500891000000001,
+      "wall": 12.612293458001659,
+      "rss": 502.140625,
+      "bbp_regret": 1303.2800608220577,
+      "full_regret": 1288.1470046736933,
+      "expected_vs_full": 0.011747926357362992,
+      "expected_vs_baseline": 0.01200446037093661
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1931708228,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1424.633066244371,
+      "regret_after_100": 1180.5148984673212,
+      "regret_after_300": 674.3077097708482,
+      "mean_gp_rank": 10.84,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.507244,
+      "wall_s": 12.625134791000164,
+      "peak_rss_mib": 544.4375,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1931708228_5b08f942fda6.json",
+      "source_sha256": "5b08f942fda66ba96a831de457f79a7585d604e7b9bb8738804985ed783bf670",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1931708228_Eps1e5/result.json",
+      "configuration": "2c90ba436ecea3e3b10e3f1c4ea273d3187234bd360bf4748a4d6922d30f65c8",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1180.5148984673212,
+      "regret_after100": 1180.5148984673212,
+      "mean_rank": 10.84,
+      "cpu": 12.507244,
+      "wall": 12.625134791000164,
+      "rss": 544.4375,
+      "bbp_regret": 1472.4816071583807,
+      "full_regret": 1528.388554543833,
+      "expected_vs_full": -0.036579014687883715,
+      "expected_vs_baseline": 0.033586571902439744
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1985066759,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1432.6167022696134,
+      "regret_after_100": 1161.043930783297,
+      "regret_after_300": 688.6823425344866,
+      "mean_gp_rank": 15.22,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.507940999999999,
+      "wall_s": 12.628216416000214,
+      "peak_rss_mib": 539.59375,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1985066759_45a9dcee35f6.json",
+      "source_sha256": "45a9dcee35f6362af23c2c1e09df299acbc46f54ebc5a4a91f85de9b29e7da16",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1985066759_Eps1e5/result.json",
+      "configuration": "3f4d70b06934f403936f8cca59a548219c7554813e1c121de82bd5a70776b3c3",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1161.043930783297,
+      "regret_after100": 1161.043930783297,
+      "mean_rank": 15.22,
+      "cpu": 12.507940999999999,
+      "wall": 12.628216416000214,
+      "rss": 539.59375,
+      "bbp_regret": 1432.616702269614,
+      "full_regret": 1427.8927042061184,
+      "expected_vs_full": 0.003308370474602418,
+      "expected_vs_baseline": 4.440892098500626e-16
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 162854674,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1352.0490205205429,
+      "regret_after_100": 1117.4865858900819,
+      "regret_after_300": 654.0683066025259,
+      "mean_gp_rank": 13.34,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.982543,
+      "wall_s": 12.116724957999395,
+      "peak_rss_mib": 544.421875,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed162854674_6453f0b13c5f.json",
+      "source_sha256": "6453f0b13c5f44d7bd216ca4274b6aeb4cdcc4a0130bf909bbb0f2ac6fcaa557",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed162854674_Eps1e5/result.json",
+      "configuration": "730ff415aefca1713d13c26785ae1839955bf0795bf1dc71e947ba3e08c6c27e",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1117.4865858900819,
+      "regret_after100": 1117.4865858900819,
+      "mean_rank": 13.34,
+      "cpu": 11.982543,
+      "wall": 12.116724957999395,
+      "rss": 544.421875,
+      "bbp_regret": 1313.9381397006543,
+      "full_regret": 1313.9381397006543,
+      "expected_vs_full": 0.0,
+      "expected_vs_baseline": -0.02818749930029585
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 458737337,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1518.5226256496396,
+      "regret_after_100": 1251.3512313524113,
+      "regret_after_300": 762.7779828967218,
+      "mean_gp_rank": 15.1,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.997723,
+      "wall_s": 12.133218708997447,
+      "peak_rss_mib": 545.28125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed458737337_f00d971bf8c4.json",
+      "source_sha256": "f00d971bf8c4428cff4b8cf5459a7f129f8aa4012fa964b88c37ecfd77c959f0",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed458737337_Eps1e5/result.json",
+      "configuration": "ce38a8b20e0b833ee9df3bcfc3127872ccf98974e90af5d5732af8db9e386bff",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1251.3512313524113,
+      "regret_after100": 1251.3512313524113,
+      "mean_rank": 15.1,
+      "cpu": 11.997723,
+      "wall": 12.133218708997447,
+      "rss": 545.28125,
+      "bbp_regret": 1473.1457485357887,
+      "full_regret": 1504.4509098840174,
+      "expected_vs_full": -0.02080836346507453,
+      "expected_vs_baseline": -0.029882252886708427
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1937092903,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1353.1788043516274,
+      "regret_after_100": 1122.4279898041361,
+      "regret_after_300": 664.0040737361052,
+      "mean_gp_rank": 16.3,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.78311,
+      "wall_s": 11.80665529199905,
+      "peak_rss_mib": 541.375,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1937092903_22cba6670857.json",
+      "source_sha256": "22cba6670857a0ffdd5b2ffcb8dd0dd35604fd210ae383f46b4a914fecb64924",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1937092903_Eps1e5/result.json",
+      "configuration": "b04ccf78bb50cc46686ed4c6d072de4deeddc47ef7f578648c207ac54acae7d3",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1122.4279898041361,
+      "regret_after100": 1122.4279898041361,
+      "mean_rank": 16.3,
+      "cpu": 11.78311,
+      "wall": 11.80665529199905,
+      "rss": 541.375,
+      "bbp_regret": 1311.46007189108,
+      "full_regret": 1426.4677845859496,
+      "expected_vs_full": -0.08062412200094105,
+      "expected_vs_baseline": -0.030830169912790528
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 642579509,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1440.1138918928145,
+      "regret_after_100": 1202.5165304217708,
+      "regret_after_300": 713.41019094822,
+      "mean_gp_rank": 15.6,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 11.767353,
+      "wall_s": 11.792355499997939,
+      "peak_rss_mib": 543.484375,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed642579509_d2c41774011e.json",
+      "source_sha256": "d2c41774011e17b2001761edbc5b37b77306239ad707ffcf0689a8ce76648b69",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed642579509_Eps1e5/result.json",
+      "configuration": "b9de9d489e2c6edfe4bd07c8be9e9656d146b3422aea0e51d5d44ba8cf940ab7",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1202.5165304217708,
+      "regret_after100": 1202.5165304217708,
+      "mean_rank": 15.6,
+      "cpu": 11.767353,
+      "wall": 11.792355499997939,
+      "rss": 543.484375,
+      "bbp_regret": 1475.1971998701745,
+      "full_regret": 1437.9441449978085,
+      "expected_vs_full": 0.025907164059159493,
+      "expected_vs_baseline": 0.024361481529247886
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 998733448,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1395.8337967635514,
+      "regret_after_100": 1119.6017699976612,
+      "regret_after_300": 659.1146784700492,
+      "mean_gp_rank": 18.44,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.477364,
+      "wall_s": 12.79322591700111,
+      "peak_rss_mib": 387.296875,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed998733448_3d301d14e809.json",
+      "source_sha256": "3d301d14e8091ec65df43564b9d2010a35f42aefdb8f3ca37fd3475bc75ba2ee",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed998733448_Eps1e5/result.json",
+      "configuration": "6ce3a0abf4c9f122669b35a867258ef25b094a54d65f01baddcf2ce7e008b8bc",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1119.6017699976612,
+      "regret_after100": 1119.6017699976612,
+      "mean_rank": 18.44,
+      "cpu": 12.477364,
+      "wall": 12.79322591700111,
+      "rss": 387.296875,
+      "bbp_regret": 1417.555876833564,
+      "full_regret": 1416.4137460561437,
+      "expected_vs_full": 0.0008063539206679682,
+      "expected_vs_baseline": 0.015562082047575032
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 567341557,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1298.5473588727073,
+      "regret_after_100": 1056.2000272970438,
+      "regret_after_300": 574.3547092425642,
+      "mean_gp_rank": 15.26,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.452492000000001,
+      "wall_s": 12.770260375000362,
+      "peak_rss_mib": 388.71875,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed567341557_c16b7f375832.json",
+      "source_sha256": "c16b7f3758325a75acf859fc89d6de19a85e7e89adc6dc9e7f30ffb4630a2ccd",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed567341557_Eps1e5/result.json",
+      "configuration": "1368b4d9679c109fa90c6011b7386622348e440f24b32726b20bd1c014dfa9d7",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1056.2000272970438,
+      "regret_after100": 1056.2000272970438,
+      "mean_rank": 15.26,
+      "cpu": 12.452492000000001,
+      "wall": 12.770260375000362,
+      "rss": 388.71875,
+      "bbp_regret": 1438.6060824103743,
+      "full_regret": 1367.4114651593065,
+      "expected_vs_full": 0.052065248145899856,
+      "expected_vs_baseline": 0.10785800192859707
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 726091954,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1275.9815575156408,
+      "regret_after_100": 1052.1915340120597,
+      "regret_after_300": 605.7995873734013,
+      "mean_gp_rank": 15.34,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.341524,
+      "wall_s": 12.461959917000058,
+      "peak_rss_mib": 539.0,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed726091954_8aefded17855.json",
+      "source_sha256": "8aefded17855334e39a93fa99369c9d5f05ad78ad30e498613b419a37d1e0137",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed726091954_Eps1e5/result.json",
+      "configuration": "1c223faa7652639650f28b2c3a24940fd793c82d7070bb7cd64ffa58cc0325d7",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1052.1915340120597,
+      "regret_after100": 1052.1915340120597,
+      "mean_rank": 15.34,
+      "cpu": 12.341524,
+      "wall": 12.461959917000058,
+      "rss": 539.0,
+      "bbp_regret": 1275.801665192095,
+      "full_regret": 1282.9483994360266,
+      "expected_vs_full": -0.005570554705920605,
+      "expected_vs_baseline": -0.00014098348246982528
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1420037105,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1442.4659860312215,
+      "regret_after_100": 1186.8232087254205,
+      "regret_after_300": 714.428611159727,
+      "mean_gp_rank": 13.96,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.340439,
+      "wall_s": 12.459939415999543,
+      "peak_rss_mib": 544.921875,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1420037105_9ea6d2fcc12e.json",
+      "source_sha256": "9ea6d2fcc12e9ec110de6888b6c5e5a3600b3cfcea9004563896bfa91af8ed84",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1420037105_Eps1e5/result.json",
+      "configuration": "cfb91d2817dbe93b02731b7ad32c02e9b026c2be292565f9af220fe47ecb6f49",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1186.8232087254205,
+      "regret_after100": 1186.8232087254205,
+      "mean_rank": 13.96,
+      "cpu": 12.340439,
+      "wall": 12.459939415999543,
+      "rss": 544.921875,
+      "bbp_regret": 1436.4666505078712,
+      "full_regret": 1444.0551749182587,
+      "expected_vs_full": -0.005255010017755746,
+      "expected_vs_baseline": -0.004159082835538341
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 488895996,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1457.0873927349965,
+      "regret_after_100": 1211.2455080604282,
+      "regret_after_300": 682.4501203948003,
+      "mean_gp_rank": 16.54,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.175141,
+      "wall_s": 12.285337959001481,
+      "peak_rss_mib": 501.421875,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed488895996_00cb8df4981f.json",
+      "source_sha256": "00cb8df4981fbbac5a1fd9762343e3cec265d928397ab4006d3826400ca98d6c",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed488895996_Eps1e5/result.json",
+      "configuration": "a5f7b90a049cfb4cb10f411b4a86a8f2184f3241fe2743b67e3f9b2f5f90fb38",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1211.2455080604282,
+      "regret_after100": 1211.2455080604282,
+      "mean_rank": 16.54,
+      "cpu": 12.175141,
+      "wall": 12.285337959001481,
+      "rss": 501.421875,
+      "bbp_regret": 1459.194855060369,
+      "full_regret": 1461.5745501691003,
+      "expected_vs_full": -0.0016281722396274123,
+      "expected_vs_baseline": 0.0014463527279697797
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1800891344,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1259.4179333212717,
+      "regret_after_100": 1021.001102593422,
+      "regret_after_300": 577.7004182561978,
+      "mean_gp_rank": 17.04,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.172474999999999,
+      "wall_s": 12.281259332998161,
+      "peak_rss_mib": 502.3125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1800891344_6c3139e7eb06.json",
+      "source_sha256": "6c3139e7eb067ad71ad05d3314c9bd7d25103c8cb3cc75ef8615e0c7d0af45d1",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1800891344_Eps1e5/result.json",
+      "configuration": "39aedc21611c25a7382e5ffcf6626af71e4e57ecb4381551aece603d68590ed4",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1021.001102593422,
+      "regret_after100": 1021.001102593422,
+      "mean_rank": 17.04,
+      "cpu": 12.172474999999999,
+      "wall": 12.281259332998161,
+      "rss": 502.3125,
+      "bbp_regret": 1278.7050600857028,
+      "full_regret": 1285.4744690352036,
+      "expected_vs_full": -0.0052660781000041235,
+      "expected_vs_baseline": 0.015314318030685836
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1448742623,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1331.6639528774967,
+      "regret_after_100": 1104.0300041933535,
+      "regret_after_300": 642.683553004484,
+      "mean_gp_rank": 12.2,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.519343999999998,
+      "wall_s": 12.541790666997258,
+      "peak_rss_mib": 540.90625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1448742623_ecd42b3e8a48.json",
+      "source_sha256": "ecd42b3e8a4823a7345ee30ddb5cc56197c913c45080764aff819a2a1cea5054",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1448742623_Eps1e5/result.json",
+      "configuration": "87373fb65b60a755badf605ed9eedd8220cd503ba27772d10e7062bca41fffa0",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1104.0300041933535,
+      "regret_after100": 1104.0300041933535,
+      "mean_rank": 12.2,
+      "cpu": 12.519343999999998,
+      "wall": 12.541790666997258,
+      "rss": 540.90625,
+      "bbp_regret": 1322.5094102285223,
+      "full_regret": 1320.851368617494,
+      "expected_vs_full": 0.0012552825021967529,
+      "expected_vs_baseline": -0.00687451412136908
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1786198063,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1362.030545750856,
+      "regret_after_100": 1120.0206965608868,
+      "regret_after_300": 653.2428959929481,
+      "mean_gp_rank": 15.6,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.522536,
+      "wall_s": 12.54581116600093,
+      "peak_rss_mib": 544.078125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1786198063_18680a9557a5.json",
+      "source_sha256": "18680a9557a512f772d8554304a207673bebeef677ca0b9dd052380202d18ef5",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1786198063_Eps1e5/result.json",
+      "configuration": "e2057444d3acc30e337eaaa42a8b097bc2dd35cb527e85226d89339727fe6404",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1120.0206965608868,
+      "regret_after100": 1120.0206965608868,
+      "mean_rank": 15.6,
+      "cpu": 12.522536,
+      "wall": 12.54581116600093,
+      "rss": 544.078125,
+      "bbp_regret": 1355.7125659126707,
+      "full_regret": 1354.9782919772879,
+      "expected_vs_full": 0.0005419082650477414,
+      "expected_vs_baseline": -0.004638647685175301
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 1176065761,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1410.5814892595774,
+      "regret_after_100": 1149.9467911034008,
+      "regret_after_300": 655.8522981020212,
+      "mean_gp_rank": 14.8,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.466467,
+      "wall_s": 12.577859083001385,
+      "peak_rss_mib": 535.65625,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed1176065761_48ad6f6786ae.json",
+      "source_sha256": "48ad6f6786ae2425008dcd50bdda7ca23489cf235c20733e7d56e6d7d938835c",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed1176065761_Eps1e5/result.json",
+      "configuration": "abde415fd0b19ff9bb6bea218fea8e57b9d836d3ff322a6a93212fb07a23ddb5",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1149.9467911034008,
+      "regret_after100": 1149.9467911034008,
+      "mean_rank": 14.8,
+      "cpu": 12.466467,
+      "wall": 12.577859083001385,
+      "rss": 535.65625,
+      "bbp_regret": 1412.6276930474248,
+      "full_regret": 1413.4968586308887,
+      "expected_vs_full": -0.0006149045030816591,
+      "expected_vs_baseline": 0.0014506101231495094
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 998350375,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1367.8111766548104,
+      "regret_after_100": 1131.6326755471198,
+      "regret_after_300": 683.859464779953,
+      "mean_gp_rank": 16.2,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 12.46656,
+      "wall_s": 12.576058292001107,
+      "peak_rss_mib": 542.734375,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed998350375_f82759c557db.json",
+      "source_sha256": "f82759c557dbccdf1de54c0fc8647c65d5dd2f27b18234e64192ed881b3a3165",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed998350375_Eps1e5/result.json",
+      "configuration": "7648d66d062677dc74a2517014cc658f3ea79956e3389424b2bba6610d0e0aeb",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1131.6326755471198,
+      "regret_after100": 1131.6326755471198,
+      "mean_rank": 16.2,
+      "cpu": 12.46656,
+      "wall": 12.576058292001107,
+      "rss": 542.734375,
+      "bbp_regret": 1327.6116959179142,
+      "full_regret": 1409.3413018623864,
+      "expected_vs_full": -0.05799135087893181,
+      "expected_vs_baseline": -0.02938964194985605
+    },
+    {
+      "id": "EXP095",
+      "environment": "KuaiRec_100_users",
+      "env": "KuaiRec_100_users",
+      "seed": 651056294,
+      "method": "Eps1e5",
+      "raw_method": "Eps1e5",
+      "rounds": 600,
+      "regret": 1368.2199432416105,
+      "regret_after_100": 1137.6429143252158,
+      "regret_after_300": 675.8064777882768,
+      "mean_gp_rank": 17.36,
+      "nn_params_final": 7844,
+      "total_params_final": 17847,
+      "cpu_s": 9.986732,
+      "wall_s": 10.094356875000813,
+      "peak_rss_mib": 542.3125,
+      "result_file": "KuaiRec_100_users/EXP095/results/seed651056294_f964835c428f.json",
+      "source_sha256": "f964835c428f6143d7a0a44590ef237178be09dd24fa2d40b1fc76f163d32297",
+      "original_source": "nn_agp_pr/paper_experiments/reruns/EXP095/seed651056294_Eps1e5/result.json",
+      "configuration": "39bda976a0917d8addb7d5cb3319aead9a98f94f73a6da8d33887694e66b1fa3",
+      "paper_refs": [
+        "tab:bbp-results",
+        "tab:bbp-controls",
+        "tab:online-protocol",
+        "fig:extended-curves",
+        "fig:direct-curves",
+        "fig:threshold-dynamics"
+      ],
+      "post100": 1137.6429143252158,
+      "regret_after100": 1137.6429143252158,
+      "mean_rank": 17.36,
+      "cpu": 9.986732,
+      "wall": 10.094356875000813,
+      "rss": 542.3125,
+      "bbp_regret": 1367.5432605978651,
+      "full_regret": 1367.5432605978651,
+      "expected_vs_full": 0.0,
+      "expected_vs_baseline": -0.0004945715395305861
     }
   ],
   "configurations": {
@@ -28893,23 +33140,23 @@
   "plots": [
     {
       "file": "KuaiRec_100_users/EXP095/plots/main_control.pdf",
-      "original_source": "new_paper/figures/main_control.pdf",
-      "sha256": "f0e717939f6058ed659c769f678c87594d87225e0f893da50c881b8958e38cf5",
-      "bytes": 80239,
+      "original_source": "nn_agp_pr/paper_experiments/paper/figures/main_control.pdf",
+      "sha256": "9c298d7e7c9717de348aed5e0428d4cf5c318fe0a0f1a9d313a97342df370ec4",
+      "bytes": 81771,
       "role": "final_manuscript_figure"
     },
     {
       "file": "KuaiRec_100_users/EXP095/plots/threshold_dynamics.pdf",
-      "original_source": "new_paper/figures/threshold_dynamics.pdf",
-      "sha256": "655020f50be85330f3bca9a231a0696ea9228f19348e9e4ad26d4a7e2ad42954",
-      "bytes": 40736,
+      "original_source": "nn_agp_pr/paper_experiments/paper/figures/threshold_dynamics.pdf",
+      "sha256": "0d27b08ac18dce4ef047e9ca6da32470ca2aa26b55622f254d24dae2e7611bc4",
+      "bytes": 40824,
       "role": "final_manuscript_figure"
     },
     {
       "file": "KuaiRec_100_users/EXP095/plots/appendix_regret_online.pdf",
-      "original_source": "new_paper/figures/appendix_regret_online.pdf",
-      "sha256": "050bc882a9324b3cf4c11c5db56b47d421565adff8fe54cd9b106da62abc7aaa",
-      "bytes": 153424,
+      "original_source": "nn_agp_pr/paper_experiments/paper/figures/appendix_regret_online.pdf",
+      "sha256": "02bd3e317f69d23c990c5e1e2b5783a4508e9b64e10367a78443f08ba3cfe567",
+      "bytes": 161816,
       "role": "final_manuscript_figure"
     },
     {
@@ -28919,7 +33166,11 @@
       "bytes": 54184
     }
   ],
-  "method_configurations": {},
+  "method_configurations": {
+    "Eps1e5": {
+      "eps_prune": 1e-05
+    }
+  },
   "notes": [],
   "paper_seed_order": [
     7200,
@@ -28996,7 +33247,7 @@
     998350375,
     651056294
   ],
-  "expected_runs": 511,
+  "expected_runs": 584,
   "methods": [
     "BBP",
     "Fixed10",
@@ -29004,7 +33255,8 @@
     "FixedEps1e6",
     "Full",
     "Relative",
-    "Small"
+    "Small",
+    "Eps1e5"
   ],
   "seeds": [
     7200,
@@ -29533,6 +33785,81 @@
       651056294
     ],
     "Small": [
+      7200,
+      7201,
+      7202,
+      7203,
+      7204,
+      7205,
+      7206,
+      7207,
+      7208,
+      7209,
+      7210,
+      7211,
+      7212,
+      7213,
+      7214,
+      5524256,
+      43992497,
+      44579598,
+      83498340,
+      162494215,
+      295340044,
+      302645401,
+      343947955,
+      583910462,
+      626863097,
+      676755751,
+      709255664,
+      764712097,
+      784820884,
+      806485893,
+      833816902,
+      842701295,
+      844327520,
+      856092563,
+      906338870,
+      939142453,
+      964415178,
+      977002178,
+      1004566682,
+      1204695200,
+      1216733727,
+      1295017899,
+      1405645881,
+      1441187591,
+      1447778654,
+      1463307338,
+      1467670520,
+      1474419226,
+      1489502826,
+      1574110263,
+      1612499641,
+      1670897433,
+      1675250178,
+      1692532192,
+      1825741997,
+      1843916749,
+      1931708228,
+      1985066759,
+      162854674,
+      458737337,
+      1937092903,
+      642579509,
+      998733448,
+      567341557,
+      726091954,
+      1420037105,
+      488895996,
+      1800891344,
+      1448742623,
+      1786198063,
+      1176065761,
+      998350375,
+      651056294
+    ],
+    "Eps1e5": [
       7200,
       7201,
       7202,

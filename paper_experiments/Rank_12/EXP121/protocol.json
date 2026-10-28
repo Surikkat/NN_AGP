@@ -2,7 +2,7 @@
   "id": "EXP121",
   "environment": "Rank_12",
   "paper_key": "online.rank12",
-  "title": "Rank 12 (noise 0.5) / d=5 / noise=0.5 / history n=t / T=400",
+  "title": "Smooth 12 / history calibration",
   "horizon": 400,
   "paper_refs": [
     "tab:bbp-results",
@@ -5463,9 +5463,9 @@
   "plots": [
     {
       "file": "Rank_12/EXP121/plots/appendix_regret_online.pdf",
-      "original_source": "new_paper/figures/appendix_regret_online.pdf",
-      "sha256": "050bc882a9324b3cf4c11c5db56b47d421565adff8fe54cd9b106da62abc7aaa",
-      "bytes": 153424,
+      "original_source": "nn_agp_pr/paper_experiments/paper/figures/appendix_regret_online.pdf",
+      "sha256": "02bd3e317f69d23c990c5e1e2b5783a4508e9b64e10367a78443f08ba3cfe567",
+      "bytes": 161816,
       "role": "final_manuscript_figure"
     },
     {

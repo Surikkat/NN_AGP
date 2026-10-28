@@ -2,7 +2,7 @@
   "id": "EXP061",
   "environment": "Benchmark_07",
   "paper_key": "v4.exp07",
-  "title": "Exp 7: Near-cutoff nuisance / d=10 / noise sd=0.1 / history n=t / T=200",
+  "title": "Exp. 7 / near-cutoff nuisance / history calibration",
   "horizon": 200,
   "paper_refs": [
     "tab:bbp-results",
@@ -5071,9 +5071,9 @@
   "plots": [
     {
       "file": "Benchmark_07/EXP061/plots/appendix_regret_v4.pdf",
-      "original_source": "new_paper/figures/appendix_regret_v4.pdf",
-      "sha256": "ad50378fb2413f902b1914e9f26ddd236a1fa510a679faba23ba64e418ccc8db",
-      "bytes": 83013,
+      "original_source": "nn_agp_pr/paper_experiments/paper/figures/appendix_regret_v4.pdf",
+      "sha256": "5b38dc5b7bde71cdb4b3574e13590cd06c42ed80993511f465aa63eee4a9f705",
+      "bytes": 80333,
       "role": "final_manuscript_figure"
     },
     {
