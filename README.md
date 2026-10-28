@@ -25,20 +25,20 @@ List experiments and run one:
 
 ```sh
 python run_paper.py --list
-python run_paper.py --experiment EXP248 --method BBP --seed 6100
+python run_paper.py --experiment EXP248 --method BBP --seed 6100 --output results/weak
 ```
 
 Build the paper's tables and figures from saved results:
 
 ```sh
-python plot_paper.py
+python plot_paper.py --output output
 ```
 
 Run all experiments and build their tables and figures:
 
 ```sh
-python run_paper.py --all
-python plot_paper.py --runs paper_experiments/reruns
+python run_paper.py --all --output results
+python plot_paper.py --input results --output output
 ```
 
 Settings, results, figures and the Excel summary are in

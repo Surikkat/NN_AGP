@@ -2,5 +2,5 @@ __pycache__/
 *.pyc
 .venv/
 .DS_Store
-paper_experiments/reruns/
-paper_experiments/paper_rerun/
+/results/
+/output/
