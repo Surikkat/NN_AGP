@@ -37,17 +37,22 @@ Run from the repository root:
 
 ```sh
 python run_paper.py --list
-python run_paper.py --experiment EXP248 --method BBP --seed 6100
+python run_paper.py --experiment EXP248 --method BBP --seed 6100 --output results/weak
 ```
 
 Use the method names printed by `--list`; quote names containing spaces.
-New results and checkpoints go to `paper_experiments/reruns/`.
 
 Rebuild the paper's nine tables and seven figures from saved results:
 
 ```sh
-python plot_paper.py
+python plot_paper.py --output output
 ```
 
-The output is in `paper_experiments/paper/`.
-See the [main README](../README.md) for installation and running all experiments.
+Run all experiments and build their tables and figures:
+
+```sh
+python run_paper.py --all --output results
+python plot_paper.py --input results --output output
+```
+
+See the [main README](../README.md) for installation.

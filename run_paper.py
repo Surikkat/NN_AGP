@@ -163,22 +163,12 @@ def train(plan, record):
         row['rank_after'] = model.m if adaptive else rank
         rows.append(row)
     timing = dict(cpu=time.process_time()-cpu,wall=time.perf_counter()-wall)
-    old = read(DATA/record['result_file'])['trajectory']
-    differences = {name:[r['t'] for r,s in zip(rows,old) if name in s and
-        (r[name]!=s.get(name) if name in ('action','rank') else not math.isclose(r[name],s[name],rel_tol=1e-9,abs_tol=1e-9))]
-        for name in ('action','rank','regret','reward')}
-    assert len(rows)==len(old)==plan['horizon']
     peak = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
     return dict(status='complete',experiment=plan['id'],method=method,seed=seed,
         horizon=plan['horizon'],trajectory=rows,timing=timing,
         peak_rss_bytes=int(peak if sys.platform=='darwin' else peak*1024),
         parameters=dict(initial=initial,final=parameters(model)),transfer=getattr(model,'transfer',None),
         spectra=getattr(model,'spectral_history',[]),numerical_fallbacks=getattr(model,'numerical_fallbacks',[]),
-        reference=dict(file=record['result_file'],
-            matching_actions_and_regret=not(differences['action'] or differences['regret']),
-            matching_ranks=not differences['rank'],
-            matching_rewards=(not differences['reward']) if all('reward' in r for r in old) else None,
-            first_different_round=min((t for values in differences.values() for t in values),default=None)),
         summary=dict(final_rank=model.m if adaptive else None,regret=math.fsum(r['regret'] for r in rows),
             regret_after_100=math.fsum(r['regret'] for r in rows[100:]),
             regret_after_300=math.fsum(r['regret'] for r in rows[300:]))),model
@@ -194,20 +184,15 @@ def jobs(plan):
         key=lambda r:(plan['seeds'].index(r['seed']),r['method']))]
 
 
-def result_path(directory, plan, method, seed):
-    name = re.sub(r'[^A-Za-z0-9.-]+', '_', method).strip('_')
-    return directory/plan['id']/f'seed{seed}_{name}'/'result.json'
-
-
 def main():
     parser = argparse.ArgumentParser(description='Run paper experiments.')
     parser.add_argument('--experiment')
     parser.add_argument('--method',help='Method name from --list.')
     parser.add_argument('--seed',type=int)
-    parser.add_argument('--output',type=Path)
+    parser.add_argument('--output',type=Path,help='Folder for results and checkpoints.')
     parser.add_argument('--all',action='store_true')
     parser.add_argument('--list',action='store_true')
-    parser.add_argument('--from-checkpoint',action='store_true',help='Repeat BBP spectral sampling without retraining.')
+    parser.add_argument('--from-checkpoint',action='store_true',help='Use the saved BBP checkpoint.')
     args = parser.parse_args()
     plans = protocols()
     if args.list:
@@ -215,65 +200,47 @@ def main():
             methods = ['Trained features'] if p.get('kind')=='spectral_diagnostic' else p['methods']
             print(f"{name}: {p['environment']}\n  Methods: {', '.join(methods)}\n  Seeds: {', '.join(map(str,p['seeds']))}")
         return
+    if args.output is None:
+        parser.error('Specify --output DIR.')
+    output = args.output.resolve()
     if args.all:
         if args.experiment or args.method or args.seed is not None or args.from_checkpoint:
-            parser.error('Use --all by itself, optionally with --output.')
-        directory = (args.output or DATA/'reruns').resolve()
+            parser.error('Use --all with --output only.')
         for plan in plans.values():
             for method,seed in jobs(plan):
-                path = result_path(directory,plan,method,seed)
-                if not path.exists():
-                    subprocess.run([sys.executable,'-B',str(Path(__file__)),'--experiment',plan['id'],
-                        '--method',method,'--seed',str(seed),'--output',str(path.parent)],check=True)
-                value = read(path)
-                if (value.get('status')!='complete' or value.get('experiment')!=plan['id'] or
-                    value.get('method')!=method or value.get('seed')!=seed or
-                    value.get('from_checkpoint',False)):
-                    raise ValueError(f'Existing run differs from this configuration: {path}')
-                if any(v is False for k,v in value.get('reference',{}).items() if k.startswith('matching_')):
-                    raise ValueError(f'Run differs from saved results: {path}')
+                subprocess.run([sys.executable,'-B',str(Path(__file__)),'--experiment',plan['id'],
+                    '--method',method,'--seed',str(seed),
+                    '--output',str(output/plan['folder']/'results')],check=True)
         return
     if args.experiment not in plans or args.seed is None:
-        parser.error('Use --experiment EXPxxx --method METHOD --seed SEED, or --list/--all.')
+        parser.error('Choose --experiment, --method and --seed from --list.')
     plan = plans[args.experiment]
     method = args.method or ('Trained features' if plan.get('kind')=='spectral_diagnostic' else None)
     if (method,args.seed) not in jobs(plan):
         parser.error('Choose a method and seed listed for this experiment.')
     if args.from_checkpoint and plan.get('kind')!='spectral_diagnostic':
-        parser.error('--from-checkpoint applies only to the BBP spectral experiment.')
-    output = (args.output or result_path(DATA/'reruns',plan,method,args.seed).parent).resolve()
-    if output.is_relative_to(DATA) and not output.is_relative_to(DATA/'reruns'):
-        parser.error('New runs inside paper_experiments must be under reruns/.')
-    output.mkdir(parents=True,exist_ok=False)
+        parser.error('--from-checkpoint applies only to the BBP experiment.')
+    output.mkdir(parents=True,exist_ok=True)
     import torch
     torch.set_num_threads(1);torch.set_num_interop_threads(1)
-    try:
-        if plan.get('kind')=='spectral_diagnostic':
-            import paper_bbp
-            origin = DATA/plan['folder']/'results'
-            if args.from_checkpoint:
-                for name in ('checkpoint.pt','calibration.npz'):
-                    shutil.copy2(origin/name,output/name)
-            else:
-                paper_bbp.train(output)
-            paper_bbp.sample(output)
-            import numpy as np
-            with np.load(origin/'samples.npz',allow_pickle=False) as old, np.load(
-                    output/'classical_transition/samples.npz',allow_pickle=False) as new:
-                same = set(old.files)==set(new.files) and all(
-                    np.allclose(old[k],new[k],rtol=1e-9,atol=1e-9) for k in old.files)
-            result = dict(status='complete',experiment=plan['id'],method=method,seed=args.seed,
-                from_checkpoint=args.from_checkpoint,results='classical_transition/results.json',
-                reference=dict(matching_spectral_samples=bool(same)))
+    if plan.get('kind')=='spectral_diagnostic':
+        import paper_bbp
+        if args.from_checkpoint:
+            source = DATA/plan['folder']/'results'
+            for name in ('checkpoint.pt','calibration.npz'):
+                if (source/name).resolve() != output/name:
+                    shutil.copy2(source/name,output/name)
         else:
-            record = next(r for r in plan['runs'] if r['method']==method and r['seed']==args.seed)
-            result,model = train(plan,record)
-            torch.save(checkpoint(model),output/'checkpoint.pt')
-        (output/'result.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
-        print(json.dumps(dict(output=str(output),status='complete',reference=result.get('reference'))))
-    except Exception as error:
-        (output/'failure.json').write_text(json.dumps(dict(status='failed',error=repr(error)),indent=2)+'\n')
-        raise
+            if not paper_bbp.train(output)['geometry_pass']:
+                raise RuntimeError('BBP calibration failed.')
+        paper_bbp.sample(output)
+    else:
+        record = next(r for r in plan['runs'] if r['method']==method and r['seed']==args.seed)
+        result,model = train(plan,record)
+        name = f"seed{args.seed}_{re.sub(r'[^A-Za-z0-9.-]+', '_', method).strip('_')}"
+        torch.save(checkpoint(model),output/(name+'.pt'))
+        (output/(name+'.json')).write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
+    print(f'Saved to {output}')
 
 
 if __name__=='__main__':

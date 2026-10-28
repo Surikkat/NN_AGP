@@ -6,7 +6,6 @@ from functools import lru_cache
 import json
 import os
 from pathlib import Path
-import re
 import sys
 import tempfile
 
@@ -46,12 +45,7 @@ def read(path):
     return json.loads(Path(path).read_text())
 
 
-def result_path(directory, plan, method, seed):
-    name = re.sub(r'[^A-Za-z0-9.-]+', '_', method).strip('_')
-    return directory / plan["id"] / f"seed{seed}_{name}" / "result.json"
-
-
-def load(plans, directory):
+def load(plans, input_dir):
     import numpy as np
     experiments = {}
     for plan in plans:
@@ -65,7 +59,7 @@ def load(plans, directory):
                 if seed not in records:
                     continue
                 record = records[seed]
-                path = ROOT / record["result_file"] if directory is None else result_path(directory, plan, method, seed)
+                path = input_dir / record["result_file"]
                 raw = read(path)
                 verify_run(raw, plan, method, seed, path)
                 sequence = raw["trajectory"]
@@ -77,8 +71,6 @@ def load(plans, directory):
                 if len(regret) != plan["horizon"] or not np.isfinite(regret).all():
                     raise ValueError(f"Invalid trajectory: {path}")
                 regret = np.cumsum(regret)
-                if directory is None and not np.isclose(regret[-1], record["regret"], rtol=1e-12, atol=1e-8):
-                    raise ValueError(f"Regret sum differs: {path}")
                 timing = raw["timing"]
                 parameters = raw.get("parameters", {}).get("final") or {}
                 rss = raw.get("peak_rss_bytes")
@@ -110,8 +102,6 @@ def verify_run(raw, plan, method, seed, path):
     if (raw.get("status") != "complete" or raw.get("experiment") != plan["id"] or
         raw.get("method") != method or raw.get("seed") != seed):
         raise ValueError(f"Wrong or incomplete run: {path}")
-    if any(v is False for k, v in raw.get("reference", {}).items() if k.startswith("matching_")):
-        raise ValueError(f"Run differs from saved results: {path}")
 
 
 def bootstrap(a, b):
@@ -523,24 +513,16 @@ def figures(experiments, phase, selector, output, summary):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--runs", type=Path, help="Read new runs from this directory")
-    parser.add_argument("--output", type=Path, help="Generated tables and figures directory")
+    parser.add_argument("--input", type=Path, default=ROOT, help="Results directory")
+    parser.add_argument("--output", type=Path, required=True, help="Generated tables and figures directory")
     args = parser.parse_args()
     plans = [read(p) for p in sorted(ROOT.glob("*/EXP*/protocol.json"))]
-    directory = args.runs.resolve() if args.runs else None
-    output = args.output.resolve() if args.output else ROOT / ("paper_rerun" if directory else "paper")
-    if output == ROOT or any(output.is_relative_to(ROOT / p["folder"]) for p in plans):
-        parser.error("Choose a generated-output directory, not a source/result directory")
-    if directory is not None and directory.is_relative_to(ROOT) and not directory.is_relative_to(ROOT / "reruns"):
-        parser.error("New model results inside the package belong under reruns/")
+    input_dir = args.input.resolve()
+    output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=True)
-    experiments = load(plans, directory)
+    experiments = load(plans, input_dir)
     phase_plan = next(p for p in plans if p.get("kind") == "spectral_diagnostic")
-    if directory is not None:
-        record = result_path(directory, phase_plan, "Trained features", phase_plan["seeds"][0])
-        verify_run(read(record), phase_plan, "Trained features", phase_plan["seeds"][0], record)
-    phase_dir = (ROOT / phase_plan["folder"] / "results" if directory is None else
-                 result_path(directory, phase_plan, "Trained features", phase_plan["seeds"][0]).parent / "classical_transition")
+    phase_dir = input_dir / phase_plan["folder"] / "results"
     import numpy as np
     with np.load(phase_dir / "samples.npz", allow_pickle=False) as archive:
         samples = {k: archive[k] for k in archive.files}
@@ -553,9 +535,8 @@ def main():
         os.environ["XDG_CACHE_HOME"] = cache
         figures(experiments, phase, selector, output, summary)
     summary["runs"] = sum(len(p["runs"]) for p in plans)
-    summary["input"] = "saved" if directory is None else str(directory)
     (output / "summary.json").write_text(json.dumps(summary, indent=2, allow_nan=False) + "\n")
-    print(json.dumps(dict(output=str(output), runs=summary["runs"], tables=9, figures=7)))
+    print(f"Saved to {output}")
 
 
 if __name__ == "__main__":

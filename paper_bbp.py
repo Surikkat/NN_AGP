@@ -302,7 +302,6 @@ def train(output):
         result["calibration_skipped"] = "Initial raw geometry failed predeclared gates"
     result["total_seconds"] = time.monotonic() - start
     write_json(output / "training_results.json", result)
-    print(json.dumps(result), flush=True)
     return result
 
 
@@ -321,10 +320,10 @@ def measure(H, n, targets):
 
 
 def sample(output):
-    """Read checkpoint/calibration; save 400 repetitions in output/classical_transition."""
+    """Read checkpoint/calibration; save sampled spectra in output."""
     output = Path(output)
-    out = output / "classical_transition"
-    out.mkdir(exist_ok=True)
+    out = output
+    out.mkdir(parents=True, exist_ok=True)
     state = torch.load(output/"checkpoint.pt", weights_only=False)
     agent = NN_AGP_UCB_Adaptive.from_config(state["config"], state["seed"], "BBP", calibration="fresh")
     agent.encoder.net.load_state_dict(state["g"])
@@ -415,5 +414,4 @@ def sample(output):
                       selector="NN_AGP_UCB_Adaptive._support_projection, calibration_mode=fresh, BBP"),
         observations=[dict(n=n, **{key: summary(value[j]) for key, value in selector.items()})
                       for j, n in enumerate(sizes)]))
-    print(json.dumps(dict(ncrit=critical.tolist(), last=rows[-1])), flush=True)
     return result

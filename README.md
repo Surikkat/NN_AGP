@@ -25,28 +25,21 @@ List experiments and run one:
 
 ```sh
 python run_paper.py --list
-python run_paper.py --experiment EXP248 --method BBP --seed 6100
+python run_paper.py --experiment EXP248 --method BBP --seed 6100 --output results/weak
 ```
-
-New runs are saved under `paper_experiments/reruns/`.
 
 Build the paper's tables and figures from saved results:
 
 ```sh
-python plot_paper.py
+python plot_paper.py --output output
 ```
-
-This writes to `paper_experiments/paper/`.
 
 Run all experiments and build their tables and figures:
 
 ```sh
-python run_paper.py --all
-python plot_paper.py --runs paper_experiments/reruns
+python run_paper.py --all --output results
+python plot_paper.py --input results --output output
 ```
-
-After all runs finish, the second command writes their tables and figures
-to `paper_experiments/paper_rerun/`.
 
 Settings, results, figures and the Excel summary are in
 [paper_experiments](paper_experiments/README.md).
