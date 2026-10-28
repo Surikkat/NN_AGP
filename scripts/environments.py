@@ -9,7 +9,7 @@ import numpy as np
 
 RHO, SD_ETA = 0.9, 0.1
 SIG = SD_ETA / math.sqrt(1 - RHO**2)
-DATA = Path(__file__).resolve().parent / "datasets"
+DATA = Path(__file__).resolve().parents[1] / "datasets"
 KUAIREC = "https://zenodo.org/records/18164998/files/KuaiRec.zip"
 
 

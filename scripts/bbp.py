@@ -15,7 +15,6 @@ import torch
 from bandits.nn_agp_adaptive import NN_AGP_UCB_Adaptive
 
 torch.set_num_threads(1)
-ROOT = Path(__file__).resolve().parent
 JITTER = 1e-6
 CLAMP = {"ell": (math.log(.05), math.log(20.)), "s2": (math.log(1e-3), math.log(1e2))}
 M, C, HIDDEN, A, ACTION_BLOCK = 128, 512, 1024, 262144, 4096

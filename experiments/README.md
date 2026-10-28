@@ -2,7 +2,7 @@
 
 `experiments.xlsx` lists settings, averages, and every seed/method.
 Each environment's experiment folders contain `protocol.json` and `results/`.
-Generators are in [paper_envs.py](../paper_envs.py).
+Generators are in [scripts/environments.py](../scripts/environments.py).
 
 | Environment | Description | Experiments |
 | --- | --- | --- |
@@ -24,7 +24,7 @@ Generators are in [paper_envs.py](../paper_envs.py).
 | Exp. 10 | Five signal factors with an abrupt rotation at round 100 | EXP083 (main); EXP086 (relative cutoff / fixed ranks) |
 
 EXP285 contains the BBP transition and selector experiment. Its settings,
-training and sampling are in [paper_bbp.py](../paper_bbp.py); `results/`
+training and sampling are in [scripts/bbp.py](../scripts/bbp.py); `results/`
 contains the checkpoint, calibration and sampled spectra.
 
 In each online experiment folder:
@@ -33,26 +33,4 @@ In each online experiment folder:
 - `results/`: one JSON file per seed and method, with per-round actions, rewards,
   regret and selected dimensions.
 
-Run from the repository root:
-
-```sh
-python run_paper.py --list
-python run_paper.py --experiment EXP248 --method BBP --seed 6100 --output results/weak
-```
-
-Use the method names printed by `--list`; quote names containing spaces.
-
-Rebuild the paper's nine tables and seven figures from saved results:
-
-```sh
-python plot_paper.py --output output
-```
-
-Run all experiments and build their tables and figures:
-
-```sh
-python run_paper.py --all --output results
-python plot_paper.py --input results --output output
-```
-
-See the [main README](../README.md) for installation.
+See the [main README](../README.md) for installation and run commands.

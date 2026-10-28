@@ -854,10 +854,7 @@
   },
   "macros": {
     "RankRange": "24--29",
-    "RegretReductionRange": "0.3--4.2",
-    "WeakSeeds": 64,
-    "BalancedSeeds": 65,
-    "KuaiSeeds": 73
+    "RegretReductionRange": "0.3--4.2"
   },
   "baselines": {
     "online.exp02": {
