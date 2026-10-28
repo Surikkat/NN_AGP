@@ -6,6 +6,8 @@ We compress the GP decision space using fixed relative or adaptive BBP
 cutoffs while the full encoder continues training. The selected subspace
 also supports physical compression of the network output layer.
 
+![Spectral compression for NN–AGP bandits](paper_experiments/paper/figures/graphical_abstract.svg)
+
 ## Installation
 
 Python 3.11.
@@ -15,6 +17,9 @@ python -m pip install -r requirements-paper.txt
 ```
 
 ## Paper experiments
+
+Each experiment's settings are in
+`paper_experiments/<environment>/EXPxxx/protocol.json`.
 
 List experiments and run one:
 
@@ -39,5 +44,7 @@ python plot_paper.py --runs paper_experiments/reruns
 Settings, results, figures and the Excel summary are in
 [paper_experiments](paper_experiments/README.md).
 
-Model implementations are in `bandits/`, environment generators in
-`paper_envs.py`, and the BBP experiment in `paper_bbp.py`.
+Model implementations are in `bandits/`. Environment generators are in
+`paper_envs.py`: `WeakBalancedEnv` for Weak and Balanced, `smooth_env` for
+Smooth, `kuairec_env` for KuaiRec, and `make_env` with `step` for Exp. 1–10.
+The separate BBP experiment is in `paper_bbp.py`.

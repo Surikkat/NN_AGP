@@ -1,11 +1,8 @@
 # Paper experiments
 
 `experiments.xlsx` lists settings, averages, and every seed/method.
-Each `Environment/EXPxxx/` contains `protocol.json`, `results/`, and `plots/`.
+Each `Environment/EXPxxx/` contains `protocol.json` and `results/`.
 `paper/` contains the nine tables and seven figures used in the article.
-
-Task names map to the existing experiment IDs below. Directory names and raw
-environment/method keys are unchanged.
 
 | Task | Main comparison | Other comparisons |
 | --- | --- | --- |
@@ -26,34 +23,20 @@ environment/method keys are unchanged.
 | Exp. 9 | EXP075 | EXP079 (relative cutoff / fixed ranks) |
 | Exp. 10 | EXP083 | EXP086 (relative cutoff / fixed ranks) |
 
-EXP285 is the BBP transition diagnostic. Method display names are Full, BBP,
-Fixed rank 3/5/10/25, Relative cutoff 1e-2/1e-4/1e-5/1e-6, NN-AGP (m=7),
-GP-UCB (product), GP-UCB (weighted sum), NeuralUCB, NN-UCB, and
-BBP + physical compression. Figures write relative cutoffs with
-`epsilon_prune`; plain labels use scientific notation. CLI `--method` accepts
-the raw protocol keys (for example, `Fixed10`, `Small`, `Fixed`, `GP mult`,
-`GP add`, and `Late`).
+EXP285 contains the BBP transition and selector experiment.
 
-Run from the repository root with Python 3.11:
+In each experiment folder:
 
-```sh
-python -m pip install -r requirements-paper.txt
-python plot_paper.py
-```
+- `protocol.json`: settings, methods, seeds and result files.
+- `results/`: one file per seed and method; BBP checkpoints.
 
-To run an experiment:
+Run from the repository root:
 
 ```sh
 python run_paper.py --list
 python run_paper.py --experiment EXP248 --method BBP --seed 6100
+python plot_paper.py
 ```
 
-To retrain everything and rebuild:
-
-```sh
-python run_paper.py --all
-python plot_paper.py --runs paper_experiments/reruns
-```
-
-New runs go to `reruns/`; their tables and figures go to `paper_rerun/`.
-Saved results are preserved. Timing depends on hardware.
+Use the method names printed by `--list`; quote names containing spaces.
+See the [main README](../README.md) for installation and all-experiment commands.

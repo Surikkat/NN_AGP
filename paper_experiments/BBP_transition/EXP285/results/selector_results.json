@@ -46,15 +46,6 @@
       "scipy": "1.17.1",
       "torch": "2.14.0"
     },
-    "input_sha256": {
-      "nn_agp_pr/paper_experiments/BBP_transition/EXP285/results/checkpoint.pt": "36cdc3368b6cf2a0c2c050c2bb37f70cce971f910e1473baccc9dcc3044beef9",
-      "nn_agp_pr/paper_experiments/BBP_transition/EXP285/results/calibration.npz": "396e8b0cf4c8b2a531eb3b93dc4e8bb7050de4190111cde079c79e8f9e729718",
-      "nn_agp_pr/paper_experiments/BBP_transition/EXP285/results/samples.npz": "f715f9cc3bf7b1e62229d0caa96b3dff3f21d18052508e6e90333690c289f9f4",
-      "nn_agp_pr/paper_experiments/BBP_transition/EXP285/results/phase_protocol.json": "262208ab8e67a213a8883a616d5c6f9bc99f772554331f571b2e766bea9345f3",
-      "nn_agp_pr/paper_experiments/BBP_transition/EXP285/results/training_training_statistics.npz": "cdab4dc35154a7091c999278b79b0419c88206055e22727e036103fc2105f64d",
-      "nn_agp_pr/bandits/nn_agp_adaptive.py": "91a0df8221908e9e72c43d779a9fb9daee744397233b858f22030f443f6d1640",
-      "offline/bbp_selector_check/run.py": "f08015568a52f01c222b6ddf24fd86e2a5e03ebadd19dc154308bf50a69d013b"
-    },
     "inference": "Conditional on the single saved trained model; all 19 sizes and 400 repetitions retained",
     "intervals": "95% t intervals for means; 95% Wilson intervals for frequencies; central quantiles describe between-batch variation"
   },

@@ -4,7 +4,6 @@ import os
 for key in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "VECLIB_MAXIMUM_THREADS", "MKL_NUM_THREADS"):
     os.environ[key] = "1"
 
-import hashlib
 import json
 import math
 import time
@@ -40,14 +39,6 @@ def f64(value):
 def dense_nll(K, y, noise):
     L = torch.linalg.cholesky(K + (noise + JITTER) * torch.eye(len(K), dtype=K.dtype))
     return .5 * y @ torch.cholesky_solve(y[:, None], L)[:, 0] + L.diagonal().log().sum()
-
-
-def digest(path):
-    return hashlib.sha256(path.read_bytes()).hexdigest()
-
-
-def source_hashes():
-    return {name: digest(ROOT / name) for name in ("paper_bbp.py", "bandits/nn_agp_adaptive.py")}
 
 
 def write_json(path, value):
@@ -235,13 +226,12 @@ def train(output):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     start = time.monotonic()
-    hashes = source_hashes()
     verification = verify()
     protocol = dict(config=CONFIG, seed=SEED, M=M, C=C, A=A, hidden=HIDDEN,
         context_sd=SD, observation_noise_sd=NOISE, teacher_rho=RHO, action_radius=RADIUS,
         budgets=dict(stage1_steps=STAGE1, stage2_steps=STAGE2,
                      first_geometry_contexts=FIRST_MC, independent_calibration_contexts=CALIBRATION_MC),
-        verification=verification, source_hashes=hashes, geometry_gates=GATES,
+        verification=verification, geometry_gates=GATES,
         context_algorithm="Paired SD*sqrt(M) coordinate basis, then M IID Gaussian context draws and their negatives",
         rng_algorithm="NumPy default_rng(seed96015): Gaussian context MxM; QR Gaussian MxM teacher U; one common_u 1xM; then action blocks",
         action_block_algorithm="Block size4096: draw independent Z[block,M], P=sqrt(1-rho)*Z+sqrt(rho)*common_u; then Gaussian noise[C,block]",
@@ -298,8 +288,7 @@ def train(output):
                    hyp=float((agent.hyp.detach() - initial_hyp).abs().max()))
     result = dict(status="completed", completed_steps=completed, initial_loss=initial_loss,
         final_loss=final_loss, training_seconds=training_seconds, streaming=streaming,
-        trace=trace, parameter_updates_from_random_initialization=updates,
-        source_unchanged=hashes == source_hashes())
+        trace=trace, parameter_updates_from_random_initialization=updates)
     write_json(output / "training_results.json", result)
     first = geometry(agent, U, FIRST_MC, 42, "geometry_first", output)
     result["first_geometry"] = first
@@ -361,12 +350,9 @@ def sample(output):
     measured_root = Q*np.sqrt(np.maximum(eig, 0))
     isotropic_values = np.r_[values[:2], np.full(M-2, background)]
     classical_root = V*np.sqrt(isotropic_values)
-    inputs = {"checkpoint.pt": output/"checkpoint.pt", "calibration.npz": output/"calibration.npz",
-              "paper_bbp.py": ROOT/"paper_bbp.py", "bandits/nn_agp_adaptive.py": ROOT/"bandits/nn_agp_adaptive.py"}
-    hashes = {name: digest(path) for name, path in inputs.items()}
     protocol = dict(repetitions=REPS, seed=SAMPLE_SEED, sizes=sizes,
         context_sd=sd, M=M, sigma_eff2=background, spike_excess=(values[:2]-background).tolist(),
-        spike_ratio=delta.tolist(), ncrit=critical.tolist(), input_hashes=hashes,
+        spike_ratio=delta.tolist(), ncrit=critical.tolist(),
         statistic="Unmodified trained h=g(theta)B; raw H.T@H/n on fresh IID contexts",
         calibration=("Exact Gaussian-input ReLU moments" if (output/"exact_calibration.json").exists()
                      else "Independent large Monte Carlo calibration")+"; fixed raw J and directions before fresh tests",
@@ -420,8 +406,7 @@ def sample(output):
             row[kind] = {key: summary(sample[:, j]) for j, key in enumerate(keys)}
         rows.append(row)
     np.savez_compressed(out/"samples.npz", **arrays)
-    result = dict(protocol=protocol, observations=rows,
-                  inputs_unchanged=all(digest(inputs[name])==sha for name,sha in hashes.items()))
+    result = dict(protocol=protocol, observations=rows)
     (out/"results.json").write_text(json.dumps(result, indent=2)+"\n")
     np.savez_compressed(out/"selector_samples.npz", sizes=np.array(sizes), **selector)
     write_json(out/"selector_results.json", dict(
@@ -430,5 +415,5 @@ def sample(output):
                       selector="NN_AGP_UCB_Adaptive._support_projection, calibration_mode=fresh, BBP"),
         observations=[dict(n=n, **{key: summary(value[j]) for key, value in selector.items()})
                       for j, n in enumerate(sizes)]))
-    print(json.dumps(dict(ncrit=critical.tolist(), inputs_unchanged=result["inputs_unchanged"], last=rows[-1])), flush=True)
+    print(json.dumps(dict(ncrit=critical.tolist(), last=rows[-1])), flush=True)
     return result

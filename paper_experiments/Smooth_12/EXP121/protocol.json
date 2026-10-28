@@ -1,0 +1,894 @@
+{
+  "id": "EXP121",
+  "title": "Smooth 12 / history calibration",
+  "environment": "Smooth 12",
+  "paper_key": "online.smooth12",
+  "folder": "Smooth_12/EXP121",
+  "horizon": 400,
+  "settings": {
+    "calibration": {
+      "n": "t",
+      "policy": "observed_history"
+    }
+  },
+  "configurations": {
+    "default": {
+      "T": 400,
+      "env": {
+        "kind": "smooth",
+        "n_ctx": 256,
+        "n_actions": 40,
+        "d_theta": 5,
+        "d_x": 5,
+        "ell_theta": 2.0,
+        "ell_x": 2.0,
+        "noise_sd": 0.5,
+        "sigma": [
+          0.4603527757906247,
+          0.4126257576467846,
+          0.36984683231500665,
+          0.33150300687369255,
+          0.29713447288011413,
+          0.2663290924760227,
+          0.2387174561455908,
+          0.21396845285969815,
+          0.19178529948497228,
+          0.17190198184336397,
+          0.15408006474443944,
+          0.1381058327371874
+        ]
+      },
+      "agent": {
+        "hidden": [
+          64,
+          32
+        ],
+        "rule": "old",
+        "s2n": 0.01,
+        "mle_every": 10,
+        "batch": null,
+        "mle_max": 2048,
+        "holdout": 0.1,
+        "ho_frac": 0.1,
+        "ho_uniform": false,
+        "n_min": 50,
+        "delta": 0.1,
+        "m_fix": null,
+        "decision_rank": null,
+        "sd": null,
+        "c": 1.0,
+        "policy": "ucb",
+        "hyp": "train",
+        "weights": false,
+        "equal": false,
+        "t1": 500,
+        "M": 100,
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "noise_sd": 0.5
+      }
+    }
+  },
+  "methods": [
+    "BBP",
+    "Relative cutoff 1e-5",
+    "Fixed rank 10",
+    "Fixed rank 25",
+    "Relative cutoff 1e-6",
+    "Full",
+    "Relative cutoff 1e-2",
+    "Relative cutoff 1e-4"
+  ],
+  "seeds": [
+    7600,
+    7601,
+    7602,
+    7603,
+    7604,
+    372273586,
+    688652385,
+    1091417152,
+    1288985921,
+    1391820987,
+    1646183259,
+    1717792751,
+    1723169116,
+    1914270772
+  ],
+  "paper_refs": [
+    "tab:bbp-results",
+    "tab:bbp-controls",
+    "tab:online-protocol",
+    "fig:extended-curves"
+  ],
+  "runs": [
+    {
+      "method": "Full",
+      "seed": 7600,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7600_Full.json",
+      "regret": 622.9177054872584
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 7600,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7600_Relative_cutoff_1e-2.json",
+      "regret": 640.4297360082938
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 7600,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7600_Relative_cutoff_1e-4.json",
+      "regret": 622.9563271412923
+    },
+    {
+      "method": "BBP",
+      "seed": 7600,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7600_BBP.json",
+      "regret": 637.8454708509612
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 7600,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7600_Fixed_rank_10.json",
+      "regret": 631.1046849777283
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 7600,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7600_Fixed_rank_25.json",
+      "regret": 635.7633840089237
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 7600,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7600_Relative_cutoff_1e-5.json",
+      "regret": 631.9934825616791
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 7600,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7600_Relative_cutoff_1e-6.json",
+      "regret": 635.7633840089237
+    },
+    {
+      "method": "Full",
+      "seed": 7601,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7601_Full.json",
+      "regret": 637.8249975942696
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 7601,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7601_Relative_cutoff_1e-2.json",
+      "regret": 658.1950133570946
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 7601,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7601_Relative_cutoff_1e-4.json",
+      "regret": 634.4574908763765
+    },
+    {
+      "method": "BBP",
+      "seed": 7601,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7601_BBP.json",
+      "regret": 614.2901587562201
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 7601,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7601_Fixed_rank_10.json",
+      "regret": 608.3834065445371
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 7601,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7601_Fixed_rank_25.json",
+      "regret": 614.2901587562201
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 7601,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7601_Relative_cutoff_1e-5.json",
+      "regret": 639.8034022615618
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 7601,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7601_Relative_cutoff_1e-6.json",
+      "regret": 639.8034022615618
+    },
+    {
+      "method": "Full",
+      "seed": 7602,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7602_Full.json",
+      "regret": 579.7492334961199
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 7602,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7602_Relative_cutoff_1e-2.json",
+      "regret": 574.7698478473382
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 7602,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7602_Relative_cutoff_1e-4.json",
+      "regret": 599.8269952122704
+    },
+    {
+      "method": "BBP",
+      "seed": 7602,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7602_BBP.json",
+      "regret": 602.9764652949641
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 7602,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7602_Fixed_rank_10.json",
+      "regret": 571.1596738900503
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 7602,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7602_Fixed_rank_25.json",
+      "regret": 582.5442679533335
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 7602,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7602_Relative_cutoff_1e-5.json",
+      "regret": 585.462913873073
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 7602,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7602_Relative_cutoff_1e-6.json",
+      "regret": 579.7492334961199
+    },
+    {
+      "method": "Full",
+      "seed": 7603,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7603_Full.json",
+      "regret": 696.1430522481744
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 7603,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7603_Relative_cutoff_1e-2.json",
+      "regret": 751.9036610986057
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 7603,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7603_Relative_cutoff_1e-4.json",
+      "regret": 700.1992503517481
+    },
+    {
+      "method": "BBP",
+      "seed": 7603,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7603_BBP.json",
+      "regret": 682.5598215067699
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 7603,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7603_Fixed_rank_10.json",
+      "regret": 709.5249114349767
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 7603,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7603_Fixed_rank_25.json",
+      "regret": 726.9885979596917
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 7603,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7603_Relative_cutoff_1e-5.json",
+      "regret": 726.9885979596917
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 7603,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7603_Relative_cutoff_1e-6.json",
+      "regret": 693.8620991927875
+    },
+    {
+      "method": "Full",
+      "seed": 7604,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7604_Full.json",
+      "regret": 674.620388897583
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 7604,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7604_Relative_cutoff_1e-2.json",
+      "regret": 700.6902511831929
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 7604,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7604_Relative_cutoff_1e-4.json",
+      "regret": 661.910330251098
+    },
+    {
+      "method": "BBP",
+      "seed": 7604,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7604_BBP.json",
+      "regret": 683.0657734690653
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 7604,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7604_Fixed_rank_10.json",
+      "regret": 680.2144786069101
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 7604,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7604_Fixed_rank_25.json",
+      "regret": 684.5232569414459
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 7604,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7604_Relative_cutoff_1e-5.json",
+      "regret": 674.620388897583
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 7604,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed7604_Relative_cutoff_1e-6.json",
+      "regret": 674.620388897583
+    },
+    {
+      "method": "Full",
+      "seed": 372273586,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed372273586_Full.json",
+      "regret": 552.6699596979141
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 372273586,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed372273586_Relative_cutoff_1e-2.json",
+      "regret": 556.5437827406092
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 372273586,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed372273586_Relative_cutoff_1e-4.json",
+      "regret": 556.3210347688286
+    },
+    {
+      "method": "BBP",
+      "seed": 372273586,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed372273586_BBP.json",
+      "regret": 566.4282603771691
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 372273586,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed372273586_Fixed_rank_10.json",
+      "regret": 573.1131614906662
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 372273586,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed372273586_Fixed_rank_25.json",
+      "regret": 607.5740599497891
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 372273586,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed372273586_Relative_cutoff_1e-5.json",
+      "regret": 558.1324724125038
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 372273586,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed372273586_Relative_cutoff_1e-6.json",
+      "regret": 558.1324724125038
+    },
+    {
+      "method": "Full",
+      "seed": 688652385,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed688652385_Full.json",
+      "regret": 692.7969056551768
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 688652385,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed688652385_Relative_cutoff_1e-2.json",
+      "regret": 652.6602960389221
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 688652385,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed688652385_Relative_cutoff_1e-4.json",
+      "regret": 633.6429168488379
+    },
+    {
+      "method": "BBP",
+      "seed": 688652385,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed688652385_BBP.json",
+      "regret": 643.5276968466623
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 688652385,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed688652385_Fixed_rank_10.json",
+      "regret": 651.1384894636019
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 688652385,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed688652385_Fixed_rank_25.json",
+      "regret": 628.6672144870506
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 688652385,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed688652385_Relative_cutoff_1e-5.json",
+      "regret": 613.0546277218197
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 688652385,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed688652385_Relative_cutoff_1e-6.json",
+      "regret": 608.4485094448852
+    },
+    {
+      "method": "Full",
+      "seed": 1091417152,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1091417152_Full.json",
+      "regret": 654.4792195442693
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1091417152,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1091417152_Relative_cutoff_1e-2.json",
+      "regret": 616.898072183984
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 1091417152,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1091417152_Relative_cutoff_1e-4.json",
+      "regret": 672.8521067660402
+    },
+    {
+      "method": "BBP",
+      "seed": 1091417152,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1091417152_BBP.json",
+      "regret": 648.4654360664455
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1091417152,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1091417152_Fixed_rank_10.json",
+      "regret": 649.068980975836
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 1091417152,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1091417152_Fixed_rank_25.json",
+      "regret": 648.4654360664455
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 1091417152,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1091417152_Relative_cutoff_1e-5.json",
+      "regret": 657.123080694187
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 1091417152,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1091417152_Relative_cutoff_1e-6.json",
+      "regret": 658.2326715512451
+    },
+    {
+      "method": "Full",
+      "seed": 1288985921,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1288985921_Full.json",
+      "regret": 678.4973058491767
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1288985921,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1288985921_Relative_cutoff_1e-2.json",
+      "regret": 644.2601988794703
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 1288985921,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1288985921_Relative_cutoff_1e-4.json",
+      "regret": 676.5516469113433
+    },
+    {
+      "method": "BBP",
+      "seed": 1288985921,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1288985921_BBP.json",
+      "regret": 669.5922971337642
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1288985921,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1288985921_Fixed_rank_10.json",
+      "regret": 665.0114287009573
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 1288985921,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1288985921_Fixed_rank_25.json",
+      "regret": 669.5922971337642
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 1288985921,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1288985921_Relative_cutoff_1e-5.json",
+      "regret": 674.4592561027923
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 1288985921,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1288985921_Relative_cutoff_1e-6.json",
+      "regret": 674.4592561027923
+    },
+    {
+      "method": "Full",
+      "seed": 1391820987,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1391820987_Full.json",
+      "regret": 635.2245981738604
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1391820987,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1391820987_Relative_cutoff_1e-2.json",
+      "regret": 610.0103518724836
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 1391820987,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1391820987_Relative_cutoff_1e-4.json",
+      "regret": 613.0988360849532
+    },
+    {
+      "method": "BBP",
+      "seed": 1391820987,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1391820987_BBP.json",
+      "regret": 610.144533884839
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1391820987,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1391820987_Fixed_rank_10.json",
+      "regret": 593.6574496363042
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 1391820987,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1391820987_Fixed_rank_25.json",
+      "regret": 633.8051442241829
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 1391820987,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1391820987_Relative_cutoff_1e-5.json",
+      "regret": 616.1348151160039
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 1391820987,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1391820987_Relative_cutoff_1e-6.json",
+      "regret": 616.1348151160039
+    },
+    {
+      "method": "Full",
+      "seed": 1646183259,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1646183259_Full.json",
+      "regret": 696.426007673841
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1646183259,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1646183259_Relative_cutoff_1e-2.json",
+      "regret": 691.1613906828943
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 1646183259,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1646183259_Relative_cutoff_1e-4.json",
+      "regret": 707.9430233930542
+    },
+    {
+      "method": "BBP",
+      "seed": 1646183259,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1646183259_BBP.json",
+      "regret": 709.3247869255796
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1646183259,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1646183259_Fixed_rank_10.json",
+      "regret": 693.6905739509117
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 1646183259,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1646183259_Fixed_rank_25.json",
+      "regret": 709.3247869255796
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 1646183259,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1646183259_Relative_cutoff_1e-5.json",
+      "regret": 698.3094285305436
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 1646183259,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1646183259_Relative_cutoff_1e-6.json",
+      "regret": 696.426007673841
+    },
+    {
+      "method": "Full",
+      "seed": 1717792751,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1717792751_Full.json",
+      "regret": 602.3983040448353
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1717792751,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1717792751_Relative_cutoff_1e-2.json",
+      "regret": 628.4465320146741
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 1717792751,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1717792751_Relative_cutoff_1e-4.json",
+      "regret": 580.9398512237834
+    },
+    {
+      "method": "BBP",
+      "seed": 1717792751,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1717792751_BBP.json",
+      "regret": 602.1590334910912
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1717792751,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1717792751_Fixed_rank_10.json",
+      "regret": 648.4188382468839
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 1717792751,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1717792751_Fixed_rank_25.json",
+      "regret": 602.1590334910912
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 1717792751,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1717792751_Relative_cutoff_1e-5.json",
+      "regret": 600.5045175483723
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 1717792751,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1717792751_Relative_cutoff_1e-6.json",
+      "regret": 602.3983040448353
+    },
+    {
+      "method": "Full",
+      "seed": 1723169116,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1723169116_Full.json",
+      "regret": 635.5364055509415
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1723169116,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1723169116_Relative_cutoff_1e-2.json",
+      "regret": 651.417788968887
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 1723169116,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1723169116_Relative_cutoff_1e-4.json",
+      "regret": 646.8498522254183
+    },
+    {
+      "method": "BBP",
+      "seed": 1723169116,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1723169116_BBP.json",
+      "regret": 646.353672176921
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1723169116,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1723169116_Fixed_rank_10.json",
+      "regret": 662.5617955877043
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 1723169116,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1723169116_Fixed_rank_25.json",
+      "regret": 646.353672176921
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 1723169116,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1723169116_Relative_cutoff_1e-5.json",
+      "regret": 635.5364055509415
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 1723169116,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1723169116_Relative_cutoff_1e-6.json",
+      "regret": 635.5364055509415
+    },
+    {
+      "method": "Full",
+      "seed": 1914270772,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1914270772_Full.json",
+      "regret": 659.2845659367454
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1914270772,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1914270772_Relative_cutoff_1e-2.json",
+      "regret": 624.047101403721
+    },
+    {
+      "method": "Relative cutoff 1e-4",
+      "seed": 1914270772,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1914270772_Relative_cutoff_1e-4.json",
+      "regret": 667.4353753050128
+    },
+    {
+      "method": "BBP",
+      "seed": 1914270772,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1914270772_BBP.json",
+      "regret": 659.2845659367454
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1914270772,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1914270772_Fixed_rank_10.json",
+      "regret": 664.5169176614185
+    },
+    {
+      "method": "Fixed rank 25",
+      "seed": 1914270772,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1914270772_Fixed_rank_25.json",
+      "regret": 659.2845659367454
+    },
+    {
+      "method": "Relative cutoff 1e-5",
+      "seed": 1914270772,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1914270772_Relative_cutoff_1e-5.json",
+      "regret": 659.2845659367454
+    },
+    {
+      "method": "Relative cutoff 1e-6",
+      "seed": 1914270772,
+      "configuration": "default",
+      "result_file": "Smooth_12/EXP121/results/seed1914270772_Relative_cutoff_1e-6.json",
+      "regret": 659.2845659367454
+    }
+  ]
+}

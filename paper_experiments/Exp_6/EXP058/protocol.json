@@ -1,0 +1,1111 @@
+{
+  "id": "EXP058",
+  "title": "Exp. 6 / Relative cutoff 1e-2 / fixed ranks 3, 5, 10",
+  "environment": "Exp. 6",
+  "paper_key": "relative.exp06",
+  "folder": "Exp_6/EXP058",
+  "horizon": 200,
+  "settings": {
+    "history_svd": true
+  },
+  "configurations": {
+    "config1": {
+      "T": 200,
+      "env": {
+        "d_theta": 10,
+        "d_x": 5,
+        "n_actions": 20,
+        "mask": null,
+        "lam": [
+          1.0,
+          0.7197,
+          0.5179,
+          0.3728,
+          0.2683,
+          0.1931,
+          0.1389,
+          0.1
+        ],
+        "active": [
+          [
+            1,
+            3
+          ],
+          [
+            40,
+            4
+          ],
+          [
+            80,
+            5
+          ],
+          [
+            120,
+            6
+          ],
+          [
+            160,
+            7
+          ],
+          [
+            200,
+            8
+          ]
+        ],
+        "osc": null,
+        "decay": null,
+        "J_sp": 0,
+        "lam_sp": [
+          0.0,
+          0.0
+        ],
+        "rotation": null,
+        "link": "id",
+        "c_z": null,
+        "omega": null,
+        "nuisance": null,
+        "sparse": null,
+        "noise": {
+          "kind": "gauss",
+          "sd": 0.1
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.1
+      }
+    },
+    "config2": {
+      "T": 200,
+      "env": {
+        "d_theta": 10,
+        "d_x": 5,
+        "n_actions": 20,
+        "mask": null,
+        "lam": [
+          1.0,
+          0.7197,
+          0.5179,
+          0.3728,
+          0.2683,
+          0.1931,
+          0.1389,
+          0.1
+        ],
+        "active": [
+          [
+            1,
+            3
+          ],
+          [
+            40,
+            4
+          ],
+          [
+            80,
+            5
+          ],
+          [
+            120,
+            6
+          ],
+          [
+            160,
+            7
+          ],
+          [
+            200,
+            8
+          ]
+        ],
+        "osc": null,
+        "decay": null,
+        "J_sp": 0,
+        "lam_sp": [
+          0.0,
+          0.0
+        ],
+        "rotation": null,
+        "link": "id",
+        "c_z": null,
+        "omega": null,
+        "nuisance": null,
+        "sparse": null,
+        "noise": {
+          "kind": "gauss",
+          "sd": 0.1
+        }
+      },
+      "agent": {
+        "hidden": [
+          64,
+          32
+        ],
+        "rule": "old",
+        "s2n": 0.01,
+        "mle_every": 10,
+        "batch": null,
+        "mle_max": 2048,
+        "holdout": 0.1,
+        "ho_frac": 0.1,
+        "ho_uniform": false,
+        "n_min": 50,
+        "delta": 0.1,
+        "m_fix": null,
+        "decision_rank": 10,
+        "sd": null,
+        "c": 1.0,
+        "policy": "ucb",
+        "hyp": "train",
+        "weights": false,
+        "equal": false,
+        "t1": 500,
+        "M": 100,
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "noise_sd": 0.1
+      }
+    },
+    "config3": {
+      "T": 200,
+      "env": {
+        "d_theta": 10,
+        "d_x": 5,
+        "n_actions": 20,
+        "mask": null,
+        "lam": [
+          1.0,
+          0.7197,
+          0.5179,
+          0.3728,
+          0.2683,
+          0.1931,
+          0.1389,
+          0.1
+        ],
+        "active": [
+          [
+            1,
+            3
+          ],
+          [
+            40,
+            4
+          ],
+          [
+            80,
+            5
+          ],
+          [
+            120,
+            6
+          ],
+          [
+            160,
+            7
+          ],
+          [
+            200,
+            8
+          ]
+        ],
+        "osc": null,
+        "decay": null,
+        "J_sp": 0,
+        "lam_sp": [
+          0.0,
+          0.0
+        ],
+        "rotation": null,
+        "link": "id",
+        "c_z": null,
+        "omega": null,
+        "nuisance": null,
+        "sparse": null,
+        "noise": {
+          "kind": "gauss",
+          "sd": 0.1
+        }
+      },
+      "agent": {
+        "hidden": [
+          64,
+          32
+        ],
+        "rule": "old",
+        "s2n": 0.01,
+        "mle_every": 10,
+        "batch": null,
+        "mle_max": 2048,
+        "holdout": 0.1,
+        "ho_frac": 0.1,
+        "ho_uniform": false,
+        "n_min": 50,
+        "delta": 0.1,
+        "m_fix": null,
+        "decision_rank": 3,
+        "sd": null,
+        "c": 1.0,
+        "policy": "ucb",
+        "hyp": "train",
+        "weights": false,
+        "equal": false,
+        "t1": 500,
+        "M": 100,
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "noise_sd": 0.1
+      }
+    },
+    "config4": {
+      "T": 200,
+      "env": {
+        "d_theta": 10,
+        "d_x": 5,
+        "n_actions": 20,
+        "mask": null,
+        "lam": [
+          1.0,
+          0.7197,
+          0.5179,
+          0.3728,
+          0.2683,
+          0.1931,
+          0.1389,
+          0.1
+        ],
+        "active": [
+          [
+            1,
+            3
+          ],
+          [
+            40,
+            4
+          ],
+          [
+            80,
+            5
+          ],
+          [
+            120,
+            6
+          ],
+          [
+            160,
+            7
+          ],
+          [
+            200,
+            8
+          ]
+        ],
+        "osc": null,
+        "decay": null,
+        "J_sp": 0,
+        "lam_sp": [
+          0.0,
+          0.0
+        ],
+        "rotation": null,
+        "link": "id",
+        "c_z": null,
+        "omega": null,
+        "nuisance": null,
+        "sparse": null,
+        "noise": {
+          "kind": "gauss",
+          "sd": 0.1
+        }
+      },
+      "agent": {
+        "hidden": [
+          64,
+          32
+        ],
+        "rule": "old",
+        "s2n": 0.01,
+        "mle_every": 10,
+        "batch": null,
+        "mle_max": 2048,
+        "holdout": 0.1,
+        "ho_frac": 0.1,
+        "ho_uniform": false,
+        "n_min": 50,
+        "delta": 0.1,
+        "m_fix": null,
+        "decision_rank": 5,
+        "sd": null,
+        "c": 1.0,
+        "policy": "ucb",
+        "hyp": "train",
+        "weights": false,
+        "equal": false,
+        "t1": 500,
+        "M": 100,
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "noise_sd": 0.1
+      }
+    }
+  },
+  "methods": [
+    "Fixed rank 10",
+    "Fixed rank 3",
+    "Fixed rank 5",
+    "Full",
+    "Relative cutoff 1e-2"
+  ],
+  "seeds": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1013,
+    1014,
+    1015,
+    1016,
+    1017,
+    1018,
+    1019
+  ],
+  "paper_refs": [
+    "tab:direct-control",
+    "tab:fixed-rank",
+    "app:relative-results"
+  ],
+  "runs": [
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1000,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1000_Relative_cutoff_1e-2.json",
+      "regret": 520.7591196603801
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1000,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1000_Fixed_rank_10.json",
+      "regret": 502.64268921464657
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1000,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1000_Fixed_rank_3.json",
+      "regret": 539.8272310519503
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1000,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1000_Fixed_rank_5.json",
+      "regret": 515.8383230192218
+    },
+    {
+      "method": "Full",
+      "seed": 1000,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1000_Full.json",
+      "regret": 552.6864143821681
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1001,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1001_Relative_cutoff_1e-2.json",
+      "regret": 556.1322865959432
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1001,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1001_Fixed_rank_10.json",
+      "regret": 567.6386362125015
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1001,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1001_Fixed_rank_3.json",
+      "regret": 531.0064498019424
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1001,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1001_Fixed_rank_5.json",
+      "regret": 567.6386362125015
+    },
+    {
+      "method": "Full",
+      "seed": 1001,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1001_Full.json",
+      "regret": 567.6386362125015
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1002,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1002_Relative_cutoff_1e-2.json",
+      "regret": 551.8562885752496
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1002,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1002_Fixed_rank_10.json",
+      "regret": 566.0276913435569
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1002,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1002_Fixed_rank_3.json",
+      "regret": 551.8562885752496
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1002,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1002_Fixed_rank_5.json",
+      "regret": 558.1825374223404
+    },
+    {
+      "method": "Full",
+      "seed": 1002,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1002_Full.json",
+      "regret": 566.0276913435569
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1003,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1003_Relative_cutoff_1e-2.json",
+      "regret": 581.948018047843
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1003,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1003_Fixed_rank_10.json",
+      "regret": 553.7353554947655
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1003,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1003_Fixed_rank_3.json",
+      "regret": 562.9762622372656
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1003,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1003_Fixed_rank_5.json",
+      "regret": 563.3434753992968
+    },
+    {
+      "method": "Full",
+      "seed": 1003,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1003_Full.json",
+      "regret": 584.2274671050137
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1004,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1004_Relative_cutoff_1e-2.json",
+      "regret": 527.2185079989874
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1004,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1004_Fixed_rank_10.json",
+      "regret": 502.8467180736608
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1004,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1004_Fixed_rank_3.json",
+      "regret": 521.8774338460988
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1004,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1004_Fixed_rank_5.json",
+      "regret": 510.18372184650434
+    },
+    {
+      "method": "Full",
+      "seed": 1004,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1004_Full.json",
+      "regret": 494.57670817135505
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1005,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1005_Relative_cutoff_1e-2.json",
+      "regret": 552.5619497449842
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1005,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1005_Fixed_rank_10.json",
+      "regret": 567.7679685472488
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1005,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1005_Fixed_rank_3.json",
+      "regret": 572.9427997624316
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1005,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1005_Fixed_rank_5.json",
+      "regret": 572.9172579504926
+    },
+    {
+      "method": "Full",
+      "seed": 1005,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1005_Full.json",
+      "regret": 541.3163424052266
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1006,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1006_Relative_cutoff_1e-2.json",
+      "regret": 439.11351026477854
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1006,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1006_Fixed_rank_10.json",
+      "regret": 499.3301503462035
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1006,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1006_Fixed_rank_3.json",
+      "regret": 439.11351026477854
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1006,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1006_Fixed_rank_5.json",
+      "regret": 494.3417048726514
+    },
+    {
+      "method": "Full",
+      "seed": 1006,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1006_Full.json",
+      "regret": 494.3417048726514
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1007,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1007_Relative_cutoff_1e-2.json",
+      "regret": 455.44690182353867
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1007,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1007_Fixed_rank_10.json",
+      "regret": 469.2256414228687
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1007,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1007_Fixed_rank_3.json",
+      "regret": 440.5213140879533
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1007,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1007_Fixed_rank_5.json",
+      "regret": 454.71918132204814
+    },
+    {
+      "method": "Full",
+      "seed": 1007,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1007_Full.json",
+      "regret": 457.2042540288374
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1008,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1008_Relative_cutoff_1e-2.json",
+      "regret": 355.42555262190626
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1008,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1008_Fixed_rank_10.json",
+      "regret": 406.0159623802321
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1008,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1008_Fixed_rank_3.json",
+      "regret": 413.5302008994147
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1008,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1008_Fixed_rank_5.json",
+      "regret": 398.2978771555898
+    },
+    {
+      "method": "Full",
+      "seed": 1008,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1008_Full.json",
+      "regret": 449.89227496538626
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1009,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1009_Relative_cutoff_1e-2.json",
+      "regret": 439.3036388513129
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1009,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1009_Fixed_rank_10.json",
+      "regret": 443.97474203096607
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1009,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1009_Fixed_rank_3.json",
+      "regret": 451.3969796850915
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1009,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1009_Fixed_rank_5.json",
+      "regret": 435.7619768728162
+    },
+    {
+      "method": "Full",
+      "seed": 1009,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1009_Full.json",
+      "regret": 448.1632626591732
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1010,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1010_Relative_cutoff_1e-2.json",
+      "regret": 443.2117025307244
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1010,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1010_Fixed_rank_10.json",
+      "regret": 453.38610998127905
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1010,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1010_Fixed_rank_3.json",
+      "regret": 441.1098055860507
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1010,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1010_Fixed_rank_5.json",
+      "regret": 453.38610998127905
+    },
+    {
+      "method": "Full",
+      "seed": 1010,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1010_Full.json",
+      "regret": 511.20015069202356
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1011,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1011_Relative_cutoff_1e-2.json",
+      "regret": 601.4054843607103
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1011,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1011_Fixed_rank_10.json",
+      "regret": 661.7858665195859
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1011,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1011_Fixed_rank_3.json",
+      "regret": 674.2744412134822
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1011,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1011_Fixed_rank_5.json",
+      "regret": 664.5143365229569
+    },
+    {
+      "method": "Full",
+      "seed": 1011,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1011_Full.json",
+      "regret": 667.9119031186214
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1012,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1012_Relative_cutoff_1e-2.json",
+      "regret": 504.6462808224436
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1012,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1012_Fixed_rank_10.json",
+      "regret": 517.8604061235053
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1012,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1012_Fixed_rank_3.json",
+      "regret": 513.6108930963507
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1012,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1012_Fixed_rank_5.json",
+      "regret": 498.3672671613377
+    },
+    {
+      "method": "Full",
+      "seed": 1012,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1012_Full.json",
+      "regret": 493.1115714132451
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1013,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1013_Relative_cutoff_1e-2.json",
+      "regret": 706.3936672685976
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1013,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1013_Fixed_rank_10.json",
+      "regret": 665.3170509742952
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1013,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1013_Fixed_rank_3.json",
+      "regret": 667.9471707785747
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1013,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1013_Fixed_rank_5.json",
+      "regret": 665.3170509742952
+    },
+    {
+      "method": "Full",
+      "seed": 1013,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1013_Full.json",
+      "regret": 687.728322220394
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1014,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1014_Relative_cutoff_1e-2.json",
+      "regret": 580.7104259819886
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1014,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1014_Fixed_rank_10.json",
+      "regret": 572.061611468529
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1014,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1014_Fixed_rank_3.json",
+      "regret": 546.0548902963802
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1014,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1014_Fixed_rank_5.json",
+      "regret": 546.3112711936994
+    },
+    {
+      "method": "Full",
+      "seed": 1014,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1014_Full.json",
+      "regret": 539.0215220907835
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1015,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1015_Relative_cutoff_1e-2.json",
+      "regret": 498.83243679846174
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1015,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1015_Fixed_rank_10.json",
+      "regret": 478.8494035427059
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1015,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1015_Fixed_rank_3.json",
+      "regret": 470.0176774789946
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1015,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1015_Fixed_rank_5.json",
+      "regret": 489.91644145205936
+    },
+    {
+      "method": "Full",
+      "seed": 1015,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1015_Full.json",
+      "regret": 478.8494035427059
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1016,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1016_Relative_cutoff_1e-2.json",
+      "regret": 568.6458652615108
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1016,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1016_Fixed_rank_10.json",
+      "regret": 496.7832842592323
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1016,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1016_Fixed_rank_3.json",
+      "regret": 495.3207732206618
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1016,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1016_Fixed_rank_5.json",
+      "regret": 482.78702913511853
+    },
+    {
+      "method": "Full",
+      "seed": 1016,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1016_Full.json",
+      "regret": 486.205126039947
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1017,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1017_Relative_cutoff_1e-2.json",
+      "regret": 605.9427094390811
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1017,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1017_Fixed_rank_10.json",
+      "regret": 601.7849339862564
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1017,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1017_Fixed_rank_3.json",
+      "regret": 606.4524469782044
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1017,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1017_Fixed_rank_5.json",
+      "regret": 575.2732238512024
+    },
+    {
+      "method": "Full",
+      "seed": 1017,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1017_Full.json",
+      "regret": 616.0422027419647
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1018,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1018_Relative_cutoff_1e-2.json",
+      "regret": 599.510286103265
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1018,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1018_Fixed_rank_10.json",
+      "regret": 605.9727663424891
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1018,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1018_Fixed_rank_3.json",
+      "regret": 599.510286103265
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1018,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1018_Fixed_rank_5.json",
+      "regret": 618.2530964059066
+    },
+    {
+      "method": "Full",
+      "seed": 1018,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1018_Full.json",
+      "regret": 616.3563284478381
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 1019,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1019_Relative_cutoff_1e-2.json",
+      "regret": 629.4459752011916
+    },
+    {
+      "method": "Fixed rank 10",
+      "seed": 1019,
+      "configuration": "config2",
+      "result_file": "Exp_6/EXP058/results/seed1019_Fixed_rank_10.json",
+      "regret": 599.1307348691839
+    },
+    {
+      "method": "Fixed rank 3",
+      "seed": 1019,
+      "configuration": "config3",
+      "result_file": "Exp_6/EXP058/results/seed1019_Fixed_rank_3.json",
+      "regret": 622.4304152228839
+    },
+    {
+      "method": "Fixed rank 5",
+      "seed": 1019,
+      "configuration": "config4",
+      "result_file": "Exp_6/EXP058/results/seed1019_Fixed_rank_5.json",
+      "regret": 646.1733567414913
+    },
+    {
+      "method": "Full",
+      "seed": 1019,
+      "configuration": "config1",
+      "result_file": "Exp_6/EXP058/results/seed1019_Full.json",
+      "regret": 609.373493610123
+    }
+  ]
+}

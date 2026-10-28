@@ -1,73 +1,14 @@
 {
   "id": "EXP018",
-  "environment": "Balanced",
-  "paper_key": "physical_fold300.balanced",
   "title": "Balanced / physical compression at round 300",
-  "horizon": 800,
-  "paper_refs": [
-    "tab:network-cost",
-    "tab:network-cost-detail",
-    "app:network-cost"
-  ],
+  "environment": "Balanced",
+  "paper_key": "physical.balanced",
   "folder": "Balanced/EXP018",
+  "horizon": 800,
   "settings": {
     "calibration": {
       "family": "physical_late",
       "policy": "implementation-defined"
-    },
-    "config": {
-      "agent": {
-        "M": 100,
-        "T_spec": 10,
-        "batch": null,
-        "c": 1,
-        "cov_lr": 0.001,
-        "cov_mle_max": 256,
-        "cov_start": 100,
-        "cov_steps": 10,
-        "decision_rank": null,
-        "delta": 0.1,
-        "eps": 0.01,
-        "equal": false,
-        "hidden": [
-          64,
-          32
-        ],
-        "ho_frac": 0.1,
-        "ho_uniform": false,
-        "holdout": 0.1,
-        "hyp": "train",
-        "m_fix": null,
-        "mle_every": 10,
-        "mle_max": 2048,
-        "n_min": 50,
-        "noise_sd": 0.25,
-        "policy": "ucb",
-        "rule": "old",
-        "s2n": 0.01,
-        "sd": null,
-        "t1": 500,
-        "weights": false
-      },
-      "env": {
-        "d_theta": 16,
-        "d_x": 1
-      }
-    },
-    "environment": "Balanced",
-    "environment_model": "gaussian_rbf_rewards",
-    "family": "physical_late",
-    "horizon": 800,
-    "numerical_sources": {
-      "agents.py": [
-        "50223bc1f0f4eba987dc4b01256b59c1b58ef5e7f0dafa004d28670b45a5063c"
-      ],
-      "gaussian_environment_and_model": [
-        "837dd1447fe2d872c0f883d13687f4f390afc21844920282e2e4b70152c42fc8"
-      ],
-      "rank.py": [
-        "a4ee24c58815d1310532a43e6156fdd31dfa78eeeead093fac56b4b32e1c0448"
-      ]
     },
     "reward_specification": {
       "actions": 16,
@@ -77,601 +18,10 @@
       "nuisance_correlation": 0,
       "weak": 1
     },
-    "method_implementations": {
-      "BBP": [
-        {
-          "family": "physical_late",
-          "sources": {
-            "agents.py": [
-              "50223bc1f0f4eba987dc4b01256b59c1b58ef5e7f0dafa004d28670b45a5063c"
-            ],
-            "rank.py": [
-              "a4ee24c58815d1310532a43e6156fdd31dfa78eeeead093fac56b4b32e1c0448"
-            ],
-            "accelerate.py": [
-              "20e442191ae3362c551cd74f1b213bd508d30daf00c1925391853a1b8282c221"
-            ],
-            "online.py": [
-              "323d00ee7b59f50bebd47b5a9447a46d323b3491f22fa4a4b64a82758a9aca10",
-              "3ac09de74c2fbacd281fe1de631e19786ef2200c2c28aa61de491bbfe9e89459"
-            ],
-            "catalog_profile.py": [
-              "51b0ffc7ea6965b57ed30619b86401f90cc21e8c2768bdb911bab228bec04bb3"
-            ]
-          }
-        }
-      ],
-      "Late": [
-        {
-          "family": "physical_late",
-          "sources": {
-            "agents.py": [
-              "50223bc1f0f4eba987dc4b01256b59c1b58ef5e7f0dafa004d28670b45a5063c"
-            ],
-            "rank.py": [
-              "a4ee24c58815d1310532a43e6156fdd31dfa78eeeead093fac56b4b32e1c0448"
-            ],
-            "accelerate.py": [
-              "20e442191ae3362c551cd74f1b213bd508d30daf00c1925391853a1b8282c221"
-            ],
-            "online.py": [
-              "323d00ee7b59f50bebd47b5a9447a46d323b3491f22fa4a4b64a82758a9aca10",
-              "3ac09de74c2fbacd281fe1de631e19786ef2200c2c28aa61de491bbfe9e89459"
-            ],
-            "catalog_profile.py": [
-              "51b0ffc7ea6965b57ed30619b86401f90cc21e8c2768bdb911bab228bec04bb3"
-            ]
-          }
-        }
-      ]
-    }
+    "fold_round": 300
   },
-  "sources": [
-    {
-      "file": "Balanced/EXP018/results/seed8300_104a89589e86.json",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8300_BBP.json",
-      "sha256": "104a89589e8672acf14e584becc5c99c3bc63274578e701f5cd0952e0d4936da",
-      "bytes": 482181,
-      "role": "raw_result",
-      "selected_runs": [
-        {
-          "seed": 8300,
-          "method": "BBP",
-          "raw_method": "BBP"
-        }
-      ],
-      "native_methods": [
-        "BBP"
-      ]
-    },
-    {
-      "file": "Balanced/EXP018/results/seed8300_c1518b618ed1.json",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8300_Late.json",
-      "sha256": "c1518b618ed1077553a08a3f7c4d0752cf34c2aaa126904bc671dce0393df00c",
-      "bytes": 482456,
-      "role": "raw_result",
-      "selected_runs": [
-        {
-          "seed": 8300,
-          "method": "Late",
-          "raw_method": "Late"
-        }
-      ],
-      "native_methods": [
-        "Late"
-      ]
-    },
-    {
-      "file": "Balanced/EXP018/results/seed8301_1f8907f03635.json",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8301_BBP.json",
-      "sha256": "1f8907f03635075c6ff61c0dd6d9d3d0e0c7e68c54afb77b84a9338af674d98a",
-      "bytes": 483412,
-      "role": "raw_result",
-      "selected_runs": [
-        {
-          "seed": 8301,
-          "method": "BBP",
-          "raw_method": "BBP"
-        }
-      ],
-      "native_methods": [
-        "BBP"
-      ]
-    },
-    {
-      "file": "Balanced/EXP018/results/seed8301_b31196f3ff72.json",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8301_Late.json",
-      "sha256": "b31196f3ff724207ea0670b4a57e2e8b97105ce7a9ffa9c741827ef531753870",
-      "bytes": 483249,
-      "role": "raw_result",
-      "selected_runs": [
-        {
-          "seed": 8301,
-          "method": "Late",
-          "raw_method": "Late"
-        }
-      ],
-      "native_methods": [
-        "Late"
-      ]
-    },
-    {
-      "file": "Balanced/EXP018/results/seed8302_ff9715796d66.json",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8302_BBP.json",
-      "sha256": "ff9715796d66b052700bd43c7d8ecbfc77b0ef8363a4c2cf4cba765eee59ab56",
-      "bytes": 480096,
-      "role": "raw_result",
-      "selected_runs": [
-        {
-          "seed": 8302,
-          "method": "BBP",
-          "raw_method": "BBP"
-        }
-      ],
-      "native_methods": [
-        "BBP"
-      ]
-    },
-    {
-      "file": "Balanced/EXP018/results/seed8302_2584f99b4c20.json",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8302_Late.json",
-      "sha256": "2584f99b4c20bf0b2fa4a3111c66ebf335beb2a43a2902d6f9ee15680967a3c2",
-      "bytes": 480069,
-      "role": "raw_result",
-      "selected_runs": [
-        {
-          "seed": 8302,
-          "method": "Late",
-          "raw_method": "Late"
-        }
-      ],
-      "native_methods": [
-        "Late"
-      ]
-    },
-    {
-      "file": "Balanced/EXP018/results/seed8303_4be18eec2c14.json",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8303_BBP.json",
-      "sha256": "4be18eec2c148e87f2f1c70d16f6c7aa8ebc4adbc26078ee9d8f005519669cdc",
-      "bytes": 479543,
-      "role": "raw_result",
-      "selected_runs": [
-        {
-          "seed": 8303,
-          "method": "BBP",
-          "raw_method": "BBP"
-        }
-      ],
-      "native_methods": [
-        "BBP"
-      ]
-    },
-    {
-      "file": "Balanced/EXP018/results/seed8303_f161b75ad061.json",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8303_Late.json",
-      "sha256": "f161b75ad06147917505c4771302288f38a0bd7328627aa0a41a7fa5de5d5ece",
-      "bytes": 479476,
-      "role": "raw_result",
-      "selected_runs": [
-        {
-          "seed": 8303,
-          "method": "Late",
-          "raw_method": "Late"
-        }
-      ],
-      "native_methods": [
-        "Late"
-      ]
-    },
-    {
-      "file": "Balanced/EXP018/results/seed8304_3b9292216e2e.json",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8304_BBP.json",
-      "sha256": "3b9292216e2eeaf0cec8cb6facca29b73ba0052224445c1700738c0548e5e8af",
-      "bytes": 480639,
-      "role": "raw_result",
-      "selected_runs": [
-        {
-          "seed": 8304,
-          "method": "BBP",
-          "raw_method": "BBP"
-        }
-      ],
-      "native_methods": [
-        "BBP"
-      ]
-    },
-    {
-      "file": "Balanced/EXP018/results/seed8304_486a887f5c8a.json",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8304_Late.json",
-      "sha256": "486a887f5c8a10adfbb1427a7ddb6061ba9c9158c0d6796c78575ff89634d2aa",
-      "bytes": 480798,
-      "role": "raw_result",
-      "selected_runs": [
-        {
-          "seed": 8304,
-          "method": "Late",
-          "raw_method": "Late"
-        }
-      ],
-      "native_methods": [
-        "Late"
-      ]
-    }
-  ],
-  "runs": [
-    {
-      "id": "EXP018",
-      "environment": "Balanced",
-      "env": "Balanced",
-      "seed": 8300,
-      "method": "BBP",
-      "raw_method": "BBP",
-      "rounds": 800,
-      "regret": 495.2642741620613,
-      "regret_after_100": 357.4484132947465,
-      "regret_after_300": 137.73664242410433,
-      "mean_gp_rank": 28.6,
-      "nn_params_final": 7588,
-      "total_params_final": 17591,
-      "cpu_s": 12.685487,
-      "wall_s": 12.761425958015025,
-      "peak_rss_mib": 559.859375,
-      "result_file": "Balanced/EXP018/results/seed8300_104a89589e86.json",
-      "source_sha256": "104a89589e8672acf14e584becc5c99c3bc63274578e701f5cd0952e0d4936da",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8300_BBP.json",
-      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
-      "paper_refs": [
-        "tab:network-cost",
-        "tab:network-cost-detail",
-        "app:network-cost"
-      ],
-      "post100": 357.4484132947465,
-      "regret_after100": 357.4484132947465,
-      "mean_rank": 28.6,
-      "cpu": 12.685487,
-      "wall": 12.761425958015025,
-      "rss": 559.859375,
-      "bbp_regret": 495.2642741620613,
-      "full_regret": null,
-      "expected_vs_full": null,
-      "expected_vs_baseline": 0.0
-    },
-    {
-      "id": "EXP018",
-      "environment": "Balanced",
-      "env": "Balanced",
-      "seed": 8300,
-      "method": "Late",
-      "raw_method": "Late",
-      "rounds": 800,
-      "regret": 489.5382899309948,
-      "regret_after_100": 351.7224290636798,
-      "regret_after_300": 132.0106581930376,
-      "mean_gp_rank": 26.87142857142857,
-      "nn_params_final": 2843,
-      "total_params_final": 3575,
-      "cpu_s": 11.751726,
-      "wall_s": 11.799694208195433,
-      "peak_rss_mib": 622.34375,
-      "result_file": "Balanced/EXP018/results/seed8300_c1518b618ed1.json",
-      "source_sha256": "c1518b618ed1077553a08a3f7c4d0752cf34c2aaa126904bc671dce0393df00c",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8300_Late.json",
-      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
-      "paper_refs": [
-        "tab:network-cost",
-        "tab:network-cost-detail",
-        "app:network-cost"
-      ],
-      "post100": 351.7224290636798,
-      "regret_after100": 351.7224290636798,
-      "mean_rank": 26.87142857142857,
-      "cpu": 11.751726,
-      "wall": 11.799694208195433,
-      "rss": 622.34375,
-      "bbp_regret": 495.2642741620613,
-      "full_regret": null,
-      "expected_vs_full": null,
-      "expected_vs_baseline": 0.011696703503772277
-    },
-    {
-      "id": "EXP018",
-      "environment": "Balanced",
-      "env": "Balanced",
-      "seed": 8301,
-      "method": "BBP",
-      "raw_method": "BBP",
-      "rounds": 800,
-      "regret": 536.3747219806845,
-      "regret_after_100": 386.71616681572067,
-      "regret_after_300": 147.64103962767132,
-      "mean_gp_rank": 28.728571428571428,
-      "nn_params_final": 7588,
-      "total_params_final": 17591,
-      "cpu_s": 13.571988,
-      "wall_s": 13.973772124852985,
-      "peak_rss_mib": 412.078125,
-      "result_file": "Balanced/EXP018/results/seed8301_1f8907f03635.json",
-      "source_sha256": "1f8907f03635075c6ff61c0dd6d9d3d0e0c7e68c54afb77b84a9338af674d98a",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8301_BBP.json",
-      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
-      "paper_refs": [
-        "tab:network-cost",
-        "tab:network-cost-detail",
-        "app:network-cost"
-      ],
-      "post100": 386.71616681572067,
-      "regret_after100": 386.71616681572067,
-      "mean_rank": 28.728571428571428,
-      "cpu": 13.571988,
-      "wall": 13.973772124852985,
-      "rss": 412.078125,
-      "bbp_regret": 536.3747219806845,
-      "full_regret": null,
-      "expected_vs_full": null,
-      "expected_vs_baseline": 0.0
-    },
-    {
-      "id": "EXP018",
-      "environment": "Balanced",
-      "env": "Balanced",
-      "seed": 8301,
-      "method": "Late",
-      "raw_method": "Late",
-      "rounds": 800,
-      "regret": 540.3513681489887,
-      "regret_after_100": 390.69281298402484,
-      "regret_after_300": 151.6176857959755,
-      "mean_gp_rank": 26.928571428571427,
-      "nn_params_final": 2843,
-      "total_params_final": 3575,
-      "cpu_s": 12.732083,
-      "wall_s": 13.072701541008428,
-      "peak_rss_mib": 425.515625,
-      "result_file": "Balanced/EXP018/results/seed8301_b31196f3ff72.json",
-      "source_sha256": "b31196f3ff724207ea0670b4a57e2e8b97105ce7a9ffa9c741827ef531753870",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8301_Late.json",
-      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
-      "paper_refs": [
-        "tab:network-cost",
-        "tab:network-cost-detail",
-        "app:network-cost"
-      ],
-      "post100": 390.69281298402484,
-      "regret_after100": 390.69281298402484,
-      "mean_rank": 26.928571428571427,
-      "cpu": 12.732083,
-      "wall": 13.072701541008428,
-      "rss": 425.515625,
-      "bbp_regret": 536.3747219806845,
-      "full_regret": null,
-      "expected_vs_full": null,
-      "expected_vs_baseline": -0.007359370962502609
-    },
-    {
-      "id": "EXP018",
-      "environment": "Balanced",
-      "env": "Balanced",
-      "seed": 8302,
-      "method": "BBP",
-      "raw_method": "BBP",
-      "rounds": 800,
-      "regret": 466.8117759416501,
-      "regret_after_100": 275.7001881175922,
-      "regret_after_300": 75.36575407112423,
-      "mean_gp_rank": 28.7,
-      "nn_params_final": 7588,
-      "total_params_final": 17591,
-      "cpu_s": 12.706528,
-      "wall_s": 12.799960250034928,
-      "peak_rss_mib": 634.6875,
-      "result_file": "Balanced/EXP018/results/seed8302_ff9715796d66.json",
-      "source_sha256": "ff9715796d66b052700bd43c7d8ecbfc77b0ef8363a4c2cf4cba765eee59ab56",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8302_BBP.json",
-      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
-      "paper_refs": [
-        "tab:network-cost",
-        "tab:network-cost-detail",
-        "app:network-cost"
-      ],
-      "post100": 275.7001881175922,
-      "regret_after100": 275.7001881175922,
-      "mean_rank": 28.7,
-      "cpu": 12.706528,
-      "wall": 12.799960250034928,
-      "rss": 634.6875,
-      "bbp_regret": 466.8117759416501,
-      "full_regret": null,
-      "expected_vs_full": null,
-      "expected_vs_baseline": 0.0
-    },
-    {
-      "id": "EXP018",
-      "environment": "Balanced",
-      "env": "Balanced",
-      "seed": 8302,
-      "method": "Late",
-      "raw_method": "Late",
-      "rounds": 800,
-      "regret": 480.73019986186654,
-      "regret_after_100": 289.6186120378087,
-      "regret_after_300": 89.28417799134075,
-      "mean_gp_rank": 26.928571428571427,
-      "nn_params_final": 2843,
-      "total_params_final": 3575,
-      "cpu_s": 11.938239,
-      "wall_s": 11.972101290943101,
-      "peak_rss_mib": 624.40625,
-      "result_file": "Balanced/EXP018/results/seed8302_2584f99b4c20.json",
-      "source_sha256": "2584f99b4c20bf0b2fa4a3111c66ebf335beb2a43a2902d6f9ee15680967a3c2",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8302_Late.json",
-      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
-      "paper_refs": [
-        "tab:network-cost",
-        "tab:network-cost-detail",
-        "app:network-cost"
-      ],
-      "post100": 289.6186120378087,
-      "regret_after100": 289.6186120378087,
-      "mean_rank": 26.928571428571427,
-      "cpu": 11.938239,
-      "wall": 11.972101290943101,
-      "rss": 624.40625,
-      "bbp_regret": 466.8117759416501,
-      "full_regret": null,
-      "expected_vs_full": null,
-      "expected_vs_baseline": -0.0289526722561132
-    },
-    {
-      "id": "EXP018",
-      "environment": "Balanced",
-      "env": "Balanced",
-      "seed": 8303,
-      "method": "BBP",
-      "raw_method": "BBP",
-      "rounds": 800,
-      "regret": 449.65486733091365,
-      "regret_after_100": 288.1846457903131,
-      "regret_after_300": 171.80832600730784,
-      "mean_gp_rank": 28.957142857142856,
-      "nn_params_final": 7588,
-      "total_params_final": 17591,
-      "cpu_s": 12.709871,
-      "wall_s": 12.82705279183574,
-      "peak_rss_mib": 608.390625,
-      "result_file": "Balanced/EXP018/results/seed8303_4be18eec2c14.json",
-      "source_sha256": "4be18eec2c148e87f2f1c70d16f6c7aa8ebc4adbc26078ee9d8f005519669cdc",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8303_BBP.json",
-      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
-      "paper_refs": [
-        "tab:network-cost",
-        "tab:network-cost-detail",
-        "app:network-cost"
-      ],
-      "post100": 288.1846457903131,
-      "regret_after100": 288.1846457903131,
-      "mean_rank": 28.957142857142856,
-      "cpu": 12.709871,
-      "wall": 12.82705279183574,
-      "rss": 608.390625,
-      "bbp_regret": 449.65486733091365,
-      "full_regret": null,
-      "expected_vs_full": null,
-      "expected_vs_baseline": 0.0
-    },
-    {
-      "id": "EXP018",
-      "environment": "Balanced",
-      "env": "Balanced",
-      "seed": 8303,
-      "method": "Late",
-      "raw_method": "Late",
-      "rounds": 800,
-      "regret": 429.9311457121676,
-      "regret_after_100": 268.460924171567,
-      "regret_after_300": 152.08460438856173,
-      "mean_gp_rank": 26.957142857142856,
-      "nn_params_final": 2843,
-      "total_params_final": 3575,
-      "cpu_s": 11.83588,
-      "wall_s": 11.892065542051569,
-      "peak_rss_mib": 553.015625,
-      "result_file": "Balanced/EXP018/results/seed8303_f161b75ad061.json",
-      "source_sha256": "f161b75ad06147917505c4771302288f38a0bd7328627aa0a41a7fa5de5d5ece",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8303_Late.json",
-      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
-      "paper_refs": [
-        "tab:network-cost",
-        "tab:network-cost-detail",
-        "app:network-cost"
-      ],
-      "post100": 268.460924171567,
-      "regret_after100": 268.460924171567,
-      "mean_rank": 26.957142857142856,
-      "cpu": 11.83588,
-      "wall": 11.892065542051569,
-      "rss": 553.015625,
-      "bbp_regret": 449.65486733091365,
-      "full_regret": null,
-      "expected_vs_full": null,
-      "expected_vs_baseline": 0.04587646607010587
-    },
-    {
-      "id": "EXP018",
-      "environment": "Balanced",
-      "env": "Balanced",
-      "seed": 8304,
-      "method": "BBP",
-      "raw_method": "BBP",
-      "rounds": 800,
-      "regret": 419.98693771661345,
-      "regret_after_100": 261.53537935061365,
-      "regret_after_300": 107.85055855424402,
-      "mean_gp_rank": 28.685714285714287,
-      "nn_params_final": 7588,
-      "total_params_final": 17591,
-      "cpu_s": 12.866818,
-      "wall_s": 13.043864917010069,
-      "peak_rss_mib": 404.265625,
-      "result_file": "Balanced/EXP018/results/seed8304_3b9292216e2e.json",
-      "source_sha256": "3b9292216e2eeaf0cec8cb6facca29b73ba0052224445c1700738c0548e5e8af",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8304_BBP.json",
-      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
-      "paper_refs": [
-        "tab:network-cost",
-        "tab:network-cost-detail",
-        "app:network-cost"
-      ],
-      "post100": 261.53537935061365,
-      "regret_after100": 261.53537935061365,
-      "mean_rank": 28.685714285714287,
-      "cpu": 12.866818,
-      "wall": 13.043864917010069,
-      "rss": 404.265625,
-      "bbp_regret": 419.98693771661345,
-      "full_regret": null,
-      "expected_vs_full": null,
-      "expected_vs_baseline": 0.0
-    },
-    {
-      "id": "EXP018",
-      "environment": "Balanced",
-      "env": "Balanced",
-      "seed": 8304,
-      "method": "Late",
-      "raw_method": "Late",
-      "rounds": 800,
-      "regret": 416.6019229784461,
-      "regret_after_100": 258.1503646124465,
-      "regret_after_300": 104.46554381607685,
-      "mean_gp_rank": 26.914285714285715,
-      "nn_params_final": 2843,
-      "total_params_final": 3575,
-      "cpu_s": 11.743362,
-      "wall_s": 11.769742084201425,
-      "peak_rss_mib": 603.75,
-      "result_file": "Balanced/EXP018/results/seed8304_486a887f5c8a.json",
-      "source_sha256": "486a887f5c8a10adfbb1427a7ddb6061ba9c9158c0d6796c78575ff89634d2aa",
-      "original_source": "offline/nn_shrink_late_2026-10-15/results/balanced/seed8304_Late.json",
-      "configuration": "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2",
-      "paper_refs": [
-        "tab:network-cost",
-        "tab:network-cost-detail",
-        "app:network-cost"
-      ],
-      "post100": 258.1503646124465,
-      "regret_after100": 258.1503646124465,
-      "mean_rank": 26.914285714285715,
-      "cpu": 11.743362,
-      "wall": 11.769742084201425,
-      "rss": 603.75,
-      "bbp_regret": 419.98693771661345,
-      "full_regret": null,
-      "expected_vs_full": null,
-      "expected_vs_baseline": 0.00812529791981409
-    }
-  ],
   "configurations": {
-    "2736ddd5d9827066ba67b7a4482fd4c1ead67550a0f520547615aefb3de581f2": {
+    "default": {
       "env": {
         "d_theta": 16,
         "d_x": 1
@@ -693,26 +43,9 @@
       }
     }
   },
-  "plots": [
-    {
-      "file": "Balanced/EXP018/plots/regret.png",
-      "role": "mean_curves",
-      "sha256": "c2e4a0dd3a2e100882ec8399fc61bfc6c779debe472e0576363c2156d34beae0",
-      "bytes": 40106
-    }
-  ],
-  "method_configurations": {},
-  "notes": [],
-  "paper_seed_order": [
-    8300,
-    8301,
-    8302,
-    8303,
-    8304
-  ],
   "methods": [
     "BBP",
-    "Late"
+    "BBP + physical compression"
   ],
   "seeds": [
     8300,
@@ -721,25 +54,81 @@
     8303,
     8304
   ],
-  "method_seeds": {
-    "BBP": [
-      8300,
-      8301,
-      8302,
-      8303,
-      8304
-    ],
-    "Late": [
-      8300,
-      8301,
-      8302,
-      8303,
-      8304
-    ]
-  },
-  "completion": "complete",
-  "availability": "Full native seed histories",
-  "aggregation": "Only listed run rows; same-seed pairing within this numerical protocol. No pooling by date or study stage.",
-  "raw_container_policy": "Byte-exact source containers are retained. Any native methods not in selected_runs are provenance only and excluded from every table, plot and run count.",
-  "timing_note": "Original measured timings retained; paced/concurrent timings are descriptive, not an unpaced speed benchmark."
+  "paper_refs": [
+    "tab:network-cost",
+    "tab:network-cost-detail",
+    "app:network-cost"
+  ],
+  "runs": [
+    {
+      "method": "BBP",
+      "seed": 8300,
+      "configuration": "default",
+      "result_file": "Balanced/EXP018/results/seed8300_BBP.json",
+      "regret": 495.2642741620613
+    },
+    {
+      "method": "BBP + physical compression",
+      "seed": 8300,
+      "configuration": "default",
+      "result_file": "Balanced/EXP018/results/seed8300_BBP_physical_compression.json",
+      "regret": 489.5382899309948
+    },
+    {
+      "method": "BBP",
+      "seed": 8301,
+      "configuration": "default",
+      "result_file": "Balanced/EXP018/results/seed8301_BBP.json",
+      "regret": 536.3747219806845
+    },
+    {
+      "method": "BBP + physical compression",
+      "seed": 8301,
+      "configuration": "default",
+      "result_file": "Balanced/EXP018/results/seed8301_BBP_physical_compression.json",
+      "regret": 540.3513681489887
+    },
+    {
+      "method": "BBP",
+      "seed": 8302,
+      "configuration": "default",
+      "result_file": "Balanced/EXP018/results/seed8302_BBP.json",
+      "regret": 466.8117759416501
+    },
+    {
+      "method": "BBP + physical compression",
+      "seed": 8302,
+      "configuration": "default",
+      "result_file": "Balanced/EXP018/results/seed8302_BBP_physical_compression.json",
+      "regret": 480.73019986186654
+    },
+    {
+      "method": "BBP",
+      "seed": 8303,
+      "configuration": "default",
+      "result_file": "Balanced/EXP018/results/seed8303_BBP.json",
+      "regret": 449.65486733091365
+    },
+    {
+      "method": "BBP + physical compression",
+      "seed": 8303,
+      "configuration": "default",
+      "result_file": "Balanced/EXP018/results/seed8303_BBP_physical_compression.json",
+      "regret": 429.9311457121676
+    },
+    {
+      "method": "BBP",
+      "seed": 8304,
+      "configuration": "default",
+      "result_file": "Balanced/EXP018/results/seed8304_BBP.json",
+      "regret": 419.98693771661345
+    },
+    {
+      "method": "BBP + physical compression",
+      "seed": 8304,
+      "configuration": "default",
+      "result_file": "Balanced/EXP018/results/seed8304_BBP_physical_compression.json",
+      "regret": 416.6019229784461
+    }
+  ]
 }

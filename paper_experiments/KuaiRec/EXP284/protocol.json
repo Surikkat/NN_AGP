@@ -1,0 +1,518 @@
+{
+  "id": "EXP284",
+  "title": "KuaiRec / 100 users / Relative cutoff 1e-2 versus Full",
+  "environment": "KuaiRec",
+  "paper_key": "relative.kuairec100",
+  "folder": "KuaiRec/EXP284",
+  "horizon": 2000,
+  "settings": {
+    "epsilon": 0.01,
+    "users": 100,
+    "corrected_svd_policy": true,
+    "history_svd": true
+  },
+  "configurations": {
+    "config1": {
+      "T": 2000,
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.5093801792572608
+      }
+    },
+    "config2": {
+      "T": 2000,
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.5024463922511557
+      }
+    },
+    "config3": {
+      "T": 2000,
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.5011702203891936
+      }
+    },
+    "config4": {
+      "T": 2000,
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.5049865837521164
+      }
+    },
+    "config5": {
+      "T": 2000,
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.5401054009977331
+      }
+    },
+    "config6": {
+      "T": 2000,
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.4983433933910503
+      }
+    },
+    "config7": {
+      "T": 2000,
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.4860362887020942
+      }
+    },
+    "config8": {
+      "T": 2000,
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.5093919552654199
+      }
+    },
+    "config9": {
+      "T": 2000,
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.5280465025323479
+      }
+    },
+    "config10": {
+      "T": 2000,
+      "env": {
+        "data": "kuairec",
+        "clip": 5.0,
+        "d_theta": 20,
+        "d_x": 20,
+        "n_actions": 200,
+        "rank": 3,
+        "ridge": 5.0,
+        "iters": 15,
+        "n_users": 100,
+        "noise": {
+          "kind": "gauss",
+          "sd": null,
+          "rho": 0.16
+        }
+      },
+      "agent": {
+        "M": 100,
+        "hidden": [
+          64,
+          32
+        ],
+        "T_spec": 10,
+        "eps": 0.01,
+        "cov_start": 100,
+        "cov_steps": 10,
+        "cov_lr": 0.001,
+        "cov_mle_max": 256,
+        "c": 1.0,
+        "noise_sd": 0.5107680905721853
+      }
+    }
+  },
+  "methods": [
+    "Full",
+    "Relative cutoff 1e-2"
+  ],
+  "seeds": [
+    3000,
+    3001,
+    3002,
+    3003,
+    3004,
+    3005,
+    3006,
+    3007,
+    3008,
+    3009
+  ],
+  "paper_refs": [
+    "tab:kuairec",
+    "app:relative-results"
+  ],
+  "runs": [
+    {
+      "method": "Full",
+      "seed": 3000,
+      "configuration": "config1",
+      "result_file": "KuaiRec/EXP284/results/seed3000_Full.json",
+      "regret": 3151.9561471743577
+    },
+    {
+      "method": "Full",
+      "seed": 3001,
+      "configuration": "config2",
+      "result_file": "KuaiRec/EXP284/results/seed3001_Full.json",
+      "regret": 4466.583915870045
+    },
+    {
+      "method": "Full",
+      "seed": 3002,
+      "configuration": "config3",
+      "result_file": "KuaiRec/EXP284/results/seed3002_Full.json",
+      "regret": 5018.696350243564
+    },
+    {
+      "method": "Full",
+      "seed": 3003,
+      "configuration": "config4",
+      "result_file": "KuaiRec/EXP284/results/seed3003_Full.json",
+      "regret": 4257.7474537261305
+    },
+    {
+      "method": "Full",
+      "seed": 3004,
+      "configuration": "config5",
+      "result_file": "KuaiRec/EXP284/results/seed3004_Full.json",
+      "regret": 3158.1563818790873
+    },
+    {
+      "method": "Full",
+      "seed": 3005,
+      "configuration": "config6",
+      "result_file": "KuaiRec/EXP284/results/seed3005_Full.json",
+      "regret": 3667.5868599784467
+    },
+    {
+      "method": "Full",
+      "seed": 3006,
+      "configuration": "config7",
+      "result_file": "KuaiRec/EXP284/results/seed3006_Full.json",
+      "regret": 4608.640654169656
+    },
+    {
+      "method": "Full",
+      "seed": 3007,
+      "configuration": "config8",
+      "result_file": "KuaiRec/EXP284/results/seed3007_Full.json",
+      "regret": 3601.0656401870165
+    },
+    {
+      "method": "Full",
+      "seed": 3008,
+      "configuration": "config9",
+      "result_file": "KuaiRec/EXP284/results/seed3008_Full.json",
+      "regret": 4420.045563259237
+    },
+    {
+      "method": "Full",
+      "seed": 3009,
+      "configuration": "config10",
+      "result_file": "KuaiRec/EXP284/results/seed3009_Full.json",
+      "regret": 4879.806280639202
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 3000,
+      "configuration": "config1",
+      "result_file": "KuaiRec/EXP284/results/seed3000_Relative_cutoff_1e-2.json",
+      "regret": 2986.598104168214
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 3001,
+      "configuration": "config2",
+      "result_file": "KuaiRec/EXP284/results/seed3001_Relative_cutoff_1e-2.json",
+      "regret": 4745.749587874535
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 3002,
+      "configuration": "config3",
+      "result_file": "KuaiRec/EXP284/results/seed3002_Relative_cutoff_1e-2.json",
+      "regret": 4566.488581893805
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 3003,
+      "configuration": "config4",
+      "result_file": "KuaiRec/EXP284/results/seed3003_Relative_cutoff_1e-2.json",
+      "regret": 4080.1121389163186
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 3004,
+      "configuration": "config5",
+      "result_file": "KuaiRec/EXP284/results/seed3004_Relative_cutoff_1e-2.json",
+      "regret": 3103.2758092139356
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 3005,
+      "configuration": "config6",
+      "result_file": "KuaiRec/EXP284/results/seed3005_Relative_cutoff_1e-2.json",
+      "regret": 3844.752908289053
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 3006,
+      "configuration": "config7",
+      "result_file": "KuaiRec/EXP284/results/seed3006_Relative_cutoff_1e-2.json",
+      "regret": 4498.676967655509
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 3007,
+      "configuration": "config8",
+      "result_file": "KuaiRec/EXP284/results/seed3007_Relative_cutoff_1e-2.json",
+      "regret": 3716.207832215737
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 3008,
+      "configuration": "config9",
+      "result_file": "KuaiRec/EXP284/results/seed3008_Relative_cutoff_1e-2.json",
+      "regret": 4713.648957841522
+    },
+    {
+      "method": "Relative cutoff 1e-2",
+      "seed": 3009,
+      "configuration": "config10",
+      "result_file": "KuaiRec/EXP284/results/seed3009_Relative_cutoff_1e-2.json",
+      "regret": 4901.514682334642
+    }
+  ]
+}
