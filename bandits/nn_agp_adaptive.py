@@ -523,7 +523,7 @@ class NN_AGP_UCB_Adaptive:
             aspect = d / n
             background = (float(np.median(values[:min(d, n)])) /
                           (max(aspect, 1.) * _mp_median(min(aspect, 1 / aspect)))) if fresh else (
-                          float(np.median(values)) / _mp_median(aspect))
+                          float(np.median(values[:min(d, n)])) / _mp_median(aspect))
             edge = background * (1 + np.sqrt(aspect)) ** 2
             bbp_rank = int((values > edge).sum())
         invalid = not (np.isfinite(background) and background > np.finfo(float).eps * max(lambda1, 0.))
@@ -531,10 +531,12 @@ class NN_AGP_UCB_Adaptive:
             bbp_rank = 0
         epsilon = self.eps_prune if self.prune_rule == "relative" else None
         relative_rank = max(1, int((values > .01 * lambda1).sum()))
-        proposed = (max(1, int((values > epsilon * lambda1).sum())) if epsilon is not None else bbp_rank) if d else 0
+        proposed = max(1, int((values > epsilon * lambda1).sum())) if epsilon is not None else bbp_rank
         self.epsilon = (float(edge / lambda1) if lambda1 > 0 else None) if epsilon is None else epsilon
         self.proposed_rank, self.no_peak = proposed, proposed == 0
-        if self.calibration_mode == "fresh":
+        if d == 0 and epsilon is not None:
+            projection = np.linalg.svd(H, full_matrices=False)[2][:1].T
+        elif self.calibration_mode == "fresh":
             V = Q @ vectors
             projection = V[:, :proposed] if proposed else np.eye(self.m_max)
         else:

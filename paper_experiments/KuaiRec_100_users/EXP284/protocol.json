@@ -2,7 +2,7 @@
   "id": "EXP284",
   "environment": "KuaiRec_100_users",
   "paper_key": "legacy.kuairec100.T2000",
-  "title": "Relative cutoff 0.01 versus Full; 100 users; T=2000",
+  "title": "KuaiRec / 100 users / Relative cutoff 1e-2 versus Full",
   "horizon": 2000,
   "paper_refs": [
     "tab:kuairec",

@@ -235,9 +235,10 @@ def main():
     args = parser.parse_args()
     plans = protocols()
     if args.list:
+        from plot_paper import method_name
         for name,p in plans.items():
             methods = ['Trained features'] if p.get('kind')=='spectral_diagnostic' else p['methods']
-            print(f"{name}: {p['title']}\n  Methods: {', '.join(methods)}\n  Seeds: {', '.join(map(str,p['seeds']))}")
+            print(f"{name}: {p['title']}\n  Methods: {', '.join(method_name(m, plain=True) for m in methods)}\n  Seeds: {', '.join(map(str,p['seeds']))}")
         return
     if args.all:
         if args.experiment or args.method or args.seed is not None or args.from_checkpoint:

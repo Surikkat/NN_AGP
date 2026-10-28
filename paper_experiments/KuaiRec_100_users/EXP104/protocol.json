@@ -2,7 +2,7 @@
   "id": "EXP104",
   "environment": "KuaiRec_100_users",
   "paper_key": "physical_fold300.kuairec",
-  "title": "Physical output-layer reduction at round 300: kuairec",
+  "title": "KuaiRec / physical compression at round 300",
   "horizon": 600,
   "paper_refs": [
     "tab:network-cost",

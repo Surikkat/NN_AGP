@@ -2,7 +2,7 @@
   "id": "EXP018",
   "environment": "Balanced",
   "paper_key": "physical_fold300.balanced",
-  "title": "Physical output-layer reduction at round 300: balanced",
+  "title": "Balanced / physical compression at round 300",
   "horizon": 800,
   "paper_refs": [
     "tab:network-cost",

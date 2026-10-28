@@ -15,41 +15,48 @@ KuaiRec & 0.207 & 0.996 & 1.019 \\
 
 \begin{table}[htbp]
 \centering\small
-\caption{Synthetic environments. The nominal latent width is 100.}
+\caption{Online environments and reward parameters.}
 \label{tab:environments-direct}
-\begin{tabular}{@{}cp{10.4cm}@{}}
+\begin{tabular}{@{}p{3.2cm}p{12cm}@{}}
 \toprule
-Exp & Description \\
+Environment & Reward parameters or variation \\
 \midrule
-1 & Five dominant factors and 95 weak components \\
-2 & Rank 3 with separated eigenvalues \\
-3 & Rank 10 with 40 weak components \\
-4 & $\tanh$ of a rank-8 bilinear core \\
-5 & Sparse rank-5 factors and heavy-tailed noise \\
-6 & Rank grows from 3 to 8 \\
-7 & Nuisance directions near the cutoff \\
-8 & Transient rank burst $5\to15\to5$ \\
-9 & Slowly rotating rank-5 subspace \\
-10 & Abrupt rank-5 subspace rotation \\
+Weak & $a=0.25$ \\
+Balanced & $a=1$ \\
+KuaiRec & 100-user catalogue \\
+Smooth 12 & $r=12$ \\
+Smooth 3 & $r=3$ \\
+Smooth 3 (128 inputs) & $r=3$; append 123 independent standard Gaussian coordinates each round, ignored by the reward \\
+Exp. 1 & Five base factors and 95 weak factors with $s_j^2=10^{-4}$ \\
+Exp. 2 & Three factors with $s_j^2=(1,0.5,0.2)$; retain each context coordinate independently with probability $0.1$ \\
+Exp. 3 & Ten base factors and 40 weak factors with $s_j^2\sim\mathrm{Uniform}(0,0.005)$, drawn once \\
+Exp. 4 & Eight factors; apply $\tanh$ to the sum \\
+Exp. 5 & Five linear factors with two nonzero Gaussian coefficients per loading, normalized to unit norm. Context supports are disjoint random pairs; action loading $j$ uses coordinate $j$ and one uniformly chosen different coordinate \\
+Exp. 6 & Eight available factors; active counts $3,4,5,6,7,8$ from rounds $1,40,80,120,160,200$ \\
+Exp. 7 & Ten jointly generated factors: five geometric squared weights and five with $s_{6+k}^2(t)=0.01[1+0.5\sin(2\pi(t/20+k/5))]$, $k=0,\ldots,4$ \\
+Exp. 8 & Fifteen available factors; first five active at rounds 1--80, all fifteen at 81--120, first five at 121--200 \\
+Exp. 9 & Five factors; $\varphi_t=0.02t$ \\
+Exp. 10 & Five factors; angle zero through round 100 and $\pi/4$ afterwards \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{table}[htbp]
 \centering\small
-\caption{Online evaluation settings.}
+\caption{Online evaluation settings. Noise is additive and independent. $t_3$ denotes a Student random variable with three degrees of freedom. Fresh calibration uses $n=\max(128,t)$ independent unlabeled contexts; history calibration uses the $t$ recorded contexts.}
 \label{tab:online-protocol}
-\begin{tabular}{@{}lrrrl@{}}
+\begin{tabular}{@{}lrrrll@{}}
 \toprule
-Task & Inputs (context, action) & Actions & Rounds & Calibration \\
+Task & Inputs $(d_\theta,d_x)$ & Actions & Rounds & Noise & Calibration \\
 \midrule
-Weak & $(16,1)$ & 16 & 800 & Fresh \\
-Balanced & $(16,1)$ & 16 & 800 & Fresh \\
-KuaiRec & $(20,20)$ & 200 & 600 & History \\
-Rank 12 & $(5,5)$ & 40 & 400 & History \\
-Rank 3 & $(5,5)$ & 40 & 400 & History \\
-Rank 3, 128 inputs & $(128,5)$ & 40 & 400 & History \\
-Exp. 1--10 & $(10,5)$ & 20 & 200 & History \\
+Weak & $(16,1)$ & 16 & 800 & $N(0,0.25^2)$ & Fresh \\
+Balanced & $(16,1)$ & 16 & 800 & $N(0,0.25^2)$ & Fresh \\
+KuaiRec & $(20,20)$ & 200 & 600 & $N(0,\sigma_K^2)$ & History \\
+Smooth 12 & $(5,5)$ & 40 & 400 & $N(0,0.5^2)$ & History \\
+Smooth 3 & $(5,5)$ & 40 & 400 & $N(0,0.5^2)$ & History \\
+Smooth 3 (128 inputs) & $(128,5)$ & 40 & 400 & $N(0,0.5^2)$ & History \\
+Exp. 1--4, 6--10 & $(10,5)$ & 20 & 200 & $N(0,0.1^2)$ & History \\
+Exp. 5 & $(10,5)$ & 20 & 200 & $0.1t_3$ & History \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -65,9 +72,9 @@ Task & Seeds & Full & BBP & GP dimension & BBP/Full \\
 Weak & 64 & 413.9 & 396.5 & 28.7 & 0.958 [0.938, 0.977] \\
 Balanced & 65 & 581.9 & 564.5 & 28.8 & 0.970 [0.954, 0.985] \\
 KuaiRec & 73 & 1374.4 & 1369.9 & 26.4 & 0.997 [0.990, 1.003] \\
-Rank 12 & 14 & 644.2 & 641.1 & 23.9 & 0.995 [0.979, 1.010] \\
-Rank 3 & 16 & 429.2 & 427.9 & 24.0 & 0.997 [0.977, 1.019] \\
-Rank 3, 128 inputs & 18 & 679.7 & 670.1 & 24.3 & 0.986 [0.973, 1.001] \\
+Smooth 12 & 14 & 644.2 & 641.1 & 23.9 & 0.995 [0.979, 1.010] \\
+Smooth 3 & 16 & 429.2 & 427.9 & 24.0 & 0.997 [0.977, 1.019] \\
+Smooth 3 (128 inputs) & 18 & 679.7 & 670.1 & 24.3 & 0.986 [0.973, 1.001] \\
 Exp. 1 & 13 & 325.4 & 323.5 & 23.3 & 0.994 [0.984, 1.000] \\
 Exp. 2 & 14 & 62.4 & 62.4 & 34.4 & 1.001 [0.999, 1.005] \\
 Exp. 3 & 15 & 674.7 & 673.9 & 24.0 & 0.999 [0.996, 1.000] \\
@@ -88,14 +95,14 @@ Exp. 10 & 15 & 382.4 & 383.8 & 23.5 & 1.004 [0.997, 1.016] \\
 \label{tab:bbp-controls}
 \begin{tabular}{@{}lrrrrrrr@{}}
 \toprule
-Task & Full & Rank 10 & Rank 25 & $10^{-2}$ & $10^{-4}$ & $10^{-5}$ & $10^{-6}$ \\
+Task & \shortstack{Full} & \shortstack{Fixed rank\\10} & \shortstack{Fixed rank\\25} & \shortstack{Relative\\cutoff\\1e-2} & \shortstack{Relative\\cutoff\\1e-4} & \shortstack{Relative\\cutoff\\1e-5} & \shortstack{Relative\\cutoff\\1e-6} \\
 \midrule
-Weak & -4.20 & -- & -1.20 & -21.96 & -4.14 & -- & -2.09 \\
-Balanced & -2.98 & -- & -1.65 & -17.64 & -4.26 & -- & -2.21 \\
-KuaiRec & -0.33 & +0.12 & +0.03 & -1.21 & +0.03 & -- & -0.23 \\
-Rank 12 & -0.47 & -0.28 & -0.81 & -0.28 & +0.01 & +0.05 & +0.48 \\
-Rank 3 & -0.28 & -0.84 & +0.72 & -1.89 & -1.53 & -0.45 & -0.25 \\
-Rank 3, 128 inputs & -1.42 & +0.06 & -0.23 & -1.49 & -0.93 & +0.04 & -0.66 \\
+Weak & -4.20 & -3.26 & -1.20 & -21.96 & -4.14 & -1.23 & -2.09 \\
+Balanced & -2.98 & -4.67 & -1.65 & -17.64 & -4.26 & -2.18 & -2.21 \\
+KuaiRec & -0.33 & +0.12 & +0.03 & -1.21 & +0.03 & +0.05 & -0.23 \\
+Smooth 12 & -0.47 & -0.28 & -0.81 & -0.28 & +0.01 & +0.05 & +0.48 \\
+Smooth 3 & -0.28 & -0.84 & +0.72 & -1.89 & -1.53 & -0.45 & -0.25 \\
+Smooth 3 (128 inputs) & -1.42 & +0.06 & -0.23 & -1.49 & -0.93 & +0.04 & -0.66 \\
 Exp. 1 & -0.58 & +0.03 & -0.25 & -2.19 & -0.13 & -0.26 & -0.61 \\
 Exp. 2 & +0.13 & -2.55 & -0.16 & -0.71 & -0.20 & -0.16 & +0.26 \\
 Exp. 3 & -0.13 & -0.54 & 0.00 & +0.20 & -0.76 & 0.00 & -0.13 \\
@@ -114,20 +121,14 @@ Exp. 10 & +0.36 & +2.10 & -0.04 & +0.59 & +1.78 & -0.14 & -0.03 \\
 \centering\small
 \caption{Output-layer reduction relative to BBP with the full encoder. Geometric mean ratios and 95\% paired t intervals in log space.}
 \label{tab:network-cost-detail}
-\begin{tabular}{@{}llrrr@{}}
+\begin{tabular}{@{}lrrr@{}}
 \toprule
-Quantity & & Weak & Balanced & KuaiRec \\
+Quantity & Weak & Balanced & KuaiRec \\
 \midrule
-Parameters & Ratio & 0.203 & 0.203 & 0.207 \\
- & 95\% interval & [0.195, 0.212] & [0.203, 0.203] & [0.196, 0.218] \\
-Wall time & Ratio & 0.933 & 0.925 & 0.996 \\
- & 95\% interval & [0.878, 0.991] & [0.908, 0.942] & [0.911, 1.088] \\
-CPU time & Ratio & 0.937 & 0.930 & 0.976 \\
- & 95\% interval & [0.899, 0.977] & [0.916, 0.943] & [0.936, 1.017] \\
-Regret & Ratio & 0.996 & 0.994 & 1.019 \\
- & 95\% interval & [0.984, 1.008] & [0.961, 1.029] & [1.009, 1.028] \\
-Peak RSS & Ratio & 1.005 & 1.089 & 0.915 \\
- & 95\% interval & [0.783, 1.290] & [0.859, 1.381] & [0.818, 1.022] \\
+Parameters & 0.203 [0.195, 0.212] & 0.203 [0.203, 0.203] & 0.207 [0.196, 0.218] \\
+Wall time & 0.933 [0.878, 0.991] & 0.925 [0.908, 0.942] & 0.996 [0.911, 1.088] \\
+CPU time & 0.937 [0.899, 0.977] & 0.930 [0.916, 0.943] & 0.976 [0.936, 1.017] \\
+Regret & 0.996 [0.984, 1.008] & 0.994 [0.961, 1.029] & 1.019 [1.009, 1.028] \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -160,7 +161,7 @@ Exp & Regret / Full & GP dimension \\
 \label{tab:fixed-rank}
 \begin{tabular}{cr}
 \toprule
-Fixed rank & Regret / Fixed \\
+Fixed rank & Regret / Fixed rank \\
 \midrule
 3 & 0.994 [0.981, 1.008] \\
 5 & 1.007 [0.995, 1.019] \\
