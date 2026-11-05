@@ -54,7 +54,7 @@ def environment(plan, cfg, seed):
     return env, fresh
 
 
-def make_model(plan, cfg, method, seed):
+def make_model(plan, cfg, method, seed, device=None):
     import numpy as np
     import torch
     if method not in BASELINES:
@@ -65,7 +65,7 @@ def make_model(plan, cfg, method, seed):
             history_svd=plan['settings'].get('history_svd',False),
             corrected_svd=plan['settings'].get('corrected_svd_policy',True),
             fold_round=plan['settings']['fold_round'] if physical and method=='BBP + physical compression' else None,
-            catalog=physical)
+            catalog=physical, device=device)
     d, x = cfg['env']['d_theta'], cfg['env']['d_x']
     np.random.seed(seed)
     torch.manual_seed(seed)

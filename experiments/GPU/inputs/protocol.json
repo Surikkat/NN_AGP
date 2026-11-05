@@ -1,0 +1,778 @@
+{
+  "dtype": "float64",
+  "cpu_threads": 1,
+  "fold_round": 300,
+  "calibration": "Fresh contexts for Weak/Balanced; own history for KuaiRec.",
+  "jobs": [
+    {
+      "case": "weak",
+      "seed": 8300,
+      "config": {
+        "agent": {
+          "M": 100,
+          "T_spec": 10,
+          "c": 1.0,
+          "cov_lr": 0.001,
+          "cov_mle_max": 256,
+          "cov_start": 100,
+          "cov_steps": 10,
+          "eps": 0.01,
+          "hidden": [
+            64
+          ],
+          "noise_sd": 0.25
+        },
+        "env": {
+          "d_theta": 16,
+          "d_x": 1
+        }
+      },
+      "horizon": 800,
+      "initial": "seed8300_initial.npz",
+      "stream": "weak_8300_stream.npz",
+      "fit_rng": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 166423317221240406887700708440532301061,
+          "state": 5865247612968671998958995335404774119
+        },
+        "uinteger": 0
+      },
+      "calibration_spec": {
+        "actions": 16,
+        "baseline": 12.0,
+        "d_theta": 16,
+        "fresh_external_contexts": true,
+        "kind": "gaussian",
+        "n_cal_min": 128,
+        "noise": 0.25,
+        "nuisance_correlation": 0.0,
+        "rho": 0.0,
+        "seed_salt": 90211,
+        "weak": 0.25
+      }
+    },
+    {
+      "case": "weak",
+      "seed": 8301,
+      "config": {
+        "agent": {
+          "M": 100,
+          "T_spec": 10,
+          "c": 1.0,
+          "cov_lr": 0.001,
+          "cov_mle_max": 256,
+          "cov_start": 100,
+          "cov_steps": 10,
+          "eps": 0.01,
+          "hidden": [
+            64
+          ],
+          "noise_sd": 0.25
+        },
+        "env": {
+          "d_theta": 16,
+          "d_x": 1
+        }
+      },
+      "horizon": 800,
+      "initial": "seed8301_initial.npz",
+      "stream": "weak_8301_stream.npz",
+      "fit_rng": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 235034770123028542448680194973929324029,
+          "state": 112463563153784707896961883956773750377
+        },
+        "uinteger": 0
+      },
+      "calibration_spec": {
+        "actions": 16,
+        "baseline": 12.0,
+        "d_theta": 16,
+        "fresh_external_contexts": true,
+        "kind": "gaussian",
+        "n_cal_min": 128,
+        "noise": 0.25,
+        "nuisance_correlation": 0.0,
+        "rho": 0.0,
+        "seed_salt": 90211,
+        "weak": 0.25
+      }
+    },
+    {
+      "case": "weak",
+      "seed": 8302,
+      "config": {
+        "agent": {
+          "M": 100,
+          "T_spec": 10,
+          "c": 1.0,
+          "cov_lr": 0.001,
+          "cov_mle_max": 256,
+          "cov_start": 100,
+          "cov_steps": 10,
+          "eps": 0.01,
+          "hidden": [
+            64
+          ],
+          "noise_sd": 0.25
+        },
+        "env": {
+          "d_theta": 16,
+          "d_x": 1
+        }
+      },
+      "horizon": 800,
+      "initial": "seed8302_initial.npz",
+      "stream": "weak_8302_stream.npz",
+      "fit_rng": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 315907792064294306229271453271368202183,
+          "state": 113485531068878155759097638138477977084
+        },
+        "uinteger": 0
+      },
+      "calibration_spec": {
+        "actions": 16,
+        "baseline": 12.0,
+        "d_theta": 16,
+        "fresh_external_contexts": true,
+        "kind": "gaussian",
+        "n_cal_min": 128,
+        "noise": 0.25,
+        "nuisance_correlation": 0.0,
+        "rho": 0.0,
+        "seed_salt": 90211,
+        "weak": 0.25
+      }
+    },
+    {
+      "case": "weak",
+      "seed": 8303,
+      "config": {
+        "agent": {
+          "M": 100,
+          "T_spec": 10,
+          "c": 1.0,
+          "cov_lr": 0.001,
+          "cov_mle_max": 256,
+          "cov_start": 100,
+          "cov_steps": 10,
+          "eps": 0.01,
+          "hidden": [
+            64
+          ],
+          "noise_sd": 0.25
+        },
+        "env": {
+          "d_theta": 16,
+          "d_x": 1
+        }
+      },
+      "horizon": 800,
+      "initial": "seed8303_initial.npz",
+      "stream": "weak_8303_stream.npz",
+      "fit_rng": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 126898398030899763546380019376386553697,
+          "state": 65084991002702852394479451406720874480
+        },
+        "uinteger": 0
+      },
+      "calibration_spec": {
+        "actions": 16,
+        "baseline": 12.0,
+        "d_theta": 16,
+        "fresh_external_contexts": true,
+        "kind": "gaussian",
+        "n_cal_min": 128,
+        "noise": 0.25,
+        "nuisance_correlation": 0.0,
+        "rho": 0.0,
+        "seed_salt": 90211,
+        "weak": 0.25
+      }
+    },
+    {
+      "case": "weak",
+      "seed": 8304,
+      "config": {
+        "agent": {
+          "M": 100,
+          "T_spec": 10,
+          "c": 1.0,
+          "cov_lr": 0.001,
+          "cov_mle_max": 256,
+          "cov_start": 100,
+          "cov_steps": 10,
+          "eps": 0.01,
+          "hidden": [
+            64
+          ],
+          "noise_sd": 0.25
+        },
+        "env": {
+          "d_theta": 16,
+          "d_x": 1
+        }
+      },
+      "horizon": 800,
+      "initial": "seed8304_initial.npz",
+      "stream": "weak_8304_stream.npz",
+      "fit_rng": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 203283171405535320158238671748173571811,
+          "state": 210312746722998441160817096355474312066
+        },
+        "uinteger": 0
+      },
+      "calibration_spec": {
+        "actions": 16,
+        "baseline": 12.0,
+        "d_theta": 16,
+        "fresh_external_contexts": true,
+        "kind": "gaussian",
+        "n_cal_min": 128,
+        "noise": 0.25,
+        "nuisance_correlation": 0.0,
+        "rho": 0.0,
+        "seed_salt": 90211,
+        "weak": 0.25
+      }
+    },
+    {
+      "case": "balanced",
+      "seed": 8300,
+      "config": {
+        "agent": {
+          "M": 100,
+          "T_spec": 10,
+          "c": 1.0,
+          "cov_lr": 0.001,
+          "cov_mle_max": 256,
+          "cov_start": 100,
+          "cov_steps": 10,
+          "eps": 0.01,
+          "hidden": [
+            64
+          ],
+          "noise_sd": 0.25
+        },
+        "env": {
+          "d_theta": 16,
+          "d_x": 1
+        }
+      },
+      "horizon": 800,
+      "initial": "seed8300_initial.npz",
+      "stream": "balanced_8300_stream.npz",
+      "fit_rng": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 166423317221240406887700708440532301061,
+          "state": 5865247612968671998958995335404774119
+        },
+        "uinteger": 0
+      },
+      "calibration_spec": {
+        "actions": 16,
+        "baseline": 12.0,
+        "d_theta": 16,
+        "fresh_external_contexts": true,
+        "kind": "gaussian",
+        "n_cal_min": 128,
+        "noise": 0.25,
+        "nuisance_correlation": 0.0,
+        "rho": 0.0,
+        "seed_salt": 90211,
+        "weak": 1.0
+      }
+    },
+    {
+      "case": "balanced",
+      "seed": 8301,
+      "config": {
+        "agent": {
+          "M": 100,
+          "T_spec": 10,
+          "c": 1.0,
+          "cov_lr": 0.001,
+          "cov_mle_max": 256,
+          "cov_start": 100,
+          "cov_steps": 10,
+          "eps": 0.01,
+          "hidden": [
+            64
+          ],
+          "noise_sd": 0.25
+        },
+        "env": {
+          "d_theta": 16,
+          "d_x": 1
+        }
+      },
+      "horizon": 800,
+      "initial": "seed8301_initial.npz",
+      "stream": "balanced_8301_stream.npz",
+      "fit_rng": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 235034770123028542448680194973929324029,
+          "state": 112463563153784707896961883956773750377
+        },
+        "uinteger": 0
+      },
+      "calibration_spec": {
+        "actions": 16,
+        "baseline": 12.0,
+        "d_theta": 16,
+        "fresh_external_contexts": true,
+        "kind": "gaussian",
+        "n_cal_min": 128,
+        "noise": 0.25,
+        "nuisance_correlation": 0.0,
+        "rho": 0.0,
+        "seed_salt": 90211,
+        "weak": 1.0
+      }
+    },
+    {
+      "case": "balanced",
+      "seed": 8302,
+      "config": {
+        "agent": {
+          "M": 100,
+          "T_spec": 10,
+          "c": 1.0,
+          "cov_lr": 0.001,
+          "cov_mle_max": 256,
+          "cov_start": 100,
+          "cov_steps": 10,
+          "eps": 0.01,
+          "hidden": [
+            64
+          ],
+          "noise_sd": 0.25
+        },
+        "env": {
+          "d_theta": 16,
+          "d_x": 1
+        }
+      },
+      "horizon": 800,
+      "initial": "seed8302_initial.npz",
+      "stream": "balanced_8302_stream.npz",
+      "fit_rng": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 315907792064294306229271453271368202183,
+          "state": 113485531068878155759097638138477977084
+        },
+        "uinteger": 0
+      },
+      "calibration_spec": {
+        "actions": 16,
+        "baseline": 12.0,
+        "d_theta": 16,
+        "fresh_external_contexts": true,
+        "kind": "gaussian",
+        "n_cal_min": 128,
+        "noise": 0.25,
+        "nuisance_correlation": 0.0,
+        "rho": 0.0,
+        "seed_salt": 90211,
+        "weak": 1.0
+      }
+    },
+    {
+      "case": "balanced",
+      "seed": 8303,
+      "config": {
+        "agent": {
+          "M": 100,
+          "T_spec": 10,
+          "c": 1.0,
+          "cov_lr": 0.001,
+          "cov_mle_max": 256,
+          "cov_start": 100,
+          "cov_steps": 10,
+          "eps": 0.01,
+          "hidden": [
+            64
+          ],
+          "noise_sd": 0.25
+        },
+        "env": {
+          "d_theta": 16,
+          "d_x": 1
+        }
+      },
+      "horizon": 800,
+      "initial": "seed8303_initial.npz",
+      "stream": "balanced_8303_stream.npz",
+      "fit_rng": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 126898398030899763546380019376386553697,
+          "state": 65084991002702852394479451406720874480
+        },
+        "uinteger": 0
+      },
+      "calibration_spec": {
+        "actions": 16,
+        "baseline": 12.0,
+        "d_theta": 16,
+        "fresh_external_contexts": true,
+        "kind": "gaussian",
+        "n_cal_min": 128,
+        "noise": 0.25,
+        "nuisance_correlation": 0.0,
+        "rho": 0.0,
+        "seed_salt": 90211,
+        "weak": 1.0
+      }
+    },
+    {
+      "case": "balanced",
+      "seed": 8304,
+      "config": {
+        "agent": {
+          "M": 100,
+          "T_spec": 10,
+          "c": 1.0,
+          "cov_lr": 0.001,
+          "cov_mle_max": 256,
+          "cov_start": 100,
+          "cov_steps": 10,
+          "eps": 0.01,
+          "hidden": [
+            64
+          ],
+          "noise_sd": 0.25
+        },
+        "env": {
+          "d_theta": 16,
+          "d_x": 1
+        }
+      },
+      "horizon": 800,
+      "initial": "seed8304_initial.npz",
+      "stream": "balanced_8304_stream.npz",
+      "fit_rng": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 203283171405535320158238671748173571811,
+          "state": 210312746722998441160817096355474312066
+        },
+        "uinteger": 0
+      },
+      "calibration_spec": {
+        "actions": 16,
+        "baseline": 12.0,
+        "d_theta": 16,
+        "fresh_external_contexts": true,
+        "kind": "gaussian",
+        "n_cal_min": 128,
+        "noise": 0.25,
+        "nuisance_correlation": 0.0,
+        "rho": 0.0,
+        "seed_salt": 90211,
+        "weak": 1.0
+      }
+    },
+    {
+      "case": "kuairec",
+      "seed": 8400,
+      "config": {
+        "agent": {
+          "M": 100,
+          "T_spec": 10,
+          "c": 1.0,
+          "cov_lr": 0.001,
+          "cov_mle_max": 256,
+          "cov_start": 100,
+          "cov_steps": 10,
+          "decision_rank": null,
+          "delta": 0.1,
+          "eps": 0.01,
+          "hidden": [
+            64
+          ],
+          "noise_sd": 0.5388157946099896
+        },
+        "env": {
+          "clip": 5.0,
+          "d_theta": 20,
+          "d_x": 20,
+          "data": "kuairec",
+          "iters": 15,
+          "n_actions": 200,
+          "n_users": 100,
+          "noise": {
+            "kind": "gauss",
+            "rho": 0.16,
+            "sd": null
+          },
+          "rank": 3,
+          "ridge": 5.0
+        }
+      },
+      "horizon": 600,
+      "initial": "kuairec_8400_initial.npz",
+      "stream": "kuairec_8400_stream.npz",
+      "fit_rng": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 275368427555148952877201817610112500983,
+          "state": 262954510467223965836694775254108466336
+        },
+        "uinteger": 0
+      },
+      "calibration_spec": {
+        "d_theta": 20,
+        "fresh_external_contexts": false,
+        "kind": "history",
+        "source": "own_observed_contexts"
+      }
+    },
+    {
+      "case": "kuairec",
+      "seed": 8401,
+      "config": {
+        "agent": {
+          "M": 100,
+          "T_spec": 10,
+          "c": 1.0,
+          "cov_lr": 0.001,
+          "cov_mle_max": 256,
+          "cov_start": 100,
+          "cov_steps": 10,
+          "decision_rank": null,
+          "delta": 0.1,
+          "eps": 0.01,
+          "hidden": [
+            64
+          ],
+          "noise_sd": 0.5075857547144921
+        },
+        "env": {
+          "clip": 5.0,
+          "d_theta": 20,
+          "d_x": 20,
+          "data": "kuairec",
+          "iters": 15,
+          "n_actions": 200,
+          "n_users": 100,
+          "noise": {
+            "kind": "gauss",
+            "rho": 0.16,
+            "sd": null
+          },
+          "rank": 3,
+          "ridge": 5.0
+        }
+      },
+      "horizon": 600,
+      "initial": "kuairec_8401_initial.npz",
+      "stream": "kuairec_8401_stream.npz",
+      "fit_rng": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 185844995809541709708345387515659034953,
+          "state": 48075045561833067085444676451774498402
+        },
+        "uinteger": 0
+      },
+      "calibration_spec": {
+        "d_theta": 20,
+        "fresh_external_contexts": false,
+        "kind": "history",
+        "source": "own_observed_contexts"
+      }
+    },
+    {
+      "case": "kuairec",
+      "seed": 8402,
+      "config": {
+        "agent": {
+          "M": 100,
+          "T_spec": 10,
+          "c": 1.0,
+          "cov_lr": 0.001,
+          "cov_mle_max": 256,
+          "cov_start": 100,
+          "cov_steps": 10,
+          "decision_rank": null,
+          "delta": 0.1,
+          "eps": 0.01,
+          "hidden": [
+            64
+          ],
+          "noise_sd": 0.5035349088911169
+        },
+        "env": {
+          "clip": 5.0,
+          "d_theta": 20,
+          "d_x": 20,
+          "data": "kuairec",
+          "iters": 15,
+          "n_actions": 200,
+          "n_users": 100,
+          "noise": {
+            "kind": "gauss",
+            "rho": 0.16,
+            "sd": null
+          },
+          "rank": 3,
+          "ridge": 5.0
+        }
+      },
+      "horizon": 600,
+      "initial": "kuairec_8402_initial.npz",
+      "stream": "kuairec_8402_stream.npz",
+      "fit_rng": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 48922946099499206295475528390333832929,
+          "state": 164344585469398509440838333224861418444
+        },
+        "uinteger": 0
+      },
+      "calibration_spec": {
+        "d_theta": 20,
+        "fresh_external_contexts": false,
+        "kind": "history",
+        "source": "own_observed_contexts"
+      }
+    },
+    {
+      "case": "kuairec",
+      "seed": 8403,
+      "config": {
+        "agent": {
+          "M": 100,
+          "T_spec": 10,
+          "c": 1.0,
+          "cov_lr": 0.001,
+          "cov_mle_max": 256,
+          "cov_start": 100,
+          "cov_steps": 10,
+          "decision_rank": null,
+          "delta": 0.1,
+          "eps": 0.01,
+          "hidden": [
+            64
+          ],
+          "noise_sd": 0.532670014907522
+        },
+        "env": {
+          "clip": 5.0,
+          "d_theta": 20,
+          "d_x": 20,
+          "data": "kuairec",
+          "iters": 15,
+          "n_actions": 200,
+          "n_users": 100,
+          "noise": {
+            "kind": "gauss",
+            "rho": 0.16,
+            "sd": null
+          },
+          "rank": 3,
+          "ridge": 5.0
+        }
+      },
+      "horizon": 600,
+      "initial": "kuairec_8403_initial.npz",
+      "stream": "kuairec_8403_stream.npz",
+      "fit_rng": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 88264167260273638645695976654691937889,
+          "state": 3849618332497008849999689039061285830
+        },
+        "uinteger": 0
+      },
+      "calibration_spec": {
+        "d_theta": 20,
+        "fresh_external_contexts": false,
+        "kind": "history",
+        "source": "own_observed_contexts"
+      }
+    },
+    {
+      "case": "kuairec",
+      "seed": 8404,
+      "config": {
+        "agent": {
+          "M": 100,
+          "T_spec": 10,
+          "c": 1.0,
+          "cov_lr": 0.001,
+          "cov_mle_max": 256,
+          "cov_start": 100,
+          "cov_steps": 10,
+          "decision_rank": null,
+          "delta": 0.1,
+          "eps": 0.01,
+          "hidden": [
+            64
+          ],
+          "noise_sd": 0.4937734564583949
+        },
+        "env": {
+          "clip": 5.0,
+          "d_theta": 20,
+          "d_x": 20,
+          "data": "kuairec",
+          "iters": 15,
+          "n_actions": 200,
+          "n_users": 100,
+          "noise": {
+            "kind": "gauss",
+            "rho": 0.16,
+            "sd": null
+          },
+          "rank": 3,
+          "ridge": 5.0
+        }
+      },
+      "horizon": 600,
+      "initial": "kuairec_8404_initial.npz",
+      "stream": "kuairec_8404_stream.npz",
+      "fit_rng": {
+        "bit_generator": "PCG64",
+        "has_uint32": 0,
+        "state": {
+          "inc": 216631815175009522967414688459271415017,
+          "state": 285585083059053697662510054302079669698
+        },
+        "uinteger": 0
+      },
+      "calibration_spec": {
+        "d_theta": 20,
+        "fresh_external_contexts": false,
+        "kind": "history",
+        "source": "own_observed_contexts"
+      }
+    }
+  ]
+}

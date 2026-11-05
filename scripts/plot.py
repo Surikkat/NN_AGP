@@ -73,10 +73,9 @@ def load(plans, input_dir):
                 regret = np.cumsum(regret)
                 timing = raw["timing"]
                 parameters = raw.get("parameters", {}).get("final") or {}
-                rss = raw.get("peak_rss_bytes")
                 rows.append(dict(seed=seed, regret=regret, rank=rank, epsilon=epsilon, width=width,
                     final_rank=final_rank, wall=timing.get("wall"),
-                    cpu=timing.get("cpu"), rss=rss,
+                    cpu=timing.get("cpu"),
                     parameters=parameters.get("total"), neural=parameters.get("neural")))
             by_method[method] = {key: np.asarray([r[key] for r in rows], dtype=float)
                                  for key in rows[0] if key != "seed"}
@@ -142,7 +141,7 @@ def tables(experiments, output):
     physical_stats = {}
     for name, e in zip(("Weak", "Balanced", "KuaiRec"), physical):
         physical_stats[name] = {metric: interval(a / b, True).tolist()
-            for metric in ("parameters", "wall", "cpu", "regret", "rss")
+            for metric in ("parameters", "wall", "cpu", "regret")
             for a, b in [paired(e, "BBP + physical compression", "BBP", metric)]}
     add("tab:network-cost", "Output-layer reduction relative to BBP with the full encoder. Geometric mean ratios.",
         "@{}lrrr@{}", r"Task & Parameters & Wall time & Regret",

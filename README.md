@@ -50,3 +50,5 @@ Model implementations are in `bandits/`. Environment generators are in
 `scripts/environments.py`: `WeakBalancedEnv` for Weak and Balanced, `smooth_env` for
 Smooth, `kuairec_env` for KuaiRec, and `make_env` with `step` for Exp. 1–10.
 The separate BBP experiment is in `scripts/bbp.py`.
+
+GPU measurements: [notebook](notebooks/gpu.ipynb), [inputs and results](experiments/GPU).

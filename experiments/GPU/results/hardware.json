@@ -1,0 +1,10 @@
+{
+  "gpu": "Tesla T4",
+  "python": "3.13.16",
+  "torch": "2.11.0+cu130",
+  "numpy": "2.4.6",
+  "scipy": "1.16.3",
+  "cuda": "13.0",
+  "dtype": "float64",
+  "cpu_threads": 1
+}
