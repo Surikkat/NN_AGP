@@ -307,8 +307,7 @@ def train(output):
 def summary(values):
     mean = values.mean()
     se = values.std(ddof=1)/np.sqrt(len(values))
-    return dict(mean=float(mean), se=float(se), ci80=[float(mean-1.281551565545*se),
-                                                    float(mean+1.281551565545*se)])
+    return dict(mean=float(mean), se=float(se))
 
 
 def measure(H, n, targets):
@@ -356,9 +355,7 @@ def sample(output):
                      else "Independent large Monte Carlo calibration")+"; fixed raw J and directions before fresh tests",
         controls="Finite Gaussian with isotropic tail; finite Gaussian with actual mean and covariance. Diagnostic only",
         scope="Frozen learned checkpoint after offline crossed GP likelihood training; n counts independent contexts, not rewards",
-        phase_labels="Asymptotic BBP reference regimes; finite-M transition is rounded",
-        intervals="80% Monte Carlo confidence for means, conditional on this learned checkpoint")
-    (out/"protocol.json").write_text(json.dumps(protocol, indent=2)+"\n")
+        phase_labels="Asymptotic BBP reference regimes; finite-M transition is rounded")
     data = {kind: {n: [] for n in sizes} for kind in ("actual", "classical_Gaussian", "measured_Gaussian")}
     selector = {key: np.zeros((len(sizes), REPS)) for key in
                 ("threshold", "support_dimension", "rank", "background", "raw_count")}

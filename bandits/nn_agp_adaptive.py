@@ -109,7 +109,7 @@ class NN_AGP_UCB_Adaptive:
             raise ValueError("prune_rule must be 'relative', 'bbp' or 'none'")
         if T_spec < 1 or burn_in < 0 or not 0 < eps_prune < 1:
             raise ValueError("Require T_spec >= 1, burn_in >= 0 and 0 < eps_prune < 1")
-        self.device = device or torch.device("cpu")
+        self.device = torch.device(device) if device is not None else torch.device("cpu")
         self.debug_spectral = debug_spectral
         self.seed = torch.initial_seed() if seed is None else seed
         if seed is not None:
@@ -167,7 +167,7 @@ class NN_AGP_UCB_Adaptive:
 
     @classmethod
     def from_config(cls, cfg, seed, method, calibration="history", history_svd=False,
-                    corrected_svd=True, fold_round=None, catalog=False):
+                    corrected_svd=True, fold_round=None, catalog=False, device=None):
         thresholds = {"Relative cutoff 1e-2": .01, "Relative cutoff 1e-4": .0001,
                       "Relative cutoff 1e-6": 1e-6, "Relative cutoff 1e-5": 1e-5}
         ranks = {"Fixed rank 25": 25, "Fixed rank 10": 10}
@@ -197,7 +197,7 @@ class NN_AGP_UCB_Adaptive:
                   init_noise=c.get("noise_sd", .1), lr=c.get("cov_lr", 1e-3),
                   mll_steps=c.get("cov_steps", 10), T_spec=period, eps_prune=epsilon,
                   prune_rule="none" if method == "Full" else "bbp" if method == "BBP" else "relative",
-                  burn_in=start, seed=seed)
+                  burn_in=start, seed=seed, device=device)
         obj.cfg, obj.c = cfg, c
         obj.method, obj.calibration_mode = method, calibration
         obj.history_svd, obj.corrected_svd = history_svd, corrected_svd
@@ -314,9 +314,56 @@ class NN_AGP_UCB_Adaptive:
         self.catalog_diagnostics = {}
         if self.history_svd:
             return self._torch_posterior(X, theta)
+        if self.device.type == "cuda":
+            return self._cuda_posterior(X, theta)
         if self.catalog and len(X) * self.m < len(self.ys):
             return self._catalog_posterior(X, theta)
         return self._dual_posterior(X, theta)
+
+    @torch.no_grad()
+    def _cuda_posterior(self, X, theta):
+        X = torch.as_tensor(X, dtype=self.B.dtype, device=self.device)
+        theta = torch.as_tensor(theta, dtype=self.B.dtype, device=self.device)
+        if not self.ys:
+            q = self.features(theta[None], True)
+            prior = self.hyp[1].exp() * q.square().sum()
+            return self.B.new_zeros(len(X)), prior.expand(len(X))
+        H = self.features(self.th, True)
+        q = self.features(theta[None], True)[0]
+        ell, scale, noise = self.hyp.exp().unbind()
+        n, K, m = len(self.ys), len(X), self.m
+        observed, y = self.x, self.y
+        if not self.catalog or K * m >= n:
+            kernel = self.kernel(H, H, self.D2)
+            cross = scale * torch.exp(-torch.cdist(X, observed).square() / (2 * ell ** 2)) * (H @ q)[None]
+            L = torch.linalg.cholesky(kernel + (noise + self.jitter) *
+                                     torch.eye(n, dtype=self.B.dtype, device=self.device))
+            forward = torch.linalg.solve_triangular(L, cross.T, upper=False)
+            mean = cross @ torch.cholesky_solve(y[:, None], L)[:, 0]
+            return mean, (scale * q.square().sum() - forward.square().sum(0)).clamp_min(1e-12)
+        matches = (observed[:, None] == X[None]).all(2)
+        if not torch.all(matches.sum(1) == 1):
+            raise ValueError("History must use this fixed, unique catalog")
+        ids = matches.to(torch.int64).argmax(1)
+        Kx = scale * torch.exp(-torch.cdist(X, X).square() / (2 * ell ** 2))
+        values, vectors = torch.linalg.eigh(Kx)
+        R = vectors * values.clamp_min(0).sqrt()
+        grams, responses = [], []
+        for j in range(K):
+            group, response = H[ids == j], y[ids == j]
+            grams.append(group.T @ group)
+            responses.append(group.T @ response)
+        grams, responses = torch.stack(grams), torch.stack(responses)
+        eta = noise + self.jitter
+        products = (R[:, :, None] * R[:, None, :]).reshape(K, K * K)
+        A = (products.T @ grams.reshape(K, m * m)).reshape(K, K, m, m)
+        A = A.permute(0, 2, 1, 3).reshape(K * m, K * m) / eta
+        A = A + torch.eye(K * m, dtype=A.dtype, device=A.device)
+        L = torch.linalg.cholesky(A)
+        rhs = (R.T @ responses).reshape(-1, 1) / eta
+        Z = (R[:, :, None] * q[None, None, :]).reshape(K, K * m)
+        forward = torch.linalg.solve_triangular(L, Z.T, upper=False)
+        return (Z @ torch.cholesky_solve(rhs, L))[:, 0], forward.square().sum(0).clamp_min(1e-12)
 
     def _dual_posterior(self, X, theta):
         with torch.no_grad():
@@ -413,7 +460,8 @@ class NN_AGP_UCB_Adaptive:
             beta = 2 * math.log(len(X_candidates) * (self.step_count + 1) ** 2 * math.pi ** 2 /
                                 (2 * self.c.get("delta", .1)))
         self.last_mean, self.last_var = mean.cpu().numpy(), var.cpu().numpy()
-        idx = int(torch.argmax(mean + self.c.get("c", 1.) * math.sqrt(beta) * var.sqrt()))
+        weight = beta ** .5 if self.device.type == "cuda" else math.sqrt(beta)
+        idx = int(torch.argmax(mean + self.c.get("c", 1.) * weight * var.sqrt()))
         return X_candidates[idx], float(mean[idx]), float(var[idx])
 
 
